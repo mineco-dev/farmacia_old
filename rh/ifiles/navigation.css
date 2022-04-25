@@ -1,0 +1,176 @@
+/************************************************************/
+/* Theme:          Layout & Navigation Styles   Zurich.com  */
+/* Browser:        IE 5+ & NS 6+                            */
+/* Platform:       Windows                                  */
+/* Author:         Ludmila Kukal / Gerhard Schauer          */
+/* Created:        29/11/2003                               */
+/* Last Modified:                                           */
+/* By:                                                      */
+/************************************************************/
+/************************************************************/
+/* General Styles for Layout                                */
+/************************************************************/
+#head, #tabNav { margin: 0px 10px; width: 735px; vertical-align: top }
+#imageryArea .imageryLeft img{
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+ #imageryArea .imageryRight img {
+	margin-left: 0px;
+	margin-bottom: 5px;
+}
+#imageryArea {
+	margin: 0px 10px 0px 10px;
+	width: 735px;
+	vertical-align: top
+}
+#imageryArea td { background-color: #eed }
+#contentArea { margin: 10px 10px 0px 10px; width: 735px;height:298px; }
+#contentArea td { vertical-align: top }
+#mainContent { padding: 0px 10px }
+#relContent { margin: 0; width: 150px }
+#head td, #primaryNav td, #strapline td { text-align: left }
+
+/************************************************************/
+/* General Styles for all Navigation Levels                 */
+/************************************************************/
+#header a, #header span, #serviceNavTable .active, #primaryNavigation a, #primaryNavigation span, #secondNavigation a, #secondNavigation span, #breadCrumb, #breadCrumb a, #breadCrumb span, #footer a, #footer span {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px
+}
+/************************************************************/
+/* Header Navigation                                        */
+/************************************************************/
+#header form { margin-top: 0px; margin-bottom: 0px }
+#zurichLogo td { vertical-align: bottom !important }
+#descriptor { float: left; border: 0px; margin: 0px }
+#specialLink, #serviceNavTable {
+	float: right;
+	text-align: right;
+	vertical-align: middle
+}
+#header .text, #login .text {
+	color: #000;
+	background-color: #fff;
+	border: 1px solid #89b;
+	font-size: 11px;
+	height: 16px
+}
+#header .button, #login .button{
+	color: #fff;
+	background-color: #8899BB;
+	border: 0;
+	font-size: 11px;
+	padding: 1px 2px 1px 2px;
+	margin-left: 1px;
+	margin-bottom:0px;
+	height: 16px;
+	cursor : pointer;
+}
+#specialLink a {
+	padding-top: 3px;
+	vertical-align: middle;
+	color: #039;
+	background-color: #fff
+}
+#serviceNavTable td.languageBg {
+	background-color: #89b;
+	border-top: 3px solid #fff;
+	border-left: 1px solid #fff;
+	text-align: center;
+	vertical-align: middle;
+	height: 19px
+}
+#serviceNavTable span.active { color: #cde }
+/************************************************************/
+/* Primary Navigation                                        */
+/************************************************************/
+.tabNormal, .tabSelected {
+	font-size: 82%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	vertical-align: middle;
+	padding-left: 2px;
+	padding-right: 2px;
+	margin-right: 2px
+}
+.tabNormal a:link, .tabNormal a:visited, .tabNormal a:active, .tabSelected a:link, .tabSelected a:visited, .tabSelected a:active {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none
+}
+.tabSelected { background-color: #eed }
+.tabRow, .tabNormal { background-color: #003399 }
+.tabBg { background-color: #eed }
+.tabNormal a:link, .tabNormal a:visited, .tabNormal a:active, .tabNormal a:hover { color: #ffffff }
+.tabSelected a:link, .tabSelected a:visited, .tabSelected a:active, .tabSelected a:hover { color: #000000 }
+/************************************************************/
+/* Left Navigation                                          */
+/************************************************************/
+#leftNav tr.leftNavBg1, #leftNav tr.leftNavBg2 { height: 20px; width: 150px; }
+#leftNav td { vertical-align: top; }
+#leftNav .leftNavBg1 { background-color: #8899bb; }
+#leftNav .leftNavBg2 { background-color: #c3ccdd; }
+#leftNav .leftNavBg1 a { color: #fff; }
+#leftNav .leftNavBg2 a { color: #000;  }
+#leftNav .navText, #leftNav .navTextSelected {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 82%;
+	line-height: 130%;
+	vertical-align: middle;
+}
+#leftNav .navTextSelected {text-decoration: none;}
+.leftNavBg1 a.navText:link, .leftNavBg1 a.navText:visited, .leftNavBg1 a.navText:active  {text-decoration: none;}
+.leftNavBg2 a.navText:link, .leftNavBg2 a.navText:visited, .leftNavBg2 a.navText:active {	text-decoration: none;}
+.leftNavBg1 a.navText:hover, .leftNavBg2 a.navText:hover  {text-decoration: underline;}
+.leftNavBg { background-color: #ccddee; height: 100%; width: 150px; }
+/************************************************************/
+/* Breadcrumb Navigation                                    */
+/************************************************************/
+#breadCrumb a:link, #breadCrumb a:visited, #breadCrumb a:active { color: #003399; text-decoration: underline }
+#breadCrumb {
+	vertical-align: middle;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #003399;
+	font-size: 70%;
+	line-height: 130%;
+	padding: 0px 5px 0px 14px;
+	height: 20px;
+}
+/************************************************************/
+/* Footer Navigation                                        */
+/************************************************************/
+#footer {
+	margin: 5px 10px 10px 10px;
+	padding-right: 5px;
+	background-color: #f6f6f6;
+	text-align: right;
+	vertical-align: middle;
+}
+#footer a:link, #footer a:visited, #footer a:active {
+	color: #039;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	text-decoration: none
+}
+#footer .copyright { color: #666 }
+#footer img {margin:0px 5px;}
+#footer td { height: 20px }
+#footer .activ { font-weight: bold }
+/************************************************************/
+/* Common Navigation Styles                                 */
+/************************************************************/
+.navSeperator { background-color: #fff }
+
+
+.navTextSelected { font-weight: bold }
+#serviceNavTable a.language:link, a.language:visited, a.language:hover { color: #fff }
+
+a.priNav:link, a.secNav:link, a.secNavSelected:link, a.thirdNav:link, a.thirdNavSelected:link, a.fourthNav:link, a.language:link, #footer a:link, #specialLink a:link, #serviceNavTable a:link, a.priNav:visited, a.secNav:visited,  a.secNavSelected:visited, a.thirdNav:visited, a.thirdNavSelected:visited, a.fourthNav:visited, a.language:visited, #footer a:visited, #specialLink a:visited, #serviceNavTable a:visited { text-decoration: none }
+a.priNav:hover, a.secNav:hover, a.secNavSelected:hover, a.thirdNav:hover, a.thirdNavSelected:hover, a.fourthNav:hover, a.language:hover, #footer a:hover, #specialLink a:hover, #serviceNavTable a:hover, A.tabNormal:hover, A.tabSelected:hover, #strapline a:hover, #footer a:hover { text-decoration: underline }
+.cotizador {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #003399;
+	line-height: 16px;
+	padding: 10px;
+}

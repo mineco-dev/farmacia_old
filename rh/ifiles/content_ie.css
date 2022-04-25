@@ -1,0 +1,346 @@
+/************************************************************/
+/* Theme:          Content Component  Styles Zurich.com     */
+/* Browser:        IE 5+, NS 6.1 +                          */
+/* Author:         Gerhard Schauer / Ludmila Kukal          */
+/* Created:        2003/12/01                               */
+/* Last Modified:    2004/02/20                                       */
+/* By:                                                      */
+/************************************************************/
+
+/************************************************************/
+/* Righthand area                                                                   */
+/************************************************************/
+
+.righthandarea,.righthandarea2,.righthandarea3,.righthandarea4,.righthandarea5{
+	border: 1px solid #ddd;
+	width: 150px;
+	margin-top:5px;
+	margin-left:10px;
+}
+/************************************************************/
+/*                                                                                */
+/************************************************************/
+
+.rightPadding{
+	padding-right:15px;
+}
+.topPadding{
+	padding-top:16px;
+}
+.normWeight{
+	font-weight: normal;
+}
+#content{
+	color: #000000;
+	padding-left:5px;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	width:100%;
+}
+#content h1 {
+	margin: 12px 0px 18px 8px;
+	color: #003399;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 140%;
+	font-weight: normal;
+/*	line-height: 0.5em;*/
+}
+#content h2 {
+	margin: 24px 0px 11px 9px;
+	color: #003399;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 110% !important;
+	font-weight: normal;
+}
+#content h3 {
+	margin: 25px 0px 6px 8px;
+	color: #003399;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 90%;
+	font-weight: bold/*	line-height : 0.3em;*/
+}
+#content h4 {
+	margin: 25px 15px 4px 9px;
+	color: #003399;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 80%;
+	font-weight: bold;
+}
+#content p{
+	margin: 0px 0px 6px 9px;
+	padding: 0px;
+	font-size: 80%;
+	line-height: 1.4em;
+	vertical-align:top;
+}
+#content a:link { 
+	color: #003399; 
+}
+#content a:visited { 
+	color: #666; 
+}
+.caption { 
+	margin-top: 6px; 
+	font-size: 70%; 
+}
+.captionRight { 
+	margin-top: 6px; 
+	font-size: 70%; 
+	margin-left:20px;
+	text-align:left;
+}
+.picleft{
+	margin-top: 5px;
+	margin-bottom: 14px;
+	float: left;
+	padding-left: 10px;
+}
+.picright{
+	margin-top: 5px;
+	margin-bottom: 14px;
+	float: right;
+	text-align: right;
+}
+.picnormal {
+	margin-top: 5px;
+	margin-bottom: 14px;
+	padding-left: 10px;
+	clear: both;
+	text-align : left;
+}
+/************************************************************/
+/* Listing styles                                                                        */
+/************************************************************/
+#content ul {
+	margin-left: 10px;
+	margin-top: 12px;
+	margin-bottom: 0px;
+	padding-left: 21px;
+	list-style-image:  url(../../Documents%20and%20Settings/ggutierr/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/img/bullet.gif);
+}
+#content ol {
+	margin-left: 10px;
+	margin-top: 12px;
+	margin-bottom: 0px;
+	padding-left: 33px;
+	font-size: 100%; 
+	font-weight:bold;
+	color:#039;
+}
+#content li{
+	margin: 8px 0px 6px 0px;
+	font-size: 80%;
+	line-height: 1.4em;
+	vertical-align:top;
+}
+.itemTitle{ color: #039; font-size: 100%; font-weight:bold;}
+.itemSubtitle{ margin-bottom: 0.3em; font-size: 85%;}
+.itemDesc{margin-bottom: 18px;color:#000;font-weight:normal;}
+.datedList{
+	font-size: 80%;
+	line-height: 1.4em;
+	vertical-align: top;
+	margin-left:8px;
+}
+.resultNr{text-align:right; padding-right:11px;}
+.filled {border:solid 1px #039;font-size:9px;line-height:9px;padding:0px 2px 0px 2px;color:#ccc;background-color:#039;margin-right:1px;}
+.empty {border:solid 1px #039;font-size:9px;line-height:9px;padding:0px 2px 0px 2px;color:#ccc;margin-right:1px;}
+/************************************************************/
+/* Index styles                                                                        */
+/************************************************************/
+#content ul.index{
+	list-style-image : none;
+	list-style-type : none;
+	margin: 0px 10px -6px 9px;
+	padding: 0px;
+}
+#content li div.indexLabel{font-weight: bold;}
+/************************************************************/
+/* Footnote styles                                                                    */
+/************************************************************/
+#footnote{margin-top:20px;}
+#footnote p{ color: #666; font-size: 70%; line-height: 1.4em; }
+/************************************************************/
+/* Articles styles                                                                       */
+/************************************************************/
+#author p { margin-bottom: 1.4em; font-size: 70%; }
+#abstract p {
+	background-color: #fff;
+	color: #039;
+}
+/************************************************************/
+/* PageNav styles                                                                   */
+/************************************************************/
+.pageNav{
+	padding: 5px 5px 5px 8px;
+	border-bottom: solid 2px #fff;
+	background-color: #eed;
+	font-size: 80%;
+	margin-left:10px;
+}
+.pageNav a:link{text-decoration: none;}
+.pageNav a:visited {text-decoration: none;}
+.pageNav a:hover{ text-decoration: underline; }
+.pageNav span{ text-decoration: underline; }
+/************************************************************/
+/* Table styles                                                                         */
+/************************************************************/
+.table{
+	margin-top: 12px;
+	margin-bottom: 12px;
+	margin-left:10px;
+}
+.table td {
+	border-bottom: solid 1px #aaa999;
+	color: #000000;
+	font-size: 70%;
+	text-align: left;
+	vertical-align: top;
+}
+.table th {
+	border-bottom: solid 1px #aaa999;
+	color: #003399;
+	background-color: #eed;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 70%;
+	text-align: left;
+	vertical-align: bottom;
+}
+/*Beginn of old styledefinition: old tables had the class "tableLink" on the td tag.*/
+/*This part can be deleted as soon as all old tables correspond to the new tag /class structure*/
+.tableLink a:link{text-decoration: none;}
+.tableLink a:visited{text-decoration: none;}
+.tableLink a:hover{ text-decoration: underline;}
+/*End of old styledefinition: comment by chkgsch, 311203*/
+ a:link.tableLink{text-decoration: none;}
+ a:visited.tableLink {text-decoration: none;}
+ a:hover.tableLink{ text-decoration: underline;}
+.tableLink span{ text-decoration: underline;}
+.tableLabel{ vertical-align: top !important; }
+/************************************************************/
+/* Form styles                                                                          */
+/************************************************************/
+#content form{
+	margin: 0px;
+}
+.form {
+	margin-left: 10px;
+}
+.form label { color: #039; font-size: 80%; font-weight:normal;}
+.label th{
+	border-bottom: 1px solid #eed !important;
+}
+.form td, .form th {
+	border-bottom: 1px solid #fff;
+	background-color: #eed;
+	text-align:left;
+}
+.radioButton label, .radioButton span {
+	font-size: 70%;
+	color:#000 !important;
+} 
+.radioButton input{
+	margin-bottom:-1px;
+}
+.output{
+	font-size: 70%;
+	padding-bottom:6px;
+}
+#content input.text {
+	border: outset 1px solid #8899BB;
+	color: #000000;
+	background-color: #FFFFFF;
+	font-size: 70%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#content select {font-size: 0.7em;margin-top:1px;}
+#content input.button {
+	border: 0px;
+	margin: 0px 0px 0px 1px;
+	padding: 0px 2px 0px 2px;
+	color: #fff;
+	background-color: #8899BB;
+	font-size: 0.7em;
+	height: 16px;
+}
+#content textarea {
+	border: inset 1px solid #8899BB;
+	padding: 2px 2px 2px 2px;
+	color: #000000;
+	background-color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	overflow: auto;
+	scrollbar-3dlight-color: #FFFFFF;
+	scrollbar-arrow-color: #FFFFFF;
+	scrollbar-base-color: #8899BB;
+	scrollbar-darkshadow-color: #FFFFFF;
+	scrollbar-face-color: #8899BB;
+	scrollbar-highlight-color: #8899BB;
+	scrollbar-shadow-color: #8899BB;
+	scrollbar-track-color: #FFFFFF;
+}
+td.buttons{
+	background-color: #fff !important; text-align:right;
+}
+#content .required{color: #666; font-size: 70%; line-height: 1.4em; text-align:left;}
+
+#content .errorMessage {
+	color:#bd3440 !important;
+	font-size:70%;
+	margin:0px;
+}
+
+/************************************************************/
+/* Filter styles                                                                           */
+/************************************************************/
+.tableSelNav {
+	margin: 0px 0px 0px 10px; 
+	border-bottom: solid 1px #fff;
+	border-top: solid 1px #fff;
+	height: 40px;
+}
+.tableSelNav label { color: #039; font-size: 70%;vertical-align: middle;}
+.tableSelNav td { color: #000000;background-color: #f6f6f6;vertical-align: middle !important;}
+.tableSelNav .button{
+	margin-top:1px;
+}
+.titulo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 15px;
+	color: #666666;
+}
+.cotizadortitulo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	line-height: 18px;
+	color: #003399;
+	padding: 10px;
+}
+
+.linkboxlink a:link, .linkboxlink a:visited, .linkboxlink a:hover
+{
+   FONT-FAMILY:		Arial, Helvetica, sans-serif;
+   FONT-SIZE:		12px;
+	line-height: 16px;
+	font-weight: normal;
+}
+
+.linkboxlink a:link
+{
+   COLOR:		#003399;
+   TEXT-DECORATION: 	none;
+}
+
+.linkboxlink a:visited
+{
+   COLOR:		#666666;
+   TEXT-DECORATION: 	none;
+}
+
+.linkboxlink a:hover
+{
+	COLOR:		#003399;
+	TEXT-DECORATION: 	underline;
+}

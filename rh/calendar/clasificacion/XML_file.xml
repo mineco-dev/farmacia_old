@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<razon_inscripcion>
+	<deudor>
+		<nombre>Juan Antonio Perez Esquivel</nombre>
+	</deudor>
+	<suma></suma>
+	<plazo></plazo>
+	<fecha_inicio>5-12-2008</fecha_inicio>
+	<interes></interes>
+	<bienes>
+		<detalle>Un amueblado de sala color negro de cuero, con barras metalicas</detalle>
+	</bienes>
+	<fecha_cele_contrato>--</fecha_cele_contrato>
+	<notario></notario>
+	<fecha_ingreso>1-12-2007 0:0:0</fecha_ingreso>
+	<expediente>3</expediente>
+</razon_inscripcion>

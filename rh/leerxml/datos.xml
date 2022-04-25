@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<datos>
+	<productos>
+		<p_0 nombre="Esto%20es%20un%20producto" descripcion="producto%20producto%20producto%20producto%20producto%20producto%20">
+			<item_0 nombre="Servicios%20generales" img="img/sp_1.png" >
+				<referencia_0 nombre="1-18" descripcion="d118-d118-d118-d118-d118" material="0-1-4-6" color="1-3-5-7" tallas="1-2-3" fotos="r0_peq.jpg*r0.jpg" />
+				<referencia_1 nombre="1-19" descripcion="d119-d119-d119-d119-d119" material="0-1-4-6" color="1-3-5-7" tallas="1-2-3" fotos="r0_peq.jpg*r0.jpg" />
+				<referencia_2 nombre="1-20" descripcion="d120-d120-d120-d120-d120" material="0-1-4-6" color="1-3-5-7" tallas="1-2-3" fotos="r0_peq.jpg*r0.jpg" />
+			</item_0>
+			<item_1 nombre="Peces%20raros" img="img/sp_0.png" >
+				<referencia_0 nombre="1-18" descripcion="d118-d118-d118-d118-d118" material="0-1-4-6" color="1-3-5-7" tallas="1-2-3" fotos="r0_peq.jpg*r0.jpg" />
+			</item_1>
+		</p_0>
+		<p_1 nombre="Esto%20es%20otro%20producto" descripcion="Manteles,%20Carpetas,%20Servilletas,%20toallas%20cortes%C3%ADa,%20individuales,%20portavasos,%20cojines,%20vaminos,%20cubrecamas,%20tapetes%20en%20lino%20y%20telar." >
+		</p_1>
+	</productos>
+	<idioma nombre="es">
+		<detalles_subproducto ref="Referencia" />
+	</idioma>
+</datos>

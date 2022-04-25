@@ -1,0 +1,15 @@
+script para crear base de datos
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[simpatia]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[simpatia]
+GO
+
+CREATE TABLE [dbo].[simpatia] (
+	[codigo] [int] IDENTITY (1, 1) NOT NULL ,
+	[ip] [varchar] (50) COLLATE Modern_Spanish_CI_AS NULL ,
+	[chico] [int] NULL ,
+	[chica] [int] NULL ,
+	[activo] [int] NULL 
+) ON [PRIMARY]
+GO

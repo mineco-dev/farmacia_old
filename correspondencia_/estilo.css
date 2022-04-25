@@ -1,0 +1,47 @@
+/* CSS Document */
+
+<style>
+<!--
+p
+{
+font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+td
+{
+font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+background: #D1D1E1;
+color: #000000;
+border: 1px solid #0B198C;
+}
+.thead
+{
+background: #5C7099 url('../gradient_thead.gif') repeat-x top left;
+color: #FFFFFF;
+font-style:normal; font-variant:normal; font-weight:bold; font-size:11px; font-family:tahoma, verdana, geneva, lucida, lucida grande, arial, helvetica, sans-serif
+}
+td.thead { padding: 4px; }
+.tcat
+{
+background: #869BBF url('../gradient_tcat.gif') repeat-x top left;
+color: #FFFFFF;
+font-style:normal; font-variant:normal; font-weight:bold; font-size:10pt; font-family:verdana, geneva, lucida, lucida grande, arial, helvetica, sans-serif
+}
+.alt1
+{
+background: #F5F5FF;
+color: #000000;
+}
+.alt2
+{
+background: #E1E4F2;
+color: #000000;
+}
+-->
+</style>

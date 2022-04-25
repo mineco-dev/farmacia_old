@@ -1,0 +1,453 @@
+.MainBGColor2 {
+	BACKGROUND-COLOR: #dcdada
+}
+.MasterGeneralTable {
+	MARGIN-LEFT: auto; WIDTH: 910px; MARGIN-RIGHT: auto; BACKGROUND-COLOR: #ffffff
+}
+.MainTd {
+	MARGIN: 0px; WIDTH: 900px
+}
+.BasicTable {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+.SideShadowLeft {
+	BACKGROUND-IMAGE: url(file:///C|/AsignacionCodigoPersonal/htdocs/images/Images/WebSite/Graphic/Common/LeftShadow.gif); WIDTH: 5px; BACKGROUND-REPEAT: repeat-y; HEIGHT: 100%
+}
+.SideShadowRight {
+	BACKGROUND-IMAGE: url(file:///C|/AsignacionCodigoPersonal/htdocs/images/Images/WebSite/Graphic/Common/RightShadow.gif); WIDTH: 5px; BACKGROUND-REPEAT: repeat-y; HEIGHT: 100%
+}
+.BottomShadow1 {
+	WIDTH: 100%; HEIGHT: 2px; BACKGROUND-COLOR: #b8b8b8
+}
+.BottomShadow2 {
+	WIDTH: 100%; HEIGHT: 2px; BACKGROUND-COLOR: #c6c6c6
+}
+.blueFont {
+	FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; TEXT-ALIGN: left
+}
+.BasicFont {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; TEXT-ALIGN: left
+}
+.BasicFont2 {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial
+}
+.BasicFontHebrew {
+	FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: Arial; TEXT-ALIGN: left
+}
+.BoldBasicFont {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; TEXT-ALIGN: left
+}
+.GrayBasicFont {
+	FONT-SIZE: 13px; COLOR: #7f7a7a; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial
+}
+.OrangeBasicFont {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #e48529; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; TEXT-ALIGN: left
+}
+.BlueBasicFont {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #2f669c; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; TEXT-ALIGN: left
+}
+.BlueBasicFontNoAlign {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #2f669c; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial
+}
+.WhiteSpaces {
+	WIDTH: 25px; BACKGROUND-COLOR: #ffffff
+}
+.GraySpaces {
+	WIDTH: 25px; BACKGROUND-COLOR: #aba9a9
+}
+.PaleGraySpaces {
+	WIDTH: 25px; HEIGHT: 19px; BACKGROUND-COLOR: #eeeeee
+}
+.MainContentTable {
+	MARGIN: 0px; WIDTH: 850px
+}
+.MenuBGColor {
+	BACKGROUND-COLOR: #aaa9a9
+}
+.slogan {
+	FONT-SIZE: 12px; VERTICAL-ALIGN: bottom; COLOR: #b7babc; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+.LogoRow {
+	HEIGHT: 86px; BACKGROUND-COLOR: #ffffff
+}
+.MenuRow {
+	FONT-WEIGHT: normal; COLOR: #ffffff; HEIGHT: 28px; BACKGROUND-COLOR: #aba9a9
+}
+A.BigMenuItems:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 14px; COLOR: #ffffff; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+A.BigMenuItems:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 14px; COLOR: #ffffff; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+A.BigMenuItems:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 14px; COLOR: #ffffff; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+A.BigMenuItems:active {
+	FONT-WEIGHT: normal; FONT-SIZE: 14px; COLOR: #ffffff; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+A.BigBoldMenuItems:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #fdeb75; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+A.BigBoldMenuItems:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #fdeb75; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+A.BigBoldMenuItems:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #fdeb75; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+A.BigBoldMenuItems:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #fdeb75; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+.MenuUnderline {
+	HEIGHT: 1px; BACKGROUND-COLOR: #9a9898
+}
+.MainBlueBox {
+	BACKGROUND-IMAGE: url(file:///C|/AsignacionCodigoPersonal/htdocs/images/Images/WebSite/Graphic/Default/MainBlueBox.jpg); WIDTH: 602px; HEIGHT: 221px
+}
+.HSpace15 {
+	HEIGHT: 15px
+}
+.HSpace5 {
+	HEIGHT: 5px
+}
+.HDottedLine {
+	BACKGROUND-IMAGE: url(file:///C|/AsignacionCodigoPersonal/htdocs/images/Images/WebSite/Graphic/Common/HDottedLine.gif); WIDTH: 100%; BACKGROUND-REPEAT: repeat-x; HEIGHT: 1px
+}
+.VDottedLine {
+	BACKGROUND-IMAGE: url(file:///C|/AsignacionCodigoPersonal/htdocs/images/Images/WebSite/Graphic/Common/VDottedLine.gif); WIDTH: 1px; BACKGROUND-REPEAT: repeat-y; HEIGHT: 100%
+}
+.WhiteBasicFont {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: Arial; TEXT-ALIGN: left
+}
+A.WhiteBasicFont:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: Arial; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+A.WhiteBasicFont:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: Arial; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+A.WhiteBasicFont:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: Arial; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+A.BigWhiteFont:link {
+	FONT-SIZE: 30px; COLOR: #ffffff; FONT-FAMILY: Century Gothic,Tahoma; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+A.BigWhiteFont:visited {
+	FONT-SIZE: 30px; COLOR: #ffffff; FONT-FAMILY: Century Gothic,Tahoma; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+A.BigWhiteFont:hover {
+	FONT-SIZE: 30px; COLOR: #ffffff; FONT-FAMILY: Century Gothic,Tahoma; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+.MainWritingArea {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; FONT-SIZE: 13px; PADDING-BOTTOM: 15px; WIDTH: 100%; COLOR: #222222; PADDING-TOP: 15px; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; BACKGROUND-COLOR: #f8f8fa; TEXT-ALIGN: left
+}
+A.BiggerBlueLink:link {
+	FONT-SIZE: 13px; COLOR: #0774ce; FONT-FAMILY: Tahoma; TEXT-DECORATION: underline
+}
+A.BiggerBlueLink:visited {
+	FONT-SIZE: 13px; COLOR: #0774ce; FONT-FAMILY: Tahoma; TEXT-DECORATION: underline
+}
+A.BiggerBlueLink:hover {
+	FONT-SIZE: 13px; COLOR: #0774ce; FONT-FAMILY: Tahoma; TEXT-DECORATION: underline
+}
+A.DarkerBlueLink:link {
+	FONT-SIZE: 13px; COLOR: #115c88; FONT-FAMILY: Tahoma; TEXT-DECORATION: underline
+}
+A.DarkerBlueLink:visited {
+	FONT-SIZE: 13px; COLOR: #115c88; FONT-FAMILY: Tahoma; TEXT-DECORATION: underline
+}
+A.DarkerBlueLink:hover {
+	FONT-SIZE: 13px; COLOR: #115c88; FONT-FAMILY: Tahoma; TEXT-DECORATION: underline
+}
+.GoogleAdVertical1 {
+	WIDTH: 100%; HEIGHT: 43px; TEXT-ALIGN: left
+}
+.TitleFont {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ffffff; FONT-FAMILY: Arial; HEIGHT: 21px; TEXT-ALIGN: left
+}
+.AfterMenuWhiteSpace {
+	HEIGHT: 5px; BACKGROUND-COLOR: #ffffff
+}
+.HolloUserRow {
+	HEIGHT: 19px; BACKGROUND-COLOR: #eeeeee
+}
+.HelloUser {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #2e548a; FONT-FAMILY: Tahoma
+}
+#tagCloud {
+	BORDER-RIGHT: #ccc 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #ccc 1px solid; PADDING-LEFT: 5px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 5px; BORDER-LEFT: #ccc 1px solid; WIDTH: 200px; PADDING-TOP: 5px; BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: justify
+}
+#tagCloud A {
+	MARGIN-LEFT: 5px; TEXT-TRANSFORM: lowercase; MARGIN-RIGHT: 5px; FONT-FAMILY: Trebuchet MS, Verdana, Arial; TEXT-DECORATION: none
+}
+#tagCloud A:hover {
+	COLOR: #00cc00; TEXT-DECORATION: underline
+}
+#tagCloud A.weight1 {
+	FONT-WEIGHT: bolder; FONT-SIZE: 25px; COLOR: #ff9900
+}
+#tagCloud A.weight2 {
+	FONT-WEIGHT: bolder; FONT-SIZE: 23px; COLOR: #4169e1
+}
+#tagCloud A.weight3 {
+	FONT-WEIGHT: bolder; FONT-SIZE: 20px; COLOR: #009eff
+}
+#tagCloud A.weight4 {
+	FONT-WEIGHT: bold; FONT-SIZE: 17px; COLOR: #4188cf
+}
+#tagCloud A.weight5 {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #83bcd8
+}
+.weight6 {
+	FONT-SIZE: 10px; COLOR: gray; FONT-FAMILY: Tahoma
+}
+.LatestFormsName {
+	BORDER-RIGHT: #d6d6d6 1px solid; BORDER-TOP: #d6d6d6 1px solid; BORDER-LEFT: #d6d6d6 1px solid; BORDER-BOTTOM: #d6d6d6 1px solid
+}
+A.LatestFormsNameLink:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #0774ce; FONT-FAMILY: Tahoma
+}
+A.LatestFormsNameLink:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #0774ce; FONT-FAMILY: Tahoma
+}
+A.LatestFormsNameLink:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #0774ce; FONT-FAMILY: Tahoma
+}
+.LatestFormsTag {
+	BORDER-RIGHT: #d6d6d6 1px solid; BORDER-TOP: #d6d6d6 1px solid; BORDER-LEFT: #d6d6d6 1px solid; BORDER-BOTTOM: #d6d6d6 1px solid
+}
+A.LatestFormsTagLink:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: Tahoma
+}
+A.LatestFormsTagLink:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: Tahoma
+}
+A.LatestFormsTagLink:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: Tahoma
+}
+.LatestFormsDetails {
+	BORDER-RIGHT: #d6d6d6 1px solid; BORDER-TOP: #d6d6d6 1px solid; BORDER-LEFT: #d6d6d6 1px solid; BORDER-BOTTOM: #d6d6d6 1px solid
+}
+A.LatestFormsDetailsLink:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #e48529; FONT-FAMILY: Tahoma
+}
+A.LatestFormsDetailsLink:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #e48529; FONT-FAMILY: Tahoma
+}
+A.LatestFormsDetailsLink:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #e48529; FONT-FAMILY: Tahoma
+}
+.LearnMoreRow {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #4f9ece; FONT-FAMILY: arial
+}
+A.LearnMoreLinks:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #4f9ece; FONT-FAMILY: arial
+}
+A.LearnMoreLinks:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #4f9ece; FONT-FAMILY: arial
+}
+A.LearnMoreLinks:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: gray; FONT-FAMILY: arial
+}
+.MenuFooterSite {
+	FONT-SIZE: 12px; COLOR: #7f8888; FONT-FAMILY: Tahoma
+}
+A.FooterLinksSite:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #7f8888; FONT-FAMILY: Tahoma; TEXT-DECORATION: underline
+}
+A.FooterLinksSite:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #7f8888; FONT-FAMILY: Tahoma; TEXT-DECORATION: underline
+}
+A.FooterLinksSite:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #4f9ece; FONT-FAMILY: Tahoma; TEXT-DECORATION: underline
+}
+.QuoteWriting {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #222222; FONT-STYLE: italic; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+.QuoteNameWriting {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+A.BasicFontGray:link {
+	FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; TEXT-ALIGN: left
+}
+A.BasicFontGray:visited {
+	FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; TEXT-ALIGN: left
+}
+A.BasicFontGray:hover {
+	FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; TEXT-ALIGN: left
+}
+.PartnersLink:link {
+	FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; TEXT-ALIGN: left; TEXT-DECORATION: underline
+}
+.PartnersLink:visited {
+	FONT-SIZE: 13px; COLOR: #222222; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; TEXT-ALIGN: left; TEXT-DECORATION: underline
+}
+.PartnersLink:hover {
+	FONT-SIZE: 13px; COLOR: #e48529; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; TEXT-ALIGN: left; TEXT-DECORATION: underline
+}
+TABLE.UserFormsTable {
+	BORDER-RIGHT: #d0d0d1 0px solid; BORDER-TOP: #d0d0d1 0px solid; BORDER-LEFT: #d0d0d1 0px solid; BORDER-BOTTOM: #d0d0d1 0px solid; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: white; border-spacing: 
+}
+A.srollover1 {
+	DISPLAY: block; BACKGROUND: url(http://www.formlogix.com/Images/WebSite/Graphic/Default/CreateRollOver.jpg) no-repeat 0px 0px; WIDTH: 144px; HEIGHT: 93px; TEXT-DECORATION: none
+}
+A.srollover1:hover {
+	BACKGROUND-POSITION: -144px 0px
+}
+A.srollover2 {
+	DISPLAY: block; BACKGROUND: url(http://www.formlogix.com/Images/WebSite/Graphic/Default/PublishRollOver.jpg) no-repeat 0px 0px; WIDTH: 180px; HEIGHT: 93px; TEXT-DECORATION: none
+}
+A.srollover2:hover {
+	BACKGROUND-POSITION: -180px 0px
+}
+A.srollover3 {
+	DISPLAY: block; BACKGROUND: url(http://www.formlogix.com/Images/WebSite/Graphic/Default/ManageRollOver.jpg) no-repeat 0px 0px; WIDTH: 175px; HEIGHT: 93px; TEXT-DECORATION: none
+}
+A.srollover3:hover {
+	BACKGROUND-POSITION: -175px 0px
+}
+A.HelpBiggerGrayLink:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #54545c; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+A.HelpBiggerGrayLink:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #b52121; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+A.HelpBiggerGrayLink:hover {
+	FONT-SIZE: 13px; COLOR: #0774ce; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+.LoginHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: Arial
+}
+.WelcomeNoteSubTitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #e48529; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+.BiggerGrayWriting {
+	FONT-SIZE: 12px; COLOR: #7f7a7a; FONT-FAMILY: Arial
+}
+.LoginBgDark {
+	BACKGROUND-COLOR: #bbbbbb
+}
+.GrayWriting {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #54545c; FONT-FAMILY: Tahoma
+}
+.LoginBgLight {
+	BACKGROUND-COLOR: #f2f2f2
+}
+A.BlueLink:link {
+	COLOR: #0774ce; TEXT-DECORATION: underline
+}
+A.BlueLink:visited {
+	COLOR: #0774ce; TEXT-DECORATION: underline
+}
+A.BlueLink:hover {
+	COLOR: #7a8187; TEXT-DECORATION: underline
+}
+.OrangeWritingUnderline {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #e48529; FONT-FAMILY: Tahoma; TEXT-DECORATION: underline
+}
+.TuringHelp {
+	FONT-SIZE: 11px; COLOR: #1a70b6; FONT-FAMILY: Tahoma; BACKGROUND-COLOR: #f2f2f2
+}
+.SaveUser {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #0e6fbe; FONT-FAMILY: Arial
+}
+.ErrorUser {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #c81919; FONT-FAMILY: Arial
+}
+.RegisteredUserLoginTable {
+	BORDER-RIGHT: #a19fac 1px solid; BORDER-TOP: #a19fac 1px solid; BORDER-LEFT: #a19fac 1px solid; BORDER-BOTTOM: #a19fac 1px solid; BACKGROUND-COLOR: #ffffff
+}
+.RegisteredUserLoginTitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #7779b4; FONT-FAMILY: Arial
+}
+A.GrayLink:link {
+	FONT-SIZE: 10px; COLOR: #6f6969; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+A.GrayLink:visited {
+	FONT-SIZE: 10px; COLOR: #6f6969; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+A.GrayLink:hover {
+	FONT-SIZE: 10px; COLOR: #0774ce; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+.LoginError {
+	FONT-SIZE: 10px; COLOR: red; FONT-FAMILY: Tahoma
+}
+.HelpGrayOption {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: gray; FONT-FAMILY: Arial
+}
+A.HelpBlueLink:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #0774ce; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+A.HelpBlueLink:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #0774ce; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+A.HelpBlueLink:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #7a8187; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+.ToolBoxInnerFrames {
+	BORDER-RIGHT: #c8cbd4 1px solid; BORDER-TOP: #c8cbd4 1px solid; BORDER-LEFT: #c8cbd4 1px solid; BORDER-BOTTOM: #c8cbd4 1px solid; BACKGROUND-COLOR: #ffffff
+}
+.EditPreferencesBrackets {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #d97718; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+A.EditPreferences:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #d97718; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+A.EditPreferences:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #d97718; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+A.EditPreferences:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #ba2204; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+.ProgressWriting {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #4d5963; FONT-FAMILY: Tahoma
+}
+.SmallFont {
+	FONT-SIZE: 6px; FONT-FAMILY: Arial
+}
+.SmallFont {
+	FONT-SIZE: 6px; FONT-FAMILY: Arial
+}
+.WelcomeNoteSubTitleSmall {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #e48529; FONT-FAMILY: Arial
+}
+.BlueWriting {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #2f669c; FONT-FAMILY: Arial
+}
+.RedWriting {
+	FONT-SIZE: 12px; COLOR: red; FONT-FAMILY: Tahoma
+}
+.BlueMsgWriting {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #2f669c; FONT-FAMILY: Arial
+}
+.RedMsgWriting {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: red; FONT-FAMILY: Tahoma
+}
+.Error404Title {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #e48529; FONT-FAMILY: Arial
+}
+.Error404SubTitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #e48529; FONT-FAMILY: Arial
+}
+.FaqAnswersTitel {
+	FONT-SIZE: 13px; COLOR: #0774ce; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+.PaymentTableCaption {
+	BORDER-RIGHT: #bab7b7 1px solid; BORDER-TOP: #bab7b7 1px solid; BORDER-LEFT: #bab7b7 1px solid; BORDER-BOTTOM: #bab7b7 1px solid; BACKGROUND-COLOR: #e0dfdf
+}
+.PaymentTableRow {
+	BORDER-RIGHT: #e1e1e1 1px solid; BORDER-TOP: #e1e1e1 1px solid; BORDER-LEFT: #e1e1e1 1px solid; BORDER-BOTTOM: #e1e1e1 1px solid; BACKGROUND-COLOR: #f6f6f6
+}
+.BasicFontInBorder {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 13px; BORDER-LEFT: #000000 1px solid; COLOR: #222222; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; BACKGROUND-COLOR: #F8F9D9; TEXT-ALIGN: left
+}
+.BasicFontInBorder2 {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 13px; BORDER-LEFT: #000000 1px solid; COLOR: #222222; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; BACKGROUND-COLOR:#E2EBD6; TEXT-ALIGN: left
+}
+.BasicFontInBorder3 {
+	BORDER-RIGHT:#999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 13px; BORDER-LEFT: #999999 1px solid; COLOR: #222222; BORDER-BOTTOM: #999999 1px solid; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; BACKGROUND-COLOR:#F7FFEA; TEXT-ALIGN: left
+}
+.BasicFontInBorder4 {
+	BORDER-RIGHT:#999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 13px; BORDER-LEFT: #999999 1px solid; COLOR: #222222; BORDER-BOTTOM: #999999 1px solid; FONT-FAMILY: MS Reference Sans Serif,Tahoma,Arial; BACKGROUND-COLOR:#D7E9FF; TEXT-ALIGN: left
+}
+.YellowMarker {
+	BACKGROUND-COLOR: #eef579
+}

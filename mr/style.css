@@ -1,0 +1,62 @@
+body{
+padding:0px;
+margin:0px;
+background-image:url(images/sq.gif);
+background-position:center;
+}
+a:hover{text-decoration:none;}
+
+.m_text
+	{
+		font-family:Tahoma;
+		font-size:11px;
+		line-height:13px;
+		color:#222222;
+	}
+
+.h_text
+	{
+		font-family:Tahoma;
+		font-size:11px;
+		line-height:13px;
+		color:#811018;
+	}
+	
+.l_text
+	{
+		font-family:Tahoma;
+		font-size:11px;
+		line-height:11px;
+		color:#222222;
+	}
+
+.lt_text
+	{
+		font-family:Tahoma;
+		font-size:11px;
+		line-height:16px;
+		color:#222222;
+	}
+	
+.c_text
+	{
+		font-family:Tahoma;
+		font-size:11px;
+		line-height:11px;
+		color:#FFFFFF;
+	}
+
+.form
+	{
+		width:178px; height:20px; border-color:#222222; border-width:1px; background-color:#FEFCF7; border-style:solid; padding-left:5px
+	}
+.form_div
+	{
+		height:23px; margin-top:0px;
+	}
+		
+	a.l_text{text-decoration:none;}	
+	a.l_text:hover{text-decoration:underline;}
+	
+	a.c_text{text-decoration:none;}	
+	a.c_text:hover{text-decoration:underline;}

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html> 
+ <head> 
+  <script language="JavaScript"> 
+
+   function habilita(){ 
+    document.frm.txt.disabled = false; 
+   } 
+
+   function deshabilita(){ 
+    document.frm.txt.disabled = true; 
+    document.frm.txt.value = ""; 
+   } 
+
+  </script> 
+ </head> 
+ <body> 
+  <form name='frm'> 
+   <b>Sexo:</b><br> 
+   <input type="radio" name="rad" value="M" onclick="deshabilita()"> 
+   Masculino<br> 
+   <input type="radio" name="rad" value="F" onclick="deshabilita()"> 
+   Femenino<br> 
+   <input type="radio" name="rad" value="O" onclick="habilita()"> 
+   Otro   (Indique cual: 
+   <input type='text' name='txt' disabled>) 
+  </form> 
+ </body> 
+</html>  
+
+
+</body>
+</html>

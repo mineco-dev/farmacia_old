@@ -1,0 +1,13 @@
+SELECT     TOP 100 PERCENT dbo.soporte.fecha_reporto AS solicitado, users.nombres AS nombre, users.apellidos AS apellido, dbo.categoria.categoria, 
+                      dbo.soporte.detalle_solicita AS detalle, dbo.estado.nombre_estado AS estado, dbo.soporte.codigo_soporte AS ticket, users.nivel, 
+                      tecnicos.nombres AS tecnico, dbo.soporte.fecha_inicio AS inicio, dbo.soporte.fecha_finaliza AS finalizado, dbo.estado.codigo_estado AS estatus, 
+                      supervisor.nombre_usuario AS supervisor, dbo.soporte.codigo_tecnico AS codigotecnico, dbo.soporte.codigo_estado AS codigo, 
+                      users.codigo_usuario
+FROM         dbo.soporte INNER JOIN
+                      dbo.usuario supervisor ON supervisor.codigo_usuario = dbo.soporte.codigo_supervisor INNER JOIN
+                      dbo.usuario tecnicos ON tecnicos.codigo_usuario = dbo.soporte.codigo_tecnico INNER JOIN
+                      dbo.usuario users ON dbo.soporte.codigo_usuario = users.codigo_usuario INNER JOIN
+                      dbo.categoria ON dbo.soporte.codigo_categoria = dbo.categoria.codigo_categoria INNER JOIN
+                      dbo.estado ON dbo.soporte.codigo_estado = dbo.estado.codigo_estado
+WHERE     (dbo.soporte.codigo_estado = 4)
+ORDER BY dbo.soporte.fecha_reporto

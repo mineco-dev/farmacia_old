@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+function modificarEstado(){
+        if(document.getElementById("ch").checked)
+                document.getElementById("cantidad").disabled =false;
+        else
+                document.getElementById("cantidad").disabled=true;
+}
+</script>
+</head>
+
+<body>
+
+<label><input type="checkbox"  name="ch" id="ch" onclick="modificarEstado()">  A�adir cantidad </label>
+
+<!--input type="checkbox"  name="ch" id="ch" onclick="modificarEstado()"--> 
+<input type="text" id="cantidad" name="cantidad" style="width: 30px" >
+
+
+
+</body>
+</html>

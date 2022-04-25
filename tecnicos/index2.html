@@ -1,0 +1,286 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Language" content="es">
+<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <style type="text/css"><!--
+   .header {font-family:Tahoma, sans-serif; font-size: 12px; COLOR:#2FFFFF; padding-left:10; padding-right:5; font-weight:900 }
+   .text {font-family:Tahoma,sans-serif; font-size: 11px; color:#000000; padding-left:20; padding-right:10 }
+   .text2 {font-family:Verdana,sans-serif; font-size: 10px; color:#ffffff; padding-left:20; padding-right:10 }
+    .news {font-family:Arial, sans-serif; font-size: 9px; color:#ffffff; padding-left:10; padding-right:5; font-weight:900; }
+   a:link{text-decoration: none; color:#ffffff}
+  a:visited{text-decoration: none; color: #ffffff}
+  a:hover{text-decoration: underline; color: #ffffff}
+  a:active{text-decoration: none; color: #ffffff}
+li {
+	list-style : url(images/pic.jpg);
+}
+
+--></style>
+<?
+	$gisett=(int)date("w");
+	$mesnum=(int)date("m");
+	$hora = date(" H:i",time());	
+?>
+<head>
+<script LANGUAGE="JavaScript">
+function Validar(form)
+{
+ if (form.cbo_usuario.value == "0")
+  { 
+  	alert("Seleccione su nombre"); 
+	form.cbo_usuario.focus(); 
+	return;
+  }
+  if (form.cbo_categoria.value == "0")
+  { 
+  	alert("Seleccione el tipo de asistencia que desea"); 
+	form.cbo_soporte.focus(); 
+	return;
+  }
+  if (form.txt_detalle_solicita.value == "")
+  { 
+  	alert("Describa en forma concisa su solicitud"); 
+	form.txt_detalle_solicita.focus(); 
+	return;
+  }
+  
+  form.submit();
+}
+function Refrescar(form)
+{
+	form.reset();
+	form.cbo_usuario.focus(); 
+}
+</script>
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="file:///C:/Archivos%20de%20programa/Microsoft%20Office/FRONTP2003/OFFICE11/fpclass/outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR=#FFFFFF LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0 background="../bg.jpg" onclick="dynOutline()" language="Javascript1.2">
+<!--Julio Chavarria -->
+<div align="center">
+<TABLE WIDTH=780 BORDER=0 CELLPADDING=0 CELLSPACING=0 height=100% bgcolor="#FFFFFF">
+	<TR><td bgcolor=#000000 rowspan=99><img src="../spacer.gif" with=1></td>
+		<TD WIDTH=780 HEIGHT=174 COLSPAN=14>
+			<IMG SRC="../01.jpg" WIDTH=780 HEIGHT=174 ALT=""></TD>
+			<td bgcolor=#000000 rowspan=99><img src="../spacer.gif" with=1></td>
+	</TR>
+	<TR>
+		<TD WIDTH=64 HEIGHT=42>
+				<IMG SRC="../02.jpg" WIDTH=64 HEIGHT=42 BORDER=0 ALT=""></A></TD>
+		<TD WIDTH=58 HEIGHT=42>
+				<IMG SRC="../03.jpg" WIDTH=58 HEIGHT=42 BORDER=0 ALT=""></A></TD>
+		<TD WIDTH=58 HEIGHT=42 COLSPAN=2>
+				<IMG SRC="../04.jpg" WIDTH=58 HEIGHT=42 BORDER=0 ALT=""></A></TD>
+		<TD WIDTH=71 HEIGHT=42 COLSPAN=2>
+				<IMG SRC="../05.jpg" WIDTH=71 HEIGHT=42 BORDER=0 ALT=""></A></TD>
+		<TD WIDTH=76 HEIGHT=42>
+				<IMG SRC="../06.jpg" WIDTH=76 HEIGHT=42 BORDER=0 ALT=""></A></TD>
+		<TD WIDTH=77 HEIGHT=42 COLSPAN=2>
+				<IMG SRC="../07.jpg" WIDTH=77 HEIGHT=42 BORDER=0 ALT=""></A></TD>
+		<TD WIDTH=100 HEIGHT=42 COLSPAN=2>
+			<A HREF="#">
+				<IMG SRC="../08.jpg" WIDTH=100 HEIGHT=42 BORDER=0 ALT=""></A></TD>
+		<TD WIDTH=276 HEIGHT=42 COLSPAN=3>
+			<IMG SRC="../09.jpg" WIDTH=276 HEIGHT=42 ALT=""></TD>
+	</TR>
+	<TR>
+		<TD WIDTH=780 HEIGHT=29 COLSPAN=14>
+			<table border="1" width="100%" id="table19">
+				<tr>
+					<td>
+												  <p align="center"><b>
+												  <font size="5" face="Book Antiqua">
+												  Sistema Inform�tico SISTEC</font></b>
+												  </td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=140 HEIGHT=28 COLSPAN=3>
+			<IMG SRC="../11.jpg" WIDTH=140 HEIGHT=28 ALT=""></TD>
+		<TD WIDTH=82 HEIGHT=28 COLSPAN=2>
+			<IMG SRC="../12.jpg" WIDTH=82 HEIGHT=28 ALT=""></TD>
+		<TD  COLSPAN=2 background="../13.jpg" WIDTH=105 HEIGHT=28 ALT="">
+		<p align="center"></TD>
+		<TD WIDTH=67 HEIGHT=28>
+			<IMG SRC="../14.jpg" WIDTH=67 HEIGHT=28 ALT=""></TD>
+		<TD   COLSPAN=2 background="../15.jpg" WIDTH=101 HEIGHT=28 ALT="">
+		<p align="center"><b>Portal Mineco</b></TD>
+		<TD WIDTH=23 HEIGHT=28 COLSPAN=2>
+			<a href="http://www.mineco.gob.gt" target="_blank">
+				<IMG SRC="../16.jpg" WIDTH=23 HEIGHT=28 BORDER=0 ALT="Portal Ministerio de Econom�a"></a></TD>
+		<TD WIDTH=262 HEIGHT=28 COLSPAN=2>
+			<IMG SRC="../17.jpg" WIDTH=262 HEIGHT=28 ALT=""></TD>
+	</TR>
+	<TR>
+		<TD WIDTH=780 HEIGHT=25 COLSPAN=14>
+			<IMG SRC="../18.jpg" WIDTH=780 HEIGHT=25 ALT=""></TD>
+	</TR>
+	<TR>
+		<TD WIDTH=563 HEIGHT=100% valign="top" COLSPAN=13>
+			<form method="post" action="solicitud2.php">
+				
+				<div align="center">
+				    <table id="table14" width="93%" bgColor="#FFFFFF" border="0">
+					    <tr>
+						    <td height="285">
+							  <div align="center">
+								  <table id="table15" width="84%" bgColor="#FFFFFF" border="0">
+									  <tr>
+										  <td>
+										  <table id="table16" width="100%" border="0">
+											  <tr>
+												  <td>
+												  <hr color="#FF9900"></td>
+											  </tr>
+										  </table>
+										  <div align="left"></div>
+										  <center>
+										    <table id="table18" width="100%" border="0">
+											  <tr>
+											    <td width="100%" height="10">&nbsp;</td>
+											  </tr>
+											  <tr>
+												  <td height="10">
+												  <p align="center">
+												    <font color="red" size="+2" face="Britannic bold"><b>
+												    </b></font></td>
+											  </tr>
+										    </table>
+                                          </center></td>
+									  </tr>
+							    </table>
+							  </div>
+						    </td>
+					    </tr>
+			      </table>
+			  </div>
+			</form>	  </TD>
+		<TD WIDTH=217 HEIGHT=100% valign="top" background="../rbg.jpg">
+			<address><IMG SRC="../r1.jpg"></address>
+			<address><font color="#ffffff">&nbsp;&nbsp;&nbsp; 
+				<img height="9" src="../arrow.gif" width="8" border="0"></font></a><font color="#FFFFFF">&nbsp;&nbsp;
+				</font><font color="#000080">&nbsp;</font><a href="gerencia/index.php"><u><font color="#000080">Gerencia 
+				General </font><font size="1" color="#B70400">Nuevo!</font></u></a></address>
+			<address><font color="#FFFFFF">&nbsp;&nbsp;&nbsp; </font>
+				<font color="#ffffff">
+				<img height="9" src="../arrow.gif" width="8" border="0"></font><font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;</font> <span style="font-style: normal">
+				<font color="#000000"><blink>
+				<a target="_blank" href="Politicas_Seguridad.mht">
+				<font color="#000000">Pol�ticas de Seguridad</font></a></blink></font></span></address>
+			<!--msimagelist--><table dynamicoutline initcollapsed style="text-decoration: blink" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<!--msimagelist--><tr>
+					<!--msimagelist--><td valign="baseline" width="42">
+					<img src="../arrow.gif" width="8" height="9" hspace="17" alt="vi�eta"></td>
+					<td valign="top" width="100%">
+					<address>
+						<span style="font-style: normal; text-decoration:underline"><blink>
+						Formularios</blink></span></address>
+					<!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<!--msimagelist--><tr>
+							<!--msimagelist--><td valign="baseline" width="42">
+							<img src="../arrow.gif" width="8" height="9" hspace="17" alt="vi�eta"></td>
+							<td valign="top" width="100%">
+							<address>
+								<blink>
+								<a target="_blank" href="salonvirtual.doc"><font color="#000000">Sal�n Virtual</font></a></blink></address>
+							<!--msimagelist--></td>
+						</tr>
+						<!--msimagelist--><tr>
+							<!--msimagelist--><td valign="baseline" width="42">
+							<img src="../arrow.gif" width="8" height="9" hspace="17" alt="vi�eta"></td>
+							<td valign="top" width="100%">
+							<address>
+								<blink><a target="_blank" href="sicoinweb.doc"><font color="#000000">Sicoin Web</font></a></blink></address>
+							<!--msimagelist--></td>
+						</tr>
+						<!--msimagelist--><tr>
+							<!--msimagelist--><td valign="baseline" width="42">
+							<img src="../arrow.gif" width="8" height="9" hspace="17" alt="vi�eta"></td>
+							<td valign="top" width="100%">
+							<address>Equipo Pr�stamo</address><!--msimagelist--></td>
+						</tr>
+						<!--msimagelist--></table>
+					<!--msimagelist--></td>
+				</tr>
+				<!--msimagelist--></table>
+			<!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+				<!--msimagelist--><tr>
+					<!--msimagelist--><td valign="baseline" width="42">
+					<img src="../arrow.gif" width="8" height="9" hspace="17" alt="vi�eta"></td>
+					<td valign="top" width="100%">
+					<address>
+						<span style="font-style: normal; text-decoration:underline">
+						Tips Inform�tica</span></address>
+					<!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<!--msimagelist--><tr>
+							<!--msimagelist--><td valign="baseline" width="42">
+							<img src="../arrow.gif" width="8" height="9" hspace="17" alt="vi�eta"></td>
+							<td valign="top" width="100%">
+							<address><span style="font-style: normal">
+								<blink>
+								<a target="_blank" href="tips/mantenimiento1.doc"><font color="#000000">Mantenimiento</font></a></blink></span></address>
+							<!--msimagelist--></td>
+						</tr>
+						<!--msimagelist--></table>
+					<!--msimagelist--></td>
+				</tr>
+				<!--msimagelist--></table>
+			<address>
+&nbsp;</address>
+			<address>
+			<IMG SRC="../r1.jpg"></address>
+	  </TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=14 background="../21.jpg" WIDTH=780 HEIGHT=31 ALT="">
+		<p align="center">� Inform&aacute;tica Mineco Agosto 2005<IMG height=3 src="../line_red.gif" width="100%" border=0></TD>
+	</TR>
+	<TR>
+		<TD WIDTH=64 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=64 HEIGHT=1 ALT=""></TD>
+		<TD WIDTH=58 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=58 HEIGHT=1 ALT=""></TD>
+		<TD WIDTH=18 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=18 HEIGHT=1 ALT=""></TD>
+		<TD WIDTH=40 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=40 HEIGHT=1 ALT=""></TD>
+		<TD WIDTH=42 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=42 HEIGHT=1 ALT=""></TD>
+		<TD WIDTH=29 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=29 HEIGHT=1 ALT=""></TD>
+		<TD WIDTH=76 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=76 HEIGHT=1 ALT=""></TD>
+		<TD WIDTH=67 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=67 HEIGHT=1 ALT=""></TD>
+		<TD WIDTH=10 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=10 HEIGHT=1 ALT=""></TD>
+		<TD WIDTH=91 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=91 HEIGHT=1 ALT=""></TD>
+		<TD WIDTH=9 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=9 HEIGHT=1 ALT=""></TD>
+		<TD WIDTH=14 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=14 HEIGHT=1 ALT=""></TD>
+		<TD WIDTH=45 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=45 HEIGHT=1 ALT=""></TD>
+		<TD WIDTH=217 HEIGHT=1>
+			<IMG SRC="../spacer.gif" WIDTH=217 HEIGHT=1 ALT=""></TD>
+	</TR>
+</TABLE>
+</div>
+</BODY>
+</HTML>

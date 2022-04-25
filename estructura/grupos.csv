@@ -1,0 +1,63 @@
+1,1,33,Seguimiento de ticket,tecnicos/consulta_ticket.php,1,y
+1,2,33,Directorio telefónico,tecnicos/busca_extension.php,1,y
+5,3,33,Cambiar contraseña,tecnicos/cambiar_pwd.php,1,y
+5,4,33,Mensajes de texto,mensajes/lista_mensajes.php,1,y
+1,5,10,Publicaciones,uploads/,1,y
+2,6,10,Eventos,tecnicos/actividad.php?cat=45,1,y
+9,7,10,Punto nuevo,tecnicos/solicita.php,1,y
+9,8,10,Reasignación de punto,tecnicos/reasignar_ticket.php,1,y
+9,9,10,Conceptos nuevos,tecnicos/busca_cat.php,1,y
+9,10,10,Actividades pendientes,tecnicos/actividad.php,1,y
+9,11,10,Reporte por Subgerente,tecnicos/inicia_reporte.php,1,y
+9,12,10,Minuta,reporte_pend_compl.php,1,y
+1,13,1,Soporte técnico,tecnicos/solicita.php,1,y
+1,14,1,Publicaciones,uploads/,1,y
+5,15,1,Reportes,tecnicos/inicia_reporte.php,1,y
+5,16,1,Usuarios frecuentes,tecnicos/reincidentes.php,1,y
+5,17,1,Problemas frecuentes,tecnicos/frecuentes.php,1,y
+5,18,1,Tareas pendientes,tecnicos/actividad.php,1,y
+9,19,1,Ver bitácora,bitacora.php,1,y
+9,20,1,Reasignar ticket,tecnicos/reasignar_ticket.php,1,y
+9,21,1,Categorías,tecnicos/busca_cat.php,1,y
+13,22,1,ABC-Publicaciones,uploads/publicacion.php,1,y
+13,23,1,ABC-usuarios,tecnicos/busca_usuario.php,1,y
+1,24,26,Solicitud de servicio,tecnicos/solicita.php,1,y
+1,25,26,Publicaciones,uploads/,1,y
+5,26,26,Reportes,tecnicos/inicia_reporte.php,1,y
+5,27,26,Usuarios frecuentes,tecnicos/reincidentes.php,1,y
+5,28,26,Servicios frecuentes,tecnicos/frecuentes.php,1,y
+5,29,26,Tareas pendientes,tecnicos/actividad.php,1,y
+9,30,26,Reasignar ticket,tecnicos/reasignar_ticket.php,1,y
+9,31,26,Servicios,tecnicos/busca_cat.php,1,y
+13,32,26,ABC-Publicaciones,uploads/publicacion.php,1,y
+1,33,24,Solicitud de servicio,tecnicos/solicita.php,1,y
+1,34,24,Publicaciones,uploads/,1,y
+2,35,24,Visitantes,seguridad/visitas.php,1,y
+2,36,24,Agregar equipo,seguridad/registrar_equipo.php,1,y
+3,37,24,Ingresar visitante,seguridad/,1,y
+5,38,24,Reportes,tecnicos/inicia_reporte.php,1,y
+5,39,24,Usuarios frecuentes,tecnicos/reincidentes.php,1,y
+5,40,24,Servicios frecuentes,tecnicos/frecuentes.php,1,y
+5,41,24,Tareas pendientes,tecnicos/actividad.php,1,y
+9,42,24,Reasignar ticket,tecnicos/reasignar_ticket.php,1,y
+9,43,24,Servicios,tecnicos/busca_cat.php,1,y
+13,44,24,ABC-Publicaciones,uploads/publicacion.php,1,y
+1,45,27,Solicitud de servicio,tecnicos/solicita.php,1,y
+1,46,27,Publicaciones,uploads/,1,y
+5,47,27,Reportes,tecnicos/inicia_reporte.php,1,y
+5,48,27,Usuarios frecuentes,tecnicos/reincidentes.php,1,y
+5,49,27,Servicios frecuentes,tecnicos/frecuentes.php,1,y
+5,50,27,Tareas pendientes,tecnicos/actividad.php,1,y
+9,51,27,Reasignar ticket,tecnicos/reasignar_ticket.php,1,y
+9,52,27,Servicios,tecnicos/busca_cat.php,1,y
+13,53,27,ABC-Publicaciones,uploads/publicacion.php,1,y
+1,54,34,Manuales de Informática,planeacion/index.php?id=1,1,y
+1,55,34,Manuales de Administrativo,planeacion/index.php?id=24,1,y
+1,56,34,Manuales de RRHH,planeacion/index.php?id=26,1,y
+1,57,34,Manuales de Financiero,planeacion/index.php?id=27,1,y
+1,58,34,Manuales de Gerencia,planeacion/index.php?id=10,1,y
+13,59,34,ABC-Manuales,planeacion/publicacion.php,1,y
+1,60,35,Cafetería,otros_anuncios/index.php?id=36,1,y
+1,61,35,Informe de combustible,otros_anuncios/index.php?id=9,1,y
+1,62,35,Informe de TLC-DR CAFTA,otros_anuncios/index.php?id=2,1,y
+1,63,35,ABC-Otros anuncios,otros_anuncios/publicacion.php,1,y
