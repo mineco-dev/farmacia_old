@@ -5,8 +5,8 @@
 // $mydb="helpdesk";
 // $s=mssql_connect($myserver, 'sa', 'abc123') or die ("no se pudo conectar al servidor $myserver");
 	$myserver="128.5.8.85"; 
-	$myuser="dev";
-	$mypass="12345678";
+	$myuser="farmacia";
+	$mypass="DTIdesa@2K271.";
 	$mydb="helpdesk_nuevo";
 
 

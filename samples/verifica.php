@@ -7,8 +7,8 @@ $connect="mssql_connect";
 $select_db="mssql_select_db";
 // $myserver="server_appl";
 $myserver="128.5.8.85";
-	$bd_usuario = "dev"; 
-	$bd_password = "12345678"; 
+	$bd_usuario = "farmacia"; 
+	$bd_password = "DTIdesa@2K271."; 
 function conectardb($grupo_rol)
 {	
 	if (isset($_SESSION["param_conexion"]))

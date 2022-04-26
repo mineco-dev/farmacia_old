@@ -7,8 +7,8 @@ function conectardb($grupo_rol)
 
 {	
 	$myserver="128.5.8.85";
-	$bd_usuario = "dev"; 
-	$bd_password = "12345678"; 
+	$bd_usuario = "farmacia"; 
+	$bd_password = "DTIdesa@2K271."; 
 	if (isset($_SESSION["param_conexion"]))
 	{
 		$grupos=count($_SESSION["param_conexion"]);
