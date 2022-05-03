@@ -1,6 +1,6 @@
 <html style="background-color: buttonface; color: buttontext;">
 <head>
-	<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+	<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 	
   <!-- calendar stylesheet -->
   <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />

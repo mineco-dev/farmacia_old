@@ -6,7 +6,7 @@ require("../../../includes/sqlcommand.inc");
 <!DOCTYPE html>
 <html>
 <head>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="../../../includes/helpdesk.css" rel="stylesheet" type="text/css">
 </head>

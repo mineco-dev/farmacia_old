@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <link rel="stylesheet" type="text/css" href="resources/css/demo.css" />
 </head>
 <body>

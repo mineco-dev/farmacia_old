@@ -43,7 +43,7 @@ $codi1 = $_GET['codigo'];
 <html>
 <head>
 <met a http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 </head>
 
 <body>

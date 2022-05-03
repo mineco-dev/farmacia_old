@@ -30,7 +30,7 @@ dump = function (domElement, bWindow) {
   outputWindow.focus();
 
   outputWindow.document.open("text/html", "replace");
-  outputWindow.document.write("<HTML><HEAD><title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title></HEAD><BODY>\n");
+  outputWindow.document.write("<HTML><HEAD><title>ASEGGYS - SISTEMA FARMACIA MINECO</title></HEAD><BODY>\n");
   outputWindow.document.write("<textarea rows=20 cols=60>")
   outputWindow.document.write(strDump)
   outputWindow.document.write("</textarea>")

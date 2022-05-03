@@ -1,5 +1,5 @@
 
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <link href="../css/cssWeb.css" type=text/css rel=StyleSheet>
     <style type="text/css">
 <!--

@@ -167,7 +167,7 @@ function verificar (form) {
 			alert("Debe ingresar la descripcion de la información a solicitar");
 		}else
 		{
-			if (confirm('�Esta seguro de guardar estos datos?')) form.submit();
+			if (confirm('¿Esta seguro de guardar estos datos?')) form.submit();
 		}
 	}catch (ee)	
 	{
@@ -197,7 +197,7 @@ function imprimir()
 	}
 }
 </SCRIPT>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
 <link href="../../HojaEstilo.css" rel="stylesheet" type="text/css" />
 <link href="../estilos/style.css" rel="stylesheet" type="text/css" media="screen" />
@@ -237,11 +237,7 @@ function imprimir()
  echo '<tr><td><center></center></td>
  <td><center><a href="impresionDOM.php "target=_blank""><img src="../../../images/iconos/ico_print.jpg" width="50" height="50"></a></center></td>
  </tr>';
- 
-
- ?>
- 
-       
+ ?>   
        
        
          <tr>

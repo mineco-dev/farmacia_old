@@ -78,7 +78,7 @@ if (window.document.form1.opnacionalidad[0].checked)
 }
 }
 </SCRIPT>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 <meta http-equiv="Content-Type" content="text/html" charset="utf-8_spanish_ci" />
 <link href="../HojaEstilo.css" rel="stylesheet" type="text/css" />

@@ -5,7 +5,7 @@ include("almacen.php");
 <html>
 <head>
 <link href="helpdesk.css" rel="stylesheet" type="text/css">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <META HTTP-EQUIV="REFRESH" CONTENT="20;URL=main33.php">
 <style type="text/css">

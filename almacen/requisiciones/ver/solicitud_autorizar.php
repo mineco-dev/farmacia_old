@@ -33,9 +33,9 @@ and d.codigo_bodega = inv.codigo_bodega and d.codigo_empresa = inv.codigo_empres
 left join cat_medida cm on cm.codigo_medida = p.codigo_medida
 where d.codigo_requisicion_enc = '$idsolicitud'";
 
-echo "<hr>";
-echo $Fields;
-echo "<hr>";
+//echo "<hr>";
+//echo $Fields;
+//echo "<hr>";
 $res_qry_producto = $query($Fields);
 while ($row = $fetch_array($res_qry_producto)) {
 
@@ -59,7 +59,7 @@ while ($row = $fetch_array($res_qry_producto)) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <script src="SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
 

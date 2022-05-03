@@ -116,7 +116,7 @@ echo $contador= $contador +1;
 
 <link rel="stylesheet" href="CSS3 Menu.css3prj_files/css3menu1/style.css" /><style type="text/css">._css3m{display:none}</style>
 
-	<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+	<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 	<!--link rel="stylesheet" type="text/css" href="style.css"-->
     <style type="text/css">
 <!--

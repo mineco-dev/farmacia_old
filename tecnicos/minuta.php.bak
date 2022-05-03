@@ -4,7 +4,7 @@ include("../restringir.php");
 ?>
 <head>
 <link href="estilo.css" rel="stylesheet" type="text/css">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 </head>
 <body background="fondos/fondo.gif" style="background-attachment: fixed">
  <div align="center">

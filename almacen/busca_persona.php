@@ -128,7 +128,7 @@ function Validar(form)
 {
 	if (form.txt_buscar.value == "")
 	{ 
-		alert("Escriba el nombre o apellido del empleado para realizar la b�squeda"); 
+		alert("Escriba el nombre o apellido del empleado para realizar la búsqueda"); 
 		form.txt_buscar.focus(); 
 		return;
 	}  
@@ -143,7 +143,7 @@ function Refrescar(form)
 <link href="../helpdesk.css" rel="stylesheet" type="text/css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <style type="text/css">
 
 .Estilo1 {font-size: 12px}
@@ -158,7 +158,7 @@ function Refrescar(form)
 			<table width="100%" border="0" bordercolor="#ECE9D8">
 				<tr>
 					<td><div align="left" class="titulocategoria">
-						<div align="center">FORMULARIO PARA B&Uacute;SQUEDA DE EMPLEADOS </div>
+						<div align="center">FORMULARIO PARA BÚSQUEDA DE EMPLEADOS </div>
 					</div></td>
 				</tr>
 				<tr>
@@ -183,13 +183,13 @@ function Refrescar(form)
 						<td width="51%" class="titulotabla"><strong>Apellidos y nombres</strong></td>
 
 
-						<td width="51%" class="titulotabla"><strong>ID ASESOR</strong></td>
+						<td width="51%" class="titulotabla"><strong>Código</strong></td>
 
 					</tr>
 					<?php
 					
 					if ($_REQUEST["txt_buscar"]!="")
-					{
+						{
 						$busqueda=strtoupper($_REQUEST["txt_buscar"]);					
 						$consulta = "SELECT (a.apellido +' '+ a.apellido2 +' '+ a.apellidocasada +', '+ a.nombre +' '+ a.nombre2 +' '+ a.nombre3) as empleado, 
 						a.activo, a.idasesor ,d.nombre AS dependencia
@@ -197,10 +197,10 @@ function Refrescar(form)
 						INNER JOIN direccion d ON a.iddireccion = d.iddireccion 
 						where (a.apellido like '%$busqueda%' or a.apellido2 like '%$busqueda%' or a.nombre like '%$busqueda%' or a.nombre2 like '%$busqueda%' or d.nombre like '%$busqueda%') and (a.activo=1)";//primera consulta
 
-					}
+						}
 					else	
 							if (isset($_REQUEST["in"]))	
-								{
+									{
 									
 									$inicial=$_REQUEST["in"];
 									echo "Listado de personal que su apellido inicia con $inicial";

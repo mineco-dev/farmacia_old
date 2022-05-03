@@ -423,7 +423,7 @@ function calTitle(d) {
 }
 
 function calHeader() {
-  return "<head>\n<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>\n<style type='text/css'>\n"+spanx("title",titleFontColor)+spanx("days",daysFontColor)+spanx("foot",footColor)+spanx("day",dayFontColor)+spanx("currentDay",currentDayFontColor)+ax("titlea",titleFontColor)+ax("daya",dayFontColor)+ax("currenta",currentDayFontColor)+ax("foota",footFontColor)+"</style>\n</head>\n<body>\n<table align='center' border='0' bgcolor='"+borderColor+"' cellspacing='0' cellpadding='1'><tr><td>\n<table cellspacing='1' cellpadding='3' border='0'>";
+  return "<head>\n<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>\n<style type='text/css'>\n"+spanx("title",titleFontColor)+spanx("days",daysFontColor)+spanx("foot",footColor)+spanx("day",dayFontColor)+spanx("currentDay",currentDayFontColor)+ax("titlea",titleFontColor)+ax("daya",dayFontColor)+ax("currenta",currentDayFontColor)+ax("foota",footFontColor)+"</style>\n</head>\n<body>\n<table align='center' border='0' bgcolor='"+borderColor+"' cellspacing='0' cellpadding='1'><tr><td>\n<table cellspacing='1' cellpadding='3' border='0'>";
 }
 
 function calFooter() {

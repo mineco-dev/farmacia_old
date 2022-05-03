@@ -39,7 +39,7 @@ if (confirm('SEGURO QUE DESEA GUARDAR LA INFORMACION?')){
 </script>
 <meta http-equiv="Content-Language" content="es">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 </head>
 <body background="Fondo%20de%20Fiesta.jpg">
 <? 

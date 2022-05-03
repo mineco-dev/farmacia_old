@@ -127,7 +127,7 @@ exit();
 
 //		echo'<p align="center"><strong><em><font color="#FF3300" size="6" face="Comic Sans MS">Acceso No Valido</font></em></strong></p>';
 ?>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <p align="left"></p>
 <form name="form1" method="post" action="consulta.php">
   <div align="center">

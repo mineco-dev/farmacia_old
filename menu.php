@@ -8,7 +8,7 @@ header('Content-Type: text/html; charset=UTF-8');
 	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-	<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+	<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 	<link rel="stylesheet" type="text/css" href="helpdesk.css">
 <STYLE TYPE="text/css">
 <!--
@@ -49,10 +49,7 @@ color : #006699;
 */
 a { text-decoration: none; }
 .submenu{
-	
-	cursor:pointer;
-
-	
+	cursor:pointer;	
 	font-size : 13px;
 	font-family : Tahoma,Verdana,Arial;
 	text-align:left;

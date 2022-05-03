@@ -39,7 +39,7 @@ body {
 </style>
 <link href="../../../includes/helpdesk.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <script src="../../../includes/SpryTabbedPanels.js" type="text/javascript"></script>
 <link href="../../../includes/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="../../../includes/calendar.js"></script>

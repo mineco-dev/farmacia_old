@@ -19,7 +19,7 @@ auth_check();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+  <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
   <link rel="stylesheet" href="style.css" type="text/css"/>
   <link rel="SHORTCUT ICON" href="images/favicon.ico"/>
   <script type="text/javascript" src="jquery-1.4.2.js"></script>

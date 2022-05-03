@@ -5,7 +5,7 @@
 <html>
 <head>
 <link href="../helpdesk.css" rel="stylesheet" type="text/css">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style type="text/css">
 <!--

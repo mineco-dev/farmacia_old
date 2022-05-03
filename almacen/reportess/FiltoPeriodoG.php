@@ -10,7 +10,7 @@
     border: 1px solid black;
 }
 </style>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 </head>
 
 <body>

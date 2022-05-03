@@ -46,7 +46,7 @@ function verificar (form) {
 			alert("Debe ingresar la descripcion de la información a solicitar");
 		}else
 		{
-			if (confirm('�Esta seguro de guardar estos datos?')) form.submit();
+			if (confirm('¿Está seguro de guardar estos datos?')) form.submit();
 		}
 	}catch (ee)
 	{
@@ -76,7 +76,7 @@ if (window.document.form1.opnacionalidad[0].checked)
 }
 }
 </SCRIPT>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 <meta http-equiv="Content-Type" content="text/html" charset="utf-8_spanish_ci" />
 <link href="HojaEstilo.css" rel="stylesheet" type="text/css" />
@@ -134,7 +134,7 @@ if (window.document.form1.opnacionalidad[0].checked)
                   <td width="627" colspan="2">
                    <?php
 
-conectardb($almacen);
+conectardb($farmacia);
 
 // $qry_tipo_estatus="select max(codigo_requisicion_enc + 1) as ultima_requisicion from tb_requisicion_enc";
 $qry_tipo_estatus = "select isnull(max(codigo_requisicion_enc)+ 1,0+1) as ultima_requisicion from tb_requisicion_enc";
@@ -165,7 +165,7 @@ $free_result($res_qry_tipo_estatus);
                 <td>Dependencia</td>
                 <td colspan="2">
 <?php
-  conectardb($almacen);
+  conectardb($farmacia);
   $qry_empresa = "select * from direccion where activo = 1";
   $res_qry_empresa = $query($qry_empresa);
 

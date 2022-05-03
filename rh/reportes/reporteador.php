@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="calendar_db.js"></script>
 <link rel="stylesheet" href="calendar.css">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <?  include('../includes/inc_header_sistema.inc'); 
 	
 

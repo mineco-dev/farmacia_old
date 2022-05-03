@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+		<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 		<meta name="Title"			content="Spipu - Qrcode <?php echo __CLASS_QRCODE__; ?>" > 
 		<meta name="Description"	content="Spipu - Qrcode <?php echo __CLASS_QRCODE__; ?>" >
 		<meta name="Keywords"		content="spipu">

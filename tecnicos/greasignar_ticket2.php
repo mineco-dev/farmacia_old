@@ -1,4 +1,4 @@
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <?
 	session_start();
 	$reasignado_por=($_SESSION["user_id"]);   //codigo del usuario

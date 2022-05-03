@@ -48,7 +48,7 @@ function get_menu($dbms,$dbms2)
 ?>
 <html> 
 <head>
-	<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+	<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 	<link rel="stylesheet" href="<? print $raiz."mtSystem/";?>menu.css">
 </head>
 <body>

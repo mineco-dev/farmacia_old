@@ -1,4 +1,4 @@
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <?php
 session_start();
 require_once('../connection/helpdesk.php');

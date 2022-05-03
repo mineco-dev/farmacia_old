@@ -257,7 +257,7 @@
                                                                <!-- if graph settings are defined both here and in data file, the ones from data file are used -->
     <graph gid="1">                                            <!-- if you are using XML data file, graph "gid" must match graph "gid" in data file -->
       <type>column</type>                                                        
-      <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>                                   <!-- [] (graph title) -->
+      <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>                                   <!-- [] (graph title) -->
       <color>B92F2F</color>                                    <!-- [] (hex color code) -->
       <alpha></alpha>                                          <!-- [column.alpha (line.alpha)] (0 - 100) -->
       <data_labels>
@@ -280,7 +280,7 @@
 
     <graph gid="2">
       <type>line</type>                                     
-      <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>                               
+      <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>                               
       <color></color>                                   
       <alpha></alpha>
       <balloon_text>
@@ -295,7 +295,7 @@
   	 <behind></behind>                                       <!-- [false] (true / false) whether your guides should appear in front of columns or behind them -->
 	   <start_value></start_value>                             <!-- (number) value at which guide should be placed -->
 	   <end_value></end_value>                                 <!-- (number) if you set value here too, another quide will be drawn. If you set fill alpha > 0, then the area between these quides will be filled with color -->
-	   <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>                                         <!-- (string) text which will be displayed near the guide -->
+	   <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>                                         <!-- (string) text which will be displayed near the guide -->
 	   <width></width>                                         <!-- [0] (Number) width of a guide line (0 for hairline) -->
 	   <color></color>                                         <!-- [#000000] (hex color code) color of guide line -->   
 	   <alpha></alpha>                                         <!-- [100] (0 - 100) opacity of guide line -->

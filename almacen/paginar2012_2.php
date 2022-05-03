@@ -6,7 +6,7 @@
 <META HTTP-EQUIV="REFRESH" CONTENT="100;URL=paginar2012.php">
 
 
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 </head>
 
 <body>

@@ -58,7 +58,7 @@ mysql_select_db($database_redes);*/
 		print "<a href='empleados.php'>Regresar</a>";
 	}
 ?>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <p align="left"></p>
 <form name="form1" method="post" action="consulta.php">
   <div align="center">

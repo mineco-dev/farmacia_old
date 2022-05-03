@@ -1,12 +1,10 @@
-
 <html>
 <head>
-	<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+	<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
   <style type="text/css">
   <!--
   .Estilo1 {color: #000066}
   .EStilo1 input{
-
   }
   .Estilo2 {font-size: small;
     font-family:Arial, Helvetica, sans-serif; 
@@ -21,8 +19,6 @@
  a:link {
    color: #000000;
  }
-
-
  /*login*/
  @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
@@ -69,8 +65,6 @@
 .form button:hover,.form button:active,.form button:focus {
   background: #41A4D6;
 }
-
-
 .container {
   position: relative;
   z-index: 1;
@@ -108,58 +102,41 @@
 -->
 </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 <meta http-equiv="Content-Type" content="text/html" charset="utf-8_spanish_ci" />
-
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body bgcolor="white">
-
   <table width="155" align="center">
     <tr>
      <td width="212" class="Estilo1 Estilo2">
-
-
-
-      <?
-//if no cookie is set then display the form
-      if(!isset($_SESSION["this_cookie"]))
-      {
-	// echo '<div align="center" class="login"><form action="validate.php" method="post">';
-	// echo 'Usuario  :<br><input type="text" name="username"><br>';
-	// echo 'Contrase�a : <input type="password" name="password"><br>';
-	// echo '<input type="submit" value="Entrar"></form></div>';
-
-
-       echo "
-
-
-       <div class='login-page'>
-       <div class='form'>
-       <form class='login-form' action='validate.php' method='post'>
-       <input type='text' placeholder='Usuario' name='username'/>
-       <input type='password' placeholder='password' name='password'/>
-       <button>Entrar</button>
-       </form>
-       </div>
-       </div>
-       ";
-
-     }
-     else
-     {
-       $nombre=($_SESSION["name"]);
-       echo "<div align='center' style='position: fixed; top: 0px; right: 0px;font-size:12px'> Bienvenido: $nombre <br><i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i>
-<a href='logout.php' target='_parent' >SALIR</a></span><br><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i>
-<a href='almacen/cambio_password.php' target='_parent'>Cambiar Contrase�a</a></div>";	
-       echo "";
-       $dia_numero= date("d");
-       $dia_letras = date('D');
-     }
+      <?php
+      //if no cookie is set then display the form
+            if(!isset($_SESSION["this_cookie"]))
+            {      
+            echo"
+            <div class='login-page'>
+            <div class='form'>
+            <form class='login-form' action='validate.php' method='post'>
+            <input type='text' placeholder='Usuario' name='username'/>
+            <input type='password' placeholder='password' name='password'/>
+            <button>Entrar</button>
+            </form>
+            </div>
+            </div>
+            ";
+          }
+          else
+          {
+            $nombre=($_SESSION["name"]);
+            echo "<div align='center' style='position: fixed; top: 0px; right: 0px;font-size:12px'> Bienvenido: $nombre <br><i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i>
+      <a href='logout.php' target='_parent' >SALIR</a></span><br><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i>
+      <a href='almacen/cambio_password.php' target='_parent'>Cambiar Contrase�a</a></div>";	
+            echo "";
+            $dia_numero= date("d");
+            $dia_letras = date('D');
+          }
      ?>
-
-
    </td>
  </tr>
 </table>

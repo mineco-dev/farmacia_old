@@ -5,66 +5,60 @@ require("../includes/sqlcommand.inc");
 define("L_LANG", "es_ES");
 $usuario_id = ($_SESSION["user_id"]);
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="utf-8">
-
-
-
-
-
-    <script type="text/javascript">
-        var peticion = false;
-        var testPasado = false;
-        try {
-            peticion = new XMLHttpRequest();
-        } catch (trymicrosoft) {
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var peticion = false;
+            var testPasado = false;
             try {
-                peticion = new ActiveXObject("Msxml2.XMLHTTP");
-            } catch (othermicrosoft) {
+                peticion = new XMLHttpRequest();
+            } catch (trymicrosoft) {
                 try {
-                    peticion = new ActiveXObject("Microsoft.XMLHTTP");
-                } catch (failed) {
-                    peticion = false;
+                    peticion = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (othermicrosoft) {
+                    try {
+                        peticion = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (failed) {
+                        peticion = false;
+                    }
                 }
             }
-        }
-        if (!peticion)
-            alert("ERROR AL INICIALIZAR!");
-        function cargarCombo(url, comboAnterior, element_id) {
-            console.log("url", url, " combo", comboAnterior, " elemento id", element_id)
-            var element = document.getElementById(element_id);
-            var valordepende = document.getElementById(comboAnterior)
-            var x = valordepende.value
-            var fragment_url = url + '?Id=' + x;
-            element.innerHTML = '<img src="../images/loading.gif" />';
-            peticion.open("GET", fragment_url);
-            peticion.onreadystatechange = function () {
-                if (peticion.readyState == 4) {
-                    element.innerHTML = peticion.responseText;
+            if (!peticion)
+                alert("ERROR AL INICIALIZAR!");
+            function cargarCombo(url, comboAnterior, element_id) {
+                console.log("url", url, " combo", comboAnterior, " elemento id", element_id)
+                var element = document.getElementById(element_id);
+                var valordepende = document.getElementById(comboAnterior)
+                var x = valordepende.value
+                var fragment_url = url + '?Id=' + x;
+                element.innerHTML = '<img src="../images/loading.gif" />';
+                peticion.open("GET", fragment_url);
+                peticion.onreadystatechange = function () {
+                    if (peticion.readyState == 4) {
+                        element.innerHTML = peticion.responseText;
+                    }
                 }
+                peticion.send(null);
             }
-            peticion.send(null);
-        }
 
-    </script>
-    <style>
-        .form-control {
-            display: inline !important;
-            margin-right: 5px !important;   
-        }
-    </style>
-    <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
-    <meta charset="utf-8">
-    <meta lang="es">
-    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
-    <link href="HojaEstilo.css" rel="stylesheet" type="text/css"/>
-    <link href="estilos/style.css" rel="stylesheet" type="text/css" media="screen"/>
-    <link href="SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
-    <script language="javascript" src="calendar/calendar.js"></script>
-</head>
+        </script>
+        <style>
+            .form-control {
+                display: inline !important;
+                margin-right: 5px !important;   
+            }
+        </style>
+        <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
+        <meta charset="utf-8">
+        <meta lang="es">
+        <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
+        <link href="HojaEstilo.css" rel="stylesheet" type="text/css"/>
+        <link href="estilos/style.css" rel="stylesheet" type="text/css" media="screen"/>
+        <link href="SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
+        <script language="javascript" src="calendar/calendar.js"></script>
+    </head>
 <body>
 <form name="frm_ingreso_productos" id="frm_ingreso_productos" action="gingreso_productos.php" method="POST"
       enctype="multipart/form-data">
@@ -112,7 +106,7 @@ $usuario_id = ($_SESSION["user_id"]);
                                     <td valign="top">&nbsp;</td>
                                     <td valign="top">Nit Proveedor</td>
                                     <td colspan="3" width="627"><a
-                                                onClick="buscar=window.open('proveedor.php?tipo=proveedor&posi=0','Buscar','width=650,height=525,menubar=no,scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250'); return false;">
+                                                onClick="buscar=window.open('proveedor.php?tipo=proveedor&posi=0','Buscar','width=650,height=525,menubar=no,scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=550'); return false;">
                                             <input name="proveedor[0][0]" type="text" id="proveedor[0][0]" size="15"
                                                    class="form-control " style="width:12%;" disabled/>
                                             <button class="btn btn-primary">..</button>
@@ -361,7 +355,7 @@ $usuario_id = ($_SESSION["user_id"]);
                                 </tr>
                                 <tr>
                                     <td valign="top">&nbsp;</td>
-                                    <td>Fecha de Ingreso al sistema de Almacen</td>
+                                    <td>Fecha de Ingreso al sistema de Farmacia</td>
                                     <td colspan="2">
                                         <?php
                                         $day = date("d");

@@ -54,7 +54,7 @@ $result2 = mssql_query ("select  id_tipo_doc, documento from tipo_documento wher
 <!DOCTYPE html>
 <html>
 <head>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- TemplateParam name="OptionalRegion1" type="boolean" value="true" -->
 <link href="HojaEstilo.css" rel="stylesheet" type="text/css">

@@ -133,7 +133,7 @@ DataTable.ext.buttons.print = {
 		// document so the table can retain its base styling. Note that we have
 		// to use string manipulation as IE won't allow elements to be created
 		// in the host document and then appended to the new window.
-		var head = '<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>';
+		var head = '<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>';
 		$('style, link').each( function () {
 			head += _styleToAbs( this );
 		} );

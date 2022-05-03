@@ -1,7 +1,7 @@
 <!-- BEGIN: main -->
 <html>
     <head>
-        <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+        <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
         <link rel="stylesheet" href="../templates/{PHP._POST.template}/style.css" type="text/css">
     </head>
     <body style="margin:0px">

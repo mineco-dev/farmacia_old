@@ -2,9 +2,8 @@
 <html lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 </head>
-
 <body>
 <?php
 $usuario_id=($_SESSION["user_id"]);
@@ -73,18 +72,15 @@ $usuario_id=($_SESSION["user_id"]);
 
 // where e.codigo_jefe_dependencia = '$usuario_id' 
 if ($mtstatus=="3") {
-
- getTabla2($query2,7,$vec,$vec2,$vec3,$dbms,95,"","","ver/solicitud_aprobar.php?id=");
+ 	getTabla2($query2,7,$vec,$vec2,$vec3,$dbms,95,"","","ver/solicitud_aprobar.php?id=");
  }
 
 if ($mtstatus=="4") {
-
- getTabla2($query,7,$vec,$vec2,$vec3,$dbms,95,"","","ver/solicitud_autorizar.php?id=");
+ 	getTabla2($query,7,$vec,$vec2,$vec3,$dbms,95,"","","ver/solicitud_autorizar.php?id=");
  }
  
 if ($mtstatus==="5") {
-
-getTabla2($query,7,$vec,$vec2,$vec3,$dbms,95,"","","ver/solicitud_despachar.php?id=");
+	getTabla2($query,7,$vec,$vec2,$vec3,$dbms,95,"","","ver/solicitud_despachar.php?id=");
  }
 
 		

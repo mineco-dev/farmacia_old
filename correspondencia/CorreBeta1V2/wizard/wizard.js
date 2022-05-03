@@ -409,7 +409,7 @@ function makeCode(test) {
 	html += "  <head>\n\n";
 	comment("UTF-8 is the recommended encoding for your pages");
 	html += '    <meta http-equiv="content-type" content="text/xml; charset=utf-8" />\n';
-	html += '    <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>\n\n';
+	html += '    <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>\n\n';
 
 	comment("Loading Theme file(s)");
 	html += '    <link rel="stylesheet" href="' + path + 'themes/' + c.theme + '.css" />\n';

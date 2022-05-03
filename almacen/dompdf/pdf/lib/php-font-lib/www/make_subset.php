@@ -53,7 +53,7 @@ if (isset($_POST["subset"])) {
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+  <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>

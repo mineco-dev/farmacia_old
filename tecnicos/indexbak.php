@@ -20,7 +20,7 @@ function Abrir_ventana(pagina)
 </script>
 
 <meta http-equiv="Content-Language" content="es">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <style type="text/css">
 <!--
    .header {font-family:Tahoma, sans-serif; font-size: 12px; COLOR:#2FFFFF; padding-left:10; padding-right:5; font-weight:900 }

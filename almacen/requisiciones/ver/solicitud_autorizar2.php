@@ -1,5 +1,5 @@
 <?php
-	require('../includes/cnn/inc_header.inc');
+	require('../includes/cnn/inc_header.inc');	
 	$dbms=new DBMS(conectardb($almacen));	
 	$dbms->bdd=$database_cnn;
 	require('../includes/funciones.php');
@@ -186,7 +186,7 @@ function imprimir()
 	}
 }
 </SCRIPT>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="../../HojaEstilo.css" rel="stylesheet" type="text/css" />
 <link href="../estilos/style.css" rel="stylesheet" type="text/css" media="screen" />

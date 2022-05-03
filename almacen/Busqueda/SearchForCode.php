@@ -13,7 +13,7 @@ $categoria = $_GET['categoria'];
  <html lang="en">
  <head>
  	<meta charset="UTF-8">
- 	<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+ 	<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
  	<link href="../css/helpdesk.css" rel="stylesheet" type="text/css">
 	<link href="../css/box_ie.css" rel="stylesheet" type="text/css" media="screen">
 	<link rel="stylesheet" href="css/jquery.dataTables.min.css">

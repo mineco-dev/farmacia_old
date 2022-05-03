@@ -138,7 +138,7 @@ function Refrescar(form)
 <link href="../helpdesk.css" rel="stylesheet" type="text/css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <style type="text/css">
 
 .Estilo1 {font-size: 12px}
@@ -153,7 +153,7 @@ function Refrescar(form)
     <table width="100%" border="0" bordercolor="#ECE9D8">
       <tr>
         <td><div align="left" class="titulocategoria">
-          <div align="center">FORMULARIO PARA B&Uacute;SQUEDA DE EMPLEADOS </div>
+          <div align="center">FORMULARIO PARA BÚSQUEDA DE EMPLEADOS </div>
         </div></td>
       </tr>
       <tr>
@@ -175,15 +175,15 @@ function Refrescar(form)
       <tr align="center" bgcolor="#006699" class="thead">
         <td width="9%" class="titulotabla"><div align="center"><strong>Seleccionar
         </strong></div></td>
-        <td width="51%" class="titulotabla"><strong>Apellidos y nombres</strong></td>
-     
+        <td width="51%" class="titulotabla"><strong>Nombres y Apellidos</strong></td>
+	|	<td width="51%" class="titulotabla"><strong>Código</strong></td>
       </tr>
 		<?php
 				
 				if ($_REQUEST["txt_buscar"]!="")
 				{
 				$busqueda=strtoupper($_REQUEST["txt_buscar"]);					
-				$consulta = "use helpdesk_nuevo
+				$consulta = "use helpdesk_farmacia
 select (u.nombres +' '+ u.apellidos) as nombre, u.codigo_usuario from usuario u
 							where (u.nombres like '%$busqueda%' or u.apellidos like '%$busqueda%') and (u.activo=1)";
 
@@ -194,17 +194,17 @@ select (u.nombres +' '+ u.apellidos) as nombre, u.codigo_usuario from usuario u
 					$inicial=$_REQUEST["in"];
 					echo "Listado de personal que su apellido inicia con $inicial";
 					if ($inicial!="all")
-						$consulta = "use helpdesk_nuevo
+						$consulta = "use helpdesk_farmacia
 select (u.nombres +' '+ u.apellidos) as nombre, u.codigo_usuario from usuario u where u.apellidos like '$inicial%' and u.activo=1";
 							       
 						else
-							$consulta = "use helpdesk_nuevo
+							$consulta = "use helpdesk_farmacia
 select (u.nombres +' '+ u.apellidos) as nombre, u.codigo_usuario from usuario u where u.activo = 1
 order by nombres";
 				}
 				else
 				{
-					$consulta =     "use helpdesk_nuevo
+					$consulta =     "use helpdesk_farmacia
 select (u.nombres +' '+ u.apellidos) as nombre, u.codigo_usuario from usuario u 
 
 							     	where u.apellidos like 'a%' and u.activo=1";

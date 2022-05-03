@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-  <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+  <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
   </head>
   <body>
 <?php
@@ -532,7 +532,7 @@ function is_bad_day(&$abaddays, $date) { // <<<1
 ?>
 <meta name="generator" content="An infinite number of monkeys in a universe devoid of Shakespeare">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <script language="Javascript">
 	var close_timeout=<?=$timeout?>;
 	var time_left=<?=$timeout?>;

@@ -108,7 +108,7 @@ desconectardb($almacen);
 		}
 
 </script>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="../HojaEstilo.css" rel="stylesheet" type="text/css" />
 <link href="estilos/style.css" rel="stylesheet" type="text/css" media="screen" />
@@ -233,7 +233,7 @@ if ((form['cbo_tipo_empresa'].value) == "0"){alert('Seleccione el tipo de docume
 
 /////////////////////// FIN VALIDACIONES //////////////////////////////////////////////	
 
-if (confirm('�Asegurese de seleccionar correctamente su empresa de lo contrario podrian alterar algun dato de otra dependencia?')) form.submit();
+if (confirm('¡Asegurese de seleccionar correctamente su empresa de lo contrario podrian alterar algun dato de otra dependencia¡')) form.submit();
 
 }
 </script>

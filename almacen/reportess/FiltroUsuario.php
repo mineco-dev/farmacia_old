@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script type='text/javascript' src="js/jquery.min.js"></script>
 <script src="js/jquery.form.js"></script> 
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <style>
 	table, tr, td {
     border: 1px solid black;

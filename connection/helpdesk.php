@@ -1,15 +1,8 @@
 <?php
-// $myserver="ALMACEN-PC\DEV"; 
-// $myuser="test2010";
-// $mypass="test2010";
-// $mydb="helpdesk";
-// $s=mssql_connect($myserver, 'sa', 'abc123') or die ("no se pudo conectar al servidor $myserver");
 	$myserver="128.5.8.85"; 
 	$myuser="farmacia";
 	$mypass="DTIdesa@2K271.";
-	$mydb="helpdesk_nuevo";
-
-
+	$mydb="helpdesk_farmacia";
 $s=mssql_connect($myserver, $myuser, $mypass) or die ("no se pudo conectar al servidor" .mssql_get_last_message());
 $d=mssql_select_db($mydb, $s);
 //variables para manejo de base de datos

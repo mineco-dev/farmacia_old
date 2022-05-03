@@ -1,8 +1,7 @@
 <?php
 session_start();
 function conectardb($grupo_rol)
-{	
-	
+{
 	$myserver="128.5.8.85";
 	$bd_usuario = "farmacia"; 
 	$bd_password = "DTIdesa@2K271."; 
@@ -19,11 +18,8 @@ function conectardb($grupo_rol)
 				
 				$mypass=$_SESSION["param_conexion"]["$i"][2];
 			
-				$mydb=$_SESSION["param_conexion"]["$i"][4];	
-				
-			
-			}
-			
+				$mydb=$_SESSION["param_conexion"]["$i"][4];			
+			}			
 			$i++;		
 		}	
 		$server=mssql_connect($myserver, $bd_usuario, $bd_password) or die ("Ministerio de Economia");
@@ -36,8 +32,6 @@ function conectardb($grupo_rol)
 		require_once( __DIR__ . '/../connection/helpdesk.php');
 	}
 }
-
-
 function permisosdb($grupo_rol)
 {		
 	if (isset($_SESSION["param_conexion"]))

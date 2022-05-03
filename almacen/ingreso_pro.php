@@ -1,13 +1,9 @@
 
 <script language="javascript">
     function suma() {
-
-
         var valores = 1;
         var total = 0;
-
         while (valores < contLin4) {
-
             var num1 = String(document.getElementById(['ingresado[' + valores + ']']).value);
             if (num1 == undefined) num1 = 0;
             var num2 = String(document.getElementById(['costo_unitario[' + valores + ']']).value);
@@ -20,22 +16,15 @@
             valores++;
         }
     }
-
-
 </script>
-
-
 <?php
 session_start();
 //require("../includes/funciones.php");
 require("../includes/sqlcommand.inc");
 conectardb($almacen);
-
 $_SESSION["ingreso"] = true;
 ?>
-
 <head>
-
     <style type="text/css">
         body {
             background-color: #CCCCCC !important;
@@ -44,10 +33,7 @@ $_SESSION["ingreso"] = true;
             background: black;
             color: white;
         }
-
-
     </style>
-
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8_spanish_ci"/>
 <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -71,9 +57,11 @@ $_SESSION["ingreso"] = true;
             <th class="title_input">Codigo</th>
             <th class="title_input">Renglon</th>
             <th class="title_input_product">Producto</th>
+            <th class="title_input">Fecha Vencimiento</th>
             <th class="title_input">Cantidad Ingresada</th>
             <th class="title_input">Precio Unitario</th>
             <th class="title_input">Precio Total</th>
+           
             <th class="title_input">Eliminar</th>
             <th class="title_input negrox">&Sigma;</th>
             <th class="title_input negrox" id="sumatoria"></th>
@@ -162,9 +150,14 @@ $_SESSION["ingreso"] = true;
         //fila += "<td><a href=\"javascript:void(0)\" onClick=\"buscar=window.open(\'renglon.php?tipo=bien&posi=" + cont + "\',\'Buscar4\',\'width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250\'); return false;\"><input name=\"bien[" + cont + "][5]\" type=\"text\" value=\"\" id=\"bien[" + cont + "][5]\"  alt=\"Doble clic para consultar el catalogo\" size=\"15\" class=\"form-control\" ></a></td>"
         fila += "<td><input name=\"bien[" + cont + "][5]\" type=\"text\" id=\"bien[" + cont + "][5]\" size=\"5%\" class=\"form-control input_center\"></td>"
         fila += "<td><input name=\"bien[" + cont + "][7]\" type=\"text\" id=\"bien[" + cont + "][7]\" size=\"45\" class=\"form-control\" > </td>"
+        
+        
+        fila += "<td><input name=\"fecha_caducidad[" + cont + "]\" type=\"date\" id=\"fecha_caducidad[" + cont + "]\"  size=\"7\" class=\"monto form-control input_center\" ></td>"
+
+
         fila += "<td><input name=\"ingresado[" + cont + "]\" type=\"text\" id=\"ingresado[" + cont + "]\"  size=\"7\" class=\"monto form-control input_center\" ></td>"
         fila += "<td><input class=\"monto form-control input_center\"  name=\"costo_unitario[" + cont + "]\" type=\"text\" id=\"costo_unitario[" + cont + "]\"   size=\"7\"></td>"
-        fila += "<td><input name=\"precio_total[" + cont + "]\" type=\"text\" id=\"precio_total[" + cont + "]\"  size=\"7\"  class=\"totalizar form-control input_center\" ></td>"
+        fila += "<td><input name=\"precio_total[" + cont + "]\" type=\"text\" id=\"precio_total[" + cont + "]\"  size=\"20\"  class=\"totalizar form-control input_center\" ></td>"
         fila += "<td id=\"fila" + cont + "\" onclick=\"seleccionarFila(id, 'check" + cont + "');\" ><input id=\"check" + cont + "\" type=\"checkbox\" name=\"transporte\" class=\"form-check\" >Eliminar</td>"
         fila += "<td><input name=\"precio_total1[" + cont + "]\" type=\"text\" id=\"precio_total1[" + cont + "]\" size=\"7\" style=\"display:none\" ></td>"
         fila += "<td><input name=\"bien[" + cont + "][4]\" type=\"text\" id=\"bien[" + cont + "][4]\"  size=\"7\" style=\"display:none\"></td>"
@@ -292,28 +285,31 @@ $_SESSION["ingreso"] = true;
             $(this).find('td').eq(12).find('input').attr("id", "bien[" + num + "][4]");//
             $(this).find('td').eq(12).find('input').attr("name", "bien[" + num + "][4]");
 
+            $(this).find('td').eq(7).find('input').attr("id", "fecha_caducidad[" + num + "]");//fecha de vencimiento
+            $(this).find('td').eq(7).find('input').attr("name", "fecha_caducidad[" + num + "]");//fecha de vencimiento
+           
 
-            $(this).find('td').eq(7).find('input').attr("id", "ingresado[" + num + "]");
-            $(this).find('td').eq(7).find('input').attr("name", "ingresado[" + num + "]");
-            $(this).find('td').eq(7).find('input').attr("onblur", "suma(" + num + ");");
-
-
-            $(this).find('td').eq(8).find('input').attr("id", "costo_unitario[" + num + "]");
-            $(this).find('td').eq(8).find('input').attr("name", "costo_unitario[" + num + "]");
+            $(this).find('td').eq(8).find('input').attr("id", "ingresado[" + num + "]");
+            $(this).find('td').eq(8).find('input').attr("name", "ingresado[" + num + "]");
             $(this).find('td').eq(8).find('input').attr("onblur", "suma(" + num + ");");
 
 
-            $(this).find('td').eq(9).find('input').attr("id", "precio_total[" + num + "]");
-            $(this).find('td').eq(9).find('input').attr("name", "precio_total[" + num + "]");
+            $(this).find('td').eq(9).find('input').attr("id", "costo_unitario[" + num + "]");
+            $(this).find('td').eq(9).find('input').attr("name", "costo_unitario[" + num + "]");
+            $(this).find('td').eq(9).find('input').attr("onblur", "suma(" + num + ");");
 
 
-            $(this).find('td').eq(10).attr("onclick", "seleccionarFila(id, 'check" + num + "');");
-            $(this).find('td').eq(10).attr("id", "fila" + num + "");
-            $(this).find('td').eq(10).find('input').attr("id", "check" + num + "");
+            $(this).find('td').eq(10).find('input').attr("id", "precio_total[" + num + "]");
+            $(this).find('td').eq(10).find('input').attr("name", "precio_total[" + num + "]");
 
 
-            $(this).find('td').eq(11).find('input').attr("id", "precio_total1[" + num + "]");
-            $(this).find('td').eq(11).find('input').attr("name", "precio_total1[" + num + "]");
+            $(this).find('td').eq(11).attr("onclick", "seleccionarFila(id, 'check" + num + "');");
+            $(this).find('td').eq(11).attr("id", "fila" + num + "");
+            $(this).find('td').eq(11).find('input').attr("id", "check" + num + "");
+
+
+            $(this).find('td').eq(12).find('input').attr("id", "precio_total1[" + num + "]");
+            $(this).find('td').eq(12).find('input').attr("name", "precio_total1[" + num + "]");
 
 
             $(this).attr("id", "fila" + num + "");

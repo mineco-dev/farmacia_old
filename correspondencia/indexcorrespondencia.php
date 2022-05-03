@@ -15,7 +15,7 @@
 
 <html>
 <head>
-	<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+	<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 	<link rel="STYLESHEET" type="text/css" href="estilo.css">
 	<script>
 		function devuelveFecha(dia,mes,ano){

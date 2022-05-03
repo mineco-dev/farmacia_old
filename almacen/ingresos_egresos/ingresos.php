@@ -6,7 +6,7 @@
  <script type='text/javascript' src="../bootstrap/jquery/jquery-3.2.1.js"></script> 
  <script type='text/javascript' src="../datatable/js/jquery.dataTables.min.js"></script>
  <link rel="stylesheet" type="text/css" href="../datatable/css/jquery.dataTables.min.css">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 </head>
 
 <body>

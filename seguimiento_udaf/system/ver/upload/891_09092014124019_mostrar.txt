@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 </HEAD>
 <BODY>
 <h1><div align="center">Lectura de la tabla</div></h1>

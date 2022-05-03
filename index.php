@@ -40,69 +40,57 @@ else
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-	
 	<link rel="stylesheet" type="text/css" href="STYLE/css.css">
-
-
-	<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+	<title>ASEGGYS- SISTEMA FARMACIA MINECO</title>
     <style type="text/css">
-
 body{
-	background: url("images/fondoprueva5.jpg");
-	
+	background: url("images/fondoprueva5.jpg");	
 }
-
+a{
+	cursor: pointer !important; 
+}
 a:link {text-decoration:none}
 a:visited {text-decoration:none}
 a:hover{text-decoration:none}
 
     </style>
 </head>
-
-
-
-
 <!--body leftmargin=0 topmargin=0 marginheight="0" marginwidth="0" bgcolor="#E6E6E6" background="images/fon.gif"-->
 <body >
-
-
 <nav>
-	<ul>
-				<li><a href="inicio.php" class="menu">INICIO</a></li>
-				<li><a href="administrativa.php" class="menu">ALMACEN</a></li>
-				<li><a href="informatica.php" class="menu">INFORMATICA</a></li>
+	<ul>			
+		<li><a href="administrativa.php" class="menu">FARMACIA</a></li>		
 	</ul>
 </nav>
-<div align="center" class="Titulo">ASEGGYS 2.0 - Sistema almacen MINECO </div>
+<div align="center" class="Titulo">SISTEMA FARMACIA MINECO </div>
 <div   class="contenedorLogin">
 		<div  class="Main" >
 			<table width="100%" height="80%" border="0" cellpadding="0"   style="border-collapse: collapse">
 				<tr valign="top" >
 						<td >
-								<table >
-										<tr>
-												<td  class="dependencia">
-													<?php
-													 include("dependencia.php");
-													?>
-												</td>
-										</tr>
-										<tr align="center" >
-												<td width="162">
-													<?php
+							<table >
+								<tr>
+									<td  class="dependencia">
+										<?php
+											include("dependencia.php");
+										?>
+									</td>
+								</tr>
+								<tr align="center" >
+									<td width="162">
+										<?php
 													
-														 include("menu.php");	
-													?>
-												</td>
-										</tr>
-										<tr>
-												<td bgcolor="#CCCCCC" > 
+											include("menu.php");	
+										?>
+									</td>
+								</tr>
+								<tr>
+									<td bgcolor="#CCCCCC" > 
 													
-												</td>
-										</tr>
+									</td>
+								</tr>
 
-								</table>
+							</table>
 						</td>
 				</tr>
 		</table>	
@@ -122,8 +110,10 @@ a:hover{text-decoration:none}
 					<li><a href="https://correo.mineco.gob.gt/owa" target="_blank" class="lista" >Web-Mail</a></li>
 					<!-- <li><a href="http://192.168.2.244/xampp/diacoweb/SIC" target="_blank" class="lista" >Ariane</a></li> -->
 					
-
-					<p >Copyright &copy;2021 Departamento de Tecnolog&iacute;as de la Informaci&oacute;n - MINECO - </p>
+					<?php
+						$current_year=	date("Y")
+					?>
+					<p >Copyright &copy;<?php echo("$current_year")?> Departamento de Tecnolog&iacute;as de la Informaci&oacute;n - MINECO - </p>
 			</ul>
 			</div>
 

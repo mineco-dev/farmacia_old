@@ -32,11 +32,11 @@ $queryNew = "
   FROM tb_requisicion_enc e
     INNER JOIN direccion d
         ON d.iddireccion = e.codigo_dependencia
-    INNER JOIN [helpdesk_nuevo].dbo.usuario usu
+    INNER JOIN [helpdesk_farmacia].dbo.usuario usu
         ON usu.nombre_usuario = e.usuario_aprobo
     INNER JOIN Tb_Jefes_Depen jefe
         ON jefe.codigo_usuario = e.codigo_jefe_dependencia
-    INNER JOIN [helpdesk_nuevo].dbo.usuario u
+    INNER JOIN [helpdesk_farmacia].dbo.usuario u
         ON u.nombre_usuario = e.usuario_autorizo
   WHERE e.codigo_requisicion_enc = $hoja_despacho and jefe.Codigo_Dependencia = e.codigo_dependencia";
 
@@ -126,7 +126,7 @@ $html = '
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+    <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
 

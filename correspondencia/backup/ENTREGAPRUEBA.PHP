@@ -47,7 +47,7 @@ mssql_free_result($Recordset1);
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
    <script language="javascript">
 <!--
 //texto del mensaje
@@ -498,7 +498,7 @@ function carga(x){
 <!DOCTYPE html>
 <html>
 <head>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
@@ -510,7 +510,7 @@ function carga(x){
 
 
 
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style type="text/css">
 
@@ -874,7 +874,7 @@ $SQL= "SELECT * FROM VISTA1 WHERE INGRESO = (SELECT MAX(INGRESO) FROM VISTA1)";
 
 <head>
 
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 
 </head>
 

@@ -142,7 +142,7 @@ a:active {
 <HTML>
 <HEAD>
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <!-- InstanceEndEditable --><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- InstanceBeginEditable name="head" -->
 <link href="Templates/tablas-eec.css" rel="stylesheet" type="text/css">

@@ -8,22 +8,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta charset="utf-8" />
 <script src="../SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
 <script type="text/javascript">
 var peticion = false;
 var  testPasado = false;
-try {
-  peticion = new XMLHttpRequest();
+  try { 
+    peticion = new XMLHttpRequest();
   } catch (trymicrosoft) {
   try {
-  peticion = new ActiveXObject("Msxml2.XMLHTTP");
+    peticion = new ActiveXObject("Msxml2.XMLHTTP");
   } catch (othermicrosoft) {
   try {
-  peticion = new ActiveXObject("Microsoft.XMLHTTP");
+   peticion = new ActiveXObject("Microsoft.XMLHTTP");
   } catch (failed) {
-  peticion = false;
+    peticion = false;
   }
   }
 }
@@ -45,8 +45,8 @@ function cargarCombo (url, comboAnterior, element_id) {
     peticion.open("GET", fragment_url);
     peticion.onreadystatechange = function() {
         if (peticion.readyState == 4) {
-	//escribimos la respuesta
-	element.innerHTML = peticion.responseText;
+	  //escribimos la respuesta
+	  element.innerHTML = peticion.responseText;
         }
     }
    peticion.send(null);
@@ -108,14 +108,9 @@ function imprimir()
 
 <link href="HojaEstilo.css" rel="stylesheet" type="text/css" />
 <link href="estilos/style.css" rel="stylesheet" type="text/css" media="screen" />
-
-
-
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
     <!-- <script src="../bootstrap/js/bootstrap.js"></script> -->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-   
-
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
 </head>
 <!-- <body oncontextmenu="return false"> -->
 <body>
@@ -132,16 +127,16 @@ function imprimir()
       <table width="95%" border="0" align="center" class="table table-resposive">
         <tr>
           <td>
-          <?php
-          $ver = $_REQUEST["ver"];
-		  	$mensaje = "";
-          	if ($ver==1) $mensaje = "<img src=\"imagenes/led_circle_red.png\"> Solicitadas";
-          	if ($ver==2) $mensaje = "<img src=\"imagenes/led_circle_orange.png\"> Aprobadas";
-          	if ($ver==3) $mensaje = "<img src=\"imagenes/led_circle_yellow.png\"> Autorizadas";
-		  	if ($ver==4) $mensaje = "<img src=\"imagenes/led_circle_green.png\"> Despachadas";
-			if ($ver==5) $mensaje = "<img src=\"imagenes/led_circle_grey.png\"> Anuladas";
-		
-		  ?>          </td>
+              <?php
+                $ver = $_REQUEST["ver"];
+                    $mensaje = "";
+                if ($ver==1) $mensaje = "<img src=\"imagenes/led_circle_red.png\"> Solicitadas";
+                if ($ver==2) $mensaje = "<img src=\"imagenes/led_circle_orange.png\"> Aprobadas";
+                if ($ver==3) $mensaje = "<img src=\"imagenes/led_circle_yellow.png\"> Autorizadas";
+                if ($ver==4) $mensaje = "<img src=\"imagenes/led_circle_green.png\"> Despachadas";
+                if ($ver==5) $mensaje = "<img src=\"imagenes/led_circle_grey.png\"> Anuladas";		
+              ?>          
+            </td>
         </tr>
         <tr>
           <td>
@@ -149,10 +144,9 @@ function imprimir()
           	if ($ver==1) $mtstatus = "3";  	  
           	if ($ver==2) $mtstatus = "4";      
           	if ($ver==3) $mtstatus = "5";    	
-			if ($ver==4) $mtstatus = "6";     
-			if ($ver==5) $mtstatus = "0";     
-			
-		   include("atendidas.php"); 
+			      if ($ver==4) $mtstatus = "6";     
+			      if ($ver==5) $mtstatus = "0";
+		        include("atendidas.php"); 
           ?>          </td>
         </tr>
       </table>

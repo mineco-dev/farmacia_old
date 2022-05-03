@@ -98,7 +98,7 @@ return $semanaReturn." ".$dia." de ".$mesReturn." de ".$a�o;
 		
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 
 <script language="JavaScript" src="calendar_db.js"></script>
 <link rel="stylesheet" href="calendar.css">

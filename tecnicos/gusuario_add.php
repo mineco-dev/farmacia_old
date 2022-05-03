@@ -1,4 +1,4 @@
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <?
 require_once('../connection/helpdesk.php');
 $usuario_mayus=strtoupper($txt_usuario);

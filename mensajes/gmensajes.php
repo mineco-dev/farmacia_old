@@ -2,7 +2,7 @@
 	$grupo_id=5;	
 	include("../restringir.php");		
 ?>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <style type="text/css">
 <!--
 .Estilo2 {font-size: large}

@@ -13,7 +13,7 @@ error_reporting(E_ALL);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+    <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
     <link href="../helpdesk.css" rel="stylesheet" type="text/css" />
 </head>
 <script>
@@ -49,6 +49,7 @@ if(isset($_SESSION["ingreso"]))
     $fecha_fact=$_POST['date1'];
     $fecha_ingreso_sis=$_POST['date2'];
     $cantidad_filas = $_POST['cantidad_filas'];
+    $fecha_vence=$_POST['fecha_caducidad'];
     $bien=$_POST['bien'];
     $cant_ingresada=$_POST['ingresado'];
     $costo_unitario=$_POST['costo_unitario'];
@@ -119,6 +120,7 @@ if(isset($_SESSION["ingreso"]))
         $codigoproducto = $bien[$cnt][1];
         $categoria = $bien[$cnt][2];
         $subcategoria = $bien[$cnt][3];
+        
         if ($costo_unitario[$cnt] == "") $costo_unitario[$cnt] = 0;
         $qry_ingreso_det = "INSERT INTO tb_ingreso_det
            ( codigo_ingreso_enc, 
@@ -128,6 +130,7 @@ if(isset($_SESSION["ingreso"]))
             cantidad_ingresada,              
             costo_unidad, 
             Precio_total,
+            fecha_vence,
             codigo_bodega,
             usuario_creo,
             fecha_creado,
@@ -142,7 +145,8 @@ if(isset($_SESSION["ingreso"]))
             $codigoproducto, 
             $cant_ingresada[$cnt],  
             $costo_unitario[$cnt], 
-            $precio_total[$cnt], 
+            $precio_total[$cnt],
+            '$fecha_vence[$cnt]', 
             $codigo_bodega, 
             '$nombre_usuario', 
             '$hoy',
@@ -150,8 +154,6 @@ if(isset($_SESSION["ingreso"]))
             '$renglon',              
             $codigo_empresa                              
              )";   
-        
-        //print($qry_ingreso_det);     
         $query($qry_ingreso_det);
         $cnt++;
     }

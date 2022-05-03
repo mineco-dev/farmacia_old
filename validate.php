@@ -1,23 +1,18 @@
 <?php
 require("includes/funciones.php");
 require("includes/sqlcommand.inc");
-
-
 //include("samples/conectarse.php");
 function make_safe($variable) 
 { 
 	$variable = addslashes(trim($variable)); 
 	return $variable; 
 } 
-
-
 /*function envia_msg($msg)
 {
 	echo("<script language='JavaScript'>");
 	echo("alert('$msg');");
 	echo("</script>");
 }*/
-
 header("Pragma: ");
 header("Cache-Control: ");
 header("Expires: Mon, 26 Jul 2007 05:00:00 GMT");
@@ -31,7 +26,6 @@ $password = make_safe(md5($_POST['password']));
 
 require_once('connection/helpdesk.php');
 //include('correspondencia/conectarse.php');
-
 // session_register('usrcor');
 // session_register('passcor');
 // session_register('codigoUsuario');
@@ -59,12 +53,8 @@ while($row=mssql_fetch_array($result))
 	/* selecciona el codigo de asesor de la base rrhh */
 	include('correspondencia/INCLUDES/inc_header.inc');
 	$dbms=new DBMS($conexion); 
-
-
 	$qtv = "SELECT idasesor from asesor where usuario = '$username' and password = '$password' and habilitado = 'Y'";
-
 	$rtv = mssql_query($qtv);
-
 	while($roww=mssql_fetch_array($rtv))
 	{
 //									print $qtv."aaa";
@@ -160,7 +150,7 @@ exit();
 if ($_SERVER["PHP_SELF"] == $validate_path){
 //if($REQUEST_URI == $validate_path){
 	echo "<html>\n<head>\n";
-	echo "<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>\n";
+	echo "<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>\n";
 	echo "</head>\n";
 	echo "<body bgcolor=\"white\">\n";
 	echo "Tiene una sesión activa <a href=\"".$success_page."\" target='_self'>Continuar</a>\n";

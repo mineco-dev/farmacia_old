@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+    <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
     <script src="dist/js/jquery.js"></script>
     <link href="dist/css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
     <script src="dist/js/bootstrap.js"></script>

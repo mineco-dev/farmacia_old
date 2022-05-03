@@ -140,7 +140,7 @@ function validarEntero(numero){
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="HojaEstilo.css" rel="stylesheet" type="text/css">
 

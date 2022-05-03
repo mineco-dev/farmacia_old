@@ -255,7 +255,7 @@ print '</table>';
 
  ?>
 
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <link href="../includes/estilos.css" rel="stylesheet" type="text/css" />
 <link href="../css/cssWeb.css" type=text/css rel=StyleSheet>
 </head>

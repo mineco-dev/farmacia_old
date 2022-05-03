@@ -30,16 +30,16 @@ $query="mssql_query";
 	$visitantes=31;
         
               
-        $almacenadministrador=33;
-        $almacenaprobacion=34;
-        $almacenautorizacion=35;
-        $almacendespacho=36;        
-        $almaceningreso=37;
-        $almacendirecta=38;
-        $almacenrequisicion=39;
-        $almacen=40;
-        $almacencsuario=41;
-        $almacencatalogos=42;
+	$almacenadministrador=33;
+	$almacenaprobacion=34;
+	$almacenautorizacion=35;
+	$almacendespacho=36;        
+	$almaceningreso=37;
+	$almacendirecta=38;
+	$almacenrequisicion=39;
+	$almacen=40;
+	$almacencsuario=41;
+	$almacencatalogos=42;
 
 	//expedientes
 	$expedopera=43;

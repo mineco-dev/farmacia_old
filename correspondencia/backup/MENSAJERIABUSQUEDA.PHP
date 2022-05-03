@@ -417,7 +417,7 @@ BIENVENIDOS
 <!DOCTYPE html>
 <html>
 <head>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <table width="200" border="4" cellspacing="0" cellpadding="5" align="center">
@@ -457,7 +457,7 @@ $SQL = "SELECT INGRESO, DETALLE, RECIBIO, NOMBRE_REMITENTE,  STATUS, DESCRIPCION
 
 <head>
 
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 
 <style type="text/css">
 <!--

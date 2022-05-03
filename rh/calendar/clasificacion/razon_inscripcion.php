@@ -12,7 +12,7 @@
 
 	<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 
-	<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+	<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 	<link rel="stylesheet" type="text/css" href="../css/clasificacion.css">
 	<link href="images/cssWeb.css" type=text/css rel=StyleSheet>
 	<link rel="stylesheet" type="text/css" media="all" href="calendar/calendar-win2k-1.css" title="win2k-1" />

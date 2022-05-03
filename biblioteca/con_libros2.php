@@ -29,7 +29,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 
 <link href="includes/cssWeb.css" rel="stylesheet" type="text/css" />
 <style type="text/css">

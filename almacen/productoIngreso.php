@@ -16,46 +16,26 @@
 		$tipo=$_SESSION["tipo"];
 		$posi=$_SESSION["posi"];
 	}
-
-
-
 ?>
 <html>
 <head>
 <script type="text/javascript">
-
 var peticion = false;
-
 var  testPasado = false;
-
 try {
-
-  peticion = new XMLHttpRequest();
-
+  	peticion = new XMLHttpRequest();
   } catch (trymicrosoft) {
-
   try {
-
-  peticion = new ActiveXObject("Msxml2.XMLHTTP");
-
+  	peticion = new ActiveXObject("Msxml2.XMLHTTP");
   } catch (othermicrosoft) {
-
   try {
-
-  peticion = new ActiveXObject("Microsoft.XMLHTTP");
-
+  	peticion = new ActiveXObject("Microsoft.XMLHTTP");
   } catch (failed) {
-
-  peticion = false;
-
+  	peticion = false;
   }
-
   }
-
 }
-
 if (!peticion)
-
 alert("ERROR AL INICIALIZAR!");
 
 
@@ -127,7 +107,7 @@ function Validar(form)
 {
   if (form.txt_buscar.value == "" && form.txt_buscarx.value =="")
   { 
-  	alert("Escriba el nombre o apellido del empleado para realizar la búsqueda"); 
+  	alert("Escriba el código o el nombre del medicamento para realizar la búsqueda"); 
 	form.txt_buscar.focus(); 
 	return;
  }  
@@ -142,7 +122,7 @@ function Refrescar(form)
 <link href="../helpdesk.css" rel="stylesheet" type="text/css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <style type="text/css">
 
 .Estilo1 {font-size: 12px}

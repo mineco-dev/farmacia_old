@@ -76,7 +76,7 @@
   <group>
     <percent></percent>                                       <!-- [0] (Number) if the calculated percent value of a slice is less than specified here, and there are more than one such slices, they can be grouped to "The others" slice-->
     <color></color>                                           <!-- [] (hex color code) color of "The others" slice -->                                       
-    <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>                                           <!-- [Others] title of "The others" slice -->
+    <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>                                           <!-- [Others] title of "The others" slice -->
     <url></url>                                               <!-- [] url of "The others" slice -->
     <description></description>                               <!-- [] description of "The others" slice -->        
     <pull_out></pull_out>                                     <!-- [false] (true / false) whether to pull out the other slice or not --> 

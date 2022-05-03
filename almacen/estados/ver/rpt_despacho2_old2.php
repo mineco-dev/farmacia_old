@@ -6,7 +6,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
 <html>
 <head>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 
 <meta http-equiv="Content-Type" content="text/html" charset="iso-8859-1">
 <link href="../../../helpdesk.css" rel="stylesheet" type="text/css">

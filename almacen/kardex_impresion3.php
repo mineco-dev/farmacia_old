@@ -18,7 +18,7 @@ span.green {color:darkolivegreen;font-weight:bold}
 
 
 
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 </head>
 <SCRIPT language=javascript>
 function cOn(td){

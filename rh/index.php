@@ -73,7 +73,7 @@
 }
 		</script>
 
-		<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+		<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 		<link href="Canal%20Zurich_files/navigation_corporate.html" type="text/css" rel="stylesheet" id="navigation_corporate.css">
 		<link href="ifiles/box_ie_MCMS.html" type="text/css" rel="stylesheet" id="box_ie_MCMS.css">
 		<link href="ifiles/navigation.css" rel="stylesheet" type="text/css" media="screen">

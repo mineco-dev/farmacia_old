@@ -36,7 +36,7 @@ $html = '
 <html xmlns=\'http://www.w3.org/1999/xhtml\' xml:lang=\'es\' lang=\'es\'>
 <head profile=\'http://gmpg.org/xfn/11\'>
 	<meta http-equiv=\'Content-Type\' content=\'text/html; charset=UTF-8\' />
-				<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+				<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 				<style>
 					@page{ margin: 20px; }
 					body { margin: 2px;font-family: serif; font-size: 10px; }

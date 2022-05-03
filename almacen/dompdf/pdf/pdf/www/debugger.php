@@ -5,7 +5,7 @@ $files = glob("test/*.{html,htm,php}", GLOB_BRACE);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+  <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
   <script type="text/javascript" src="jquery-1.4.2.js"></script>
   
   <script type="text/javascript">

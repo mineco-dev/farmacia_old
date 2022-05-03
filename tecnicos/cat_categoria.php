@@ -24,7 +24,7 @@ function Refrescar(form)
 	form.txt_categoria.focus(); 
 }
 </script>
-<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
+<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <link href="../helpdesk.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
