@@ -10,8 +10,8 @@
 var defaultEmptyOK = false
 var checkNiceness = true;
 var digits = "0123456789";
-var lowercaseLetters = " \t\n\rabcdefghijklmnopqrstuvwxyzáéíóúñü"
-var uppercaseLetters = " \t\n\rABCDEFGHIJKLMNOPQRSTUVWXYZÁÉÍÓÚÑ"
+var lowercaseLetters = " \t\n\rabcdefghijklmnopqrstuvwxyzï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
+var uppercaseLetters = " \t\n\rABCDEFGHIJKLMNOPQRSTUVWXYZï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
 var whitespace = " \t\n\r";
 var phoneChars = "()-+ ";
 var mMessage = "Error: Tiene que completar todos los campos"
@@ -20,8 +20,8 @@ var pAlphanumeric = "ingrese un texto que contenga solo letras y/o numeros";
 var pAlphabetic   = "ingrese un texto que contenga solo letras";
 var pInteger = "ingrese un numero entero";
 var pNumber = "ingrese un numero";
-var pPhoneNumber = "ingrese un número de teléfono";
-var pEmail = "Ingrese una dirección de correo valida";
+var pPhoneNumber = "ingrese un nÃºmero de telÃ©fono";
+var pEmail = "Ingrese una direcciÃ³n de correo valida";
 var pName = "ingrese un texto que contenga solo letras, numeros o espacios";
 var pNice = "no puede utilizar comillas aqui";
 

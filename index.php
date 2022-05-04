@@ -44,7 +44,10 @@ else
 	<title>ASEGGYS- SISTEMA FARMACIA MINECO</title>
     <style type="text/css">
 body{
-	background: url("images/fondoprueva5.jpg");	
+	background: url("images/FONDO_CELESTE.jpg");	
+	background-position: center;
+	background-attachment: fixed;
+	background-size:cover;
 }
 a{
 	cursor: pointer !important; 
@@ -59,7 +62,7 @@ a:hover{text-decoration:none}
 <body >
 <nav>
 	<ul>			
-		<li><a href="administrativa.php" class="menu">FARMACIA</a></li>		
+		<li><a href="administrativa.php" class="menu" >FARMACIA</a></li>		
 	</ul>
 </nav>
 <div align="center" class="Titulo">SISTEMA FARMACIA MINECO </div>

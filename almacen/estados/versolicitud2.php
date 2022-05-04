@@ -1,7 +1,7 @@
 <?PHP
   ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
+  //ini_set('display_startup_errors', 1);
+  //error_reporting(E_ALL);
 	require('../includes/cnn/inc_header.inc');
 	$dbms=new DBMS(conectardb($almacen));	
 	$dbms->bdd=$database_cnn;
@@ -67,7 +67,7 @@ alert("hola");
 }
 </script>
 <script language=javascript src=../includes/FormCheck.js></script>
-<SCRIPT>
+<script>
 function trim(s){
 	s = s.replace(/\s+/gi, ''); //sacar espacios repetidos dejando solo uno
 	s = s.replace(/^\s+|\s+$/gi,''); //sacar espacios blanco principio y final
@@ -106,7 +106,7 @@ function imprimir()
 		}
 	}
 }
-</SCRIPT>
+</script>
 <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="HojaEstilo.css" rel="stylesheet" type="text/css" />

@@ -152,7 +152,7 @@ function verificar (form) {
 			alert("Debe ingresar la descripcion de la información a solicitar");
 		}else
 		{
-			if (confirm('�Esta seguro de guardar estos datos?')) form.submit();
+			if (confirm('¿Esta seguro de guardar estos datos?')) form.submit();
 		}
 	}catch (ee)	
 	{
