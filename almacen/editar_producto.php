@@ -20,7 +20,8 @@ if (isset($_REQUEST["id"]))
 			$medida=$row["codigo_medida"];
 			
 			$estado=$row["codigo_estado"];
-			$uso=$row["uso"];					
+			$uso=$row["uso"];	
+			$cant_min=$row["existencia_minima"];				
 		}
 	
 }
@@ -207,12 +208,38 @@ function Refrescar(form)
 					echo('</select>');				
 					$free_result($res_qry_estado);
 				?>
-</span></td>
+				</span></td>
                 <td>&nbsp;</td>
               </tr>
-              <tr align="center">
-                <td height="25" colspan="3"><span class="titulomenu">código de catálogo MINFIN</span>                <textarea name="txt_uso" cols="70" id="txt_uso"><?PHP echo $uso; ?></textarea></td>
+
+
+
+
+
+              <tr>
+                <td height="25px">
+					<span class="titulomenu">Descripción y/o uso</span>
+				</td>
+				<td>
+					<textarea name="txt_uso" cols="70" id="txt_uso"><?PHP echo $uso; ?></textarea>
+				</td>
               </tr>
+
+
+
+			  <tr>
+                <td height="25px">
+					<span class="titulomenu">Cantida mínima en Stock</span>
+				</td>
+				<td>
+					<input type="text" name="txt_cant_min" id="txt_cant_min" value="<?PHP echo $cant_min; ?>">
+				</td>
+              </tr>
+
+
+
+			  
+
               <tr>
                 <td height="25"><input name="bt_actualizar" onClick="Validar(this.form)" type="button" id="bt_actualizar3" value="Actualizar"></td>
                 <td width="17%" height="25"><span class="tituloproducto">

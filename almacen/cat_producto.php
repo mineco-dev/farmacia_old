@@ -388,7 +388,7 @@ function Refrescar(form)
               <tr align="center" valign="top">
                 <td height="25" colspan="3">
 					<div align="left">
-						<span class="tituloproducto">código de catálogo MINFIN
+						<span class="tituloproducto">Descrición y/o uso
                   			<input name="txt_uso" type="text" id="txt_uso" size="60">
                 		</span>
 					</div>
@@ -409,7 +409,7 @@ function Refrescar(form)
 			  </tr>
 
 
-			  
+
               <tr align="center" valign="top">
                 <td height="25" colspan="3"><p class="tituloproducto">
                   <input name="bt_guardar" onClick="Validar(this.form)" type="button" id="bt_guardar8" value="Guardar">

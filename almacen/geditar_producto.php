@@ -6,7 +6,7 @@ if (isset($_REQUEST["txt_id"]))
 		$rowid=$_REQUEST["txt_id"];
 		$producto=strtoupper(utf8_decode($_REQUEST["txt_producto"]));
 		$marca=strtoupper($_REQUEST["txt_marca"]);
-			
+		$cant_min=$_REQUEST["txt_cant_min"];
 		$uso=$_REQUEST["txt_uso"];	
 
 		$subcategoria=$_REQUEST["txt_subcategoria"];
@@ -24,7 +24,7 @@ if (isset($_REQUEST["txt_id"]))
 		conectardb($almacen);
 		$nombre_usuario=$_SESSION["user_name"];
 		$qry_actualiza="UPDATE cat_producto SET producto='$producto', marca='$marca', codigo_subcategoria='$subcategoria', codigo_medida='$medida', codigo_estado='$estado', uso='$uso', usuario_modifico='$nombre_usuario', 
-						  fecha_modificado=getdate() WHERE rowid='$rowid'";
+						  fecha_modificado=getdate(), existencia_minima='$cant_min' WHERE rowid='$rowid'";
 		$query($qry_actualiza);				
 }		
 header("Location: cat_producto.php"); 
