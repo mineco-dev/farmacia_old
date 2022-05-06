@@ -159,7 +159,7 @@ if ((form['cbo_tipo_empresa'].value) == "0"){alert('Seleccione el tipo de docume
 
 /////////////////////// FIN VALIDACIONES //////////////////////////////////////////////	
 
-if (confirm('�Asegurese de seleccionar correctamente su empresa de lo contrario podrian alterar algun dato de otra dependencia?')) form.submit();
+if (confirm('¡Asegurese de seleccionar correctamente su empresa de lo contrario podrian alterar algun dato de otra dependencia!')) form.submit();
 }
 </script>
 </html>

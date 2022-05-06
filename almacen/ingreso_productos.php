@@ -92,7 +92,7 @@ $usuario_id = ($_SESSION["user_id"]);
                                         }
                                         ?>
                                         <input class="form-control" style="width:10%;" name="txt_no" type="text"
-                                               id="txt_no" size="12" value="<?php echo $no_ingreso ?>">
+                                               id="txt_no" size="12" value="<?php echo $no_ingreso ?>" readonly>
                                     </td>
                                 </tr>
 

@@ -76,11 +76,11 @@ $success_page = "samples/permisos.php";
 //the path to validate.php
 $validate_path = "full path to validate.php";
 //login failed error message
-$login_err = '<div align="center">Su usuario o contrase�a es INCORRECTA! o su usuario se encuentra desactivado</b></div>';
+$login_err = '<div align="center">Su usuario o contraseña es INCORRECTA! o su usuario se encuentra desactivado</b></div>';
 //no fields filled in
-$empty_err = '<div align="center"><b>Usted necesita iniciar sesión con su usuario y contrase�a</b></div>';
+$empty_err = '<div align="center"><b>Usted necesita iniciar sesión con su usuario y contraseña</b></div>';
 //something entered that wasn't a letter or number error message
-$chr_err = '<div align="center"><b>Please retry</b></div>';
+$chr_err = '<div align="center"><b>Intente de nuevo</b></div>';
 //if the form is empty and the cookie isn't set
 //then display error message the return to login
 if($username == "" && $password == ""  && !isset($_SESSION["this_cookie"])){

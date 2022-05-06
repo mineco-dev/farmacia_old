@@ -62,7 +62,8 @@ a:hover{text-decoration:none}
 <body >
 <nav>
 	<ul>			
-		<li><a href="administrativa.php" class="menu" >FARMACIA</a></li>		
+		<li><a href="administrativa.php" class="menu" >FARMACIA</a></li>
+		<li><a href="informatica.php" class="menu">INFORMATICA</a></li>		
 	</ul>
 </nav>
 <div align="center" class="Titulo">SISTEMA FARMACIA MINECO </div>

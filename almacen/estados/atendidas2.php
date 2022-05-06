@@ -7,19 +7,7 @@
 </head>
 
 <body>
-   <table width="372"  align="center" >
-            <tr>
-              <td><span class="Estilo2">Busqueda Ingrese No. requisicion  </span></td>
-			  <form action="" enctype="multipart/form-data" >
-
-              <td><input type="text" name="cris" size="7"  value=""></td>
-			  
-			  <td> <input  type="submit" value="BUSCAR" >
-			   
-			  </form>
-			  </td> </td>
-            </tr>
-          </table>
+   
 		  
 		  
 

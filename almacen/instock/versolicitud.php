@@ -1,4 +1,5 @@
 <?PHP
+
 	require('../includes/cnn/inc_header.inc');
 	$dbms=new DBMS(conectardb($almacen));	
   
