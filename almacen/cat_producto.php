@@ -31,7 +31,8 @@ if (isset($_REQUEST["txt_producto"]))
 		$presentacion=$_REQUEST["cbo_medida"];
 		$categoria=$_REQUEST["cbo_categoria"];	
 		$subcategoria=$_REQUEST["cbo_subcategoria"];	
-		$estado=$_REQUEST["cbo_estado"];	
+		$estado=$_REQUEST["cbo_estado"];
+		$cant_min=$_REQUEST["txt_cant_min"];	
 		
 		$uso=$_REQUEST["txt_uso"];	
 		$qry_si_existe="select * from cat_producto where (producto='$nuevo_producto' and codigo_medida=$presentacion and marca='$marca' and codigo_categoria='$categoria' and codigo_subcategoria='$subcategoria')";
@@ -52,8 +53,8 @@ if (isset($_REQUEST["txt_producto"]))
 				$ult_cod_prod_mineco=$row_codigo_producto["ultimo_cod_prod"]+1;					
 			}
 			$nombre_usuario=$_SESSION["user_name"];			
-			$qry_producto="INSERT INTO cat_producto(codigo_categoria, codigo_subcategoria, codigo_producto, producto, marca, codigo_medida, codigo_estado, uso, activo, usuario_creo, fecha_creado) 
-							VALUES ($categoria, $subcategoria, '$ult_cod_prod_mineco', '$nuevo_producto', '$marca', $presentacion, 1, '$uso', 1,'$nombre_usuario', getdate())";
+			$qry_producto="INSERT INTO cat_producto(codigo_categoria, codigo_subcategoria, codigo_producto, producto, marca, codigo_medida, codigo_estado, uso, activo, usuario_creo, fecha_creado,existencia_minima) 
+							VALUES ($categoria, $subcategoria, '$ult_cod_prod_mineco', '$nuevo_producto', '$marca', $presentacion, 1, '$uso', 1,'$nombre_usuario', getdate(), $cant_min)";
 			$query($qry_producto);		
 								
 			
@@ -306,7 +307,10 @@ function Refrescar(form)
       </tr>
       <tr>
         <td>          <div align="left">
-            <div align="justify"><img src="../images/e05.gif" width="21" height="21"> <span class="defaultfieldname">Para ingresar un nuevo producto al cat&aacute;logo </span><b onClick="expandcontent('aleg1')" style="cursor:hand; cursor:pointer"> [Haga clic aqu&iacute;] </B><span class="defaultfieldname">por favor aseg&uacute;rese que el producto no exista, realizando previamente una b&uacute;squeda. </span></div>
+            <div align="justify"><img src="../images/e05.gif" width="21" height="21"> 
+			<span class="defaultfieldname">Para ingresar un nuevo producto al cat&aacute;logo </span>
+			<b onClick="expandcontent('aleg1')" style="cursor:hand; cursor:pointer"> [Haga clic aqu&iacute;] </B>
+			<span class="defaultfieldname">por favor aseg&uacute;rese que el producto no exista, realizando previamente una b&uacute;squeda. </span></div>
             </span></div></td>
       </tr>
       <tr>
@@ -374,16 +378,38 @@ function Refrescar(form)
                 <td height="25" colspan="3"><span class="tituloproducto">Producto</span>                  <input name="txt_producto" type="text" id="txt_subcategoria2" value="" size="75"></td>
               </tr>
               <tr>
-                <td height="25" colspan="3" style="display:none"><span class="tituloproducto">Marca
+                <td height="25" colspan="3" style="display:none">
+				<span class="tituloproducto">Marca
                   <input name="txt_marca" type="text" id="txt_marca" size="40">
-                </span>                  <div align="left"></div></td>
+                </span>                  <div align="left"></div>
+				</td>
               </tr>
               
               <tr align="center" valign="top">
-                <td height="25" colspan="3"><div align="left"><span class="tituloproducto">código de catálogo MINFIN
-                  <input name="txt_uso" type="text" id="txt_uso" size="60">
-                </span></div></td>
+                <td height="25" colspan="3">
+					<div align="left">
+						<span class="tituloproducto">código de catálogo MINFIN
+                  			<input name="txt_uso" type="text" id="txt_uso" size="60">
+                		</span>
+					</div>
+				</td>
               </tr>
+			  
+
+
+			  <tr align="center" valign="top">
+				<td height="25" colspan="3">
+					<div align="left">
+						<span class="tituloproducto">
+							Cantidad mínima Stock
+							<input type="text" name="txt_cant_min" id="cant_min">		
+						</span>						
+					</div>		
+				</td>
+			  </tr>
+
+
+			  
               <tr align="center" valign="top">
                 <td height="25" colspan="3"><p class="tituloproducto">
                   <input name="bt_guardar" onClick="Validar(this.form)" type="button" id="bt_guardar8" value="Guardar">
@@ -400,7 +426,9 @@ function Refrescar(form)
         </center></td>
       </tr>
       <tr>
-        <td><b onClick="expandcontent('aleg1')" style="cursor:hand; cursor:pointer"><span class="curriculo"><img src="../images/e05.gif" width="21" height="21"></span></b> <span class="defaultfieldname">Para realizar b&uacute;squedas puede pulsar sobre una de las letras encerradas entre [], o bien escriba el nombre o parte del mismo para realizar una b&uacute;squeda espec&iacute;fica.</span></td>
+        <td><b onClick="expandcontent('aleg1')" style="cursor:hand; cursor:pointer"><span class="curriculo">
+		<img src="../images/e05.gif" width="21" height="21"></span></b> 
+		<span class="defaultfieldname">Para realizar b&uacute;squedas puede pulsar sobre una de las letras encerradas entre [], o bien escriba el nombre o parte del mismo para realizar una b&uacute;squeda espec&iacute;fica.</span></td>
       </tr>
       <tr>
         <td>&nbsp;</td>

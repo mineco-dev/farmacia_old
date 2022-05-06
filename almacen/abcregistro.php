@@ -18,7 +18,7 @@ while($row_abc=$fetch_array($res_abc))
   
   <tr>
     <td><div align="left" class="titulomenu">Modificado por: </div></td>
-    <td align="left" class="titulomenu"><?PHP echo $modifico.' -- '.$fecha_modificado; ?>
+    <td align="left" class="titulomenu"><?PHP echo $modifico.' --> '.$fecha_modificado; ?>
     <div align="left"></div></td>
   </tr>
   <tr>

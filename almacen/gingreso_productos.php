@@ -49,6 +49,7 @@ if(isset($_SESSION["ingreso"]))
     $fecha_fact=$_POST['date1'];
     $fecha_ingreso_sis=$_POST['date2'];
     $cantidad_filas = $_POST['cantidad_filas'];
+    $lote=$_POST['lote'];
     $fecha_vence=$_POST['fecha_caducidad'];
     $bien=$_POST['bien'];
     $cant_ingresada=$_POST['ingresado'];
@@ -130,6 +131,7 @@ if(isset($_SESSION["ingreso"]))
             cantidad_ingresada,              
             costo_unidad, 
             Precio_total,
+            lote,
             fecha_vence,
             codigo_bodega,
             usuario_creo,
@@ -146,6 +148,7 @@ if(isset($_SESSION["ingreso"]))
             $cant_ingresada[$cnt],  
             $costo_unitario[$cnt], 
             $precio_total[$cnt],
+            $lote[$cnt],
             '$fecha_vence[$cnt]', 
             $codigo_bodega, 
             '$nombre_usuario', 
@@ -155,6 +158,7 @@ if(isset($_SESSION["ingreso"]))
             $codigo_empresa                              
              )";   
         $query($qry_ingreso_det);
+        //print_r($qry_ingreso_det);
         $cnt++;
     }
 
@@ -468,8 +472,9 @@ if(isset($_SESSION["ingreso"]))
                 1)";
         }
         //echo "ultimo: ".$qry_ingreso_inventario;
-        //print($qry_ingreso_inventario);
+        
         $query($qry_ingreso_inventario);
+        print_r($qry_ingreso_inventario);
         
         $cnt++;
     

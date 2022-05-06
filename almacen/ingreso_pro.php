@@ -57,6 +57,7 @@ $_SESSION["ingreso"] = true;
             <th class="title_input">Codigo</th>
             <th class="title_input">Renglon</th>
             <th class="title_input_product">Producto</th>
+            <th class="title_input">Lote</th>
             <th class="title_input">Fecha Vencimiento</th>
             <th class="title_input">Cantidad Ingresada</th>
             <th class="title_input">Precio Unitario</th>
@@ -152,6 +153,7 @@ $_SESSION["ingreso"] = true;
         fila += "<td><input name=\"bien[" + cont + "][7]\" type=\"text\" id=\"bien[" + cont + "][7]\" size=\"45\" class=\"form-control\" > </td>"
         
         
+        fila += "<td><input name=\"lote[" + cont + "]\" type=\"number\" id=\"lote[" + cont + "]\"  size=\"7\" class=\"monto form-control input_center\" ></td>"
         fila += "<td><input name=\"fecha_caducidad[" + cont + "]\" type=\"date\" id=\"fecha_caducidad[" + cont + "]\"  size=\"7\" class=\"monto form-control input_center\" ></td>"
 
 
@@ -285,31 +287,34 @@ $_SESSION["ingreso"] = true;
             $(this).find('td').eq(12).find('input').attr("id", "bien[" + num + "][4]");//
             $(this).find('td').eq(12).find('input').attr("name", "bien[" + num + "][4]");
 
-            $(this).find('td').eq(7).find('input').attr("id", "fecha_caducidad[" + num + "]");//fecha de vencimiento
-            $(this).find('td').eq(7).find('input').attr("name", "fecha_caducidad[" + num + "]");//fecha de vencimiento
+            $(this).find('td').eq(7).find('input').attr("id", "lote[" + num + "]");//fecha de vencimiento
+            $(this).find('td').eq(7).find('input').attr("name", "lote[" + num + "]");//fecha de vencimiento
+
+            $(this).find('td').eq(8).find('input').attr("id", "fecha_caducidad[" + num + "]");//fecha de vencimiento
+            $(this).find('td').eq(8).find('input').attr("name", "fecha_caducidad[" + num + "]");//fecha de vencimiento
            
 
-            $(this).find('td').eq(8).find('input').attr("id", "ingresado[" + num + "]");
-            $(this).find('td').eq(8).find('input').attr("name", "ingresado[" + num + "]");
-            $(this).find('td').eq(8).find('input').attr("onblur", "suma(" + num + ");");
-
-
-            $(this).find('td').eq(9).find('input').attr("id", "costo_unitario[" + num + "]");
-            $(this).find('td').eq(9).find('input').attr("name", "costo_unitario[" + num + "]");
+            $(this).find('td').eq(9).find('input').attr("id", "ingresado[" + num + "]");
+            $(this).find('td').eq(9).find('input').attr("name", "ingresado[" + num + "]");
             $(this).find('td').eq(9).find('input').attr("onblur", "suma(" + num + ");");
 
 
-            $(this).find('td').eq(10).find('input').attr("id", "precio_total[" + num + "]");
-            $(this).find('td').eq(10).find('input').attr("name", "precio_total[" + num + "]");
+            $(this).find('td').eq(10).find('input').attr("id", "costo_unitario[" + num + "]");
+            $(this).find('td').eq(10).find('input').attr("name", "costo_unitario[" + num + "]");
+            $(this).find('td').eq(10).find('input').attr("onblur", "suma(" + num + ");");
 
 
-            $(this).find('td').eq(11).attr("onclick", "seleccionarFila(id, 'check" + num + "');");
-            $(this).find('td').eq(11).attr("id", "fila" + num + "");
-            $(this).find('td').eq(11).find('input').attr("id", "check" + num + "");
+            $(this).find('td').eq(11).find('input').attr("id", "precio_total[" + num + "]");
+            $(this).find('td').eq(11).find('input').attr("name", "precio_total[" + num + "]");
 
 
-            $(this).find('td').eq(12).find('input').attr("id", "precio_total1[" + num + "]");
-            $(this).find('td').eq(12).find('input').attr("name", "precio_total1[" + num + "]");
+            $(this).find('td').eq(12).attr("onclick", "seleccionarFila(id, 'check" + num + "');");
+            $(this).find('td').eq(12).attr("id", "fila" + num + "");
+            $(this).find('td').eq(12).find('input').attr("id", "check" + num + "");
+
+
+            $(this).find('td').eq(13).find('input').attr("id", "precio_total1[" + num + "]");
+            $(this).find('td').eq(13).find('input').attr("name", "precio_total1[" + num + "]");
 
 
             $(this).attr("id", "fila" + num + "");

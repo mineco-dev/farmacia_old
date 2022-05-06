@@ -84,7 +84,7 @@ function Refrescar(form)
 <div align="left">
   <table width="100%"  border="0">
     <tr>
-      <td width="7%"><a href="producto.php"><img src="../images/iconos/ico_izquierda.gif" alt="Volver a pantalla anterior" width="58" height="30" border="0"></a></td>
+      <td width="7%"><a href="cat_producto.php"><img src="../images/iconos/ico_izquierda.gif" alt="Volver a pantalla anterior" width="58" height="30" border="0"></a></td>
       <td width="93%"><div align="center"><span class="titulocategoria">Modificaci&oacute;n de Productos</span></div></td>
     </tr>
     <tr>
