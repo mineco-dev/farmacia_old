@@ -1,10 +1,10 @@
 <?PHP
 
-	$myserver="server_appl";
+	$myserver="128.5.8.85";
 	//print(server_appl);
-	$myuser="test2010";
-	$mypass="test2010";
-	$mydb="helpdesk";
+	$myuser="farmacia";
+	$mypass="DTIdesa@2K271.";
+	$mydb="helpdesk_farmacia";
 
 /*	$myserver="me-s-portal";
 	$myuser="test2010";

@@ -385,7 +385,7 @@ function validar_subformularios(form)
 		//{
 		//	ban = 0; for (i=1;i<8;i++) { if (valor(form['campo['+i+']'])) ban = 1; } if (ban == 0) {alert('Escriba el nombre del campo'); return};
 		//	ban = 0; for (i=1;i<8;i++) { if (valor(form['tipocampo['+i+']'])) ban = 1; } if (ban == 0) {alert('Seleccione el tipo de campo'); return};
-		//	ban = 0; for (i=1;i<8;i++) { if (valor(form['tamano['+i+']'])) ban = 1; } if (ban == 0) {alert('Escriba el tama�o del campo'); return};			
+		//	ban = 0; for (i=1;i<8;i++) { if (valor(form['tamano['+i+']'])) ban = 1; } if (ban == 0) {alert('Escriba el TAMAÑO del campo'); return};			
 		//	ban = 0; for (i=1;i<8;i++) { if (valor(form['etiqueta['+i+']'])) ban = 1; } if (ban == 0) {alert('Escriba la etiqueta del campo'); return};			
 		//	ban = 0; for (i=1;i<8;i++) { if (valor(form['orden['+i+']'])) ban = 1; } if (ban == 0) {alert('Escriba el numero de orden del campo'); return};			
 		//	ban = 0; for (i=1;i<8;i++) { if (form['tipocampo['+i+']']=='2') && (valor(form['tborigen['+i+']'])) ban = 1; } if (ban == 0) {alert('Escriba la tabla origen de los datos del combo'); return};			

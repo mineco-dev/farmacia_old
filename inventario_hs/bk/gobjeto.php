@@ -98,7 +98,7 @@ require("../includes/sqlcommand.inc");
 						//compruebo si las caracter�sticas del archivo son las que deseo 		
 						if (((strpos($tipo_archivo, "exe") || strpos($tipo_archivo, "com") || strpos($tipo_archivo, "bat")) && ($tamano_archivo < 25024000))) 
 						{ 
-							$mensaje_error= "La extensión o el tama�o de los archivos no es correcta. <br><br><table><tr><td><li>Se permiten archivos .gif - .jpg - .pdf<br><li>se permiten archivos de (25 MB) m�ximo.</td></tr></table>"; 
+							$mensaje_error= "La extensión o el TAMAÑO de los archivos no es correcta. <br><br><table><tr><td><li>Se permiten archivos .gif - .jpg - .pdf<br><li>se permiten archivos de (25 MB) m�ximo.</td></tr></table>"; 
 						}
 						else
 						{ 

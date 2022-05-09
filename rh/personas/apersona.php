@@ -68,7 +68,7 @@ $opnacionalidad = 1;
 /*
 		if (!((strpos($tipo_archivo, "gif") || strpos($tipo_archivo, "jpeg") || strpos($tipo_archivo, "jpg") || strpos($tipo_archivo, "pdf")) && ($tamano_archivo <= 500000 ))) 
 		{ 
-			echo "La extensión o el tama�o de los archivos no es correcta. <br><br><table><tr><td><li>Se permiten archivos .gif o .jpg<br><li>se permiten archivos de 500 Kb m�ximo.</td></tr></table>"; 
+			echo "La extensión o el TAMAÑO de los archivos no es correcta. <br><br><table><tr><td><li>Se permiten archivos .gif o .jpg<br><li>se permiten archivos de 500 Kb m�ximo.</td></tr></table>"; 
 		}
 		else
 		{

@@ -1,8 +1,8 @@
 <?PHP
-	$myserver="server_appl";
-	$myuser="aseggys";
-	$mypass="As3ggys2009";
-	$mydb="rrhh";
+	$myserver="128.5.8.85";
+	$myuser="farmacia";
+	$mypass="DTIdesa@2K271.";
+	$mydb="rrhh_farmacia";
 
 $s=mssql_connect($myserver, $myuser,$mypass) or die ("no se pudo conectar al servidor $myserver");
 $d=mssql_select_db($mydb, $s);

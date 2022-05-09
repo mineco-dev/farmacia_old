@@ -132,9 +132,9 @@ if  (( !$_SESSION['usr_val']) || ($_SESSION['usr_val'] == 'N') || ($_SESSION['us
 	  textoArea = textoArea.replace(variosBlancos," ");
 		 if(textoArea.length >= tamax)
 		 { 
-		 alert('Has superado el tama�o m�ximo permitido! El maximo es: '+tamax+' letras.'); 
-//		 document.write('Has superado el tama�o m�ximo permitido! El maximo es: '+tamax+' letras.'); 
-		 //alert('Has superado el tama�o m�ximo permitido! El maximo es: '+tamax+' y tu introduciste: '+numeroCaracteres+' letras.'); 
+		 alert('Has superado el TAMAÑO m�ximo permitido! El maximo es: '+tamax+' letras.'); 
+//		 document.write('Has superado el TAMAÑO m�ximo permitido! El maximo es: '+tamax+' letras.'); 
+		 //alert('Has superado el TAMAÑO m�ximo permitido! El maximo es: '+tamax+' y tu introduciste: '+numeroCaracteres+' letras.'); 
 		 //alert ('Cantidad: 'numeroCaracteres);
 		 }
 	 }

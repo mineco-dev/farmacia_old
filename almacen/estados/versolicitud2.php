@@ -1,8 +1,10 @@
 <?PHP
- 
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
 	require('../includes/cnn/inc_header.inc');
 	$dbms=new DBMS(conectardb($almacen));	
-	$dbms->bdd=$database_cnn;
+	//$dbms->bdd=$database_cnn;
 	require('../includes/funciones.php');
   //$ver= $_POST["ver"]
 ?>

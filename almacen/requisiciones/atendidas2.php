@@ -1,3 +1,13 @@
+<?php
+if(!isset($_SESSION)) 
+{ 
+	session_start(); 
+}
+$usuario_id = $_SESSION["user_id"];
+// $mtstatus = $_POST['mtstatus'];
+// $usuario_id = $_POST['usuario_id'];
+//print($usuario_id);
+?>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -7,14 +17,7 @@
 </head>
 
 <body>
-<?php
-session_start();
-$usuario_id = $_SESSION["user_id"];
-// $mtstatus = $_POST['mtstatus'];
-// $usuario_id = $_POST['usuario_id'];
-//print($usuario_id);
 
-?>
 <?php
 //$jefe = ($_POST['cbo_jefe']); 
 

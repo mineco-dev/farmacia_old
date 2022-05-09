@@ -94,7 +94,7 @@ require("../../includes/sqlcommand.inc");
 							//compruebo si las caracter�sticas del archivo son las que deseo 		
 							if ((($extension=="EXE") || ($extension=="COM") || ($extension=="BAT") || ($extension=="PHP")) && ($tamano_archivo < 25024000)) 
 							{ 
-								echo '<tr><td class="titulocategoria" colspan="3" align="center">La extensión o el tama�o de los archivos no es correcta en el campo '.$campo[$cnt].'. <br><br><table><tr><td><li>Se permiten archivos .gif - .jpg - .pdf<br><li>se permiten archivos de (10 MB) m�ximo.</td></tr>'; 
+								echo '<tr><td class="titulocategoria" colspan="3" align="center">La extensión o el TAMAÑO de los archivos no es correcta en el campo '.$campo[$cnt].'. <br><br><table><tr><td><li>Se permiten archivos .gif - .jpg - .pdf<br><li>se permiten archivos de (10 MB) m�ximo.</td></tr>'; 
 							}
 							else
 							{ 								

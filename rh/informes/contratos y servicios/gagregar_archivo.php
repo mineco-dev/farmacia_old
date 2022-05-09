@@ -22,7 +22,7 @@ $descripcion = $_POST["txt_titulo"];
 		{ 
 			echo '<br><br>';
 			echo '<table width="90%" border="0" align="center">';				
-			echo '<tr><td  align="center" class="error">La extensión o el tama�o de los archivos no es correcta. Se permiten archivos .gif - .jpg - .pdf</td></tr>';
+			echo '<tr><td  align="center" class="error">La extensión o el TAMAÑO de los archivos no es correcta. Se permiten archivos .gif - .jpg - .pdf</td></tr>';
 			echo '<tr><td  align="center">Se permiten archivos de 10240 Kb m�ximo (10 MB).</td></tr>';
 			echo '<tr><td  align="center">&nbsp; </td></tr>';			
 			echo '</table>';								

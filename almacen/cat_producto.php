@@ -32,11 +32,14 @@ if (isset($_REQUEST["txt_producto"]))
 		$categoria=$_REQUEST["cbo_categoria"];	
 		$subcategoria=$_REQUEST["cbo_subcategoria"];	
 		$estado=$_REQUEST["cbo_estado"];
-		$cant_min=$_REQUEST["txt_cant_min"];	
-		
+		$cant_min=$_REQUEST["txt_cant_min"];		
 		$uso=$_REQUEST["txt_uso"];	
+
+
 		$qry_si_existe="select * from cat_producto where (producto='$nuevo_producto' and codigo_medida=$presentacion and marca='$marca' and codigo_categoria='$categoria' and codigo_subcategoria='$subcategoria')";
+		
 		$res_qry_si_existe=$query($qry_si_existe);	
+		print_r($res_qry_si_existe);
 		$existe=false;	
 		while($row_subcategoria=$fetch_array($res_qry_si_existe))
 		{
@@ -247,7 +250,7 @@ function Validar(form)
  }*/
 //
 // { 
-//	alert("La existencia m�xima debe ser igual o superior a la existencia m�nima"); 
+//	alert("La existencia máxima debe ser igual o superior a la existencia mínima"); 
 //	form.txt_maxima.focus(); 
 //	return;
 //}
@@ -300,7 +303,7 @@ function Refrescar(form)
   <form name="form1" method="post" action="">
     <table width="100%" border="0" bordercolor="#ECE9D8">
       <tr>
-        <td class="titulocategoria"><div align="center">INGRESO DE NUEVOS PRODUCTOS AL CAT&Aacute;LOGO</div></td>
+        <td class="titulocategoria"><div align="center">INGRESO DE NUEVOS PRODUCTOS AL CATÁLOGO</div></td>
       </tr>
       <tr>
         <td>&nbsp;</td>
@@ -435,7 +438,7 @@ function Refrescar(form)
       </tr>
       <tr>
         <td><div align="left" class="titulocategoria">
-          <div align="center">CONSULTA DE  PRODUCTOS EXISTENTES EN EL CAT&Aacute;LOGO </div>
+          <div align="center">CONSULTA DE  PRODUCTOS EXISTENTES EN EL CATÁLOGO </div>
         </div></td>
       </tr>
       <tr>

@@ -297,14 +297,14 @@ A partir de entonces, podr� usarse normalmente:
 $pdf<font class="kw">-&gt;</font>AddFont<font class="kw">(</font><font class="str">'Comic'</font><font class="kw">,</font><font class="str">'I'</font><font class="kw">,</font><font class="str">'comici.php'</font><font class="kw">);</font><br>
 </font>
 </code></NOBR></TD></TR></TABLE><P></P>
-<H4 CLASS='st'>Reduciendo el tama�o de las fuentes TrueType</H4>
+<H4 CLASS='st'>Reduciendo el TAMAÑO de las fuentes TrueType</H4>
 Los ficheros de fuentes son con frecuencia bastante voluminosos (m�s de 100, incluso 200 KB);
 esto se debe a que contienen los caracteres correspondientes a muchas codificaciones. La compresión
 zlib los reduce, pero contin�an siendo bastante grandes. Existe una t�cnica para reducirlos a�n m�s.
 Consiste en convertir la fuente a formato Type1 con ttf2pt1 especificando la codificación que le interesa;
 todos los dem�s caracteres ser�n omitidos.
 <BR>
-Por ejemplo, la fuente arial.ttf que viene con Windows 98 tiene un tama�o de 267 KB (contiene 1296 caracteres).
+Por ejemplo, la fuente arial.ttf que viene con Windows 98 tiene un TAMAÑO de 267 KB (contiene 1296 caracteres).
 Despu�s de comprimirla, pesa 147 KB. Convirt�mosla a Type1 manteniendo s�lo los caracteres cp1250:
 <BR>
 <BR>
@@ -317,6 +317,6 @@ arial.pfn y arial.afm. El fichero arial.pfb ocupa s�lo 35 KB, 30 KB despu�s 
 <BR>
 Es incluso posible ir m�s all�. Si s�lo est� usted interesado en un subconjunto de la codificación (es
 probable que no necesite los 217 caracteres), puede abrir el fichero .map y quitar las l�neas que
-no le interesen. Consecuentemente, el tama�o del fichero disminuir�.
+no le interesen. Consecuentemente, el TAMAÑO del fichero disminuir�.
 </BODY>
 </HTML>

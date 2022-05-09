@@ -14,7 +14,7 @@
 <body> 
 <?php 
 $link = mssql_connect("server_appl","sa","Sup3rus3r2009"); 
-mssql_select_db("almacen",$link); 
+mssql_select_db("almacen_farmacia",$link); 
 $result = mssql_query("SELECT nombres, departamento FROM empleado", $link); 
 if (mssql_num_rows($result)){ 
   echo "<table border = '1'> 
