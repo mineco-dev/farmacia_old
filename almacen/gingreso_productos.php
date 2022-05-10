@@ -441,7 +441,9 @@ if(isset($_SESSION["ingreso"]))
             $existencia_actual=$row["existencia"]+$cant_ingresada[$cnt];
             $qry_ingreso_inventario ="UPDATE tb_inventario_det 
             SET existencia=$existencia_actual, 
-            activo=1 
+            activo=1, 
+            lote=$lote[$cnt],
+            fecha_vence=$fecha_vence[$cnt]
             WHERE codigo_empresa=$codigo_empresa 
             AND codigo_bodega=$codigo_bodega 
             AND codigo_producto=$codigoproducto 
@@ -461,7 +463,9 @@ if(isset($_SESSION["ingreso"]))
                 codigo_producto, 
                 codigo_categoria, 
                 codigo_subcategoria, 
-                activo)
+                activo,
+                lote,
+                fecha_vence)
             VALUES (
                 $cant_ingresada[$cnt],
                 $codigo_empresa, 
@@ -469,12 +473,14 @@ if(isset($_SESSION["ingreso"]))
                 $codigoproducto, 
                 $categoria,
                 $subcategoria, 
-                1)";
+                1,
+                $lote[$cnt],
+                $fecha_vence[$cnt])";
         }
         //echo "ultimo: ".$qry_ingreso_inventario;
         
         $query($qry_ingreso_inventario);
-        print_r($qry_ingreso_inventario);
+        //print_r($qry_ingreso_inventario);
         
         $cnt++;
     

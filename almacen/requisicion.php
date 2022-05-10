@@ -1,4 +1,7 @@
 <?php
+/* ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL); */
 require "../includes/sqlcommand.inc";
 require '../includes/funciones.php';
 
@@ -8,7 +11,7 @@ $grupo_id = ($_SESSION["group_id"]); // Codigo del grupo
 $usuario_nombre = $_SESSION["user_name"];
 $dependencia = $_SESSION["departament_id"];
 $codigo_grupo = $_SESSION["codigo_grupo"];
-//print($codigo_grupo);
+print($codigo_grupo);
 
 $empresa = ($_POST['cbo_tipo_empresa']);
 
@@ -134,7 +137,7 @@ if (window.document.form1.opnacionalidad[0].checked)
                   <td width="627" colspan="2">
                    <?php
 
-conectardb($farmacia);
+conectardb($almacen);
 
 // $qry_tipo_estatus="select max(codigo_requisicion_enc + 1) as ultima_requisicion from tb_requisicion_enc";
 $qry_tipo_estatus = "select isnull(max(codigo_requisicion_enc)+ 1,0+1) as ultima_requisicion from tb_requisicion_enc";
@@ -165,7 +168,7 @@ $free_result($res_qry_tipo_estatus);
                 <td>Dependencia</td>
                 <td colspan="2">
 <?php
-  conectardb($farmacia);
+  conectardb($almacen);
   $qry_empresa = "select * from direccion where activo = 1";
   $res_qry_empresa = $query($qry_empresa);
 
@@ -303,6 +306,9 @@ $free_result($res_qry_tipo_estatus);
       if ($empresa == "1") {
 
     include "requisicion_pro_diaco.php";
+    //include "requisicion_det_micro.php";
+    //include "requisicion_det_mercantil.php";
+    
 }
 
 if ($empresa == "2") {
@@ -367,7 +373,7 @@ var enviodocumento;
 $(document).on('ready',function (){
     $('#Temporal').click(function(){
        document.getElementById("T_Accion").value = 1;
-       if (confirm('�Esta seguro de guardar temporalmente esta requisición?')) {
+       if (confirm('¿Esta seguro de guardar temporalmente esta requisición?')) {
           document.getElementById("Temporal").value = "Guardar Temporal";
             //if (document.getElementById("T_Accion").value == 1) {
 
@@ -469,7 +475,7 @@ for(i = 0; i < 100; i++)
   {alert('Falta el detalle de los productos ingresados'); return};
 /////////////////////// FIN VALIDACIONES //////////////////////////////////////////////
 
-if (confirm('�Esta seguro de guardar estos datos?')) form.submit();
+if (confirm('¿Esta seguro de guardar estos datos?')) form.submit();
 }
 </script>
 </html>

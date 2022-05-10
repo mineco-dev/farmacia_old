@@ -134,7 +134,7 @@ var id_fila_selected=[];
 		
 		var fila = "<tr class=\"selected\" id=\"fila"+cont+"\" >";
 		fila += "<td id=\"cantidad\">"+cont+"</td>"
-		fila += "<td ><a href=\"javascript:void(0)\" onDblClick=\"buscar=window.open(\'producto.php?tipo=bien&posi="+cont+"\',\'Buscar4\',\'width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250\'); return false;\"><input  id=\"bien["+cont+"][1]\" type=\"text\" value=\"\"  alt=\"Doble clic para consultar el catalogo\" style=\"width:100%\" class=\"form-control\"></a></td>"
+		fila += "<td ><a href=\"javascript:void(0)\" onClick=\"buscar=window.open(\'producto.php?tipo=bien&posi="+cont+"\',\'Buscar4\',\'width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250\'); return false;\"><input  id=\"bien["+cont+"][1]\" type=\"text\" value=\"\"  alt=\"Doble clic para consultar el catalogo\" style=\"width:100%\" class=\"form-control\"></a></td>"
 		fila += "<td><input style=\"border:none;background:#fff\" id=\"bien["+cont+"][7]\" type=\"text\" size=\"70%\"  disabled></td>"
 		fila += "<td><input  id=\"bien["+cont+"][5]\" type=\"text\"  style=\"width:100%;border:none;background:#fff\" disabled></td>"
 		fila += "<td><input id=\"bien["+cont+"][6]\" type=\"text\"  style=\"width:100%;border:none;background:#fff\" disabled></td>"

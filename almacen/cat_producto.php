@@ -39,7 +39,7 @@ if (isset($_REQUEST["txt_producto"]))
 		$qry_si_existe="select * from cat_producto where (producto='$nuevo_producto' and codigo_medida=$presentacion and marca='$marca' and codigo_categoria='$categoria' and codigo_subcategoria='$subcategoria')";
 		
 		$res_qry_si_existe=$query($qry_si_existe);	
-		print_r($res_qry_si_existe);
+		
 		$existe=false;	
 		while($row_subcategoria=$fetch_array($res_qry_si_existe))
 		{

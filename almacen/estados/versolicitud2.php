@@ -1,7 +1,4 @@
 <?PHP
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
 	require('../includes/cnn/inc_header.inc');
 	$dbms=new DBMS(conectardb($almacen));	
 	//$dbms->bdd=$database_cnn;
@@ -125,18 +122,20 @@ function imprimir()
       <table width="95%" border="0" align="center">
         <tr>
           <td>
-          <?PHP
-		  	$mensaje = "";
-          	if ($ver==1) $mensaje = "<img src=\"imagenes/led_circle_red.png\"> Solicitadas";
-          			print $mensaje;
-		  ?>          </td>
+            <?PHP
+              $ver = $_REQUEST["ver"];
+              $mensaje = "";
+                if ($ver==1) $mensaje = "<img src=\"imagenes/led_circle_red.png\"> Solicitadas";
+                  print $mensaje;
+            ?>          
+          </td>
         </tr>
         <tr>
           <td>
           <?PHP
           	if ($ver==1) $mtstatus = "3";  	  
           
-		   include("atendidas2.php"); 
+		          include("atendidas2.php"); 
           ?>          </td>
         </tr>
       </table>

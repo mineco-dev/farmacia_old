@@ -188,11 +188,6 @@ function Refrescar(form)
 					if ($_REQUEST["txt_buscar"]!="")
 					{
 						$busqueda=strtoupper($_REQUEST["txt_buscar"]);					
-						// $consulta = "SELECT distinct     p.rowid, (p.producto +' - '+ p.marca +' EN '+ m.unidad_medida) as producto,  p.codigo_subcategoria,
-						// p.codigo_categoria,  p.activo,  p.codigo_producto, p.uso
-						// FROM     cat_producto p
-						// INNER JOIN cat_medida m ON p.codigo_medida = m.codigo_medida 
-						// where (p.producto like '%$busqueda%' or p.uso like '%$busqueda%')";
 						$consulta = "SELECT  p.rowid ,(p.producto +' - '+ p.marca +' EN '+ cat_medida.unidad_medida) as producto,
 						p.codigo_subcategoria, p.codigo_categoria, 
 						p.activo, p.codigo_producto, p.uso, tb_inventario.existencia
@@ -257,6 +252,8 @@ function Refrescar(form)
 								WHERE tb_inventario.existencia >= 1  and tb_inventario.codigo_bodega= 8";
 
 						}
+
+						echo $consulta;
 						conectardb($almacen);
 						$result=$query($consulta);
 						$i = 0;				
@@ -271,7 +268,7 @@ function Refrescar(form)
 
 							echo '<tr class='.$clase.'>';
 							echo "<td class='boton'><center><img src=\"../images/iconos/ico_ir.gif\" border=\"0\" alt=\"Seleccionar esta categoria\"></a></center></td>";					
-							echo '<td>'.$row["codigo_producto"].'</td><td>'.$row["producto"].'</td><td style="display:none;">'.$row["codigo_categoria"].'</td><td style="display:none;">'.$row["codigo_subcategoria"].'</td><td style="display:none;" >'.$row["rowid"].'</td></tr>';	
+							echo '<td>'.$row["codigo_producto"].'</td><td>'.utf8_encode($row["producto"]).'</td><td style="display:none;">'.$row["codigo_categoria"].'</td><td style="display:none;">'.$row["codigo_subcategoria"].'</td><td style="display:none;" >'.$row["rowid"].'</td></tr>';	
 
 					// echo '<tr class='.$clase.'>';
 					// echo "<td><a href=\"javascript:void(0)\" onClick=\"window.opener.document.getElementById('$tipo"."[".$posi."][1]').value = '$completo'; 

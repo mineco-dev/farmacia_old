@@ -32,6 +32,8 @@ function conectardb($grupo_rol)
 		require_once( __DIR__ . '/../connection/helpdesk.php');
 	}
 }
+
+
 function permisosdb($grupo_rol)
 {		
 	if (isset($_SESSION["param_conexion"]))

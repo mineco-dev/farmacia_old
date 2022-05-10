@@ -156,14 +156,14 @@ function Refrescar(form)
           <div align="center">FORMULARIO PARA B&Uacute;SQUEDA DE PRODUCTOS </div>
         </div></td>
       </tr>
-      <tr>
+      <tr>	
         <td><center>
             </center></td>
       </tr>
       <tr>
         <td>        <div align="left" class="Estilo1">
           <div align="left">
-            <p><strong><strong>            [<a href="producto_ingreso.php?in=A" alt="Muestra los registros que inician con A">A</a>] [<a href="producto_ingreso.php?in=B">B</a>] [<a href="producto_ingreso.php?in=C">C</a>] [<a href="producto_ingreso.php?in=D">D</a>] [<a href="producto_ingreso.php?in=E">E</a>] [<a href="producto_ingreso.php?in=F">F</a>] [<a href="producto_ingreso.php?in=G">G</a>] [<a href="producto_ingreso.php?in=H">H</a>] [<a href="producto_ingreso.php?in=I">I</a>] [<a href="producto_ingreso.php?in=J">J</a>] [<a href="producto_ingreso.php?in=K">K</a>] [<a href="producto_ingreso.php?in=L">L</a>] [<a href="producto_ingreso.php?in=M">M</a>] [<a href="producto_ingreso.php?in=N">N</a>] [<a href="producto_ingreso.php?in=O">O</a>] [<a href="producto_ingreso.php?in=P">P</a>] [<a href="producto_ingreso.php?in=Q">Q</a>] [<a href="producto_ingreso.php?in=R">R</a>] [<a href="producto_ingreso.php?in=S">S</a>] [<a href="producto_ingreso.php?in=T">T</a>] [<a href="producto_ingreso.php?in=U">U</a>] [<a href="producto_ingreso.php?in=V">V</a>] [<a href="producto_ingreso.php?in=W">W</a>] [<a href="producto_ingreso.php?in=X">X</a>] [<a href="producto_ingreso.php?in=Y">Y</a>] [<a href="producto_ingreso.php?in=Z">Z</a>] <a href="producto_ingreso.php?in=all">[TODO]</a>
+            <p><strong><strong>            [<a href="producto.php?in=A" alt="Muestra los registros que inician con A">A</a>] [<a href="producto_ingreso.php?in=B">B</a>] [<a href="producto_ingreso.php?in=C">C</a>] [<a href="producto_ingreso.php?in=D">D</a>] [<a href="producto_ingreso.php?in=E">E</a>] [<a href="producto_ingreso.php?in=F">F</a>] [<a href="producto_ingreso.php?in=G">G</a>] [<a href="producto_ingreso.php?in=H">H</a>] [<a href="producto_ingreso.php?in=I">I</a>] [<a href="producto_ingreso.php?in=J">J</a>] [<a href="producto_ingreso.php?in=K">K</a>] [<a href="producto_ingreso.php?in=L">L</a>] [<a href="producto_ingreso.php?in=M">M</a>] [<a href="producto_ingreso.php?in=N">N</a>] [<a href="producto_ingreso.php?in=O">O</a>] [<a href="producto_ingreso.php?in=P">P</a>] [<a href="producto_ingreso.php?in=Q">Q</a>] [<a href="producto_ingreso.php?in=R">R</a>] [<a href="producto_ingreso.php?in=S">S</a>] [<a href="producto_ingreso.php?in=T">T</a>] [<a href="producto_ingreso.php?in=U">U</a>] [<a href="producto_ingreso.php?in=V">V</a>] [<a href="producto_ingreso.php?in=W">W</a>] [<a href="producto_ingreso.php?in=X">X</a>] [<a href="producto_ingreso.php?in=Y">Y</a>] [<a href="producto_ingreso.php?in=Z">Z</a>] <a href="producto_ingreso.php?in=all">[TODO]</a>
                 </strong></strong></p>
             <p><strong><strong>
                 <input name="txt_buscar" type="text" id="txt_buscar2" size="20">
@@ -186,10 +186,10 @@ function Refrescar(form)
 				{
 				$busqueda=strtoupper($_REQUEST["txt_buscar"]);					
 				$consulta = "SELECT     (p.producto +' - '+ p.marca +' EN '+ m.unidad_medida) as producto, p.rowid, p.codigo_subcategoria,
-p.codigo_categoria,  p.activo, p.codigo_producto, p.uso
-FROM     cat_producto p
-INNER JOIN cat_medida m ON p.codigo_medida = m.codigo_medida 
-							where (p.producto like '%$busqueda%' or p.uso like '%$busqueda%') and p.activo=1";																		
+										p.codigo_categoria,  p.activo, p.codigo_producto, p.uso	
+										FROM     cat_producto p
+										INNER JOIN cat_medida m ON p.codigo_medida = m.codigo_medida 
+										where (p.producto like '%$busqueda%' or p.uso like '%$busqueda%') and p.activo=1";																		
 				}
 				else	
 				if (isset($_REQUEST["in"]))	

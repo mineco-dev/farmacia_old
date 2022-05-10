@@ -6,10 +6,7 @@
 <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
 </head>
 
-<body>
-   
-		  
-		  
+<body>		  
 
 <?PHP
 $jefe = ($_POST['cbo_jefe']); 
@@ -55,7 +52,7 @@ $jefe = ($_POST['cbo_jefe']);
 				 order by fechahora desc";*/
 //top 139 promedio de 139 despachadas mensuales
 $mtstatus= 3;
-
+$cris=$_REQUEST["cris"];
  if ($cris > 0) // REQUISICION
  
  {      $query ="select  e.fecha_requisicion, e.codigo_egreso,

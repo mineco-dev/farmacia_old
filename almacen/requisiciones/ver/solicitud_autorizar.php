@@ -3,7 +3,7 @@
 require '../includes/cnn/inc_header_1.inc';
 require '../includes/cnn/funciones.php';
 $dbms = new DBMS(conectardb($almacen));
-$dbms->bdd = $database_cnn;
+//$dbms->bdd = $database_cnn;
 
 $href = $_SERVER['HTTP_REFERER'];
 

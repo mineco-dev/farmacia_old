@@ -1,4 +1,4 @@
-<?PHP
+	<?PHP
 include("../includes/funciones.php");
 include("../includes/sqlcommand.inc");
 
