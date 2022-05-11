@@ -232,7 +232,7 @@ function imprimir()
         <tr>
           <td valign="top">&nbsp;</td>
           <td bgcolor="#FEF8DE">Observaciones</td>
-          <td colspan="2"><?PHP print $observaciones; ?></td>
+          <td colspan="2"><?PHP print utf8_encode($observaciones); ?></td>
           </tr>
       
      
@@ -271,7 +271,7 @@ function imprimir()
             $resultado = mssql_fetch_array ($consulta);
             print ("<TR>\n");
             print ("<TD>" . $resultado['codigo_egreso_enc'] . "</TD>\n");
-			print ("<TD>" . $resultado['producto'] . "</TD>\n");
+			print ("<TD>" . utf8_encode($resultado['producto']) . "</TD>\n");
             print ("<TD>" . $resultado['codigo_categoria'] . "</TD>\n");
             print ("<TD>" . $resultado['codigo_subcategoria'] . "</TD>\n");
 			 print ("<TD>" . $resultado['cantidad_solicitada'] . "</TD>\n");

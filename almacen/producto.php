@@ -253,7 +253,7 @@ function Refrescar(form)
 
 						}
 
-						echo $consulta;
+						//echo $consulta;
 						conectardb($almacen);
 						$result=$query($consulta);
 						$i = 0;				

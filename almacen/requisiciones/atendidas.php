@@ -21,6 +21,7 @@ $usuario_id=($_SESSION["user_id"]);
 		$vec[6] = "Fecha Despacho";
 		
 		
+		
 		$vec2[0] = "codigo_requisicion_enc";
 		$vec2[1] = "fecha_requisicion";
 		$vec2[2] = "solicitante";
@@ -29,6 +30,7 @@ $usuario_id=($_SESSION["user_id"]);
 		$vec2[5] = "fecha_autorizado";
 		$vec2[6] = "fecha_despacho";
 		$vec2[7] = "codigo_requisicion_enc";
+		
 	
 		
 		$vec3[0] = "width=\"4%\"";

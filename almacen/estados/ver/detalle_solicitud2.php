@@ -284,7 +284,7 @@ function imprimir()
             print ("<TR>\n");
 		     
 			print ("<TD>" . $resultado['codigo_requisicion_enc'] . "</TD>\n");
-			print ("<TD>" . $resultado['producto'] . "</TD>\n");
+			print ("<TD>" . utf8_encode($resultado['producto']) . "</TD>\n");
             print ("<TD>" . $resultado['codigo_producto'] . "</TD>\n");
 			print ("<TD>" . $resultado['codigo_categoria'] . "</TD>\n");
             print ("<TD>" . $resultado['codigo_subcategoria'] . "</TD>\n");

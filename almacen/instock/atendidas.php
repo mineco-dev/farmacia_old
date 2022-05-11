@@ -73,10 +73,12 @@
 		$vec[3] = "Producto";
 		$vec[4] = "Unidad Medida";
 		$vec[5] = "Existencia";
-		$vec[6] = "Bodega";
-		$vec[7] = "Empresa";
-		$vec[8] = "Costo Promedio";
-		$vec[9] = "Costo Total";
+		$vec[6] = "Caducidad";
+		$vec[7] = "Lote";
+		$vec[8] = "Bodega";
+		$vec[9] = "Empresa";
+		$vec[10] = "Costo Promedio";
+		$vec[11] = "Costo Total";
 
 		$vec2[0] = "categoria";
 		$vec2[1] = "subcategoria";
@@ -84,10 +86,12 @@
 		$vec2[3] = "producto";
 		$vec2[4] = "unidad_medida";
 		$vec2[5] = "existencia";
-		$vec2[6] = "bodega";
-		$vec2[7] = "empresa";
-		$vec2[8] = "promedio";
-		$vec2[9] = "costo_total";
+		$vec2[6] = "caducidad";
+		$vec2[7] = "lote";
+		$vec2[8] = "bodega";
+		$vec2[9] = "empresa";
+		$vec2[10] = "promedio";
+		$vec2[11] = "costo_total";
 
 		$vec3[0] = "width=\"5%\"";
 		$vec3[1] = "width=\"5%\"";
@@ -95,9 +99,12 @@
 		$vec3[3] = "width=\"40%\"";
 		$vec3[4] = "width=\"12%\"";
 		$vec3[5] = "width=\"10%\"";
-		$vec3[6] = "width=\"15%\"";
-		$vec3[7] = "width=\"15%\"";
-		$vec3[8] = "width=\"15%\"";
+		$vec3[6] = "width=\"10%\"";
+		$vec3[7] = "width=\"10%\"";
+		$vec3[8] = "width=\"10%\"";
+		$vec3[9] = "width=\"10%\"";
+		$vec3[10] = "width=\"15%\"";
+		$vec3[11] = "width=\"15%\"";
 
 		if ($a == 12)
 		{ //compra directa
@@ -143,27 +150,8 @@
 
 		} //compra directa
 		if ($a == 8)
-		{ //compra general
-			/*$query="select  top 400
-			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria,
-			max (p.codigo_producto) as codigo_producto,  max (p.producto +' - '+ p.marca) as producto,
-			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia,
-			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row,
-			max( i.costo_inicial) as costo_inical,
-			max( kd.costo_promedio) as promedio, max (kd.costo_promedio * i.existencia) as costo_total
-			from
-			tb_inventario i inner join cat_producto p
-			on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
-			inner join cat_medida m
-			on m.codigo_medida = p.codigo_medida
-			inner join cat_empresa e
-			on e.codigo_empresa = i.codigo_empresa
-			inner join cat_bodega b
-			on b.codigo_bodega = i.codigo_bodega inner join dbo.tb_kardex as kd on
-			i.codigo_producto = kd.codigo_producto and i.codigo_categoria = kd.codigo_categoria and i.codigo_subcategoria = kd.codigo_subcategoria
-			where i.codigo_bodega = 8 and p.activo=1   group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
-			order by producto";*/
-
+		{ 
+			/*
 			$query = "select  top 400 
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
@@ -181,33 +169,39 @@
 			inner join cat_bodega b
 					on b.codigo_bodega = i.codigo_bodega inner join dbo.tb_kardex as kd on 
 			i.codigo_producto = kd.codigo_producto and i.codigo_categoria = kd.codigo_categoria and i.codigo_subcategoria = kd.codigo_subcategoria
-								where i.codigo_bodega = 8 and p.activo=1 and kd.fecha_creado = (select max(fecha_creado)from tb_kardex where codigo_producto=kd.codigo_producto and codigo_categoria=kd.codigo_categoria and codigo_subcategoria=kd.codigo_subcategoria) group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
-								order by producto";
+								where i.codigo_bodega = 8 and p.activo=1 and kd.fecha_creado = (select max(fecha_creado)from tb_kardex 
+								where codigo_producto=kd.codigo_producto and codigo_categoria=kd.codigo_categoria and codigo_subcategoria=kd.codigo_subcategoria) 
+								group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
+								order by producto";*/
+			$query="select  top 400 
+			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
+			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
+			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia,
+			max (cast (id.fecha_vence as DATE)) as caducidad, max(id.lote) as lote,
+			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
+			max( i.costo_inicial) as costo_inical,
+			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
+			from 
+			tb_inventario i 
+			inner join cat_producto p 
+					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+				on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
+			inner join cat_medida m
+					on m.codigo_medida = p.codigo_medida
+			inner join cat_empresa e
+					on e.codigo_empresa = i.codigo_empresa
+			inner join cat_bodega b
+					on b.codigo_bodega = i.codigo_bodega inner join dbo.tb_kardex as kd on 
+			i.codigo_producto = kd.codigo_producto and i.codigo_categoria = kd.codigo_categoria and i.codigo_subcategoria = kd.codigo_subcategoria
+			where i.codigo_bodega = 8 and p.activo=1 and kd.fecha_creado = (select max(fecha_creado)from tb_kardex
+			where codigo_producto=kd.codigo_producto and codigo_categoria=kd.codigo_categoria and codigo_subcategoria=kd.codigo_subcategoria) 
+			group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
+			order by producto";
 
 		} //compra general
 		if ($a == 15)
-		{ //compra directa y categoria
-			/* $query="select  top 400
-			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria,
-			max (p.codigo_producto) as codigo_producto,  max (p.producto +' - '+ p.marca) as producto,
-			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia,
-			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row,
-			max( i.costo_inicial) as costo_inical,
-			max( kd.costo_promedio) as promedio, max (kd.costo_promedio * i.existencia) as costo_total
-			from
-			tb_inventario i inner join cat_producto p
-			on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
-			inner join cat_medida m
-			on m.codigo_medida = p.codigo_medida
-			inner join cat_empresa e
-			on e.codigo_empresa = i.codigo_empresa
-			inner join cat_bodega b
-			on b.codigo_bodega = i.codigo_bodega inner join dbo.tb_kardex as kd on
-			i.codigo_producto = kd.codigo_producto and i.codigo_categoria = kd.codigo_categoria and i.codigo_subcategoria = kd.codigo_subcategoria
-			where i.codigo_bodega = ". $_SESSION["bodega15"] . " and p.activo=1 and p.codigo_categoria = '$b'  group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
-			order by producto 
-			";*/
-
+		{ /*
 			$query = "select  top 400 
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
@@ -226,7 +220,32 @@
 					on b.codigo_bodega = i.codigo_bodega inner join dbo.tb_kardex as kd on 
 			i.codigo_producto = kd.codigo_producto and i.codigo_categoria = kd.codigo_categoria and i.codigo_subcategoria = kd.codigo_subcategoria
 								where i.codigo_bodega = " . $_SESSION["bodega15"] . " and p.activo=1 and kd.fecha_creado = (select max(fecha_creado)from tb_kardex where codigo_producto=kd.codigo_producto  and codigo_subcategoria=kd.codigo_subcategoria) group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
-								order by p.codigo_categoria asc ";
+								order by p.codigo_categoria asc ";*/
+			$query="select  top 400 
+			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
+			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
+			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max (cast (id.fecha_vence as DATE)) as caducidad, max(id.lote) as lote,
+			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
+			max( i.costo_inicial) as costo_inical,
+			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
+			from 
+			tb_inventario i 
+			inner join cat_producto p 
+					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+				on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
+			inner join cat_medida m
+					on m.codigo_medida = p.codigo_medida
+			inner join cat_empresa e
+					on e.codigo_empresa = i.codigo_empresa
+			inner join cat_bodega b
+					on b.codigo_bodega = i.codigo_bodega inner join dbo.tb_kardex as kd on 
+			i.codigo_producto = kd.codigo_producto and i.codigo_categoria = kd.codigo_categoria and i.codigo_subcategoria = kd.codigo_subcategoria
+								where i.codigo_bodega = " . $_SESSION["bodega15"] . " and p.activo=1 and kd.fecha_creado = (select max(fecha_creado)from tb_kardex where codigo_producto=kd.codigo_producto  and codigo_subcategoria=kd.codigo_subcategoria) group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
+								order by p.codigo_categoria asc
+			
+			";
 
 		} 
 
@@ -257,12 +276,15 @@
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
 			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max (cast (id.fecha_vence as DATE)) as caducidad, max(id.lote) as lote,
 			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
 			max( i.costo_inicial) as costo_inical,
 			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
@@ -304,13 +326,16 @@
 			$query = "select  top 400 
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
-			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia,
+			max (cast (id.fecha_vence as DATE)) as caducidad, max(id.lote) as lote, 
 			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
 			max( i.costo_inicial) as costo_inical,
 			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
@@ -349,12 +374,15 @@
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
 			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max (cast(id.fecha_vence as DATE)) as caducidad, max(id.lote) as lote,
 			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
 			max( i.costo_inicial) as costo_inical,
 			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
@@ -394,13 +422,16 @@
 			$query = "select  top 400 
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
-			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia,
+			max (cast(id.fecha_vence as DATE)) as caducidad, max (id.lote) as lote, 
 			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
 			max( i.costo_inicial) as costo_inical,
 			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
@@ -441,12 +472,15 @@
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
 			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max (cast(id.fecha_vence as DATE)) as caducidad, max(id.lote) as lote,
 			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
 			max( i.costo_inicial) as costo_inical,
 			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
@@ -486,13 +520,16 @@
 			$query = "select  top 400 
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
-			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia,
+			max (cast(id.fecha_vence as DATE)) as caducidad, max(id.lote) as lote, 
 			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
 			max( i.costo_inicial) as costo_inical,
 			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
@@ -533,12 +570,15 @@
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
 			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max ( cast(id.fecha_vence as DATE)) as caducidad, max(id.lote) as lote,
 			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
 			max( i.costo_inicial) as costo_inical,
 			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
@@ -581,12 +621,15 @@
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
 			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max ( cast(id.fecha_vence as DATE)) as caducidad, max(id.lote) as lote,
 			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
 			max( i.costo_inicial) as costo_inical,
 			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
@@ -627,12 +670,15 @@
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
 			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max (cast(id.fecha_vence as DATE)) as caducidad, max ( id.lote) as lote,
 			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
 			max( i.costo_inicial) as costo_inical,
 			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
@@ -672,12 +718,15 @@
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
 			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max (cast(id.fecha_vence as DATE)) as caducidad, max(id.lote) as lote,
 			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
 			max( i.costo_inicial) as costo_inical,
 			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
@@ -718,12 +767,15 @@
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
 			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max (cast (id.fecha_vence as DATE)) as caducidad, max(id.lote) as lote,
 			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
 			max( i.costo_inicial) as costo_inical,
 			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
@@ -764,12 +816,15 @@
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
 			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max (cast(id.fecha_vence as DATE)) as caducidad, max ( id.lote) as lote,
 			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
 			max( i.costo_inicial) as costo_inical,
 			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
@@ -810,12 +865,15 @@
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
 			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
+			max (cast(id.fecha_vence as DATE)) as caducidad, max(id.lote) as lote,
 			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
 			max( i.costo_inicial) as costo_inical,
 			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
@@ -830,29 +888,9 @@
 
 
 		if ($a == 8 && $b > 0 && $c > 0 && $d > 0)
-		{ //total
-			/*$query="select  top 400
-			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria,
-			max (p.codigo_producto) as codigo_producto,  max (p.producto +' - '+ p.marca) as producto,
-			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia,
-			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row,
-			max( i.costo_inicial) as costo_inical,
-			max( kd.costo_promedio) as promedio, max (kd.costo_promedio * i.existencia) as costo_total
-			from
-			tb_inventario i inner join cat_producto p
-			on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
-			inner join cat_medida m
-			on m.codigo_medida = p.codigo_medida
-			inner join cat_empresa e
-			on e.codigo_empresa = i.codigo_empresa
-			inner join cat_bodega b
-			on b.codigo_bodega = i.codigo_bodega inner join dbo.tb_kardex as kd on
-			i.codigo_producto = kd.codigo_producto and i.codigo_categoria = kd.codigo_categoria and i.codigo_subcategoria = kd.codigo_subcategoria
-			where i.codigo_bodega = 8 and p.activo=1 and p.codigo_categoria = '$b'  and p.codigo_subcategoria = '$c' and p.codigo_producto = '$d'
-			group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
-			order by producto";*/
-
-			$query = "select  top 400 
+		{ 
+			/////////query funcional old///
+			/*$query = "select  top 400 
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
 			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
 			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia, 
@@ -869,8 +907,37 @@
 			inner join cat_bodega b
 					on b.codigo_bodega = i.codigo_bodega inner join dbo.tb_kardex as kd on 
 			i.codigo_producto = kd.codigo_producto and i.codigo_categoria = kd.codigo_categoria and i.codigo_subcategoria = kd.codigo_subcategoria
-								where i.codigo_bodega = 8 and p.activo=1 and kd.fecha_creado = (select max(fecha_creado)from tb_kardex where codigo_producto='$d' and codigo_categoria='$b' and codigo_subcategoria='$c') group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
-								order by producto";
+			where i.codigo_bodega = 8 and p.activo=1 and kd.fecha_creado = (select max(fecha_creado)from tb_kardex 
+			where codigo_producto='$d' and codigo_categoria='$b' and codigo_subcategoria='$c') 
+			group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
+								order by producto";*/
+
+			$query="select  top 400 
+			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
+			max (p.codigo_producto) as codigo_producto, max (kd.fecha_creado) as FECHAMOV,  max (p.producto +' - '+ p.marca) as producto, 
+			max ( m.unidad_medida) as unidad_medida, max( i.existencia) as existencia,
+			max (cast (id.fecha_vence as DATE))	 as caducidad, max(id.lote) as lote,
+			max(b.bodega) as bodega, max( e.empresa) as empresa, max( i.rowid) as row, 
+			max( i.costo_inicial) as costo_inical,
+			max( kd.costo_promedio) as promedio, max (kd.costo_total) as costo_total
+			from 
+			tb_inventario i 
+			inner join cat_producto p 
+				on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+				on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
+			inner join cat_medida m
+				on m.codigo_medida = p.codigo_medida
+			inner join cat_empresa e
+				on e.codigo_empresa = i.codigo_empresa
+			inner join cat_bodega b
+				on b.codigo_bodega = i.codigo_bodega 
+			inner join dbo.tb_kardex as kd 
+				on i.codigo_producto = kd.codigo_producto and i.codigo_categoria = kd.codigo_categoria and i.codigo_subcategoria = kd.codigo_subcategoria
+			where i.codigo_bodega = 8 and p.activo=1 and kd.fecha_creado = (select max(fecha_creado)from tb_kardex 
+			where codigo_producto='$d' and codigo_categoria='$b' and codigo_subcategoria='$c') 
+			group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
+			order by producto";
 
 		} //total
 

@@ -243,7 +243,7 @@ function imprimir()
         <tr>
           <td valign="top">&nbsp;</td>
           <td bgcolor="#FEF8DE">Observaciones</td>
-          <td colspan="2"><?php print $observaciones; ?></td>
+          <td colspan="2"><?php print utf8_encode($observaciones); ?></td>
           </tr>
       
       <tr>
@@ -299,7 +299,7 @@ function imprimir()
             print ("<TR>\n");
 		     
 			print ("<TD>" . $resultado['codigo_requisicion_enc'] . "</TD>\n");
-			print ("<TD>" . $resultado['producto'] . "</TD>\n");
+			print ("<TD>" . utf8_encode($resultado['producto']) . "</TD>\n");
             print ("<TD>" . $resultado['codigo_producto'] . "</TD>\n");
 			print ("<TD>" . $resultado['codigo_categoria'] . "</TD>\n");
             print ("<TD>" . $resultado['codigo_subcategoria'] . "</TD>\n");

@@ -184,9 +184,9 @@ on k.id_dependencia = d.iddireccion
 CONVERT(varchar(20), k.fecha, 120) >= '2010-11-25' and CONVERT(varchar(20), k.fecha, 120) <= '2012-02-08' 
 and k.codigo_producto = 1 and k.codigo_categoria = 211 and k.codigo_subcategoria = 1200 and codigo_empresa = ".$_SESSION["empresax"]." and codigo_bodega = 8
  order by codigo_kardex asc";
- }//fin de if
+ //}//fin de if
  $result = mssql_query( $query ); 
- }//fin de if
+ //}//fin de if
  ?>
 
 <!--SIN PARAMETROS

@@ -1,7 +1,8 @@
 <?PHP
-/*ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);*/
+
+//strquery=consulta desde atendidas.php ---- $ccol=cantidad columnas ----- $ncol=Encabezados columnas/campo ----- $campos=nombres de campos segun query
+//$tamano=tamaño de campos ----- $dbms=conexion bd  ----  $width= ancho de tabla dese atendidas
+//$mod=modificar ---$eli=eliminar ---- $ver=verificar
 function getTabla2($strquery,$ccol,$ncol,$campos,$tamano,$dbms,$width,$mod,$eli,$ver)
 {
 	$col1 = "#fea";
@@ -9,7 +10,7 @@ function getTabla2($strquery,$ccol,$ncol,$campos,$tamano,$dbms,$width,$mod,$eli,
 	$impresion = 
 	"<div class=\"container2 mt-5\" ><table width=\"$width%\" id=\"Contenido\" class=\"table\" border=\"0\" align=\"center\">
 	<thead>
-	  <tr bgcolor=\"#FFFFFC\" class=\"blue\">";
+	  <tr bgcolor=\"#cccccc\" class=\"blue\">";
 	$cnt = 0;
 	while ($cnt < $ccol)
 	{
@@ -17,15 +18,17 @@ function getTabla2($strquery,$ccol,$ncol,$campos,$tamano,$dbms,$width,$mod,$eli,
 		$cnt ++;
 	}
 	if (strlen(trim($mod)) > 0)	$impresion = $impresion . "<th style=\"text-align:center;\" width=\"10%\" class=\"white\">Editar</th>";
-	 if (strlen(trim($eli)) > 0)	$impresion = $impresion . "<th width=\"15%\" class=\"white\">Borrar</th>";
-	if (strlen(trim($ver)) > 0)	$impresion = $impresion . "<th width=\"15%\" class=\"white\">Ver</th>";
+	if (strlen(trim($eli)) > 0)	$impresion = $impresion . "<th width=\"15%\" class=\"white\">Borrar</th>";
+	if(strlen(trim($ver)) > 0)	$impresion = $impresion . "<th width=\"15%\" class=\"white\">Ver</th>";
 	$impresion = $impresion . "</tr></thead>";
+
+
 	$dbms->sql=$strquery;
 	$dbms->Query();
 	$ban = 0;
 	$cantidad = 1;
 	//print_r($dbms);
-	
+
 	while($Fields=$dbms->MoveNext())
 	{
 		// var_dump($Fields[$campos]);
@@ -77,6 +80,11 @@ function getTabla2($strquery,$ccol,$ncol,$campos,$tamano,$dbms,$width,$mod,$eli,
 	else
 		print "<img src=\"../ingresos_egresos/imagenes/atencion.png\" border=\"0\"/> no hay datos ingresados...<br>";
 }
+
+
+
+
+
 
 
 

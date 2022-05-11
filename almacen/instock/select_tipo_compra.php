@@ -83,24 +83,25 @@
                     <td valign="top"><div align="center"></div></td>
                     <td valign="top">Tipo de Compra (bodega).</td>
                     <td colspan="2">
-                      <?PHP
-                      conectardb($almacen);											
-                      //$qry_tipo_empresa="SELECT * FROM cat_bodega where codigo_bodega=8 or codigo_bodega=15 or codigo_bodega = 18 and codigo_empresa = ".$_SESSION["empresax"]." and activo=1";										
-                      $qry_tipo_empresa="SELECT * FROM cat_bodega where codigo_bodega in (8 , ". $_SESSION["bodega15"] . " ,18 ) and activo= 1";										
-                      $res_qry_tipo_empresa=$query($qry_tipo_empresa);	
+                        <?PHP
+                          conectardb($almacen);											
+                          //$qry_tipo_empresa="SELECT * FROM cat_bodega where codigo_bodega=8 or codigo_bodega=15 or codigo_bodega = 18 and codigo_empresa = ".$_SESSION["empresax"]." and activo=1";										
+                          $qry_tipo_empresa="SELECT * FROM cat_bodega where codigo_bodega in (8 , ". $_SESSION["bodega15"] . " ,18 ) and activo= 1";										
+                          $res_qry_tipo_empresa=$query($qry_tipo_empresa);	
 
-                      echo('<select name="cbo_tipo_empresa">');
-                      $nombre=":: Seleccione ::";
-					//echo'<option value="0">'.$nombre.'</option>';
-                      while($row_tipo_empresa=$fetch_array($res_qry_tipo_empresa))
-                      {
-                        echo'<option value="'.$row_tipo_empresa["codigo_bodega"].'">'.$row_tipo_empresa["codigo_bodega"].'-'.$row_tipo_empresa["bodega"].'</option>';
+                            echo('<select name="cbo_tipo_empresa">');
+                            $nombre=":: Seleccione ::";
+                            //echo'<option value="0">'.$nombre.'</option>';
+                            while($row_tipo_empresa=$fetch_array($res_qry_tipo_empresa))
+                            {
+                              echo'<option value="'.$row_tipo_empresa["codigo_bodega"].'">'.$row_tipo_empresa["codigo_bodega"].'-'.$row_tipo_empresa["bodega"].'</option>';
 
-                      }
-                      echo('</select>');				
-                      $free_result($res_qry_tipo_empresa);									 
-                      ?>
-                    </select>          </td>
+                            }
+                            echo('</select>');				
+                          $free_result($res_qry_tipo_empresa);									 
+                        ?>
+                      </select>          
+                  </td>
                   </tr>  
                   <tr>
                     <td valign="top">&nbsp;</td>

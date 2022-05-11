@@ -3,7 +3,6 @@
 	require('../includes/cnn/inc_header.inc');
 	$dbms=new DBMS(conectardb($almacen));	
   
-	$dbms->bdd=$database_cnn;
 	require('../includes/funciones.php');
   $bodega = ($_POST['cbo_tipo_empresa']); 
 ?>
@@ -126,23 +125,22 @@ function imprimir()
         <tr>
           <td>
           <?PHP
-		  	$mensaje = "";
-          	if ($ver==1) $mensaje = "<img src=\"imagenes/led_circle_green.png\"> Ingresadas";
-         
-			if ($ver==2) $mensaje = "<img src=\"imagenes/led_circle_red.png\"> Egresadas";
-			print $mensaje;
-		  ?>          </td>
+		  	    $mensaje = "";
+          	if ($ver==1) $mensaje = "<img src=\"imagenes/led_circle_green.png\"> Ingresadas";         
+			      if ($ver==2) $mensaje = "<img src=\"imagenes/led_circle_red.png\"> Egresadas";
+		      	print $mensaje;
+		    ?></td>
         </tr>
         <tr>
           <td>
           <?PHP
           	
-			if ($ver==1) $bodega = "8";  	  
+			      if ($ver==1) $bodega = "8";  	  
           	if ($ver==2) $bodega = "15";      
             if ($ver==3) $bodega = "18";  
           	 
 			
-		    include("atendidas.php"); 
+		        include("atendidas.php"); 
           ?> 
 			 
           	   
