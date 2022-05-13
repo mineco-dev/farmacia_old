@@ -443,7 +443,7 @@ if(isset($_SESSION["ingreso"]))
             SET existencia=$existencia_actual, 
             activo=1, 
             lote=$lote[$cnt],
-            fecha_vence=$fecha_vence[$cnt]
+            fecha_vence='$fecha_vence[$cnt]'
             WHERE codigo_empresa=$codigo_empresa 
             AND codigo_bodega=$codigo_bodega 
             AND codigo_producto=$codigoproducto 
@@ -475,7 +475,7 @@ if(isset($_SESSION["ingreso"]))
                 $subcategoria, 
                 1,
                 $lote[$cnt],
-                $fecha_vence[$cnt])";
+                '$fecha_vence[$cnt]')";
         }
         //echo "ultimo: ".$qry_ingreso_inventario;
         

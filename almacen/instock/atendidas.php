@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -44,6 +45,8 @@
   
 
 	<?PHP
+
+
 		if (isset($_POST["a"]))
 		{
 			$a = $_POST["a"];
@@ -939,6 +942,30 @@
 			group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
 			order by producto";
 
+			$query_exitencia_minima="select  top 400 			
+			max( p.existencia_minima) as existencia_minima
+			from 
+			cat_producto p
+			inner join  tb_ingreso_det id
+				on id.codigo_producto = p.codigo_producto and id.codigo_categoria = p.codigo_categoria and id.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det ind
+				on ind.codigo_producto=id.codigo_producto and ind.codigo_categoria=id.codigo_categoria and ind.codigo_subcategoria=id.codigo_subcategoria
+			where id.codigo_producto=103'$d' and id.codigo_categoria='$b' and id.codigo_subcategoria='$c'			
+			order by existencia_minima";
+
+			$query_existencia_actual="select  top 400 
+			
+			max( i.existencia) as existencia
+			from 
+			tb_inventario i 
+			inner join cat_producto p 
+				on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
+			inner join tb_inventario_det id
+				on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
+			where id.codigo_producto='$d' and id.codigo_categoria='$b' and id.codigo_subcategoria='$c'			
+			order by existencia";
+
+			
 		} //total
 
 

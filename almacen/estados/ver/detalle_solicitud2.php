@@ -237,7 +237,7 @@ function imprimir()
         <tr>
           <td valign="top">&nbsp;</td>
           <td bgcolor="#FEF8DE">Observaciones</td>
-          <td colspan="2"><?PHP print $observaciones; ?></td>
+          <td colspan="2"><?PHP print utf8_encode($observaciones); ?></td>
           </tr>
       
        <tr>

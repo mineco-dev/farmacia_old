@@ -31,6 +31,7 @@ color : #006699;
 	text-decoration:none;	
 	color : #006699;			
 }
+.submenu a { margin: 0px; display: block; width: 100%; height: 100%; }
 
 /*codigo anterior -- 23-11-2017 --*/
 
@@ -64,7 +65,7 @@ a { text-decoration: none; }
 	color: #776b6c;
 	height: 100%;
 	line-height: 40px;
-	padding: 0 24px;
+	padding: 0 0;
 
 }
 
@@ -213,7 +214,7 @@ window.onunload=savemenustate
 								}
 						}
 				}
-				echo '<span class="submenu" id="'.$sub.'"><ul>'; //contenido del submenu, de acuerdo a la opcion seleccionada, su referencia es codigo_grupo_det
+				echo '<span class="submenu xx" id="'.$sub.'"><ul>'; //contenido del submenu, de acuerdo a la opcion seleccionada, su referencia es codigo_grupo_det
 				
 				$consulta2 = "select * from view_menu WHERE ((codigo_usuario ='$user') AND (codigo_dependencia = '$dependencia')) and ref_submenu='$codigo_grupo_det' order by orden_x_dependencia";
 						$result2=mssql_query($consulta2);	

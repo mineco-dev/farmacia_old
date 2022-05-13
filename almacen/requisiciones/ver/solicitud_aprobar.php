@@ -7,7 +7,7 @@ require_once('../comandos/funciones.php');
 require_once('../comandos/sqlcommand.inc');
 require_once('../comandos/controldb.inc');
 $dbms = new DBMS(conectardb($almacen));
-$dbms->bdd = $database_cnn;
+//$dbms->bdd = $database_cnn;
 
 
 	$idsolicitud=$_REQUEST["id"];
@@ -15,19 +15,22 @@ $dbms->bdd = $database_cnn;
 	$Fields="select d.rowid, d.codigo_producto, p.producto, c.categoria,  d.codigo_categoria, d.codigo_subcategoria, e.solicitante, 
 	e.fecha_requisicion, dep.nombre, e.observaciones, e.codigo_estatus, es.estatus, d.codigo_empresa,
 	d.codigo_requisicion_enc, b.bodega, em.empresa, d.codigo_bodega, e.usuario_aprobo, e.codigo_dependencia,
-	d.cantidad_autorizada, d.cantidad_solicitada from tb_requisicion_det d
-	inner join tb_requisicion_enc e on
-	e.codigo_requisicion_enc = d.codigo_requisicion_enc
-	inner join cat_producto p on p.codigo_producto = d.codigo_producto and p.codigo_categoria = d.codigo_categoria and p.codigo_subcategoria = d.codigo_subcategoria
-	inner join cat_categoria c on d.codigo_categoria = c.codigo_categoria 
-	inner join cat_bodega b on
-	b.codigo_bodega = d.codigo_bodega
-	inner join cat_empresa em on
-	d.codigo_empresa = em.codigo_empresa
+	d.cantidad_autorizada, d.cantidad_solicitada 
+	from tb_requisicion_det d
+	inner join tb_requisicion_enc e 
+		on	e.codigo_requisicion_enc = d.codigo_requisicion_enc
+	inner join cat_producto p 
+		on p.codigo_producto = d.codigo_producto and p.codigo_categoria = d.codigo_categoria and p.codigo_subcategoria = d.codigo_subcategoria
+	inner join cat_categoria c 
+		on d.codigo_categoria = c.codigo_categoria 
+	inner join cat_bodega b 
+		on b.codigo_bodega = d.codigo_bodega
+	inner join cat_empresa em 
+		on d.codigo_empresa = em.codigo_empresa
 	inner join direccion dep
-	on dep.iddireccion = e.codigo_dependencia
-	inner join cat_estatus es on
-	e.codigo_estatus = es.codigo_estatus
+		on dep.iddireccion = e.codigo_dependencia
+	inner join cat_estatus es 
+		on e.codigo_estatus = es.codigo_estatus
 	where d.codigo_requisicion_enc = '$idsolicitud'";
 	
 	$res_qry_producto=$query($Fields);

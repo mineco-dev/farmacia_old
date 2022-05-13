@@ -1,11 +1,12 @@
 <?PHP
-
+	
 //strquery=consulta desde atendidas.php ---- $ccol=cantidad columnas ----- $ncol=Encabezados columnas/campo ----- $campos=nombres de campos segun query
 //$tamano=tamaño de campos ----- $dbms=conexion bd  ----  $width= ancho de tabla dese atendidas
 //$mod=modificar ---$eli=eliminar ---- $ver=verificar
 function getTabla2($strquery,$ccol,$ncol,$campos,$tamano,$dbms,$width,$mod,$eli,$ver)
 {
-	$col1 = "#fea";
+	$colo_alert="#F00";
+	$col1 = "#ccc";
 	$col2 = "#FFFFFF";
 	$impresion = 
 	"<div class=\"container2 mt-5\" ><table width=\"$width%\" id=\"Contenido\" class=\"table\" border=\"0\" align=\"center\">
@@ -27,7 +28,7 @@ function getTabla2($strquery,$ccol,$ncol,$campos,$tamano,$dbms,$width,$mod,$eli,
 	$dbms->Query();
 	$ban = 0;
 	$cantidad = 1;
-	//print_r($dbms);
+//	print_r($dbms);
 
 	while($Fields=$dbms->MoveNext())
 	{
@@ -53,11 +54,7 @@ function getTabla2($strquery,$ccol,$ncol,$campos,$tamano,$dbms,$width,$mod,$eli,
 					else{
 						$impresion = $impresion . utf8_encode($Fields[$campos[$cnt]]);
 					}
-				}
-
-
-			
-			
+				}			
 			
 			$impresion = $impresion . "</span></td>";
 			$cnt ++;
@@ -110,7 +107,7 @@ function getTabla($strquery,$ccol,$ncol,$campos,$tamano,$dbms,$width,$mod,$eli,$
 	$dbms->Query();
 	$ban = 0;
 	$cantidad = 1;
-	print_r($dbms);
+	//print_r($dbms);
 	
 	while($Fields=$dbms->MoveNext())
 	{

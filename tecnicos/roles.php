@@ -79,9 +79,9 @@ function Refrescar(form)
         </tr>
 		<?
 				if ((!isset($txt_nombre)) && (!isset($txt_nombre)))
-				$consulta = "SELECT distinct(a.codigo_usuario), b.nombres, b.apellidos, b.nombre_usuario, a.codigo_usuario FROM rol a inner join usuario b on a.codigo_usuario=b.codigo_usuario where b.activo=1";
+				$consulta = "SELECT distinct(a.codigo_usuario), b.nombres, b.apellidos, b.nombre_usuario, a.codigo_usuario FROM rol a right join usuario b on a.codigo_usuario=b.codigo_usuario where b.activo=1";
 				else
-					$consulta = "SELECT distinct(a.codigo_usuario), b.nombres, b.apellidos, b.nombre_usuario, a.codigo_usuario FROM rol a inner join usuario b on a.codigo_usuario=b.codigo_usuario where b.nombres like '%$txt_nombre%' and b.apellidos like '%$txt_apellido%' and b.activo=1";
+					$consulta = "SELECT distinct(a.codigo_usuario), b.nombres, b.apellidos, b.nombre_usuario, a.codigo_usuario FROM rol a right join usuario b on a.codigo_usuario=b.codigo_usuario where b.nombres like '%$txt_nombre%' and b.apellidos like '%$txt_apellido%' and b.activo=1";
 				require_once('../connection/helpdesk.php');							
 				$result=$query($consulta);
 				$i = 0;				
