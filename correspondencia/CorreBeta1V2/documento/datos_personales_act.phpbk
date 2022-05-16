@@ -235,7 +235,7 @@ function validarEntero(numero){
 			return ""
 //   		    document.numeros.numero.focus();
       }else{ 
-            //En caso contrario (Si era un n�mero) devuelvo el valor 
+            //En caso contrario (Si era un número) devuelvo el valor 
             return numero
            // document.numeros.numero.focus();
       } 

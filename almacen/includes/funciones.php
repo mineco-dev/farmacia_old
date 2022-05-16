@@ -1,11 +1,15 @@
 <?PHP
+
 	
+
+
+
 //strquery=consulta desde atendidas.php ---- $ccol=cantidad columnas ----- $ncol=Encabezados columnas/campo ----- $campos=nombres de campos segun query
 //$tamano=tamaño de campos ----- $dbms=conexion bd  ----  $width= ancho de tabla dese atendidas
 //$mod=modificar ---$eli=eliminar ---- $ver=verificar
 function getTabla2($strquery,$ccol,$ncol,$campos,$tamano,$dbms,$width,$mod,$eli,$ver)
 {
-	$colo_alert="#F00";
+	
 	$col1 = "#ccc";
 	$col2 = "#FFFFFF";
 	$impresion = 
@@ -28,7 +32,7 @@ function getTabla2($strquery,$ccol,$ncol,$campos,$tamano,$dbms,$width,$mod,$eli,
 	$dbms->Query();
 	$ban = 0;
 	$cantidad = 1;
-//	print_r($dbms);
+	//var_dump($dbms);
 
 	while($Fields=$dbms->MoveNext())
 	{
@@ -44,17 +48,20 @@ function getTabla2($strquery,$ccol,$ncol,$campos,$tamano,$dbms,$width,$mod,$eli,
 			$impresion = $impresion . "<td><span class=\"Estilo1\">";
 
 
-			if(($cnt == 8 || $cnt == 9)&& (int)$Fields[$campos[5]]  <=0 ){
+			if(($cnt == 8 || $cnt == 9)&& (int)$Fields[$campos[5]] <=0 ){
 				$impresion = $impresion . "0";
 				}
 				else{ 
-					if (gettype($Fields[$campos[$cnt]])=='double'){
-						$impresion = $impresion . round($Fields[$campos[$cnt]],2);
+					if (gettype($Fields[$campos[$cnt]])=='double' && (int)$Fields[$campos[$cnt]] < 100){
+						$impresion = $impresion . "<p style='color:red;'>". round($Fields[$campos[$cnt]],2).'</p>';
 					}
 					else{
 						$impresion = $impresion . utf8_encode($Fields[$campos[$cnt]]);
 					}
-				}			
+				}
+			/* if((int)$Fields[$campos[$cnt]] < 100){
+					$impresion = $impresion . "<p style='color:red;'>".utf8_encode($Fields[$campos[$cnt]]).'</p>';
+			}		 */	
 			
 			$impresion = $impresion . "</span></td>";
 			$cnt ++;

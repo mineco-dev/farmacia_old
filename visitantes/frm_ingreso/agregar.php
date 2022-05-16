@@ -290,7 +290,7 @@ function cargarCombo (url, comboAnterior, element_id) {
 	</td>
   	<tr> 
     <tr class="error"><td>** Datos requeridos</td></tr>
-    <tr><td colspan="2">** Debe ingresar por lo menos un n�mero de documento de identificación</td></tr>  	
+    <tr><td colspan="2">** Debe ingresar por lo menos un número de documento de identificación</td></tr>  	
 	<td>
 	<input  name="txt_obj" type="hidden" id="txt_obj"  value="<? echo $obj?>"/>
 	<input name="cmd_guardar" type="button" onClick="validar(this.form)" id="cmd_guardar" value="Guardar" <? echo $status?>></td></tr>  	
@@ -390,7 +390,7 @@ function cargarCombo (url, comboAnterior, element_id) {
 				{						
 						echo 'if (!isNumber(form.'.$campo_validacion[$i].'.value))';
 						echo '{ ';
-							echo 'alert("En este campo solo puede ingresar n�meros");'; 
+							echo 'alert("En este campo solo puede ingresar números");'; 
 							echo 'form.'.$campo_validacion[$i].'.focus();'; 
 							echo 'return;';
 						echo '}';

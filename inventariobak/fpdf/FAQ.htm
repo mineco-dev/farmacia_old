@@ -198,7 +198,7 @@ Header('Pragma: public');
 <P><A NAME='7'></A><B>7.</B> <FONT CLASS='st'>Cuando ejecuto un script me da un error "FPDF error: Don't alter the locale before including class file".</FONT></P>
 Cuando el separador de decimales se configura para que se una coma antes de incluir un fichero,
 existe un <A HREF="http://bugs.php.net/bug.php?id=17105" TARGET="_blank">fallo</A> en PHP,
-y los n�meros decimales se truncan. Por tanto, no deber�a hacer ninguna llamada a setlocale()
+y los números decimales se truncan. Por tanto, no deber�a hacer ninguna llamada a setlocale()
 antes de incluir la clase. En Unix, no deber�a tampoco establecer la variable de entorno
 LC_ALL, ya que es equivalente a una llamada a setlocale().
 <P><A NAME='8'></A><B>8.</B> <FONT CLASS='st'>Intento insertar un PNG y Acrobat dice "There was an error processing a page. A drawing error occurred".</FONT></P>

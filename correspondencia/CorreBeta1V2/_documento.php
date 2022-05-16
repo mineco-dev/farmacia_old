@@ -135,8 +135,8 @@ function nuevoAjax()
 
 function cargaContenido(selectACargar)
 {
-	// Recibo el n�mero correspondiente al combo que se debe llenar de datos
-	var selectAnterior=selectACargar-1; // Obtengo el n�mero del combo que activ� el evento onChange
+	// Recibo el número correspondiente al combo que se debe llenar de datos
+	var selectAnterior=selectACargar-1; // Obtengo el número del combo que activ� el evento onChange
 	// Extraigo el valor del combo que se ha cambiado
 	var valor=document.getElementById("select_"+selectAnterior).options[document.getElementById("select_"+selectAnterior).selectedIndex].value;
 	var elemento;
@@ -214,8 +214,8 @@ function nuevoAjax2()
 
 function cargaContenido2(selectACargar)
 {
-	// Recibo el n�mero correspondiente al combo que se debe llenar de datos
-	var selectAnterior=selectACargar-1; // Obtengo el n�mero del combo que activ� el evento onChange
+	// Recibo el número correspondiente al combo que se debe llenar de datos
+	var selectAnterior=selectACargar-1; // Obtengo el número del combo que activ� el evento onChange
 	// Extraigo el valor del combo que se ha cambiado
 	var valor=document.getElementById("select_2"+selectAnterior).options[document.getElementById("select_2"+selectAnterior).selectedIndex].value;
 	var elemento;
@@ -290,8 +290,8 @@ function nuevoAjax3()
 
 function cargaContenido3(selectACargar)
 {
-	// Recibo el n�mero correspondiente al combo que se debe llenar de datos
-	var selectAnterior=selectACargar-1; // Obtengo el n�mero del combo que activ� el evento onChange
+	// Recibo el número correspondiente al combo que se debe llenar de datos
+	var selectAnterior=selectACargar-1; // Obtengo el número del combo que activ� el evento onChange
 	// Extraigo el valor del combo que se ha cambiado
 	var valor=document.getElementById("select_3"+selectAnterior).options[document.getElementById("select_3"+selectAnterior).selectedIndex].value;
 	var elemento;
@@ -368,8 +368,8 @@ function nuevoAjax4()
 
 function cargaContenido4(selectACargar)
 {
-	// Recibo el n�mero correspondiente al combo que se debe llenar de datos
-	var selectAnterior=selectACargar-1; // Obtengo el n�mero del combo que activ� el evento onChange
+	// Recibo el número correspondiente al combo que se debe llenar de datos
+	var selectAnterior=selectACargar-1; // Obtengo el número del combo que activ� el evento onChange
 	// Extraigo el valor del combo que se ha cambiado
 	var valor=document.getElementById("select_4"+selectAnterior).options[document.getElementById("select_4"+selectAnterior).selectedIndex].value;
 	var elemento;
@@ -446,8 +446,8 @@ function nuevoAjax5()
 
 function cargaContenido5(selectACargar)
 {
-	// Recibo el n�mero correspondiente al combo que se debe llenar de datos
-	var selectAnterior=selectACargar-1; // Obtengo el n�mero del combo que activ� el evento onChange
+	// Recibo el número correspondiente al combo que se debe llenar de datos
+	var selectAnterior=selectACargar-1; // Obtengo el número del combo que activ� el evento onChange
 	// Extraigo el valor del combo que se ha cambiado
 	var valor=document.getElementById("select_5"+selectAnterior).options[document.getElementById("select_5"+selectAnterior).selectedIndex].value;
 	var elemento;

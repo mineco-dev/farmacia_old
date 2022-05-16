@@ -412,7 +412,7 @@ function cargarCombo (url, comboAnterior, element_id) {
 				{						
 						echo 'if (!isNumber(form.'.$campo_validacion[$i].'.value))';
 						echo '{ ';
-							echo 'alert("En este campo solo puede ingresar n�meros y punto decimal [NO se admiten comas]");'; 
+							echo 'alert("En este campo solo puede ingresar números y punto decimal [NO se admiten comas]");'; 
 							echo 'form.'.$campo_validacion[$i].'.focus();'; 
 							echo 'return;';
 						echo '}';

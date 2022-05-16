@@ -21,7 +21,7 @@ function Validar(form)
  }
   if (form.txt_serie.value == "")
   { 
-  	alert("Escriba el N�mero de serie o un n�mero �nico que identifique el equipo"); 
+  	alert("Escriba el N�mero de serie o un número �nico que identifique el equipo"); 
 	form.txt_serie.focus(); 
 	return;
  }

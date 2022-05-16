@@ -179,7 +179,7 @@ function valor(objeto)
 function validar(form)
 {
 //////////////////////// Encabezado ///////////////////////////////////////////////////
-	if ((form['txt_no_ingreso'].value) == "" && (form['cbo_tipo_docto'].value) != "2" ){alert('Escriba el n�mero de documento de egreso'); form['txt_no_ingreso'].focus();  return};		
+	if ((form['txt_no_ingreso'].value) == "" && (form['cbo_tipo_docto'].value) != "2" ){alert('Escriba el número de documento de egreso'); form['txt_no_ingreso'].focus();  return};		
 	if ((form['nombre[0][1]'].value+0) == 0){alert('Debe seleccionar un solicitante'); return};
 	//if ((form['nombre[0][1]'].value+0) == 0){alert('Debe seleccionar un solicitante'); return};
 	//if (form['actuacion'].selectedIndex == 0){alert('Debe seleccionar en que calidad actua el solicitante'); return};

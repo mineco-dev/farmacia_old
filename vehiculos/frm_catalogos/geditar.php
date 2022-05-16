@@ -148,7 +148,7 @@ require("../../includes/sqlcommand.inc");
 	} // fin del if isset ingresando_obj
 	else
 	{
-		echo '<tr><td class="error" colspan="3" align="center">Para continuar llenando los cat�logos <a href="index.php">[HAGA CLIC AQUI]</a></td></tr>';
+		echo '<tr><td class="error" colspan="3" align="center">Para continuar llenando los catálogos <a href="index.php">[HAGA CLIC AQUI]</a></td></tr>';
 	}
 	?>            
 	</td>

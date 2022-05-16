@@ -264,9 +264,9 @@ function validar(form)
 //////////////////////// propiedades del equipo ///////////////////////////////////////////////////
 	//if (form['codigo_tipo_objeto'].selectedIndex == 0){alert('Seleccione el tipo de objeto'); return};
 	//if (form['codigo_tipo_objeto'].selectedIndex == 0){alert('Seleccione el tipo de objeto'); form['codigo_tipo_objeto'].focus();  return};	
-	if ((form['numero_serie'].value+0) == 0){alert('Escriba el n�mero de serie u otro n�mero que identifique el objeto');  form['numero_serie'].focus();  return};	
-	//if ((form['numero_inventario'].value+0) == 0){alert('Escriba el n�mero de inventario');  form['numero_inventario'].focus();  return};	
-	if ((form['numero_sicoin'].value+0) == 0){alert('Escriba el n�mero de sicoin');  form['numero_sicoin'].focus();  return};	
+	if ((form['numero_serie'].value+0) == 0){alert('Escriba el número de serie u otro número que identifique el objeto');  form['numero_serie'].focus();  return};	
+	//if ((form['numero_inventario'].value+0) == 0){alert('Escriba el número de inventario');  form['numero_inventario'].focus();  return};	
+	if ((form['numero_sicoin'].value+0) == 0){alert('Escriba el número de sicoin');  form['numero_sicoin'].focus();  return};	
 	if (form['codigo_dominio'].selectedIndex == 0){alert('Indique si el equipo es de MINECO o de alg�n programa'); form['codigo_dominio'].focus();  return};		
 	if ((form['nombre[0][1]'].value+0) == 0){alert('Seleccione el nombre del usuario a cargo del equipo'); return};
 	if ((form['txt_obj'].value) == 2)
@@ -276,7 +276,7 @@ function validar(form)
 		ban = 0; for (i=1;i<16;i++) { if (valor(form['marcadisco['+i+']'])) ban = 1; } if (ban == 0) {alert('Indique las caracteristicas del disco duro'); return};
 		ban = 0; for (i=1;i<8;i++) { if (valor(form['tipolector['+i+']'])) ban = 1; } if (ban == 0) {alert('Escriba las unidades de lectura (Cdrom/dvdrom/floppy) de este equipo'); return};
 		ban = 0; for (i=1;i<100;i++) { if (valor(form['tipoinstall['+i+']'])) ban = 1; } if (ban == 0) {alert('Se requiere el detalle del software instalado en este equipo'); return};		
-		ban = 0; for (i=1;i<100;i++) { if (valor(form['txt_etiqueta'])) ban = 1; } if (ban == 0) {alert('Escriba el n�mero de etiqueta de seguridad que corresponde a este CPU'); return};		
+		ban = 0; for (i=1;i<100;i++) { if (valor(form['txt_etiqueta'])) ban = 1; } if (ban == 0) {alert('Escriba el número de etiqueta de seguridad que corresponde a este CPU'); return};		
 	};
 	
 	//if (form['cbo_objeto'].selectedIndex == 12){alert('Debe seleccionar en que calidad actua el solicitante'); return};

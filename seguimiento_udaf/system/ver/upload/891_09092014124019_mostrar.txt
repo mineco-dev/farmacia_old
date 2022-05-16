@@ -10,7 +10,7 @@
 //Conexion con la base
 mysql_connect("localhost","tu_user","tu_password"); 
 
-//selecci�n de la base de datos con la que vamos a trabajar 
+//selección de la base de datos con la que vamos a trabajar 
 mysql_select_db("mi_base_datos"); 
 
 //Ejecutamos la sentencia SQL

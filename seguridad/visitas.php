@@ -44,7 +44,7 @@ function Validar(form)
 {
 	if (!numerico(form.txt_gafete.value))
     { 
-        alert("Debe ingresar un n�mero de gafete v�lido");
+        alert("Debe ingresar un número de gafete v�lido");
 		form.reset();
 		form.txt_gafete.focus(); 
 		return;

@@ -15,7 +15,7 @@ if (form.txt_ticket.value == "")
   }
 if (!numerico(form.txt_ticket.value))
     { 
-        alert("Debe ingresar un n�mero de ticket v�lido");
+        alert("Debe ingresar un número de ticket v�lido");
 		form.txt_ticket.focus(); 
 		return;
 	}	

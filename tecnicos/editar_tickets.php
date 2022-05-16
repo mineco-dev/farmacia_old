@@ -13,7 +13,7 @@ function Validar(form)
 {
   if (form.cbo_tickets.value == "0")
   { 
-  	alert("Seleccione un n�mero de ticket"); 
+  	alert("Seleccione un número de ticket"); 
 	form.cbo_tickets.focus(); 
 	return;
  }

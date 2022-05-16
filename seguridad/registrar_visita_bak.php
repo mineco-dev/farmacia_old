@@ -28,7 +28,7 @@ function Validar(form)
  }
    if (form.chk_arma.value == "1" && form.txt_casillero=="")
   { 
-  	alert("Escriba el n�mero de casillero donde deposito el arma"); 
+  	alert("Escriba el número de casillero donde deposito el arma"); 
 	form.txt_casillero.focus(); 
 	return;
  }

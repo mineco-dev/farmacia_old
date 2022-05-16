@@ -454,7 +454,7 @@ function validar(form)
 		};
 		if (form['registro'].value == "")
 		{
-			alert('Debe ingresar el n�mero de cedula...'); 
+			alert('Debe ingresar el número de cedula...'); 
 			return
 		};
 	}
@@ -464,17 +464,17 @@ function validar(form)
 	{
 		if (form['inscripcion'].value == "")
 		{
-			alert('Debe ingresar el n�mero de inscripción de la entidad juridica...'); 
+			alert('Debe ingresar el número de inscripción de la entidad juridica...'); 
 			return
 		};
 		if (form['folio'].value == "")
 		{
-			alert('Debe ingresar el n�mero de folio de la entidad juridica...'); 
+			alert('Debe ingresar el número de folio de la entidad juridica...'); 
 			return
 		};
 		if (form['libro'].value == "")
 		{
-			alert('Debe ingresar el n�mero de libro de la entidad juridica...'); 
+			alert('Debe ingresar el número de libro de la entidad juridica...'); 
 			return
 		};
 	}
@@ -483,7 +483,7 @@ function validar(form)
 	{
 		if (form['pasaporte'].value == "")
 		{
-			alert('Debe ingresar el n�mero de pasaporte de la persona extranjera'); 
+			alert('Debe ingresar el número de pasaporte de la persona extranjera'); 
 			return
 		};
 	}

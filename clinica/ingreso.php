@@ -212,8 +212,8 @@ function validar(form)
 {
 //////////////////////// Encabezado ///////////////////////////////////////////////////
 	if ((form['cbo_tipo_docto'].value) == "0"){alert('Seleccione el tipo de documento que respalda el ingreso'); form['cbo_tipo_docto'].focus();  return};	
-	if ((form['txt_no_ingreso'].value) == ""){alert('Escriba el n�mero de documento de ingreso'); form['txt_no_ingreso'].focus();  return};	
-	if ((form['txt_no_solicitud'].value) == ""){alert('Escriba el n�mero de documento de solicitud, sino tiene escriba cero'); form['txt_no_solicitud'].focus();  return};	
+	if ((form['txt_no_ingreso'].value) == ""){alert('Escriba el número de documento de ingreso'); form['txt_no_ingreso'].focus();  return};	
+	if ((form['txt_no_solicitud'].value) == ""){alert('Escriba el número de documento de solicitud, sino tiene escriba cero'); form['txt_no_solicitud'].focus();  return};	
     if ((form['txt_solicitante'].value) == ""){alert('Escriba el nombre del solicitante'); form['txt_solicitante'].focus();  return};	
 	//if ((form['nombre[0][1]'].value+0) == 0){alert('Debe seleccionar un solicitante'); return};
 	//if (form['actuacion'].selectedIndex == 0){alert('Debe seleccionar en que calidad actua el solicitante'); return};

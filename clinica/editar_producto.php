@@ -38,13 +38,13 @@ function Validar(form)
   }
   if (!numerico(form.txt_minima.value))
     { 
-        alert("La existencia m�nima se debe ingresar en n�meros");
+        alert("La existencia m�nima se debe ingresar en números");
 		form.txt_minima.focus(); 
 		return;
 	}
   if (!numerico(form.txt_maxima.value))
     { 
-        alert("La existencia m�xima se debe ingresar en n�meros");
+        alert("La existencia m�xima se debe ingresar en números");
 		form.txt_maxima.focus(); 
 		return;
 	}

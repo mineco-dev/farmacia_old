@@ -35,7 +35,7 @@ $dbms = new DBMS(conectardb($almacen));
 	
 	$res_qry_producto=$query($Fields);
 	while($row=$fetch_array($res_qry_producto))
-	{				
+	{			
 			
 			$codigo=$row["codigo_requisicion_enc"];
 			$rowid=$row["rowid"];
@@ -51,6 +51,7 @@ $dbms = new DBMS(conectardb($almacen));
 		
 		$aprobo=$row["usuario_aprobo"];
 		}
+		//echo $row;
 	?>
 	
 <!DOCTYPE html>

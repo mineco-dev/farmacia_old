@@ -405,7 +405,7 @@ function cargarCombo (url, comboAnterior, element_id) {
 				{						
 						echo 'if (!isNumber(form.'.$campo_validacion[$i].'.value))';
 						echo '{ ';
-							echo 'alert("En este campo solo puede ingresar n�meros");'; 
+							echo 'alert("En este campo solo puede ingresar números");'; 
 							echo 'form.'.$campo_validacion[$i].'.focus();'; 
 							echo 'return;';
 						echo '}';

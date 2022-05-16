@@ -72,7 +72,7 @@ if (form.date1.value > form.date2.value)
   } 
    if (form.cbo_tipo_docto.value != "0" && form.txt_numero.value=="")
   { 
-  	alert("Escriba el n�mero de documento a consultar"); 
+  	alert("Escriba el número de documento a consultar"); 
 	form.txt_numero.focus(); 
 	return;
   } 

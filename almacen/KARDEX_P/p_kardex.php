@@ -63,8 +63,8 @@ $numero_de_registros = $total;
     $res_sel2 = mssql_execute($sql_sel2); 
     $num_rows_sel2 = mssql_num_rows($res_sel2); 
      
-    $num_paginas_float = $numero_de_registros / $limite; //n�mero total de p�ginas a mostrar (float) 
-    $valor_redondeado = ceil($num_paginas_float); //n�mero total de p�ginas a mostrar (entero) 
+    $num_paginas_float = $numero_de_registros / $limite; //número total de p�ginas a mostrar (float) 
+    $valor_redondeado = ceil($num_paginas_float); //número total de p�ginas a mostrar (entero) 
     $inferior = $pagina - ( ceil( TAM_VENTANA / 2 ) ); 
     $inicio_ventana = 1; 
     if( $valor_redondeado > TAM_VENTANA ) { 

@@ -97,7 +97,7 @@ if  (( !$_SESSION['usr_val']) || ($_SESSION['usr_val'] == 'N') || ($_SESSION['us
 			return ""
 //   		    document.numeros.numero.focus();
       }else{ 
-            //En caso contrario (Si era un n�mero) devuelvo el valor 
+            //En caso contrario (Si era un número) devuelvo el valor 
             return numero
            // document.numeros.numero.focus();
       } 

@@ -260,7 +260,7 @@ require("../includes/sqlcommand.inc");
 			} //fin del if si existe es false
 			else
 			{
-				echo '<tr><td class="error" colspan="3" align="center">Ya se ha ingresado un objeto de este tipo con este n�mero de '.$mensaje_error.' <br><br>Para ingresar otro <a href="objeto.php">[HAGA CLIC AQUI]</a></td></tr>';
+				echo '<tr><td class="error" colspan="3" align="center">Ya se ha ingresado un objeto de este tipo con este número de '.$mensaje_error.' <br><br>Para ingresar otro <a href="objeto.php">[HAGA CLIC AQUI]</a></td></tr>';
 			}			
 		} // fin del if isset obj		
 	} // fin del if isset ingresando_obj

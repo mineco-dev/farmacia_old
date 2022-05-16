@@ -9,7 +9,7 @@ function Validar(form)
 {
   if ((form.cbo_tickets.value == "0") && (form.cbo_historico.value == "2"))
   { 
-  	alert("Seleccione un n�mero de ticket � seleccione SI para ver hist�rico"); 
+  	alert("Seleccione un número de ticket � seleccione SI para ver hist�rico"); 
 	form.cbo_tickets.focus(); 
 	return;
  }

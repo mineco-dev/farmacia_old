@@ -26,19 +26,19 @@ function Validar(form)
   }
    if ((form.cbo_registro_cedula.value == "23") && (form.txt_numero_cedula.value != ""))
   { 
-  	alert("Seleccione el n�mero de orden"); 
+  	alert("Seleccione el número de orden"); 
 	form.txt_numero_cedula.focus(); 
 	return;
   }  
    if ((form.txt_numero_cedula.value == "") && (form.txt_licencia.value == "") && (form.txt_carnet.value == "") && (form.txt_pasaporte.value == ""))
   { 
-  	alert("Debe escribir por lo menos un n�mero de identificación [c�dula, licencia, pasaporte o carnet]"); 
+  	alert("Debe escribir por lo menos un número de identificación [c�dula, licencia, pasaporte o carnet]"); 
 	form.txt_numero_cedula.focus(); 
 	return;
   } 
     if ((form.cbo_registro_cedula.value != "23") && (form.txt_numero_cedula.value == ""))
   { 
-  	alert("Escriba el n�mero de c�dula"); 
+  	alert("Escriba el número de c�dula"); 
 	form.txt_numero_cedula.focus(); 
 	return;
   } 

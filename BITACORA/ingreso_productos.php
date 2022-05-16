@@ -410,15 +410,15 @@ function validar(form)
 {
 //////////////////////// Encabezado ///////////////////////////////////////////////////
 	
-if ((form['txt_no'].value) == ""){alert('Escriba el n�mero de documento de ingreso'); form['txt_no'].focus();  return};	
+if ((form['txt_no'].value) == ""){alert('Escriba el número de documento de ingreso'); form['txt_no'].focus();  return};	
 if ((form['proveedor[0][1]'].value) == ""){alert('Seleccione el proveedor'); form['proveedor[0][1]'].focus();  return};
 	if ((form['cbo_tipo_docto'].value) == "0"){alert('Seleccione el tipo de documento que respalda el ingreso'); form['cbo_tipo_docto'].focus();  return};	
 	if ((form['cbo_empresa'].value) == "0"){alert('Seleccione la empresa'); form['cbo_empresa'].focus();  return};	
 	if ((form['cbo_bodega'].value) == "0"){alert('Seleccione la bodega'); form['cbo_bodega'].focus();  return};	
 	if ((form['cbo_actividad'].value) == "0"){alert('Seleccione el programa'); form['cbo_actividad'].focus();  return};	
 	if ((form['cbo_programa'].value) == "0"){alert('Seleccione la empresa'); form['cbo_programa'].focus();  return};	
-	if ((form['txt_no_serie'].value) == ""){alert('Escriba el n�mero de documento de ingreso'); form['txt_no_serie'].focus();  return};	
-	if ((form['txt_no_ingreso'].value) == ""){alert('Escriba el n�mero de documento de ingreso'); form['txt_no_ingreso'].focus();  return};	
+	if ((form['txt_no_serie'].value) == ""){alert('Escriba el número de documento de ingreso'); form['txt_no_serie'].focus();  return};	
+	if ((form['txt_no_ingreso'].value) == ""){alert('Escriba el número de documento de ingreso'); form['txt_no_ingreso'].focus();  return};	
 	
 	
 	if ((form['nombre[0][1]'].value) == ""){alert('Seleccione el nombre del solicitante'); form['nombre[0][1]'].focus();  return};	
