@@ -134,12 +134,12 @@
 			{$condicionesx= $condicionesx . ' and p.codigo_subcategoria = '.$c ;}
 		if ($d>0) //-- agregar la condicion de bodega
 			{$condicionesx= $condicionesx. ' and p.codigo_producto = '.$d ;}
-		if ($otro==30) //-- agregar la condicion de bodega
-			{$condicionesx= $condicionesx . ' and i.existencia<= p.existencia_minima ';}
-		if ($otro==40) //-- agregar la condicion de bodega
+		if ($otro==30) //-- cuando se elija los de proximos a vencer
+			{$condicionesx= $condicionesx . 'and convert(date,id.fecha_vence) <= EOMONTH( dateadd(month, 6,  getdate()) ) and id.existencia>0';}
+		if ($otro==40) //-- cuando se baja existencia
 			{$condicionesx= $condicionesx . ' and i.existencia<= p.existencia_minima ';}
 		/* fin condiciones indamicas */
-		if ($a >=1)
+		if ($a >0)
 		{
 			$query = "select  top 400 
 			max (p.codigo_categoria) as categoria, max( p.codigo_subcategoria) as subcategoria, 
@@ -166,7 +166,10 @@
 								order by producto";
 
 		}
-
+		 /* echo "<hr>";
+		echo $query;
+		echo "<hr>";  */
+	
 		getTabla2($query, 10, $vec, $vec2, $vec3, $dbms, 95,"","","");
 	?>
 </body>
