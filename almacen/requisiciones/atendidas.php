@@ -67,7 +67,7 @@ $usuario_id=($_SESSION["user_id"]);
 				inner join direccion d
 				on e.codigo_dependencia = d.iddireccion
 				and codigo_estatus in ($mtstatus)
-				where e.codigo_jefe_dependencia = '$usuario_id' 
+				--where e.codigo_jefe_dependencia = '$usuario_id' 
 				order by fecha_requisicion desc ";
 if ($mtstatus=="3") {
  	getTabla2($query2,7,$vec,$vec2,$vec3,$dbms,95,"","","ver/solicitud_aprobar.php?id=");

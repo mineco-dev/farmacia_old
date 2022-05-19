@@ -15,7 +15,7 @@ $idsolicitud = $_REQUEST["id"];
 $Fields = "select distinct d.rowid, d.codigo_producto, p.producto, c.categoria,  d.codigo_categoria, d.codigo_subcategoria, e.solicitante,
 e.fecha_requisicion, dep.nombre, e.observaciones, e.codigo_estatus, es.estatus, d.codigo_empresa,
 d.codigo_requisicion_enc, b.bodega, em.empresa, d.codigo_bodega, e.usuario_aprobo, e.codigo_dependencia, inv.existencia,inv.cantidad_comprometida as cantidad_comprometida,
-d.cantidad_autorizada, d.cantidad_solicitada
+d.cantidad_autorizada, d.cantidad_solicitada, p.existencia_minima
 , cm.unidad_medida
 from tb_requisicion_det d
 inner join tb_requisicion_enc e on
@@ -36,9 +36,9 @@ and d.codigo_bodega = inv.codigo_bodega and d.codigo_empresa = inv.codigo_empres
 left join cat_medida cm on cm.codigo_medida = p.codigo_medida
 where d.codigo_requisicion_enc = '$idsolicitud'";
 
-//echo "<hr>";
-//echo $Fields;
-//echo "<hr>";
+/* echo "<hr>";
+echo $Fields;
+echo "<hr>";  */
 $res_qry_producto = $query($Fields);
 while ($row = $fetch_array($res_qry_producto)) {
 
@@ -56,6 +56,7 @@ while ($row = $fetch_array($res_qry_producto)) {
     $cantidad_comprometida= $row["cantidad_comprometida"];
     $cantidad_comprometida= $row["cantidad_comprometida"];
     $unidad_medida = $row["unidad_medida"];
+   
 }
 
 ?>
@@ -95,6 +96,7 @@ while ($row = $fetch_array($res_qry_producto)) {
                         <table class="table informacion">
 
                           <tr>
+                            
                             <td class="DataLeft">Fecha</td>
                             <td class="DataResponse"><?print $fecha;?></td>
                             <td class="Correlativo"><div class="correlativo">Requisicion No:
@@ -114,6 +116,7 @@ while ($row = $fetch_array($res_qry_producto)) {
                             <td class="DataLeft">Observaciones</td>
                             <td class="DataResponse" colspan="2"><?print $observaciones;?></td>
                           </tr>
+                          
                           <tr>
                             <td colspan="3">
                                 <div class="radio">
@@ -139,6 +142,8 @@ while ($row = $fetch_array($res_qry_producto)) {
                                       <th>Cantidad Autorizada</th>
                                       <th>Cantidad Comprometida</th>
                                       <th>Existencias</th>
+                                    
+                                      
                                       <!-- <th>Comprometidas</th> -->
                                       <!-- <th>Chequeo</th> -->
                                     </tr>

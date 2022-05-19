@@ -314,7 +314,7 @@ inner join direccion d
 on k.id_dependencia = d.iddireccion 
 	where 
 	CONVERT(varchar(20), k.fecha, 120) >= '".$fechahora1."' and CONVERT(varchar(20), k.fecha, 120) <= '".$fechahora2."' 
- and k.codigo_producto = $producto and k.codigo_categoria = $categoria and k.codigo_subcategoria = $subcategoria and codigo_empresa = 1 and k.codigo_bodega = 15 and k.activo=1 
+ and k.codigo_producto = $producto and k.codigo_categoria = $categoria and k.codigo_subcategoria = $subcategoria and codigo_empresa = 1 and k.codigo_bodega = 8 and k.activo=1 
  order by codigo_kardex asc";
  
 

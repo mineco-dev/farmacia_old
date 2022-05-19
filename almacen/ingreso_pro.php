@@ -33,9 +33,12 @@ $_SESSION["ingreso"] = true;
             background: black;
             color: white;
         }
+        .table-producto-ingreso{
+              width: 90%;
+        }
     </style>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8_spanish_ci"/>
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -45,12 +48,12 @@ $_SESSION["ingreso"] = true;
 <body>
 
 
-<div class="container mt-5">
+<div class=" mt-5">
 
-    <table class="table table-sm" id="tabla4">
+    <table class="table table-producto-ingreso" id="tabla4">
         <thead>
         <tr>
-            <th >#</th>
+            <th >No.</th>
             <th class="title_input">Buscar</th>
             <th class="title_input">Categoria</th>
             <th class="title_input">Sub-Categoria</th>
@@ -144,8 +147,8 @@ $_SESSION["ingreso"] = true;
         var fila = "<tr class=\"selected\" id=\"fila" + cont + "\" >";
         fila += "<td id=\"cantidad\">" + cont + "</td>"
         fila += "<td class=\"input_center\" ><a href=\"javascript:void(0)\" onClick=\"buscar=window.open(\'productoIngreso.php?tipo=bien&posi=" + cont + "\',\'Buscar4\',\'width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250\'); return false;\" ><i class=\"fa fa-search\" aria-hidden=\"true\"></i></a></td>"
-        fila += "<td><input name=\"bien[" + cont + "][2]\" type=\"text\" id=\"bien[" + cont + "][2]\" size=\"10%\" class=\"form-control input_center\"  ></td>"
-        fila += "<td><input name=\"bien[" + cont + "][3]\" type=\"text\" id=\"bien[" + cont + "][3]\" size=\"20\" class=\"form-control input_center\" ></td>"
+        fila += "<td><input name=\"bien[" + cont + "][2]\" type=\"text\" id=\"bien[" + cont + "][2]\" size=\"5%\" class=\"form-control input_center\"  ></td>"
+        fila += "<td><input name=\"bien[" + cont + "][3]\" type=\"text\" id=\"bien[" + cont + "][3]\" size=\"5%\" class=\"form-control input_center\" ></td>"
         fila += "<td><input name=\"bien[" + cont + "][1]\" type=\"text\" id=\"bien[" + cont + "][1]\" size=\"5%\" class=\"form-control input_center\"></td>"
         // fila += "<td><input name=\"bien[" + cont + "][1]\" type=\"text\" value=\"\" id=\"bien[" + cont + "][1]\"  size=\"5%\" class=\"form-control\"></td>"
         //fila += "<td><a href=\"javascript:void(0)\" onClick=\"buscar=window.open(\'renglon.php?tipo=bien&posi=" + cont + "\',\'Buscar4\',\'width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250\'); return false;\"><input name=\"bien[" + cont + "][5]\" type=\"text\" value=\"\" id=\"bien[" + cont + "][5]\"  alt=\"Doble clic para consultar el catalogo\" size=\"15\" class=\"form-control\" ></a></td>"

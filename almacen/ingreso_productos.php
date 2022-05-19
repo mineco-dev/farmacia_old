@@ -47,7 +47,8 @@ $usuario_id = ($_SESSION["user_id"]);
         <style>
             .form-control {
                 display: inline !important;
-                margin-right: 5px !important;   
+                margin-right: 5px !important;
+                padding: 0 !important;   
             }
         </style>
         <title>ASEGGYS - SISTEMA FARMACIA MINECO</title>

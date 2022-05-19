@@ -53,7 +53,7 @@ body {
                   <TBODY>
                     <TR>
                       <TD width="67%" height="113" align=right vAlign=bottom style="font-size: 14pt; font-family: verdana,arial">
-					  <p align="center" class="style1">REPORTE DE CONSUMOS POR DEPENDENCIA, SISTEMA DE ALMACEN </p>                        </TD>
+					  <p align="center" class="style1">REPORTE DE CONSUMOS POR DEPENDENCIA, SISTEMA DE FARMACIA </p>                        </TD>
                       <TD width="33%" align=right vAlign=bottom style="font-size: 10pt; font-family: verdana,arial"><p align="center"><img src="mineco.JPG" width="100" height="108"></TD>
                     </TR>
                   </TBODY>

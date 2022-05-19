@@ -31,7 +31,9 @@ on dep.iddireccion = e.codigo_dependencia
 left  join cat_estatus es on
 e.codigo_estatus = es.codigo_estatus
 where d.codigo_requisicion_enc = '$idsolicitud'";
-	//echo $Fields;
+/* echo"<hr>";		
+echo $Fields;
+echo"<hr>"; */
 	$res_qry_producto=$query($Fields);
 		while($row=$fetch_array($res_qry_producto))
 		{				
