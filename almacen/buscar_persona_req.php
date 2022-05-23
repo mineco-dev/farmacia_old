@@ -20,7 +20,7 @@ include("../includes/sqlcommand.inc");
 	{
 		$_SESSION["codigodependencia"] = $_REQUEST["dependencia"];
 	}
-echo "<hr>cod dependencia: --" . $_SESSION["codigodependencia"] 
+//echo "<hr>cod dependencia: --" . $_SESSION["codigodependencia"] 
 
 ?>
 <html><head>
@@ -195,9 +195,9 @@ function Refrescar(form)
             	[<a href="buscar_persona_req.php?in=Y">Y</a>] 
             	[<a href="buscar_persona_req.php?in=Z">Z</a>] 
             	<a href="buscar_persona_req.php?in=all">[TODO]</a><BR></strong></strong><strong><strong>
-             <!-- <input name="txt_buscar" type="text" id="txt_buscar2" size="30">
+             <input name="txt_buscar" type="text" id="txt_buscar2" size="30">
                 <input name="bt_buscar" onClick="Validar(this.form)" type="button" id="bt_buscar" value="Buscar"> 
-    (ESCRIBA NOMBRE, APELLIDO O DEPENDENCIA)</strong></strong></p>-->
+    (ESCRIBA NOMBRE, APELLIDO O DEPENDENCIA)</strong></strong></p>
             </div>
         </div></td>
       </tr>
@@ -217,11 +217,11 @@ function Refrescar(form)
 				{
 				$busqueda=strtoupper($_REQUEST["txt_buscar"]);					
 				$consulta = "SELECT (a.apellido +' '+ a.apellido2 +' '+ a.apellidocasada +', '+ a.nombre +' '+ a.nombre2 +' '+ a.nombre3) as empleado, 
-	a.activo, a.idasesor ,d.nombre AS dependencia
-	FROM asesores a
-INNER JOIN direccion d ON a.iddireccion = d.iddireccion and d.iddireccion =  ".$_SESSION["codigodependencia"] ."
-where (a.apellido like '%$busqueda%' or a.apellido2 like '%$busqueda%' or a.nombre like '%$busqueda%' or a.nombre2 like '%$busqueda%' or d.nombre like '%$busqueda%') and (a.activo=1)";//primera consulta
-
+					a.activo, a.idasesor ,d.nombre AS dependencia
+				FROM asesores a
+				INNER JOIN direccion d 
+				ON a.iddireccion = d.iddireccion and d.iddireccion =  ".$_SESSION["codigodependencia"] ."
+				where (a.apellido like '%$busqueda%' or a.apellido2 like '%$busqueda%' or a.nombre like '%$busqueda%' or a.nombre2 like '%$busqueda%' or d.nombre like '%$busqueda%') and (a.activo=1)";//primera consulta
 				}
 				else	
 				if (isset($_REQUEST["in"]))	

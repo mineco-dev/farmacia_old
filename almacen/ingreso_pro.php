@@ -156,7 +156,7 @@ $_SESSION["ingreso"] = true;
         fila += "<td><input name=\"bien[" + cont + "][7]\" type=\"text\" id=\"bien[" + cont + "][7]\" size=\"45\" class=\"form-control\" > </td>"
         
         
-        fila += "<td><input name=\"lote[" + cont + "]\" type=\"number\" id=\"lote[" + cont + "]\"  size=\"7\" class=\"monto form-control input_center\" ></td>"
+        fila += "<td><input name=\"lote[" + cont + "]\" type=\"text\" id=\"lote[" + cont + "]\"  size=\"7\" class=\"monto form-control input_center\" ></td>"
         fila += "<td><input name=\"fecha_caducidad[" + cont + "]\" type=\"date\" id=\"fecha_caducidad[" + cont + "]\"  size=\"7\" class=\"monto form-control input_center\" ></td>"
 
 
@@ -290,8 +290,8 @@ $_SESSION["ingreso"] = true;
             $(this).find('td').eq(12).find('input').attr("id", "bien[" + num + "][4]");//
             $(this).find('td').eq(12).find('input').attr("name", "bien[" + num + "][4]");
 
-            $(this).find('td').eq(7).find('input').attr("id", "lote[" + num + "]");//fecha de vencimiento
-            $(this).find('td').eq(7).find('input').attr("name", "lote[" + num + "]");//fecha de vencimiento
+            $(this).find('td').eq(7).find('input').attr("id", "lote[" + num + "]");//lote del producto
+            $(this).find('td').eq(7).find('input').attr("name", "lote[" + num + "]");//lote del producto
 
             $(this).find('td').eq(8).find('input').attr("id", "fecha_caducidad[" + num + "]");//fecha de vencimiento
             $(this).find('td').eq(8).find('input').attr("name", "fecha_caducidad[" + num + "]");//fecha de vencimiento

@@ -82,9 +82,67 @@ a { text-decoration: none; }
 	color: #ecf0f1;
 }
 
+/* sub menú nuevo*/
+.submenu_x a { margin: 0px; display: block; width: 100%; height: 100%; }
+
+/*codigo anterior -- 23-11-2017 --*/
+
+/*.submenu_x{
+	cursor:pointer;
+	margin-top : 2px;
+	padding-bottom : 1px;
+	margin-bottom : 1px;
+	margin-left : 22px;
+	font-size : 11px;
+	font-family : Tahoma,Verdana,Arial;
+	text-align:left;
+	text-decoration:none;		
+	color : #006699;
+}
+*/
+
+.submenu_x{
+	cursor:pointer;	
+	font-size : 13px;
+	font-family : Tahoma,Verdana,Arial;
+	text-align:left;
+	text-decoration:none;		
+	color : #006699;
+}
+/*.submenu_x ul {
+	background-color: #ecf0f1;
+}*/
+.submenu_x ul li{
+	border-bottom: 1px solid #a6a8a9;
+	color: #776b6c;
+	height: 100%;
+	line-height: 40px;
+	padding: 0 0;
+
+}
+
+.submenu_x ul li:hover {
+	background-color: #56a3c7;
+	color: #ecf0f1;
+}
+
+.submenu_x ul li a {
+	color: #3e4146;
+}
+
+.submenu_x ul li:hover a {
+	color: #ecf0f1;
+}
+
+
+
+/* fin sub menu nuevo  */
+
 
 
 .Estilo1 {color: #006699}
+
+
 </STYLE>
  <script type="text/javascript">
 
@@ -105,11 +163,14 @@ document.write('</style>\n')
 
 function SwitchMenu(obj){
 	if(document.getElementById){
+	
 	var el = document.getElementById(obj);
+
 	var ar = document.getElementById("masterdiv").getElementsByTagName("span"); //DynamicDrive.com change
+
 		if(el.style.display != "block"){ //DynamicDrive.com change
 			for (var i=0; i<ar.length; i++){
-				if (ar[i].className=="submenu") //DynamicDrive.com change
+				if (ar[i].className=="submenu_x") //DynamicDrive.com change
 				ar[i].style.display = "none";
 			}
 			el.style.display = "block";
@@ -177,6 +238,10 @@ window.onunload=savemenustate
 	// Opciones principales del menu izquierdo, clasificado por subgerencia
 	require_once('connection/helpdesk.php');
 	$consulta = "select * from view_menu WHERE ((codigo_usuario ='$user') AND (codigo_dependencia = '$dependencia')) and ref_submenu='1' order by orden_x_dependencia";	
+	/* echo"<hr>";
+	echo $consulta;
+	echo"<hr>";  
+*/
 	$result=mssql_query($consulta);				
 	
 	while($row=mssql_fetch_array($result))
@@ -185,23 +250,30 @@ window.onunload=savemenustate
 				// $orden_x_dependencia=$row["orden_x_dependencia"];
 				$orden_x_dependencia=$row["orden_x_dependencia"];
 				$link=$row["det_link"];		
-				$sub="sub$orden_x_dependencia";		
+				$sub="sub".$orden_x_dependencia;		
 				$codigo_grupo_det=$row["det_codigo_grupo_det"];	
+				/* echo"<hr>";
+				echo($codigo_grupo_det);
+				echo "->";
+				echo($dependencia);
+				echo"<hr>"; */
 				if( ($codigo_grupo_det == 251 && $dependencia == 24) || ($codigo_grupo_det == 2 && $dependencia == 33) ){		
 							if ($link=="NA")  //si las opciones principales no tienen link, en su lugar aparece NA= no aplica, porque contiene un submenu, al dar clic lo expande
-							{echo '<div class="menutitle" onclick="SwitchMenu(\''.$sub.'\')"><B>'.utf8_encode($row["det_nombre_rol"]).'</B></div>';
+							{	//echo '<div class="menutitle" onclick="SwitchMenu(\''.$sub.'\')"><B>'.utf8_encode($row["det_nombre_rol"]).'</B></div>';
+								echo '<div class="menutitle"><a href="SwitchMenu(\''.$sub.'\')"><B>'.utf8_encode($row["det_nombre_rol"]).'</a></B></div>';								
 							}	
 							else //si tiene link en el campo link, entonces al dar clic sobre la opcion lo ejecutar�
-							{echo '<div class="menutitle"><a href="'.$row["det_link"].'" target="'.$row["destino"].'">'.utf8_encode($row["det_nombre_rol"]).'</a></div>'; 					
+							{								
+								echo '<div class="menutitle"><a href="'.$row["det_link"].'" target="'.$row["destino"].'">'.utf8_encode($row["det_nombre_rol"]).'</a></div>'; 					
 							}
 						echo '<img src="images/hr01.gif" width="137" height="5" alt="" border="0"><br>';
-				}else if($dependencia != 24 && $dependencia != 33)
+				}elseif($dependencia != 24 && $dependencia != 33)
 				{
 						if ($link=="NA")  //si las opciones principales no tienen link, en su lugar aparece NA= no aplica, porque contiene un submenu, al dar clic lo expande
 						{
 							echo '<div class="menutitle" onclick="SwitchMenu(\''.$sub.'\')"><B>'.utf8_encode($row["det_nombre_rol"]).'</B></div>';
 						}	
-						else //si tiene link en el campo link, entonces al dar clic sobre la opcion lo ejecutar�
+						else //si tiene link en el campo link, entonces al dar clic sobre la opcion lo ejecutar
 						{
 								if(($codigo_grupo_det != 14 && $dependencia == 1)){
 									echo '<div class="menutitle"><a href="'.$row["det_link"].'" target="'.$row["destino"].'">'.utf8_encode($row["det_nombre_rol"]).'</a></div>';
@@ -214,10 +286,17 @@ window.onunload=savemenustate
 								}
 						}
 				}
-				echo '<span class="submenu xx" id="'.$sub.'"><ul>'; //contenido del submenu, de acuerdo a la opcion seleccionada, su referencia es codigo_grupo_det
+				if ($codigo_grupo_det == 251 && $dependencia==24){
+					echo '<span class="submenu_x xx" id="'.$sub.'"><ul>'; //contenido del submenu, de acuerdo a la opcion seleccionada, su referencia es codigo_grupo_det
+					
+				}	
+				else{
+					echo '<span class="submenu xx" id="'.$sub.'"><ul>'; //contenido del submenu, de acuerdo a la opcion seleccionada, su referencia es codigo_grupo_det
+				}				
+				
 				
 				$consulta2 = "select * from view_menu WHERE ((codigo_usuario ='$user') AND (codigo_dependencia = '$dependencia')) and ref_submenu='$codigo_grupo_det' order by orden_x_dependencia";
-						$result2=mssql_query($consulta2);	
+				$result2=mssql_query($consulta2);	
 				while($row2=mssql_fetch_array($result2))
 				{	
 							$NoSubMenu = $row2["det_codigo_grupo_det"];
