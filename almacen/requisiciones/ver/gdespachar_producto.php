@@ -318,7 +318,7 @@ if (isset($_REQUEST["txt_id"]))
 						  fecha_despacho=getdate() WHERE codigo_requisicion_enc='$cod'";
 		$query($qry_actualiza);				
       	echo "REQUISICION DESPACHADA EXITOSAMENTE";
-		echo '<a href="almacen/requisiciones/versolicitud.php?ver=3"> <<--regresar </a>';
+		echo '<a href="../versolicitud.php?ver=3"> <<--regresar </a>';
 	  
 	  
 	    } // fin saldo

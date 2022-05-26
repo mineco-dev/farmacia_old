@@ -82,7 +82,7 @@ if ($TipoSolicitud == "1") {
         $rowSaldo++;
     }
         echo 1;
-    }else{
+}else{
         $SQLUpdateRequi = 'UPDATE 
                             tb_requisicion_enc SET
                                 codigo_estatus = 0,

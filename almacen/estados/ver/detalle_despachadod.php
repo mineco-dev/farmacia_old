@@ -13,7 +13,8 @@
 	$Fields="select d.rowid, d.codigo_producto, p.producto, c.categoria,  d.codigo_categoria, d.codigo_subcategoria, e.solicitante, 
 e.fecha_requisicion,  e.observaciones, dep.nombre, e.codigo_estatus, es.estatus, d.codigo_renglon, d.cantidad_autorizada,
 d.codigo_requisicion_enc, b.bodega, e.usuario_despacho,
- d.cantidad_solicitada from tb_requisicion_det d
+ d.cantidad_solicitada from 
+ tb_requisicion_det d
 inner join tb_requisicion_enc e on
 e.codigo_requisicion_enc = d.codigo_requisicion_enc
 inner join cat_producto p on p.codigo_producto = d.codigo_producto and p.codigo_categoria = d.codigo_categoria and p.codigo_subcategoria = d.codigo_subcategoria

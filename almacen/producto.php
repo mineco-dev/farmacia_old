@@ -128,7 +128,7 @@ function Validar(form)
 {
 	if (form.txt_buscar.value == "")
 	{ 
-		alert("Escriba el nombre o apellido del empleado para realizar la búsqueda"); 
+		alert("Escriba el nombre o apellido del empleado para realizar la b�squeda"); 
 		form.txt_buscar.focus(); 
 		return;
 	}  
@@ -143,11 +143,14 @@ function Refrescar(form)
 <link href="../helpdesk.css" rel="stylesheet" type="text/css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ASEGGYS - SISTEMA FARMACIA MINECO</title>
+<title>ASEGGYS 2.0 - SISTEMA ALMACEN MINECO</title>
 <style type="text/css">
 <!--
 .Estilo1 {font-size: 12px}
 .Estilo3 {color: #FFFFFF}
+.oculto {
+	display:none;
+}
 -->
 </style>
 </head>
@@ -188,6 +191,11 @@ function Refrescar(form)
 					if ($_REQUEST["txt_buscar"]!="")
 					{
 						$busqueda=strtoupper($_REQUEST["txt_buscar"]);					
+						// $consulta = "SELECT distinct     p.rowid, (p.producto +' - '+ p.marca +' EN '+ m.unidad_medida) as producto,  p.codigo_subcategoria,
+						// p.codigo_categoria,  p.activo,  p.codigo_producto, p.uso
+						// FROM     cat_producto p
+						// INNER JOIN cat_medida m ON p.codigo_medida = m.codigo_medida 
+						// where (p.producto like '%$busqueda%' or p.uso like '%$busqueda%')";
 						$consulta = "SELECT  p.rowid ,(p.producto +' - '+ p.marca +' EN '+ cat_medida.unidad_medida) as producto,
 						p.codigo_subcategoria, p.codigo_categoria, 
 						p.activo, p.codigo_producto, p.uso, tb_inventario.existencia
@@ -195,7 +203,7 @@ function Refrescar(form)
 						INNER JOIN cat_producto p  ON cat_medida.codigo_medida = p.codigo_medida 
 						INNER JOIN tb_inventario ON p.codigo_categoria = tb_inventario.codigo_categoria AND p.codigo_subcategoria = tb_inventario.codigo_subcategoria 
 						AND p.codigo_producto = tb_inventario.codigo_producto
-						WHERE tb_inventario.existencia >= 1 and (p.producto like '%$busqueda%' or p.uso like '%$busqueda%')  and tb_inventario.codigo_bodega= 8";
+						WHERE tb_inventario.existencia >= 1 and ((p.producto like '%$busqueda%'   and p.activo = 1) or (p.uso like '%$busqueda%'   and p.activo = 1))  and tb_inventario.codigo_bodega= 8  and p.activo = 1";
 
 					}
 					else	
@@ -216,7 +224,7 @@ function Refrescar(form)
 								INNER JOIN cat_producto p  ON cat_medida.codigo_medida = p.codigo_medida 
 								INNER JOIN tb_inventario ON p.codigo_categoria = tb_inventario.codigo_categoria AND p.codigo_subcategoria = tb_inventario.codigo_subcategoria 
 								AND p.codigo_producto = tb_inventario.codigo_producto
-								WHERE tb_inventario.existencia >= 1 and (p.producto like '$inicial%')  and tb_inventario.codigo_bodega= 8";
+								WHERE tb_inventario.existencia >= 1 and (p.producto like '$inicial%')  and tb_inventario.codigo_bodega= 8  and p.activo = 1";
 
 							else
 								// $consulta = "SELECT  distinct    p.rowid, (p.producto +' - '+ p.marca +' EN '+ m.unidad_medida) as producto,  p.codigo_subcategoria,
@@ -231,7 +239,7 @@ function Refrescar(form)
 								INNER JOIN cat_producto p  ON cat_medida.codigo_medida = p.codigo_medida 
 								INNER JOIN tb_inventario ON p.codigo_categoria = tb_inventario.codigo_categoria AND p.codigo_subcategoria = tb_inventario.codigo_subcategoria 
 								AND p.codigo_producto = tb_inventario.codigo_producto
-								WHERE tb_inventario.existencia >= 1   and tb_inventario.codigo_bodega= 8
+								WHERE tb_inventario.existencia >= 1   and tb_inventario.codigo_bodega= 8  and p.activo = 1
 								order by p.producto";
 
 						}
@@ -249,11 +257,11 @@ function Refrescar(form)
 								INNER JOIN cat_producto p  ON cat_medida.codigo_medida = p.codigo_medida 
 								INNER JOIN tb_inventario ON p.codigo_categoria = tb_inventario.codigo_categoria AND p.codigo_subcategoria = tb_inventario.codigo_subcategoria 
 								AND p.codigo_producto = tb_inventario.codigo_producto
-								WHERE tb_inventario.existencia >= 1  and tb_inventario.codigo_bodega= 8";
+								WHERE tb_inventario.existencia >= 1  and tb_inventario.codigo_bodega= 8  and p.activo = 1";
 
 						}
 
-						//echo $consulta;
+					
 						conectardb($almacen);
 						$result=$query($consulta);
 						$i = 0;				
@@ -268,7 +276,7 @@ function Refrescar(form)
 
 							echo '<tr class='.$clase.'>';
 							echo "<td class='boton'><center><img src=\"../images/iconos/ico_ir.gif\" border=\"0\" alt=\"Seleccionar esta categoria\"></a></center></td>";					
-							echo '<td>'.$row["codigo_producto"].'</td><td>'.utf8_encode($row["producto"]).'</td><td style="display:none;">'.$row["codigo_categoria"].'</td><td style="display:none;">'.$row["codigo_subcategoria"].'</td><td style="display:none;" >'.$row["rowid"].'</td></tr>';	
+							echo '<td>'.$row["codigo_producto"].'</td><td>'.utf8_encode($row["producto"]).'</td><td class="oculto">'.$row["codigo_categoria"].'</td><td class="oculto">'.$row["codigo_subcategoria"].'</td><td class="oculto" >'.$row["rowid"].'</td> <td class="oculto">'.$row["existencia"].'</td> </tr>';	
 
 					// echo '<tr class='.$clase.'>';
 					// echo "<td><a href=\"javascript:void(0)\" onClick=\"window.opener.document.getElementById('$tipo"."[".$posi."][1]').value = '$completo'; 
@@ -334,6 +342,8 @@ function Refrescar(form)
             window.opener.document.getElementById(tipo+"["+posi+"][5]").value = valores[3];
             window.opener.document.getElementById(tipo+"["+posi+"][6]").value = valores[4];
             window.opener.document.getElementById(tipo+"["+posi+"][4]").value = valores[5];
+			window.opener.document.getElementById(tipo+"["+posi+"][8]").value = valores[6];
+
             window.close();
             window.opener.focus();
 

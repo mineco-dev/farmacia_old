@@ -148,7 +148,7 @@ if(isset($_SESSION["ingreso"]))
             $cant_ingresada[$cnt],  
             $costo_unitario[$cnt], 
             $precio_total[$cnt],
-            $lote[$cnt],
+            '$lote[$cnt]',
             '$fecha_vence[$cnt]', 
             $codigo_bodega, 
             '$nombre_usuario', 
@@ -474,7 +474,7 @@ if(isset($_SESSION["ingreso"]))
                 $categoria,
                 $subcategoria, 
                 1,
-                $lote[$cnt],
+                '$lote[$cnt]',
                 '$fecha_vence[$cnt]')";
         }
         //echo "ultimo: ".$qry_ingreso_inventario;

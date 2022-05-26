@@ -220,8 +220,11 @@ function Refrescar(form)
 					a.activo, a.idasesor ,d.nombre AS dependencia
 				FROM asesores a
 				INNER JOIN direccion d 
-				ON a.iddireccion = d.iddireccion and d.iddireccion =  ".$_SESSION["codigodependencia"] ."
+				ON a.iddireccion = d.iddireccion 
 				where (a.apellido like '%$busqueda%' or a.apellido2 like '%$busqueda%' or a.nombre like '%$busqueda%' or a.nombre2 like '%$busqueda%' or d.nombre like '%$busqueda%') and (a.activo=1)";//primera consulta
+				/* echo"<hr>";
+				var_dump($consulta);
+				echo"<hr>"; */
 				}
 				else	
 				if (isset($_REQUEST["in"]))	
@@ -258,16 +261,16 @@ function Refrescar(form)
 				{
 					$completo=$row["empleado"];
 					$clase = "detalletabla2";
+					/* echo"<hr>";
+					echo"$completo";
+					echo"<hr>";
+					echo"$clase";
+					echo"<hr>"; */
 					if ($i % 2 == 0) 
 					{
 						$clase = "detalletabla1";
-					}
-
-
-					
+					}					
 					echo '<tr class='.$clase.'>';
-
-
 					echo "<td class='boton'><center><img src=\"../images/iconos/ico_ir.gif\" border=\"0\" alt=\"Seleccionar este empleado\"></a></center></td>";					
 					echo '<td>'.$row["empleado"].'</td>';	
 					echo '<td>'.$row["idasesor"].'</td></tr>';	

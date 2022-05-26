@@ -106,7 +106,7 @@ function Refrescar(form)
 					$result=mssql_query($query);	
 					echo('<select name="cbo_dependencia">');
 					$nombre=":: Dependencia ::";
-					echo'<option value="0">'.$nombre.'</option>';
+					echo'<option value="0">'.utf8_encode($nombre).'</option>';
 					while($row=mssql_fetch_array($result))
 					{
 						echo'<option value="'.$row["codigo_dependencia"].'">'.$row["nombre_dependencia"].'</option>';

@@ -19,7 +19,7 @@ if ($otro_reporte=='AP')
 						  fecha_aprobacion=getdate() WHERE codigo_requisicion_enc='$rowid'";
 		$query($qry_actualiza);				
         echo "REQUISICION APROBADA EXITOSAMENTE";
-		echo '<a href="almacen/requisiciones/versolicitud.php?ver=1"> <<--regresar </a>';
+		echo '<a href="../versolicitud.php?ver=1"> <<--regresar </a>';
     }				
 
 else
@@ -37,7 +37,9 @@ if ($otro_reporte=='RE')
 		//print($qry_actualiza);
 		$query($qry_actualiza);	
 		echo "LA REQUISICION HA SIDO RECHAZADA";
-		echo '<a href="almacen/estados/versolicitud.php?ver=5"> <<--regresar </a>';
+		echo '<a href="../versolicitud.php?ver=1"> <<--regresar </a>';
+
+		
 	}
 							
 	

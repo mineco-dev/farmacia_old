@@ -1,9 +1,5 @@
 <?PHP
 
-	
-
-
-
 //strquery=consulta desde atendidas.php ---- $ccol=cantidad columnas ----- $ncol=Encabezados columnas/campo ----- $campos=nombres de campos segun query
 //$tamano=tamaño de campos ----- $dbms=conexion bd  ----  $width= ancho de tabla dese atendidas
 //$mod=modificar ---$eli=eliminar ---- $ver=verificar

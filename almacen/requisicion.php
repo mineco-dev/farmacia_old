@@ -459,10 +459,16 @@ for(i = 0; i < 100; i++)
    {
     alert('Debe seleccionar un producto o eliminar la linea que esta vacia en el detalle del producto'); form['bien['+i+'][4]'].focus();return
   };
+  
   if(!form['cantidad_solicitada['+i+']'].value)
   {
     alert('Debe ingresar un cantidad para el producto seleccionado'); form['cantidad_solicitada['+i+']'].focus();return
   };
+  if(form['cantidad_solicitada['+i+']'].value > form['cantidad_stock['+i+']'].value)
+  {
+    alert('No se puede solicitar más de la existencia en Stock'); form['cantidad_solicitada['+i+']'].focus();return
+  };
+  
 }
 }
 /*Fin del codigo 19-12-2016*/
