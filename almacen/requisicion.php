@@ -464,10 +464,7 @@ for(i = 0; i < 100; i++)
   {
     alert('Debe ingresar un cantidad para el producto seleccionado'); form['cantidad_solicitada['+i+']'].focus();return
   };
-  if(form['cantidad_solicitada['+i+']'].value > form['cantidad_stock['+i+']'].value)
-  {
-    alert('No se puede solicitar más de la existencia en Stock'); form['cantidad_solicitada['+i+']'].focus();return
-  };
+  
   
 }
 }
