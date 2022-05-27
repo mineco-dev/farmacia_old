@@ -128,7 +128,7 @@ function Validar(form)
 {
 	if (form.txt_buscar.value == "")
 	{ 
-		alert("Escriba el nombre o apellido del empleado para realizar la b�squeda"); 
+		alert("Escriba el nombre del medicamento o parte del mismo para realizar la búsqueda"); 
 		form.txt_buscar.focus(); 
 		return;
 	}  
@@ -200,10 +200,13 @@ function Refrescar(form)
 						p.codigo_subcategoria, p.codigo_categoria, 
 						p.activo, p.codigo_producto, p.uso, tb_inventario.existencia
 						FROM            cat_medida 
-						INNER JOIN cat_producto p  ON cat_medida.codigo_medida = p.codigo_medida 
-						INNER JOIN tb_inventario ON p.codigo_categoria = tb_inventario.codigo_categoria AND p.codigo_subcategoria = tb_inventario.codigo_subcategoria 
+						INNER JOIN cat_producto p  
+							ON cat_medida.codigo_medida = p.codigo_medida 
+						INNER JOIN tb_inventario 
+							ON p.codigo_categoria = tb_inventario.codigo_categoria 
+						AND p.codigo_subcategoria = tb_inventario.codigo_subcategoria 
 						AND p.codigo_producto = tb_inventario.codigo_producto
-						WHERE tb_inventario.existencia >= 1 and ((p.producto like '%$busqueda%'   and p.activo = 1) or (p.uso like '%$busqueda%'   and p.activo = 1))  and tb_inventario.codigo_bodega= 8  and p.activo = 1";
+						WHERE tb_inventario.existencia >= 1 and ((p.producto like '%$busqueda%'   and p.activo = 1) or (p.uso like '%$busqueda%'   and p.activo = 1))  and (tb_inventario.codigo_bodega= 8 or tb_inventario.codigo_bodega=15) and p.activo = 1 ";
 
 					}
 					else	
@@ -224,7 +227,7 @@ function Refrescar(form)
 								INNER JOIN cat_producto p  ON cat_medida.codigo_medida = p.codigo_medida 
 								INNER JOIN tb_inventario ON p.codigo_categoria = tb_inventario.codigo_categoria AND p.codigo_subcategoria = tb_inventario.codigo_subcategoria 
 								AND p.codigo_producto = tb_inventario.codigo_producto
-								WHERE tb_inventario.existencia >= 1 and (p.producto like '$inicial%')  and tb_inventario.codigo_bodega= 8  and p.activo = 1";
+								WHERE tb_inventario.existencia >= 1 and (p.producto like '$inicial%')  and (tb_inventario.codigo_bodega= 8 or tb_inventario.codigo_bodega=15) and p.activo = 1";
 
 							else
 								// $consulta = "SELECT  distinct    p.rowid, (p.producto +' - '+ p.marca +' EN '+ m.unidad_medida) as producto,  p.codigo_subcategoria,
@@ -239,7 +242,7 @@ function Refrescar(form)
 								INNER JOIN cat_producto p  ON cat_medida.codigo_medida = p.codigo_medida 
 								INNER JOIN tb_inventario ON p.codigo_categoria = tb_inventario.codigo_categoria AND p.codigo_subcategoria = tb_inventario.codigo_subcategoria 
 								AND p.codigo_producto = tb_inventario.codigo_producto
-								WHERE tb_inventario.existencia >= 1   and tb_inventario.codigo_bodega= 8  and p.activo = 1
+								WHERE tb_inventario.existencia >= 1   and (tb_inventario.codigo_bodega= 8 or tb_inventario.codigo_bodega=15)  and p.activo = 1
 								order by p.producto";
 
 						}
@@ -257,7 +260,7 @@ function Refrescar(form)
 								INNER JOIN cat_producto p  ON cat_medida.codigo_medida = p.codigo_medida 
 								INNER JOIN tb_inventario ON p.codigo_categoria = tb_inventario.codigo_categoria AND p.codigo_subcategoria = tb_inventario.codigo_subcategoria 
 								AND p.codigo_producto = tb_inventario.codigo_producto
-								WHERE tb_inventario.existencia >= 1  and tb_inventario.codigo_bodega= 8  and p.activo = 1";
+								WHERE tb_inventario.existencia >= 1  and tb_inventario.codigo_bodega= 8 or tb_inventario.codigo_bodega=15 and p.activo = 1";
 
 						}
 
