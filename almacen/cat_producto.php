@@ -454,7 +454,8 @@ function Refrescar(form)
 	  	<td width="5%" class="titulotabla"><strong><strong>C&oacute;digo</strong></strong></td>
         <td width="37%" class="titulotabla"><strong><strong>Descripci&oacute;n</strong></strong></td>
         <td width="23%" class="titulotabla">Marca</td>
-        <td width="24%" class="titulotabla">Presentaci&oacute;n</td>
+        <td width="5%" class="titulotabla">Exitencia Mínima</td>
+        <td width="14%" class="titulotabla">Presentaci&oacute;n</td>
         <td width="6%" colspan="-1" class="titulotabla"><span class="titulotabla"><strong>Editar</strong></span></td>
        
       </tr>
@@ -464,44 +465,48 @@ function Refrescar(form)
 				$busqueda=strtoupper($_REQUEST["txt_buscar"]);					
 				$consulta = "SELECT * FROM cat_producto p
 				inner join cat_medida m on p.codigo_medida=m.codigo_medida
-									where p.activo=1 and producto like '%$busqueda%' ";				
+									where p.activo=1 and producto like '%$busqueda%' ";
+									
 				}
 				else	
-				if (isset($_REQUEST["in"]))	
-				{
-					$inicial=$_REQUEST["in"];
-					if ($inicial!="all")
-						$consulta = "SELECT * FROM cat_producto p
-				inner join cat_medida m on p.codigo_medida=m.codigo_medida
-				where p.activo=1 and producto like '$inicial%' ";
-						else
+					if (isset($_REQUEST["in"]))	
+					{
+						$inicial=$_REQUEST["in"];
+						if ($inicial!="all")
 							$consulta = "SELECT * FROM cat_producto p
-				inner join cat_medida m on p.codigo_medida=m.codigo_medida where p.activo=1
-				order by p.producto ";
-				}
-				else
-				{
-					$consulta = "SELECT * FROM cat_producto p
-				inner join cat_medida m on p.codigo_medida=m.codigo_medida
-				where p.producto like 'A%' and p.activo=1 order by producto";
-				}
+								inner join cat_medida m on p.codigo_medida=m.codigo_medida
+								where p.activo=1 and producto like '$inicial%' ";
+							else
+								$consulta = "SELECT * FROM cat_producto p
+								inner join cat_medida m on p.codigo_medida=m.codigo_medida where p.activo=1
+								order by p.producto ";
+					}
+					else
+					{
+						$consulta = "SELECT * FROM cat_producto p
+						inner join cat_medida m on p.codigo_medida=m.codigo_medida
+						where p.producto like 'A%' and p.activo=1 order by producto";
+						/* echo"<hr>";				
+						echo ($consulta);				
+						echo"<hr>"; */
+					}
 				conectardb($almacen);
 				$result=$query($consulta);
 				$i = 0;				
 				while($row=$fetch_array($result))
 				{
-					$completo=$row["producto"]."-".$row["unidad_medida"];
+					//$completo=$row["producto"]."-".$row["unidad_medida"];
 					$clase = "detalletabla2";
 					if ($i % 2 == 0) 
-					{
-						$clase = "detalletabla1";
-					}
+						{
+							$clase = "detalletabla1";
+						}
 					$estado=$row["activo"];
 					if ($estado==1)
 					{										
-					echo '<tr class='.$clase.'>';								
-					echo '<td class= "colcentrada"> '.utf8_encode($row["codigo_producto"]).'</td>';
-					echo '<td>'.utf8_encode($row["producto"]).'</td><td>'.utf8_encode($row["marca"]).'</td><td>'.$row["unidad_medida"].'</td><td><center><a href="editar_producto.php?id='.$row["rowid"].'"><img src="../images/iconos/ico_editar.png" width ="27"  height= "29" alt="Modificar información"></a></center></td></tr>';					
+						echo '<tr class='.$clase.'>';								
+						echo '<td class= "colcentrada"> '.utf8_encode($row["codigo_producto"]).'</td>';
+						echo '<td>'.utf8_encode($row["producto"]).'</td><td>'.utf8_encode($row["marca"]).'</td><td> '.($row["existencia_minima"]).'</td><td>'.$row["unidad_medida"].'</td><td><center><a href="editar_producto.php?id='.$row["rowid"].'"><img src="../images/iconos/ico_editar.png" width ="27"  height= "29" alt="Modificar información"></a></center></td></tr>';					
 					}
 					else
 						echo '<tr class='.$clase.'><td>'.utf8_encode($row["producto"]).'</td><td>'.utf8_encode($row["marca"]).'</td><td>'.$row["unidad_medida"].'</td><td><center><a href="editar_producto.php?id='.$row["rowid"].'"><img src="../images/iconos/ico_editar.png"  width ="27"  height= "29" alt="Modificar información"></a></center></td></tr>';										
