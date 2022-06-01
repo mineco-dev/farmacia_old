@@ -90,7 +90,7 @@ if ($TipoSolicitud == "1") {
                                 fecha_rechazo = "'.date("Y-m-d H:i:s").'"
                                 WHERE codigo_requisicion_enc = '.$nRequi.'';
 
-        // $responseRequi = $query($SQLUpdateRequi);
+        $responseRequi = $query($SQLUpdateRequi);
 
         echo 0;
 }
