@@ -141,7 +141,7 @@ var id_fila_selected=[];
 		fila += "<td><input id=\"bien["+cont+"][6]\" type=\"text\"  style=\"width:100%;border:none;background:#fff\" disabled></td>"
 		fila += "<td><input id=\"bien["+cont+"][8]\" type=\"text\"   name=\"cantidad_stock["+cont+"]\" style=\"width:100%;border:none;background:#fff\" disabled></td>"
 		fila += "<td><input   id=\"cantidad_solicitada["+cont+"]\" type=\"text\" name=\"cantidad_solicitada["+cont+"]\" size=\"12\" style=\"width:100%\" class=\"form-control\" required></td>"
-		fila += "<td id=\"fila"+cont+"\" onclick=\"seleccionarFila(id, 'check"+cont+"');\" ><input id=\"check"+cont+"\" type=\"checkbox\" name=\"transporte\" >Eliminar</td>"
+		fila += "<td id=\"fila"+cont+"\" ><input id=\"check"+cont+"\" type=\"checkbox\" name=\"transporte\" >Eliminar</td>"
 		fila += "<td><input id=\"bien["+cont+"][4]\" type=\"hidden\" name=\"bien["+cont+"][4]\"  style=\"display:none;\"  size=\"0\"/></td>"
 		fila += "</tr>";
 		$('#tabla4').append(fila);
@@ -196,11 +196,11 @@ var id_fila_selected=[];
 			$(this).find('td').eq(5).find('input').attr("id","bien["+num+"][8]");//stock 
 			//$(this).find('td').eq(5).find('input').attr("id","cantidad_sto["+num+"]");
 			$(this).find('td').eq(6).find('input').attr("name","cantidad_solicitada["+num+"]");//cantidad solicitada
-			$(this).find('td').eq(1).find('a').attr("onDblClick","buscar=window.open('producto.php?tipo=bien&posi="+num+"','Buscar4','width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250'); return false;");
+			$(this).find('td').eq(1).find('a').attr("onclick","buscar=window.open('producto.php?tipo=bien&posi="+num+"','Buscar4','width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250'); return false;");
 			//$(this).find('td').eq(1).setAttribute("onclick","https://www.google.com");
-			$(this).find('td').eq(6).attr("id","fila"+num+"");
-			$(this).find('td').eq(6).attr("onclick","seleccionarFila(id, 'check"+num+"');");
-			$(this).find('td').eq(6).find('input').attr("id","check"+num+"");
+			$(this).find('td').eq(7).attr("id","fila"+num+"");
+			$(this).find('td').eq(7).attr("onclick","seleccionarFila(id, 'check"+num+"');");
+			$(this).find('td').eq(7).find('input').attr("id","check"+num+"");
 			$(this).find('td').eq(8).find('input').attr("id","bien["+num+"][4]");
 			$(this).find('td').eq(8).find('input').attr("name","bien["+num+"][4]");
 

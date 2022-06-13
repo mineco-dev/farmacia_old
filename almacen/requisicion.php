@@ -458,13 +458,7 @@ for(i = 0; i < 100; i++)
    if(form['bien['+i+'][4]'].value == 0)
    {
     alert('Debe seleccionar un producto o eliminar la linea que esta vacia en el detalle del producto'); form['bien['+i+'][4]'].focus();return
-  };
-  
-  if(!form['cantidad_solicitada['+i+']'].value)
-  {
-    alert('Debe ingresar un cantidad para el producto seleccionado'); form['cantidad_solicitada['+i+']'].focus();return
-  };
-  
+  }; 
   
 }
 }
