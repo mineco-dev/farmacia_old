@@ -16,7 +16,8 @@
 $Fields="select distinct d.rowid, d.codigo_producto, p.producto, c.categoria,  d.codigo_categoria, d.codigo_subcategoria, e.solicitante, 
 e.fecha_requisicion, dep.nombre, e.observaciones, e.codigo_estatus, es.estatus, d.codigo_empresa,
 d.codigo_requisicion_enc, b.bodega, em.empresa, d.codigo_bodega, e.usuario_aprobo, e.codigo_dependencia, inv.existencia, inv.cantidad_comprometida, 
-d.cantidad_autorizada, d.cantidad_solicitada from tb_requisicion_det d
+d.cantidad_autorizada, d.cantidad_solicitada 
+from tb_requisicion_det d
 inner join tb_requisicion_enc e on
 e.codigo_requisicion_enc = d.codigo_requisicion_enc
 inner join cat_producto p on p.codigo_producto = d.codigo_producto and p.codigo_categoria = d.codigo_categoria and p.codigo_subcategoria = d.codigo_subcategoria
@@ -305,21 +306,14 @@ function imprimir()
 		     
 			print ("<TD>" . $resultado['codigo_requisicion_enc'] . "</TD>\n");
 			print ("<TD>" . $resultado['producto'] . "</TD>\n");
-           /* print ("<TD>" . $resultado['codigo_producto'] . "</TD>\n");
-			print ("<TD>" . $resultado['codigo_categoria'] . "</TD>\n");
-            print ("<TD>" . $resultado['codigo_subcategoria'] . "</TD>\n");
-			
-			print ("<TD>" . $resultado['estatus'] . "</TD>\n"); */
 			print ("<TD>" . $resultado['cantidad_solicitada'] . "</TD>\n");
-			
-			
             print '<td>';
            print('<input  name="txt_solicitada['.$cnt.'][15]"  value='.$resultado['cantidad_solicitada'].' type="hidden" size="8" id="txt_autorizado1"/>
 		
 		   <input  name="txt_codigo['.$cnt.'][25]"  value='.$resultado['codigo_requisicion_enc'].' type="hidden" size="3" id="txt_autorizado1"/>
 		   <input  name="txt_comprometido['.$cnt.'][30]"  value='.$resultado['cantidad_comprometida'].' type="hidden" size="3" id="txt_autorizado1"/>
 		   <input  name="txt_rowid['.$cnt.'][12]"  value='.$resultado['rowid'].' type="hidden" size="3" id="txt_autorizado1"/>
-		   <input  name="txt_autorizado['.$cnt.'][11]"  value='.$resultado['cantidad_solicitada'].' type="text" size="8" id="txt_autorizado1"/>
+		   <input  name="txt_autorizado['.$cnt.'][11]"  value='.$resultado['cantidad_solicitada'].' type="text" size="8" id="txt_autorizado1" readonly/>
 		   <input  name="txt_empresa['.$cnt.'][7]"  value='.$resultado['codigo_empresa'].' type="hidden" size="3" id="txt_autorizado1"/>
 		   <input  name="txt_bodega['.$cnt.'][6]"  value='.$resultado['codigo_bodega'].' type="hidden" size="3" id="txt_autorizado1"/>
 		   <input  name="txt_subcategoria['.$cnt.'][5]"  value='.$resultado['codigo_subcategoria'].' type="hidden" size="3" id="txt_autorizado1"/>
