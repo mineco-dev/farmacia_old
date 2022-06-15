@@ -306,11 +306,12 @@ function imprimir()
    }
 	 		
 		 print ("</TABLE>\n");
-		 echo "<ul> </ul>";
+		// echo "<ul> </ul>";
 	  
 	  }
-      else
+      else{
          print ("No hay noticias disponibles");
+	}
     ?>    
     </div>
     </div>
