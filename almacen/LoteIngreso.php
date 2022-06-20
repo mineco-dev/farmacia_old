@@ -17,7 +17,7 @@ if (isset($_REQUEST["txt_lote"]))
 			echo '<script language="javascript">alert("Este lote ya fué ingresado");</script>';
 			$existe=true;
 		}
-		if ($existe==false)
+		/* if ($existe==false)
 		{	
 			$qry_ultima_medida="select max(codigo_medida) as ultima_medida from cat_medida";
 			$res_qry_ultima_medida=$query($qry_ultima_medida);				
@@ -31,7 +31,7 @@ if (isset($_REQUEST["txt_lote"]))
 			$query($qry_medida);
 			if (isset($_REQUEST["txt_ref2"])) 			  
 				header("Location: cat_producto.php"); 
-		} 
+		}  */
 	}
 }
 ?>
@@ -190,62 +190,55 @@ function Refrescar(form)
         <td><img src="../images/e05.gif" width="21" height="21"> <span class="defaultfieldname">Para ingresar un nuevo lote al catálogo </span><b onClick="expandcontent('medida')" style="cursor:hand; cursor:pointer"> [Haga clic aqu&iacute;] </B><span class="defaultfieldname">por favor aseg&uacute;rese que  no exista, realizando previamente una b&uacute;squeda. </span></td>
       </tr>
       <tr>
-        <td height="74"><center>
+        <td><center>
 		<div id="medida" class="switchcontent">
-		<table width="100%"  border="1" cellpadding="0" cellspacing="0">
-            <tr>
-              <td>
-			  <table width="100%" border="0" align="center" cellspacing="1">
+            <table width="100%" border="0" cellspacing="5">
               <tr>
-                <td height="8" colspan="3"><img src="../images/linea.gif" width="100%" height="6"></td>
+                <td height="8"><img src="../images/linea.gif" width="100%" height="6"></td>
               </tr>
               <tr>
-                <td height="25" colspan="3"><span class="tituloproducto">Lote:
-					<input type="text" id="lote" name="lote" required>
-                </span></td>
-              </tr>
-              <tr>
-                <td height="25" colspan="3"><span class="tituloproducto">Fecha Vence
-					<input type="date" id="f_vence" name="f_vence">
-                  </span>
-				</td>
-              </tr>
-              <tr>
-                <td height="25" colspan="3">
-					<span class="tituloproducto">Cantidad ingresada</span>                  
-					<input name="cant_ingresada" type="number" id="cant_ingresada">
-				</td>
-              </tr>
-              <tr>
-                <td height="25" colspan="3">
-				<span class="tituloproducto">Existencia
-				<input name="existencia" type="number" id="existencia">
-                </span>                  <div align="left"></div>
-				</td>
-              </tr>
-              
-              <tr>
-                <td height="25" colspan="3">
-					<span class="tituloproducto">Fecha Ingresada
-						<input type="date" id="f_ingreso" name="f_ingreso">
-					</span>
-				</td>
-              </tr>
-			  
-
-
-
-              <tr align="center" valign="top">
-                <td height="25" colspan="3"><p class="tituloproducto">
-                  <input name="bt_guardar" onClick="Validar(this.form)" type="button" id="bt_guardar8" value="Guardar">
-                  </p>                </td>
-              </tr>
-              <tr>
-                <td height="8" colspan="3"><img src="../images/linea.gif" width="100%" height="6"></td>
-              </tr>
-            </table></td>
-            </tr>
-    		</table>
+                <td height="25"><label for="txt_lote" class="tituloproducto">Ingres el lote</span>                  
+				<input name="txt_lote" type="text" id="txt_lote" value="" size="25">				
+				<?PHP 
+				  	if (isset($_REQUEST["ref"]))
+				  {
+				  ?>
+				  	<input name="txt_ref2" type="hidden" id="txt_ref2" value="<?PHP echo $_REQUEST["ref"]; ?>">
+				  <?PHP
+				  }
+				  ?>
+                 
+                </td>			
+            
+			  </tr>
+			  <tr>
+				  <td>
+				 	<label for="f_vence" class="tituloproducto">Fecha Vencimiento
+					 <input type="date" name="f_vence" id="f_vence" required></label> 
+				  </td>
+			  </tr>
+			  <tr>
+				  <td>
+				 	<label for="cant_ingreso" class="tituloproducto">Cantidad ingresada
+					 <input type="number" name="cant_ingreso" id="cant_ingreso" required>
+					 </label> 
+				  </td>
+			  </tr>
+			  <tr>
+				  <td>
+				 	<label for="cant_existente" class="tituloproducto">Cantidad en existencia 
+					 	<input type="number" name="cant_existente" id="cant_existente" required>
+					</label>
+				  </td>
+			  </tr>
+			  <tr>
+				  <td> 
+				  	<span class="tituloproducto">
+					  <input name="bt_guardar" onClick="Validar(this.form)" type="button" id="bt_guardar" value="Guardar" style="align='center'">
+				  	</span>
+				  </td>
+			  </tr>
+            </table>
 		</div>
         </center></td>
       </tr>
@@ -266,31 +259,57 @@ function Refrescar(form)
     </table>
     <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" id="table17">
       <tr align="center" bgcolor="#006699" class="thead">
-        <td colspan="3" class="titulotabla"><strong>Unidades de medida  previamente ingresadas</strong><span class="Estilo3 thead"><strong></strong></span>        <div align="right"><strong>
-              <strong>              </strong>
-        </strong></div></td>
-        <td width="5%" colspan="-1" class="titulotabla"><span class="titulotabla"><strong>Editar</strong></span></td>
-        <td width="6%" class="titulotabla"><strong>Estado</strong></td>
+        <td class="titulotabla">
+			<span class="Estilo3 thead">
+				<strong>Lotes existentes</strong>
+			</span>
+		</td>
+		<td class="titulotabla">
+			<span class="Estilo3 thead">
+				<strong>fecha vencimineto</strong>
+			</span>
+		</td>
+		<td class="titulotabla">
+			<span class="Estilo3 thead">
+				<strong>Cantidad ingresada</strong>
+			</span>
+		</td>
+		<td class="titulotabla">
+			<span class="Estilo3 thead">
+				<strong>Existencia</strong>
+			</span>
+		</td>
+        <td width="5%" colspan="-1" class="titulotabla">
+			<span class="titulotabla">
+				<strong>Editar</strong>
+			</span>
+		</td>
+        <td width="6%" class="titulotabla">
+			<span>
+				<strong>Estado</strong>
+			</span>
+				
+		</td>
       </tr>
 		<?PHP
-				if ($_REQUEST["txt_buscar"]!="")
+			if ($_REQUEST["txt_buscar"]!="")
 				{
 				$busqueda=strtoupper($_REQUEST["txt_buscar"]);					
-				$consulta = "SELECT * FROM cat_medida where unidad_medida like '%$busqueda%'";					
+				$consulta = "SELECT * FROM lotes_existencia where lote like '%$busqueda%'";					
 				}
-				else	
-				if (isset($_REQUEST["in"]))	
+			else	
+			if (isset($_REQUEST["in"]))	
 				{
-					$inicial=$_REQUEST["in"];
+						$inicial=$_REQUEST["in"];
 					if ($inicial!="all")
-						$consulta = "SELECT * FROM cat_medida where unidad_medida like '$inicial%'";
-						else
-							$consulta = "SELECT * FROM cat_medida order by unidad_medida";
-				}
-				else
-				{
-					$consulta = "SELECT * FROM cat_medida where unidad_medida like '%%' order by unidad_medida asc";
-				}
+						$consulta = "SELECT * FROM lotes_existencia where lote like '$inicial%'";
+					else
+						$consulta = "SELECT * FROM lotes_existencia order by lote";
+					}
+			else
+			{
+				$consulta = "SELECT * FROM lotes_existencia where lote like '%%' order by lote asc";
+			}
 				conectardb($almacen);
 				$result=$query($consulta);
 				$i = 0;				
@@ -303,9 +322,20 @@ function Refrescar(form)
 					}
 					$estado=$row["activo"];
 					if ($estado==1)					
-					echo '<tr class='.$clase.'><td colspan="3">'.$row["unidad_medida"].'</td><td><center><a href="editar_lote.php?id='.$row["codigo_medida"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td><td><center><a href="cambia_stat.php?id='.$row["codigo_medida"].'&stat=2&ref=3"><img src="../images/iconos/ico_activo.gif" alt="Activo"></a></center></td></tr>';					
+					echo '<tr class='.$clase.'>
+							<td colspan="3">'.$row["lote"].'</td>
+							<td>'.$row["fecha_vence"].'</td>
+							<td>'.$row["ingreso"].'</td>
+							<td>'.$row["existencia"].'</td>
+							<td><center><a href="editar_lote.php?id='.$row["codigo_medida"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td>
+							<td><center><a href="cambia_stat.php?id='.$row["codigo_medida"].'&stat=2&ref=3"><img src="../images/iconos/ico_activo.gif" alt="Activo"></a></center></td></tr>';					
 					else
-						echo '<tr class='.$clase.'><td colspan="3">'.$row["unidad_medida"].'</td><td><center><a href="editar_lote.php?id='.$row["codigo_medida"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td><td><center><a href="cambia_stat.php?id='.$row["codigo_medida"].'&stat=1&ref=3"><img src="../images/iconos/ico_desactivado.gif" alt="Desactivado"></a></center></td></tr>';										
+						echo '<tr class='.$clase.'><td>'.$row["lote"].'</td>
+							  <td>'.$row["fecha_vence"].'</td>
+							  <td>'.$row["ingreso"].'</td>
+							  <td>'.$row["existencia"].'</td>
+							  <td><center><a href="editar_lote.php?id='.$row["codigo_medida"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td>
+							  <td><center><a href="cambia_stat.php?id='.$row["codigo_medida"].'&stat=1&ref=3"><img src="../images/iconos/ico_desactivado.gif" alt="Desactivado"></a></center></td></tr>';										
 					$i++;
 				}
 				$free_result($result);
