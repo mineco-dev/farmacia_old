@@ -76,40 +76,8 @@ $_SESSION["ingreso"] = true;
         </tbody>
 
     </table>
-<!--    <div>-->
-<!--        <table width="100%" id="tabla">-->
-<!--            <tr>-->
-<!--                <td width="11"></td>-->
-<!--                <td class="input_content"></td>-->
-<!--                <td class="input_content"></td>-->
-<!--                <td class="input_content"></td>-->
-<!--                <td class="title_input_product"></td>-->
-<!--                <td class="input_content"></td>-->
-<!--                <td class="input_content"></td>-->
-<!--                <td class="input_content" type="hiden">Precio Total</td>-->
-<!--                <td class="input_content"><input type="text" id="PTotal" name="PTotal" value="" class="form-control"></td>-->
-<!--                <td class="input_content"></td>-->
-<!---->
-<!--            </tr>-->
-<!--        </table>-->
-<!--    </div>-->
+
 </div>
-<!-- <table width="99%" border=1 cellspacing="0" id="tabla" class="Estilo2">
-  <tr >
-    <th width="11" rowspan="2" scope="col">#</th>
-    <th width="154" rowspan="2" scope="col">Codigo</th>
-    <th width="187" rowspan="2" scope="col">Categoria</th>
-    <th width="152" rowspan="2" scope="col">Sub-Categoria</th>
-    <th width="130" rowspan="2" scope="col">Renglon</th>
-    <th width="301" rowspan="2" scope="col">Producto</th>
-    <th width="86" rowspan="2" scope="col">Cantidad Ingresada</th>
-    <th width="78" rowspan="2" scope="col">Costo unitario</th>
-    <th width="82" rowspan="2" scope="col">Precio Total</th>
-    
-  </tr>
-  <tr>
-  </tr>
-</table> -->
 
 <br>
 
@@ -150,13 +118,11 @@ $_SESSION["ingreso"] = true;
         fila += "<td><input name=\"bien[" + cont + "][2]\" type=\"text\" id=\"bien[" + cont + "][2]\" size=\"5%\" class=\"form-control input_center\"  ></td>"
         fila += "<td><input name=\"bien[" + cont + "][3]\" type=\"text\" id=\"bien[" + cont + "][3]\" size=\"5%\" class=\"form-control input_center\" ></td>"
         fila += "<td><input name=\"bien[" + cont + "][1]\" type=\"text\" id=\"bien[" + cont + "][1]\" size=\"5%\" class=\"form-control input_center\"></td>"
-        // fila += "<td><input name=\"bien[" + cont + "][1]\" type=\"text\" value=\"\" id=\"bien[" + cont + "][1]\"  size=\"5%\" class=\"form-control\"></td>"
-        //fila += "<td><a href=\"javascript:void(0)\" onClick=\"buscar=window.open(\'renglon.php?tipo=bien&posi=" + cont + "\',\'Buscar4\',\'width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250\'); return false;\"><input name=\"bien[" + cont + "][5]\" type=\"text\" value=\"\" id=\"bien[" + cont + "][5]\"  alt=\"Doble clic para consultar el catalogo\" size=\"15\" class=\"form-control\" ></a></td>"
         fila += "<td><input name=\"bien[" + cont + "][5]\" type=\"text\" id=\"bien[" + cont + "][5]\" size=\"5%\" class=\"form-control input_center\"></td>"
         fila += "<td><input name=\"bien[" + cont + "][7]\" type=\"text\" id=\"bien[" + cont + "][7]\" size=\"45\" class=\"form-control\" > </td>"
         
         
-        fila += "<td><input name=\"lote[" + cont + "]\" type=\"text\" id=\"lote[" + cont + "]\"  size=\"7\" class=\"monto form-control input_center\" ></td>"
+        fila += "<td><input name=\"lote[" + cont + "]\" type=\"text\" id=\"lote[" + cont + "]\"  size=\"7\" class=\"monto form-control input_center\" ><span><a href=\"javascript:void(0)\" onClick=\"buscar=window.open(\'LoteIngreso.php?tipo=bien&posi=" + cont + "\',\'Buscar4\',\'width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=150,left=1100\'); return false;\" >...</a></span></td>"
         fila += "<td><input name=\"fecha_caducidad[" + cont + "]\" type=\"date\" id=\"fecha_caducidad[" + cont + "]\"  size=\"7\" class=\"monto form-control input_center\" ></td>"
 
 
@@ -264,12 +230,9 @@ $_SESSION["ingreso"] = true;
     function reordenar() {
         var num = 1;
         $('#tabla4 tbody tr').each(function () {
-            //TotalMenos +=  $(this).find('td').eq(8).find('input').value;//codigo
-            //alert(document.getElementById(['precio_total1['+num+']']).value);
-            // $(this).find('td').eq(1).find('input').attr("id", "bien[" + num + "][1]");//codigo
+        
             $(this).find('td').eq(1).find('a').attr("onClick", "buscar=window.open('productoIngreso.php?tipo=bien&posi=" + num + "','Buscar4','width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250'); return false;");
-            // $(this).find('td').eq(1).find('input').attr("name", "bien[" + num + "][1]");//categoria
-
+          
             $(this).find('td').eq(2).find('input').attr("id", "bien[" + num + "][2]");//categoria
             $(this).find('td').eq(2).find('input').attr("name", "bien[" + num + "][2]");//categoria
 
@@ -281,9 +244,7 @@ $_SESSION["ingreso"] = true;
 
             $(this).find('td').eq(5).find('input').attr("id", "bien[" + num + "][5]");//renglon
             $(this).find('td').eq(5).find('input').attr("name", "bien[" + num + "][5]");//renglon
-            //$(this).find('td').eq(5).find('a').attr("onDblClick", "buscar=window.open('renglon.php?tipo=bien&posi=" + num + "','Buscar4','width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250'); return false;");
-
-
+           
             $(this).find('td').eq(6).find('input').attr("id", "bien[" + num + "][7]");//producto
             $(this).find('td').eq(6).find('input').attr("name", "bien[" + num + "][7]");//producto
 

@@ -355,12 +355,12 @@ function Refrescar(form)
               </tr>
               <tr>
                 <td height="25" colspan="3"><span class="tituloproducto">Subcategoria
-				<div id="Div_subcategoria">
-		  		<select name="subcategoria"  id="select3">
-		  		</select>
-	 			 </div>
-                  Presentaci&oacute;n
-                  <?PHP
+					<div id="Div_subcategoria">
+		  			<select name="subcategoria"  id="select3">
+		  			</select>
+	 			 	</div>
+                  		Presentaci&oacute;n
+                  	<?PHP
 				  	conectardb($almacen);
 					$qry_medida="SELECT * FROM cat_medida WHERE activo=1 ORDER BY unidad_medida";										
 					$res_qry_medida=$query($qry_medida);	
@@ -373,9 +373,10 @@ function Refrescar(form)
 					}
 					echo('</select>');				
 					$free_result($res_qry_medida);
-				?>
+					?>
                   <a href="medida.php?ref=4"><img src="../images/iconos/ico_plus.gif" alt="Agregar nueva presentaci&oacute;n" width="17" height="17" border="0"></a></span><span class="tituloproducto">
-                  </span></td>
+                  </span>
+				</td>
               </tr>
               <tr>
                 <td height="25" colspan="3"><span class="tituloproducto">Producto</span>                  <input name="txt_producto" type="text" id="txt_subcategoria2" value="" size="75"></td>
@@ -423,10 +424,13 @@ function Refrescar(form)
               </tr>
             </table></td>
             </tr>
-          </table>
+    		</table>
             
-		</div>  <!-- Fin del DIV para expander o contraer tabla -->
-        </center></td>
+		</div>  
+		
+		<!-- ***********************Fin del DIV para expander o contraer tabla *****************************-->
+        
+		</center></td>
       </tr>
       <tr>
         <td><b onClick="expandcontent('aleg1')" style="cursor:hand; cursor:pointer"><span class="curriculo">

@@ -2,7 +2,7 @@
 // Conexion a la base de datos
 
 
-// muestra un mensaje de error y corta la acción
+// muestra un mensaje de error y corta la acciï¿½n
 function error_msg($msg)
 {
 	echo("<script language='JavaScript'>");
@@ -34,10 +34,10 @@ function muestra_fecha()
 	$dia=date("l");
 	if ($dia=="Monday") $dia="Lunes";
 	if ($dia=="Tuesday") $dia="Martes";
-	if ($dia=="Wednesday") $dia="Miércoles";
+	if ($dia=="Wednesday") $dia="MiÃ©rcoles";
 	if ($dia=="Thursday") $dia="Jueves";
 	if ($dia=="Friday") $dia="Viernes";
-	if ($dia=="Saturday") $dia="Sabado";
+	if ($dia=="Saturday") $dia="SÃ¡bado";
 	if ($dia=="Sunday") $dia="Domingo";
 	
 	$dia2=date("d");
@@ -66,7 +66,7 @@ function muestra_fecha2(&$fe)
 	$dia=date("l");
 	if ($dia=="Monday") $dia="Lunes";
 	if ($dia=="Tuesday") $dia="Martes";
-	if ($dia=="Wednesday") $dia="Miércoles";
+	if ($dia=="Wednesday") $dia="Miï¿½rcoles";
 	if ($dia=="Thursday") $dia="Jueves";
 	if ($dia=="Friday") $dia="Viernes";
 	if ($dia=="Saturday") $dia="Sabado";

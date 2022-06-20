@@ -3,19 +3,18 @@
 	require("../includes/sqlcommand.inc");
 ?>
 <?PHP
-if (isset($_REQUEST["txt_medida"]))
+if (isset($_REQUEST["txt_lote"]))
 {	
-	if ($_REQUEST["txt_medida"]!="")
+	if ($_REQUEST["txt_lote"]!="")
 	{	
 		conectardb($almacen);
-		$nueva_medida=strtoupper($_REQUEST["txt_medida"]);	
-		$qry_si_existe="select * from cat_medida where unidad_medida='$nueva_medida'";
+		$nuevo_lote=strtoupper($_REQUEST["txt_lote"]);	
+		$qry_si_existe="select * from lotes_existencia where lote='$nuevo_lote'";
 		$res_qry_si_existe=$query($qry_si_existe);	
 		$existe=false;	
 		while($row_medida=$fetch_array($res_qry_si_existe))
-		{	
-			echo '<script language="javascript">alert("Esta unidad de medida ya esta ingresada");</script>';
-			
+		{
+			echo '<script language="javascript">alert("Este lote ya fué ingresado");</script>';
 			$existe=true;
 		}
 		if ($existe==false)
@@ -32,7 +31,7 @@ if (isset($_REQUEST["txt_medida"]))
 			$query($qry_medida);
 			if (isset($_REQUEST["txt_ref2"])) 			  
 				header("Location: cat_producto.php"); 
-		}
+		} 
 	}
 }
 ?>
@@ -151,9 +150,9 @@ window.onunload=saveswitchstate
 <script LANGUAGE="JavaScript">
 function Validar(form)
 {
-  if (form.txt_medida.value == "" && form.txt_buscar.value == "")
+  if (form.txt_lote.value == "" && form.txt_buscar.value == "")
   { 
-  	alert("Escriba la unidad de medida"); 
+  	alert("Escriba el lote que deseado"); 
 	form.txt_medida.focus(); 
 	return;
  }
@@ -184,34 +183,69 @@ function Refrescar(form)
     <table width="100%" border="0" bordercolor="#ECE9D8">
       <tr>
         <td><div align="left" class="titulocategoria">
-          <div align="center">INGRESO DE NUEVAS UNIDADES DE MEDIDA </div>
+          <div align="center">INGRESO DE NUEVOS LOTES </div>
         </div></td>
       </tr>
       <tr>
-        <td><img src="../images/e05.gif" width="21" height="21"> <span class="defaultfieldname">Para ingresar un nueva unidad de medida al cat�logo </span><b onClick="expandcontent('medida')" style="cursor:hand; cursor:pointer"> [Haga clic aqu&iacute;] </B><span class="defaultfieldname">por favor aseg&uacute;rese que  no exista, realizando previamente una b&uacute;squeda. </span></td>
+        <td><img src="../images/e05.gif" width="21" height="21"> <span class="defaultfieldname">Para ingresar un nuevo lote al catálogo </span><b onClick="expandcontent('medida')" style="cursor:hand; cursor:pointer"> [Haga clic aqu&iacute;] </B><span class="defaultfieldname">por favor aseg&uacute;rese que  no exista, realizando previamente una b&uacute;squeda. </span></td>
       </tr>
       <tr>
         <td height="74"><center>
 		<div id="medida" class="switchcontent">
-            <table width="100%" border="0" cellspacing="5">
+		<table width="100%"  border="1" cellpadding="0" cellspacing="0">
+            <tr>
+              <td>
+			  <table width="100%" border="0" align="center" cellspacing="1">
               <tr>
-                <td height="8"><img src="../images/linea.gif" width="100%" height="6"></td>
+                <td height="8" colspan="3"><img src="../images/linea.gif" width="100%" height="6"></td>
               </tr>
               <tr>
-                <td height="25"><span class="tituloproducto">Ingrese la unidad de medida:</span>                  <input name="txt_medida" type="text" id="txt_medida" value="" size="50">				
-				<?PHP 
-				  	if (isset($_REQUEST["ref"]))
-				  {
-				  ?>
-				  	<input name="txt_ref2" type="hidden" id="txt_ref2" value="<?PHP echo $_REQUEST["ref"]; ?>">
-				  <?PHP
-				  }
-				  ?>
-                  <input name="bt_guardar" onClick="Validar(this.form)" type="button" id="bt_guardar" value="Guardar">
-                </td>			
-            
-			  </tr>
-            </table>
+                <td height="25" colspan="3"><span class="tituloproducto">Lote:
+					<input type="text" id="lote" name="lote" required>
+                </span></td>
+              </tr>
+              <tr>
+                <td height="25" colspan="3"><span class="tituloproducto">Fecha Vence
+					<input type="date" id="f_vence" name="f_vence">
+                  </span>
+				</td>
+              </tr>
+              <tr>
+                <td height="25" colspan="3">
+					<span class="tituloproducto">Cantidad ingresada</span>                  
+					<input name="cant_ingresada" type="number" id="cant_ingresada">
+				</td>
+              </tr>
+              <tr>
+                <td height="25" colspan="3">
+				<span class="tituloproducto">Existencia
+				<input name="existencia" type="number" id="existencia">
+                </span>                  <div align="left"></div>
+				</td>
+              </tr>
+              
+              <tr>
+                <td height="25" colspan="3">
+					<span class="tituloproducto">Fecha Ingresada
+						<input type="date" id="f_ingreso" name="f_ingreso">
+					</span>
+				</td>
+              </tr>
+			  
+
+
+
+              <tr align="center" valign="top">
+                <td height="25" colspan="3"><p class="tituloproducto">
+                  <input name="bt_guardar" onClick="Validar(this.form)" type="button" id="bt_guardar8" value="Guardar">
+                  </p>                </td>
+              </tr>
+              <tr>
+                <td height="8" colspan="3"><img src="../images/linea.gif" width="100%" height="6"></td>
+              </tr>
+            </table></td>
+            </tr>
+    		</table>
 		</div>
         </center></td>
       </tr>
@@ -255,7 +289,7 @@ function Refrescar(form)
 				}
 				else
 				{
-					$consulta = "SELECT * FROM cat_medida where unidad_medida like 'A%'";
+					$consulta = "SELECT * FROM cat_medida where unidad_medida like '%%' order by unidad_medida asc";
 				}
 				conectardb($almacen);
 				$result=$query($consulta);
@@ -269,9 +303,9 @@ function Refrescar(form)
 					}
 					$estado=$row["activo"];
 					if ($estado==1)					
-					echo '<tr class='.$clase.'><td colspan="3">'.$row["unidad_medida"].'</td><td><center><a href="editar_medida.php?id='.$row["codigo_medida"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td><td><center><a href="cambia_stat.php?id='.$row["codigo_medida"].'&stat=2&ref=3"><img src="../images/iconos/ico_activo.gif" alt="Activo"></a></center></td></tr>';					
+					echo '<tr class='.$clase.'><td colspan="3">'.$row["unidad_medida"].'</td><td><center><a href="editar_lote.php?id='.$row["codigo_medida"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td><td><center><a href="cambia_stat.php?id='.$row["codigo_medida"].'&stat=2&ref=3"><img src="../images/iconos/ico_activo.gif" alt="Activo"></a></center></td></tr>';					
 					else
-						echo '<tr class='.$clase.'><td colspan="3">'.$row["unidad_medida"].'</td><td><center><a href="editar_medida.php?id='.$row["codigo_medida"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td><td><center><a href="cambia_stat.php?id='.$row["codigo_medida"].'&stat=1&ref=3"><img src="../images/iconos/ico_desactivado.gif" alt="Desactivado"></a></center></td></tr>';										
+						echo '<tr class='.$clase.'><td colspan="3">'.$row["unidad_medida"].'</td><td><center><a href="editar_lote.php?id='.$row["codigo_medida"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td><td><center><a href="cambia_stat.php?id='.$row["codigo_medida"].'&stat=1&ref=3"><img src="../images/iconos/ico_desactivado.gif" alt="Desactivado"></a></center></td></tr>';										
 					$i++;
 				}
 				$free_result($result);
