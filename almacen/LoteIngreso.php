@@ -17,21 +17,29 @@ if (isset($_REQUEST["txt_lote"]))
 			echo '<script language="javascript">alert("Este lote ya fué ingresado");</script>';
 			$existe=true;
 		}
-		/* if ($existe==false)
+		if ($existe==false)
 		{	
-			$qry_ultima_medida="select max(codigo_medida) as ultima_medida from cat_medida";
-			$res_qry_ultima_medida=$query($qry_ultima_medida);				
-			while($row_medida=$fetch_array($res_qry_ultima_medida))
+			$fecha_vence=($_REQUEST["f_vence"]);
+			$cant_ingreso=($_REQUEST["cant_ingreso"]);
+			$existencia=($_REQUEST["cant_existente"]);
+			$fecha_ingreso=($_REQUEST["f_ingreso"]);
+			$lote=($_REQUEST["txt_lote"]);
+
+			/* $qry_ultimo_lote="select max(rowid) as ultimo_lote from lotes_existencia";		
+			$res_qry_ultimo_lote=$query($qry_ultimo_lote);				
+			while($row_lote=$fetch_array($res_qry_ultimo_lote))
 			{
-			$ultimo_codigo_medida=$row_medida["ultima_medida"]+1;
-			}			
-			$nombre_usuario=$_SESSION["user_name"];
-			$qry_medida="INSERT INTO cat_medida(codigo_medida, unidad_medida, activo, usuario_creo, fecha_creado, codigo_bodega) 
-							VALUES ('$ultimo_codigo_medida', '$nueva_medida',1,'$nombre_usuario', getdate(), '$bodega')";
-			$query($qry_medida);
+				$ultimo_codigo_lote=$row_lote["ultimo_lote"]+1;
+			}	 */			
+			//$nombre_usuario=$_SESSION["user_name"];
+			$qry_lote="INSERT INTO lotes_existencia(codigo_bodega, codigo_producto, fecha_vence, ingreso, existencia, fecha_ingreso, estado, lote ) 
+							VALUES ($bodega,8, '$fecha_vence',$cant_ingreso,$existencia, '$fecha_ingreso',1, '$lote')";
+			$query($qry_lote);
+			
+			
 			if (isset($_REQUEST["txt_ref2"])) 			  
-				header("Location: cat_producto.php"); 
-		}  */
+				header("Location: LoteIngreso.php"); 
+		} 
 	}
 }
 ?>
@@ -197,7 +205,7 @@ function Refrescar(form)
                 <td height="8"><img src="../images/linea.gif" width="100%" height="6"></td>
               </tr>
               <tr>
-                <td height="25"><label for="txt_lote" class="tituloproducto">Ingres el lote</span>                  
+                <td height="25"><label for="txt_lote" class="tituloproducto">Ingrese el lote</span>                  
 				<input name="txt_lote" type="text" id="txt_lote" value="" size="25">				
 				<?PHP 
 				  	if (isset($_REQUEST["ref"]))
@@ -232,6 +240,13 @@ function Refrescar(form)
 				  </td>
 			  </tr>
 			  <tr>
+				  <td>
+				 	<label for="f_ingreso" class="tituloproducto">Fecha de ingreso
+					 	<input type="date" name="f_ingreso" id="f_ingreso" required>
+					</label>
+				  </td>
+			  </tr>
+			  <tr>
 				  <td> 
 				  	<span class="tituloproducto">
 					  <input name="bt_guardar" onClick="Validar(this.form)" type="button" id="bt_guardar" value="Guardar" style="align='center'">
@@ -249,12 +264,17 @@ function Refrescar(form)
         <td><b onClick="expandcontent('aleg1')" style="cursor:hand; cursor:pointer"><span class="curriculo"><img src="../images/e05.gif" width="21" height="21"></span></b> <span class="defaultfieldname">Para realizar b&uacute;squedas puede pulsar sobre una de las letras encerradas entre [], o bien escriba el nombre o parte del mismo para realizar una b&uacute;squeda espec&iacute;fica.</span></td>
       </tr>
       <tr>
-        <td>        <div align="left" class="Estilo1">
-          <div align="right"><strong><strong>            [<a href="medida.php?in=A" alt="Muestra los registros que inician con A">A</a>] [<a href="medida.php?in=B">B</a>] [<a href="medida.php?in=C">C</a>] [<a href="medida.php?in=D">D</a>] [<a href="medida.php?in=E">E</a>] [<a href="medida.php?in=F">F</a>] [<a href="medida.php?in=G">G</a>] [<a href="medida.php?in=H">H</a>] [<a href="medida.php?in=I">I</a>] [<a href="medida.php?in=J">J</a>] [<a href="medida.php?in=K">K</a>] [<a href="medida.php?in=L">L</a>] [<a href="medida.php?in=M">M</a>] [<a href="medida.php?in=N">N</a>] [<a href="medida.php?in=O">O</a>] [<a href="medida.php?in=P">P</a>] [<a href="medida.php?in=Q">Q</a>] [<a href="medida.php?in=R">R</a>] [<a href="medida.php?in=S">S</a>] [<a href="medida.php?in=T">T</a>] [<a href="medida.php?in=U">U</a>] [<a href="medida.php?in=V">V</a>] [<a href="medida.php?in=W">W</a>] [<a href="medida.php?in=X">X</a>] [<a href="medida.php?in=Y">Y</a>] [<a href="medida.php?in=Z">Z</a>] <a href="medida.php?in=all">[TODO]</a>            
-            <input name="txt_buscar" type="text" id="txt_buscar2" size="20">
-            <input name="bt_buscar" onClick="Validar(this.form)" type="button" id="bt_buscar" value="Buscar">
-          </strong></strong></div>
-        </div></td>
+        <td>        
+			<div align="left" class="Estilo1">
+          		<div align="right">
+			  		<strong>
+					  	<a href="medida.php?in=all">[TODO]</a>            
+            			<input name="txt_buscar" type="text" id="txt_buscar2" size="20">
+            			<input name="bt_buscar" onClick="Validar(this.form)" type="button" id="bt_buscar" value="Buscar">
+          			</strong>
+		  		</div>
+        	</div>
+		</td>
       </tr>
     </table>
     <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" id="table17">
@@ -294,22 +314,26 @@ function Refrescar(form)
 		<?PHP
 			if ($_REQUEST["txt_buscar"]!="")
 				{
-				$busqueda=strtoupper($_REQUEST["txt_buscar"]);					
-				$consulta = "SELECT * FROM lotes_existencia where lote like '%$busqueda%'";					
+					$busqueda=strtoupper($_REQUEST["txt_buscar"]);					
+					$consulta = "SELECT * FROM lotes_existencia where lote like '%$busqueda%'";					
 				}
 			else	
-			if (isset($_REQUEST["in"]))	
+				if (isset($_REQUEST["in"]))	
 				{
-						$inicial=$_REQUEST["in"];
+					$inicial=$_REQUEST["in"];
 					if ($inicial!="all")
+					{
 						$consulta = "SELECT * FROM lotes_existencia where lote like '$inicial%'";
+					}
 					else
+					{
 						$consulta = "SELECT * FROM lotes_existencia order by lote";
 					}
-			else
-			{
-				$consulta = "SELECT * FROM lotes_existencia where lote like '%%' order by lote asc";
-			}
+				}
+				else
+				{
+					$consulta = "SELECT * FROM lotes_existencia where lote like '%%' order by lote asc";
+				}
 				conectardb($almacen);
 				$result=$query($consulta);
 				$i = 0;				
