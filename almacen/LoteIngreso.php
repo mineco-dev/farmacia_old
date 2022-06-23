@@ -351,15 +351,15 @@ function Refrescar(form)
 							<td>'.$row["fecha_vence"].'</td>
 							<td>'.$row["ingreso"].'</td>
 							<td>'.$row["existencia"].'</td>
-							<td><center><a href="editar_lote.php?id='.$row["codigo_medida"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td>
-							<td><center><a href="cambia_stat.php?id='.$row["codigo_medida"].'&stat=2&ref=3"><img src="../images/iconos/ico_activo.gif" alt="Activo"></a></center></td></tr>';					
+							<td><center><a href="editar_lote.php?id='.$row["rowid"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td>
+							<td><center><a href="cambia_stat.php?id='.$row["rowid"].'&stat=2&ref=3"><img src="../images/iconos/ico_activo.gif" alt="Activo"></a></center></td></tr>';					
 					else
 						echo '<tr class='.$clase.'><td>'.$row["lote"].'</td>
 							  <td>'.$row["fecha_vence"].'</td>
 							  <td>'.$row["ingreso"].'</td>
 							  <td>'.$row["existencia"].'</td>
-							  <td><center><a href="editar_lote.php?id='.$row["codigo_medida"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td>
-							  <td><center><a href="cambia_stat.php?id='.$row["codigo_medida"].'&stat=1&ref=3"><img src="../images/iconos/ico_desactivado.gif" alt="Desactivado"></a></center></td></tr>';										
+							  <td><center><a href="editar_lote.php?id='.$row["rowid"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td>
+							  <td><center><a href="cambia_stat.php?id='.$row["rowid"].'&stat=1&ref=3"><img src="../images/iconos/ico_desactivado.gif" alt="Desactivado"></a></center></td></tr>';										
 					$i++;
 				}
 				$free_result($result);

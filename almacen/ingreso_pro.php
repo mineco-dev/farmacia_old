@@ -122,7 +122,7 @@ $_SESSION["ingreso"] = true;
         fila += "<td><input name=\"bien[" + cont + "][7]\" type=\"text\" id=\"bien[" + cont + "][7]\" size=\"45\" class=\"form-control\" > </td>"
         
         
-        fila += "<td><input name=\"lote[" + cont + "]\" type=\"text\" id=\"lote[" + cont + "]\"  size=\"7\" class=\"monto form-control input_center\" ><span><a href=\"javascript:void(0)\" onClick=\"buscar=window.open(\'LoteIngreso.php?tipo=bien&posi=" + cont + "\',\'Buscar4\',\'width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=150,left=1100\'); return false;\" >...</a></span></td>"
+        fila += "<td><input name=\"lote[" + cont + "]\" type=\"text\" id=\"lote[" + cont + "]\"  size=\"7\" class=\"monto form-control input_center\" disabled><span><a href=\"javascript:void(0)\" onClick=\"buscar=window.open(\'LoteIngreso.php?tipo=bien&posi=" + cont + "\',\'Buscar4\',\'width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=150,left=1100\'); return false;\" >...</a></span></td>"
         fila += "<td><input name=\"fecha_caducidad[" + cont + "]\" type=\"date\" id=\"fecha_caducidad[" + cont + "]\"  size=\"7\" class=\"monto form-control input_center\" ></td>"
 
 

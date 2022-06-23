@@ -7,13 +7,13 @@ if (isset($_REQUEST["id"]))
 {	
 		$rowid=$_REQUEST["id"];
 		conectardb($almacen);
-		$latabla="cat_medida";
-		$campo_condicion="codigo_medida";
+		$latabla="lotes_existencia";
+		$campo_condicion="rowid";
 		$qry_medida="select * from $latabla where $campo_condicion='$rowid'";
 		$res_qry_medida=$query($qry_medida);
 		while($row=$fetch_array($res_qry_medida))
 		{	
-			$medida=$row["unidad_medida"];
+			$rowid=$row["rowid"];
 		}
 }
 ?>
@@ -52,7 +52,7 @@ function Refrescar(form)
 <div align="left">
   <table width="100%"  border="0">
     <tr>
-      <td width="7%"><a href="medida.php"><img src="../images/iconos/ico_izquierda.gif" alt="Volver a pantalla anterior" width="58" height="30" border="0"></a></td>
+      <td width="7%"><a href="LoteIngreso.php"><img src="../images/iconos/ico_izquierda.gif" alt="Volver a pantalla anterior" width="58" height="30" border="0"></a></td>
       <td width="93%"><div align="center"><span class="titulocategoria">Modificaci&oacute;n de unidades de medida</span></div></td>
     </tr>
     <tr>
@@ -67,9 +67,11 @@ function Refrescar(form)
               <tr>
                 <td height="25"><p><span class="tituloproducto">Realice las correcciones que correspondan</span></p>
                   <p><span class="titulomenu">Unidad de medida:</span> 
-                    <input name="txt_medida" type="text" id="txt_medida" value="<?PHP echo $medida; ?>" size="50">				
+                    <input name="txt_medida" type="text" id="txt_medida" value="<?PHP echo $rowid; ?>" size="50">
+                    
+                    
                     <input name="bt_actualizar" onClick="Validar(this.form)" type="button" id="bt_actualizar" value="Actualizar">
-                    <input name="txt_id" type="hidden" id="txt_id" value="<?PHP echo $rowid; ?>">
+                    <input name="txt_id" type="text" id="txt_id" value="<?PHP echo $rowid; ?>">
                   </p></td>			
             
 			  </tr>

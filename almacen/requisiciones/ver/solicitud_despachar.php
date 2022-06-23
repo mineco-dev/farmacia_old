@@ -17,20 +17,23 @@
 	$idsolicitud=$_REQUEST["id"];
      //conectardb($almacen);
 	$Fields="select d.rowid, d.codigo_producto, p.producto, c.categoria,  d.codigo_categoria, d.codigo_subcategoria, e.solicitante, 
-e.fecha_requisicion, dep.nombre, e.observaciones, e.codigo_estatus, es.estatus, d.codigo_empresa,
-d.codigo_requisicion_enc, b.bodega, d.codigo_bodega, e.codigo_solicitante, e.codigo_dependencia,
- d.cantidad_autorizada, d.cantidad_solicitada from tb_requisicion_det d
-left outer join tb_requisicion_enc e on
-e.codigo_requisicion_enc = d.codigo_requisicion_enc
-left join cat_producto p on p.codigo_producto = d.codigo_producto and p.codigo_categoria = d.codigo_categoria and p.codigo_subcategoria = d.codigo_subcategoria
-left join cat_categoria c on d.codigo_categoria = c.codigo_categoria 
-left join cat_bodega b on
-b.codigo_bodega = d.codigo_bodega
-left join direccion dep
-on dep.iddireccion = e.codigo_dependencia
-left  join cat_estatus es on
-e.codigo_estatus = es.codigo_estatus
-where d.codigo_requisicion_enc = '$idsolicitud'";
+				e.fecha_requisicion, dep.nombre, e.observaciones, e.codigo_estatus, es.estatus, d.codigo_empresa,
+				d.codigo_requisicion_enc, b.bodega, d.codigo_bodega, e.codigo_solicitante, e.codigo_dependencia,
+				d.cantidad_autorizada, d.cantidad_solicitada 
+				from tb_requisicion_det d
+				left outer join tb_requisicion_enc e 
+					on	e.codigo_requisicion_enc = d.codigo_requisicion_enc
+				left join cat_producto p 
+					on p.codigo_producto = d.codigo_producto and p.codigo_categoria = d.codigo_categoria and p.codigo_subcategoria = d.codigo_subcategoria
+				left join cat_categoria c 
+					on d.codigo_categoria = c.codigo_categoria 
+				left join cat_bodega b 
+					on b.codigo_bodega = d.codigo_bodega
+				left join direccion dep
+					on dep.iddireccion = e.codigo_dependencia
+				left  join cat_estatus es 
+					on e.codigo_estatus = es.codigo_estatus
+				where d.codigo_requisicion_enc = '$idsolicitud'";
 /* echo"<hr>";		
 echo $Fields;
 echo"<hr>"; */
@@ -157,7 +160,7 @@ function verificar (form) {
 			alert("Debe ingresar la descripcion de la información a solicitar");
 		}else
 		{
-			if (confirm('�Esta seguro de guardar estos datos?')) form.submit();
+			if (confirm('¿Esta seguro de guardar estos datos?')) form.submit();
 		}
 	}catch (ee)	
 	{
@@ -314,7 +317,7 @@ function imprimir()
 			<input  name="txt_codigo['.$cnt.'][11]"  value='.$resultado['codigo_requisicion_enc'].' type="hidden" size="3" id="txt_autorizado1"/>
 			<input  name="bien['.$cnt.'][8]" type="hidden" size="3" id="txt_bien1"/>
 			<input  name="txt_empresa['.$cnt.'][7]"  value='.$resultado['codigo_empresa'].' type="hidden" size="3" id="txt_autorizado1"/>
-			<input  name="txt_bodega['.$cnt.'][6]"  value='.$resultado['codigo_bodega'].' type="hidden" size="3" id="txt_autorizado1"/>
+			<input  name="txt_bodega['.$cnt.'][6]"  value='.$resultado['codigo_bodega'].' type="text" size="3" id="txt_autorizado1"/>
 			<input  name="txt_subcategoria['.$cnt.'][5]"  value='.$resultado['codigo_subcategoria'].' type="hidden" size="3" id="txt_autorizado1"/>
 			<input  name="txt_categoria['.$cnt.'][4]"  value='.$resultado['codigo_categoria'].' type="hidden" size="3" id="txt_autorizado1"/>
 			<input  name="txt_producto['.$cnt.'][3]"  value='.$resultado['codigo_producto'].' type="hidden" size="3" id="txt_autorizado1"/>

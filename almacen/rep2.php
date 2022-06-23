@@ -261,29 +261,29 @@ header, footer, nav, aside {
  conectardb($almacen);
 
   $queryControl = "use almacen_farmacia
-select CONVERT(nvarchar(10), k.fecha, 103) as fecha,
-CONVERT(nvarchar(10), k.fecha, 108) as hora,
- m.tipo_movimiento,
-k.no_despacho, 
-k.no_ingreso, 
-k.entrada,
-k.salida, 
-k.saldo, 
-k.costo_promedio, 
-k.costo_factura, 
-costo_movimiento,
- costo_total, 
- d.nombre,
- k.fecha as Fecha2
- from tb_kardex k
-inner join cat_tipo_movimiento m
-on m.codigo_tipo_movimiento = k.codigo_tipo_movimiento
-inner join direccion d
-on k.id_dependencia = d.iddireccion 
-	where 
-	CONVERT(varchar(20), k.fecha, 120) >= '".$FechaInicioControl."' and CONVERT(varchar(20), k.fecha, 120) <= '".$FechaFinalControl."' 
- and k.codigo_producto = $producto and k.codigo_categoria = $categoria and k.codigo_subcategoria = $subcategoria and codigo_empresa = 1 and k.codigo_bodega = 15 and k.activo=1 
- order by codigo_kardex asc";
+			select CONVERT(nvarchar(10), k.fecha, 103) as fecha,
+			CONVERT(nvarchar(10), k.fecha, 108) as hora,
+			m.tipo_movimiento,
+			k.no_despacho, 
+			k.no_ingreso, 
+			k.entrada,
+			k.salida, 
+			k.saldo, 
+			k.costo_promedio, 
+			k.costo_factura, 
+			costo_movimiento,
+			costo_total, 
+			d.nombre,
+			k.fecha as Fecha2
+			from tb_kardex k
+			inner join cat_tipo_movimiento m
+			on m.codigo_tipo_movimiento = k.codigo_tipo_movimiento
+			inner join direccion d
+			on k.id_dependencia = d.iddireccion 
+				where 
+				CONVERT(varchar(20), k.fecha, 120) >= '".$FechaInicioControl."' and CONVERT(varchar(20), k.fecha, 120) <= '".$FechaFinalControl."' 
+			and k.codigo_producto = $producto and k.codigo_categoria = $categoria and k.codigo_subcategoria = $subcategoria and codigo_empresa = 1 and k.codigo_bodega = 15 and k.activo=1 
+			order by codigo_kardex asc";
  
  $ResultadoControl = mssql_query($queryControl);
  while($rowControl = mssql_fetch_row($ResultadoControl))
@@ -294,28 +294,28 @@ on k.id_dependencia = d.iddireccion
  }
  
  $query = "use almacen_farmacia
-select CONVERT(nvarchar(10), k.fecha, 103) as fecha,
-CONVERT(nvarchar(10), k.fecha, 108) as hora,
- m.tipo_movimiento,
-k.no_despacho, 
-k.no_ingreso, 
-k.entrada,
-k.salida, 
-k.saldo, 
-k.costo_promedio, 
-k.costo_factura, 
-costo_movimiento,
- costo_total, 
- d.nombre
- from tb_kardex k
-inner join cat_tipo_movimiento m
-on m.codigo_tipo_movimiento = k.codigo_tipo_movimiento
-inner join direccion d
-on k.id_dependencia = d.iddireccion 
-	where 
-	CONVERT(varchar(20), k.fecha, 120) >= '".$fechahora1."' and CONVERT(varchar(20), k.fecha, 120) <= '".$fechahora2."' 
- and k.codigo_producto = $producto and k.codigo_categoria = $categoria and k.codigo_subcategoria = $subcategoria and codigo_empresa = 1 and k.codigo_bodega = 8 and k.activo=1 
- order by codigo_kardex asc";
+			select CONVERT(nvarchar(10), k.fecha, 103) as fecha,
+			CONVERT(nvarchar(10), k.fecha, 108) as hora,
+			m.tipo_movimiento,
+			k.no_despacho, 
+			k.no_ingreso, 
+			k.entrada,
+			k.salida, 
+			k.saldo, 
+			k.costo_promedio, 
+			k.costo_factura, 
+			costo_movimiento,
+			costo_total, 
+			d.nombre
+			from tb_kardex k
+			inner join cat_tipo_movimiento m
+			on m.codigo_tipo_movimiento = k.codigo_tipo_movimiento
+			inner join direccion d
+			on k.id_dependencia = d.iddireccion 
+				where 
+				CONVERT(varchar(20), k.fecha, 120) >= '".$fechahora1."' and CONVERT(varchar(20), k.fecha, 120) <= '".$fechahora2."' 
+			and k.codigo_producto = $producto and k.codigo_categoria = $categoria and k.codigo_subcategoria = $subcategoria and codigo_empresa = 1 and k.codigo_bodega = 8 and k.activo=1 
+			order by codigo_kardex asc";
  
 
 

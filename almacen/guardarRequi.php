@@ -42,14 +42,14 @@
 			$saldo=true;
 			while($cnt<=count($bien))//buscar y asigna el codigo, cat, subcat, bodega y cod_empresa a cada linea.
 			{
-				$codigo = $bien[$cnt][4]; 		
+				$codigo = $bien[$cnt][4]; //codigo de la fila de la tabla cat_producto		
 				$solicitado = $cantidad_solicitada[$cnt]; 
-				$qry_x_rowid_producto = "select  distinct inventario.codigo_producto,inventario.codigo_categoria,inventario.codigo_subcategoria, inventario.codigo_bodega,
-				inventario.codigo_empresa 
-				from tb_inventario as inventario
-				inner join cat_producto as produc on
-				inventario.codigo_categoria = produc.codigo_categoria and inventario.codigo_subcategoria = produc.codigo_subcategoria
-				where inventario.codigo_producto =(select codigo_producto from cat_producto where rowid = '$codigo')  and produc.rowid ='$codigo' and inventario.existencia>0 and (inventario.codigo_bodega=8 or inventario.codigo_bodega=15)";
+				$qry_x_rowid_producto = "select  distinct inventario.codigo_producto,inventario.codigo_categoria,inventario.codigo_subcategoria, inventario.codigo_bodega, inventario.codigo_empresa 
+										from tb_inventario as inventario
+										inner join cat_producto as produc on
+										inventario.codigo_categoria = produc.codigo_categoria and inventario.codigo_subcategoria = produc.codigo_subcategoria
+										where inventario.codigo_producto =(select codigo_producto from cat_producto 
+										where rowid = '$codigo')  and produc.rowid ='$codigo' and inventario.existencia>0 and (inventario.codigo_bodega=8)";
 				//echo "<hr>";
 				//echo $qry_x_rowid_producto;
 				//echo "<hr>";
@@ -109,7 +109,7 @@
 				}	
 
 					echo '<TR><TD COLSPAN="5">&nbsp;</TD></TR>';							
-					echo '<TR><TD COLSPAN="5"><span class="titulomenu"><center>Requisición Enviada a Autorisación!</span></center></TD></TR>';
+					echo '<TR><TD COLSPAN="5"><span class="titulomenu"><center>Requisición Enviada a Autorización!</span></center></TD></TR>';
 					echo '<TR><TD COLSPAN="5">&nbsp;</TD></TR>';
 		}
 	

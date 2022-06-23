@@ -184,8 +184,12 @@ function Refrescar(form)
 						<td width="9%" class="titulotabla"><div align="center"><strong>Seleccionar
 						</strong></div></td>
 						<td width="10%" class="titulotabla"><strong>Codigo Producto</strong></td>
-						<td width="50%" class="titulotabla">Producto</td>
-
+						<td width="50%" class="titulotabla"><strong>Producto</strong></td>
+						<td width="10%" class="titulotabla">Categoria</td>
+						<td width="10%" class="titulotabla">Sub</td>
+						<td width="10%" class="titulotabla">Rowid</td>
+						<td width="10%" class="titulotabla">Existencia</td>
+						
 					</tr>
 					<?PHP
 					if ($_REQUEST["txt_buscar"]!="")
@@ -206,7 +210,7 @@ function Refrescar(form)
 							ON p.codigo_categoria = tb_inventario.codigo_categoria 
 						AND p.codigo_subcategoria = tb_inventario.codigo_subcategoria 
 						AND p.codigo_producto = tb_inventario.codigo_producto
-						WHERE tb_inventario.existencia >= 1 and ((p.producto like '%$busqueda%'   and p.activo = 1) or (p.uso like '%$busqueda%'   and p.activo = 1))  and (tb_inventario.codigo_bodega= 8 or tb_inventario.codigo_bodega=15) and p.activo = 1 ";
+						WHERE tb_inventario.existencia >= 1 and ((p.producto like '%$busqueda%'   and p.activo = 1) or (p.uso like '%$busqueda%'   and p.activo = 1))  and tb_inventario.codigo_bodega= 8 and p.activo = 1 ";
 
 					}
 					else	
@@ -227,7 +231,7 @@ function Refrescar(form)
 								INNER JOIN cat_producto p  ON cat_medida.codigo_medida = p.codigo_medida 
 								INNER JOIN tb_inventario ON p.codigo_categoria = tb_inventario.codigo_categoria AND p.codigo_subcategoria = tb_inventario.codigo_subcategoria 
 								AND p.codigo_producto = tb_inventario.codigo_producto
-								WHERE tb_inventario.existencia >= 1 and (p.producto like '$inicial%')  and (tb_inventario.codigo_bodega= 8 or tb_inventario.codigo_bodega=15) and p.activo = 1";
+								WHERE tb_inventario.existencia >= 1 and (p.producto like '$inicial%')  and tb_inventario.codigo_bodega= 8 and p.activo = 1";
 
 							else
 								// $consulta = "SELECT  distinct    p.rowid, (p.producto +' - '+ p.marca +' EN '+ m.unidad_medida) as producto,  p.codigo_subcategoria,
@@ -242,7 +246,7 @@ function Refrescar(form)
 								INNER JOIN cat_producto p  ON cat_medida.codigo_medida = p.codigo_medida 
 								INNER JOIN tb_inventario ON p.codigo_categoria = tb_inventario.codigo_categoria AND p.codigo_subcategoria = tb_inventario.codigo_subcategoria 
 								AND p.codigo_producto = tb_inventario.codigo_producto
-								WHERE tb_inventario.existencia >= 1   and (tb_inventario.codigo_bodega= 8 or tb_inventario.codigo_bodega=15)  and p.activo = 1
+								WHERE tb_inventario.existencia >= 1   and tb_inventario.codigo_bodega= 8 and p.activo = 1
 								order by p.producto";
 
 						}
@@ -260,7 +264,7 @@ function Refrescar(form)
 								INNER JOIN cat_producto p  ON cat_medida.codigo_medida = p.codigo_medida 
 								INNER JOIN tb_inventario ON p.codigo_categoria = tb_inventario.codigo_categoria AND p.codigo_subcategoria = tb_inventario.codigo_subcategoria 
 								AND p.codigo_producto = tb_inventario.codigo_producto
-								WHERE tb_inventario.existencia >= 1  and tb_inventario.codigo_bodega= 8 or tb_inventario.codigo_bodega=15 and p.activo = 1";
+								WHERE tb_inventario.existencia >= 1  and tb_inventario.codigo_bodega=8 and p.activo = 1";
 
 						}
 
@@ -278,20 +282,14 @@ function Refrescar(form)
 							}
 
 							echo '<tr class='.$clase.'>';
-							echo "<td class='boton'><center><img src=\"../images/iconos/ico_ir.gif\" border=\"0\" alt=\"Seleccionar esta categoria\"></a></center></td>";					
-							echo '<td>'.$row["codigo_producto"].'</td><td>'.utf8_encode($row["producto"]).'</td><td class="oculto">'.$row["codigo_categoria"].'</td><td class="oculto">'.$row["codigo_subcategoria"].'</td><td class="oculto" >'.$row["rowid"].'</td> <td class="oculto">'.$row["existencia"].'</td> </tr>';	
-
-					// echo '<tr class='.$clase.'>';
-					// echo "<td><a href=\"javascript:void(0)\" onClick=\"window.opener.document.getElementById('$tipo"."[".$posi."][1]').value = '$completo'; 
-					// window.opener.document.getElementById('$tipo"."[".$posi."][4]').value = '".$row["rowid"]."';
-			  //    	window.opener.document.getElementById('$tipo"."[".$posi."][7]').value = '".$row["producto"]."';
-					// window.opener.document.getElementById('$tipo"."[".$posi."][2]').value = '".$row["codigo_categoria"]."';
-					// window.opener.document.getElementById('$tipo"."[".$posi."][3]').value = '".$row["codigo_subcategoria"]."';
-					// window.opener.document.getElementById('$tipo"."[".$posi."][5]').value = '".$row["codigo_categoria"]."';
-					// window.close();
-					// window.opener.focus(); 
-					// return false;\"><center><img src=\"../images/iconos/ico_ir.gif\" border=\"0\" alt=\"Seleccionar esta categoria\"></a></center></td>";					
-					// echo '<td>'.$row["codigo_producto"].'</td><td>'.$row["producto"].'</td></tr>';										
+							echo "<td class='boton'><center><a><img src=\"../images/iconos/ico_ir.gif\" border=\"0\" alt=\"Seleccionar esta categoria\"></a></center></td>";					
+							echo '<td>'.$row["codigo_producto"].'</td>
+								  <td>'.utf8_encode($row["producto"]).'</td>
+								  <td class="">'.$row["codigo_categoria"].'</td>
+								  <td class="">'.$row["codigo_subcategoria"].'</td>
+								  <td class="" >'.$row["rowid"].'</td> 
+								  <td class="">'.$row["existencia"].'</td> 
+								  </tr>';											
 							$i++;
 						}				
 						$free_result($result);				
@@ -306,40 +304,30 @@ function Refrescar(form)
 			<script type="text/javascript">   
 
 
-			function valor_celda(celda){
+			/* function valor_celda(celda){
 
 				alert(celda.innerHTML);
 				window.opener.document.getElementById("nombre[0][1]").value = celda.innerHTML ;
 				window.close();
 				window.opener.focus();
-			}
+			} */
 
 			window.onload = function(){
-
 				$(".boton").click(function(){
-
-
-
 					var valores= new Array();
 
+            	// Obtenemos todos los valores contenidos en los <td> de la fila
+            	// seleccionada
 
+            	$(this).parents("tr").find("td").each(function(){
 
-            // Obtenemos todos los valores contenidos en los <td> de la fila
+                	// valores+=$(this).html()+"\n";
+                	valores.push($(this).html())
+            	});
 
-            // seleccionada
-
-            $(this).parents("tr").find("td").each(function(){
-
-                // valores+=$(this).html()+"\n";
-                valores.push($(this).html())
-
-
-            });
-
-            var posi = '<?php echo $posi; ?>';
-            var tipo = '<?php echo $tipo; ?>'
-
-
+            	var posi = '<?php echo $posi; ?>';
+            	var tipo = '<?php echo $tipo; ?>'
+				
             window.opener.document.getElementById(tipo+"["+posi+"][1]").value = valores[1];
             window.opener.document.getElementById(tipo+"["+posi+"][7]").value = valores[2];
             window.opener.document.getElementById(tipo+"["+posi+"][5]").value = valores[3];
@@ -354,20 +342,20 @@ function Refrescar(form)
 
 
 
-// var tags_td = new Array();
-// var tags_td=document.getElementsByTagName('td');
-// for (i=0; i<tags_td.length; i++) {
-//             if (tags_td[i].addEventListener) {   // IE9 y el resto
-//                 tags_td[i].addEventListener ("click", function () {valor_celda(this)}, false);
-//             } 
-//             else {
-//                 if (tags_td[i].attachEvent) {    // IE9 -
-// //                    tags_td[i].attachEvent ('onclick',  function () {valor_celda(this)}, false);
-//    tags_td[i].setAttribute('onclick', 'valor_celda(this)');                 
+			/* // var tags_td = new Array();
+			// var tags_td=document.getElementsByTagName('td');
+			// for (i=0; i<tags_td.length; i++) {
+			//             if (tags_td[i].addEventListener) {   // IE9 y el resto
+			//                 tags_td[i].addEventListener ("click", function () {valor_celda(this)}, false);
+			//             } 
+			//             else {
+			//                 if (tags_td[i].attachEvent) {    // IE9 -
+			// //                    tags_td[i].attachEvent ('onclick',  function () {valor_celda(this)}, false);
+			//    tags_td[i].setAttribute('onclick', 'valor_celda(this)');                 
 
-//                 }
-//             }
-// }
+			//                 }
+			//             }
+			// } */
 };
 
 
