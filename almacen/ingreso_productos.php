@@ -556,7 +556,7 @@ $usuario_id = ($_SESSION["user_id"]);
         ;
         ban = 0;
         for (i = 1; i < 100; i++) {
-            if (valor(form['ingresado[' + i + ']'])) ban = 1;
+            if (valor(form['bienx[' + i + '][3]'])) ban = 1;
         }
         if (ban == 0) {
             alert('Falta las unidades ingresadas');

@@ -185,10 +185,7 @@ function Refrescar(form)
 						</strong></div></td>
 						<td width="10%" class="titulotabla"><strong>Codigo Producto</strong></td>
 						<td width="50%" class="titulotabla"><strong>Producto</strong></td>
-						<td width="10%" class="titulotabla">Categoria</td>
-						<td width="10%" class="titulotabla">Sub</td>
-						<td width="10%" class="titulotabla">Rowid</td>
-						<td width="10%" class="titulotabla">Existencia</td>
+						
 						
 					</tr>
 					<?PHP
@@ -285,10 +282,6 @@ function Refrescar(form)
 							echo "<td class='boton'><center><a><img src=\"../images/iconos/ico_ir.gif\" border=\"0\" alt=\"Seleccionar esta categoria\"></a></center></td>";					
 							echo '<td>'.$row["codigo_producto"].'</td>
 								  <td>'.utf8_encode($row["producto"]).'</td>
-								  <td class="">'.$row["codigo_categoria"].'</td>
-								  <td class="">'.$row["codigo_subcategoria"].'</td>
-								  <td class="" >'.$row["rowid"].'</td> 
-								  <td class="">'.$row["existencia"].'</td> 
 								  </tr>';											
 							$i++;
 						}				
@@ -315,28 +308,27 @@ function Refrescar(form)
 			window.onload = function(){
 				$(".boton").click(function(){
 					var valores= new Array();
+					
 
             	// Obtenemos todos los valores contenidos en los <td> de la fila
             	// seleccionada
 
             	$(this).parents("tr").find("td").each(function(){
-
-                	// valores+=$(this).html()+"\n";
                 	valores.push($(this).html())
             	});
-
+				
             	var posi = '<?php echo $posi; ?>';
             	var tipo = '<?php echo $tipo; ?>'
 				
-            window.opener.document.getElementById(tipo+"["+posi+"][1]").value = valores[1];
-            window.opener.document.getElementById(tipo+"["+posi+"][7]").value = valores[2];
-            window.opener.document.getElementById(tipo+"["+posi+"][5]").value = valores[3];
-            window.opener.document.getElementById(tipo+"["+posi+"][6]").value = valores[4];
-            window.opener.document.getElementById(tipo+"["+posi+"][4]").value = valores[5];
-			window.opener.document.getElementById(tipo+"["+posi+"][8]").value = valores[6];
+				window.opener.document.getElementById(tipo+"["+posi+"][1]").value = valores[1];
+				window.opener.document.getElementById(tipo+"["+posi+"][7]").value = valores[2];
+				window.opener.document.getElementById(tipo+"["+posi+"][5]").value = valores[3];
+				window.opener.document.getElementById(tipo+"["+posi+"][6]").value = valores[4];
+				//window.opener.document.getElementById(tipo+"["+posi+"][4]").value = valores[5];
+				window.opener.document.getElementById(tipo+"["+posi+"][8]").value = valores[6];
 
-            window.close();
-            window.opener.focus();
+				window.close();
+				window.opener.focus();
 
         });
 

@@ -85,7 +85,8 @@ element.innerHTML = peticion.responseText;
 
 </script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script language="JavaScript" type="text/javascript" src="../includes/ajax_request.js"></script>
 <script type="text/javascript">
 
@@ -251,18 +252,18 @@ window.onload = function(){
                 valores.push($(this).html())
             });
 
-var posi = '<?php echo $posi; ?>';
-var tipo = '<?php echo $tipo; ?>'
-
-window.opener.document.getElementById(tipo+"["+posi+"][1]").value = valores[1];
-window.opener.document.getElementById(tipo+"["+posi+"][4]").value = valores[1];
-// window.opener.document.getElementById(tipo+"["+posi+"][12]").value = valores[1];
-window.opener.document.getElementById(tipo+"["+posi+"][2]").value = valores[3];
-window.opener.document.getElementById(tipo+"["+posi+"][5]").value = valores[3];
-window.opener.document.getElementById(tipo+"["+posi+"][3]").value = valores[4];
-window.opener.document.getElementById(tipo+"["+posi+"][7]").value = valores[2];
-window.close();
-window.opener.focus();
+			var posi = '<?php echo $posi; ?>';
+			var tipo = '<?php echo $tipo; ?>'
+			let elementox ="";
+			window.opener.document.getElementById(tipo+"["+posi+"][1]").value = valores[1];//codigo del producto en detalle de productos
+			window.opener.document.getElementById(tipo+"["+posi+"][4]").value = valores[1];//codigo del producto en casill oculta
+			window.opener.document.getElementById(tipo+"["+posi+"][2]").value = valores[3];//categoria en detalle de producto
+			window.opener.document.getElementById(tipo+"["+posi+"][5]").value = valores[3];//renglon en detalle producto que es el mismo valor de categoria
+			window.opener.document.getElementById(tipo+"["+posi+"][3]").value = valores[4];//subcategoria en detalle producto
+			window.opener.document.getElementById(tipo+"["+posi+"][7]").value = valores[2];//descricion de producto en detalle			
+			
+			window.close();
+			window.opener.focus();
 
         });
 };

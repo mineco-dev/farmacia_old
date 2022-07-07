@@ -1,6 +1,17 @@
 <?PHP
 	require("../includes/funciones.php");
 	require("../includes/sqlcommand.inc");
+	/* ni_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL); */ 
+ 
+	$posi=$_REQUEST['posi'];
+	$tipo=$_REQUEST['tipo'];
+	$tipox=$_REQUEST['tipox'];
+	$cat=$_REQUEST['cat'];
+	$subcat=$_REQUEST['subcat'];
+	$codprod=$_REQUEST['codp'];
+	
 ?>
 <?PHP
 if (isset($_REQUEST["txt_lote"]))
@@ -9,7 +20,7 @@ if (isset($_REQUEST["txt_lote"]))
 	{	
 		conectardb($almacen);
 		$nuevo_lote=strtoupper($_REQUEST["txt_lote"]);	
-		$qry_si_existe="select * from lotes_existencia where lote='$nuevo_lote'";
+		$qry_si_existe="select * from lotes_existencia where lote='$nuevo_lote' and codigo_bodega=8";
 		$res_qry_si_existe=$query($qry_si_existe);	
 		$existe=false;	
 		while($row_medida=$fetch_array($res_qry_si_existe))
@@ -21,7 +32,7 @@ if (isset($_REQUEST["txt_lote"]))
 		{	
 			$fecha_vence=($_REQUEST["f_vence"]);
 			$cant_ingreso=($_REQUEST["cant_ingreso"]);
-			$existencia=($_REQUEST["cant_existente"]);
+			
 			$fecha_ingreso=($_REQUEST["f_ingreso"]);
 			$lote=($_REQUEST["txt_lote"]);
 
@@ -32,10 +43,12 @@ if (isset($_REQUEST["txt_lote"]))
 				$ultimo_codigo_lote=$row_lote["ultimo_lote"]+1;
 			}	 */			
 			//$nombre_usuario=$_SESSION["user_name"];
-			$qry_lote="INSERT INTO lotes_existencia(codigo_bodega, codigo_producto, fecha_vence, ingreso, existencia, fecha_ingreso, estado, lote ) 
-							VALUES ($bodega,8, '$fecha_vence',$cant_ingreso,$existencia, '$fecha_ingreso',1, '$lote')";
+			$qry_lote="INSERT INTO lotes_existencia(codigo_bodega, codigo_categoria, codigo_subcategoria, codigo_producto, fecha_vence, ingreso,  fecha_ingreso, estado, lote ) 
+							VALUES (8,$cat,$subcat,$codprod,'$fecha_vence',$cant_ingreso,'$fecha_ingreso',1, '$lote')";
 			$query($qry_lote);
-			
+			/* echo("<hr>");
+			echo($qry_lote);
+			echo("<hr>"); */
 			
 			if (isset($_REQUEST["txt_ref2"])) 			  
 				header("Location: LoteIngreso.php"); 
@@ -45,6 +58,7 @@ if (isset($_REQUEST["txt_lote"]))
 ?>
 <html>
 <head>
+
 <script type="text/javascript">
 /***********************************************
 * Contractible Headers script- � Dynamic Drive (www.dynamicdrive.com)
@@ -172,6 +186,11 @@ function Refrescar(form)
 	form.txt_medida.focus(); 
 }
 </script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../includes/ajax_request.js"></script>  
+
+
 <link href="../helpdesk.css" rel="stylesheet" type="text/css">
 
 <meta http-equiv="Content-Type" content="text/html"; charset="windows-1252">
@@ -232,13 +251,7 @@ function Refrescar(form)
 					 </label> 
 				  </td>
 			  </tr>
-			  <tr>
-				  <td>
-				 	<label for="cant_existente" class="tituloproducto">Cantidad en existencia 
-					 	<input type="number" name="cant_existente" id="cant_existente" required>
-					</label>
-				  </td>
-			  </tr>
+				  
 			  <tr>
 				  <td>
 				 	<label for="f_ingreso" class="tituloproducto">Fecha de ingreso
@@ -261,14 +274,14 @@ function Refrescar(form)
         <td><img src="../images/linea.gif" width="100%" height="6"></td>
       </tr>
       <tr>
-        <td><b onClick="expandcontent('aleg1')" style="cursor:hand; cursor:pointer"><span class="curriculo"><img src="../images/e05.gif" width="21" height="21"></span></b> <span class="defaultfieldname">Para realizar b&uacute;squedas puede pulsar sobre una de las letras encerradas entre [], o bien escriba el nombre o parte del mismo para realizar una b&uacute;squeda espec&iacute;fica.</span></td>
+        <td><b onClick="expandcontent('aleg1')" style="cursor:hand; cursor:pointer"><span class="curriculo"><img src="../images/e05.gif" width="21" height="21"></span></b> <span class="defaultfieldname">Para realizar una b&uacute;squeda puede escribir el nombre del lote, o parte del mismo, para realizar una b&uacute;squeda espec&iacute;fica.</span></td>
       </tr>
       <tr>
         <td>        
 			<div align="left" class="Estilo1">
           		<div align="right">
 			  		<strong>
-					  	<a href="medida.php?in=all">[TODO]</a>            
+					  	<!--<a href="LoteIngreso.php?in=all">[TODO]</a>-->            
             			<input name="txt_buscar" type="text" id="txt_buscar2" size="20">
             			<input name="bt_buscar" onClick="Validar(this.form)" type="button" id="bt_buscar" value="Buscar">
           			</strong>
@@ -279,32 +292,33 @@ function Refrescar(form)
     </table>
     <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" id="table17">
       <tr align="center" bgcolor="#006699" class="thead">
-        <td class="titulotabla">
+	  	<td width="10%"class="titulotabla">
 			<span class="Estilo3 thead">
-				<strong>Lotes existentes</strong>
+				<strong>Seleccionar</strong>
 			</span>
 		</td>
-		<td class="titulotabla">
+        <td width="20%"class="titulotabla">
+			<span class="Estilo3 thead">
+				<strong>Lotes</strong>
+			</span>
+		</td>
+		<td width="20%" class="titulotabla">
 			<span class="Estilo3 thead">
 				<strong>fecha vencimineto</strong>
 			</span>
 		</td>
-		<td class="titulotabla">
+		<td width="15%" class="titulotabla">
 			<span class="Estilo3 thead">
 				<strong>Cantidad ingresada</strong>
 			</span>
 		</td>
-		<td class="titulotabla">
-			<span class="Estilo3 thead">
-				<strong>Existencia</strong>
-			</span>
-		</td>
-        <td width="5%" colspan="-1" class="titulotabla">
+		
+        <td width="10%" class="titulotabla">
 			<span class="titulotabla">
 				<strong>Editar</strong>
 			</span>
 		</td>
-        <td width="6%" class="titulotabla">
+        <td width="10%" class="titulotabla">
 			<span>
 				<strong>Estado</strong>
 			</span>
@@ -312,6 +326,7 @@ function Refrescar(form)
 		</td>
       </tr>
 		<?PHP
+		
 			if ($_REQUEST["txt_buscar"]!="")
 				{
 					$busqueda=strtoupper($_REQUEST["txt_buscar"]);					
@@ -327,12 +342,18 @@ function Refrescar(form)
 					}
 					else
 					{
-						$consulta = "SELECT * FROM lotes_existencia order by lote";
+						$consulta = "SELECT * FROM lotes_existencia where codigo_categoria ='$cat' and codigo_subcategoria='$subcat' and codigo_producto='$codprod' order by fecha_vence";
+						echo("<hr>");
+						echo($consulta);
+						echo("<hr>");
 					}
 				}
 				else
 				{
-					$consulta = "SELECT * FROM lotes_existencia where lote like '%%' order by lote asc";
+					$consulta = "SELECT * FROM lotes_existencia where lote like '%%' and codigo_categoria ='$cat' and codigo_subcategoria='$subcat' and codigo_producto='$codprod' order by fecha_vence asc";
+					/* echo("<hr>");
+					echo($consulta);
+					echo("<hr>"); */
 				}
 				conectardb($almacen);
 				$result=$query($consulta);
@@ -344,20 +365,23 @@ function Refrescar(form)
 					{
 						$clase = "detalletabla1";
 					}
-					$estado=$row["activo"];
+					$estado=$row["estado"];
 					if ($estado==1)					
 					echo '<tr class='.$clase.'>
-							<td colspan="3">'.$row["lote"].'</td>
+							<td class="boton_x"><center><img src="../images/iconos/ico_ir.gif"></center></td>
+							<td>'.$row["lote"].'</td>
 							<td>'.$row["fecha_vence"].'</td>
 							<td>'.$row["ingreso"].'</td>
-							<td>'.$row["existencia"].'</td>
+							
 							<td><center><a href="editar_lote.php?id='.$row["rowid"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td>
 							<td><center><a href="cambia_stat.php?id='.$row["rowid"].'&stat=2&ref=3"><img src="../images/iconos/ico_activo.gif" alt="Activo"></a></center></td></tr>';					
 					else
-						echo '<tr class='.$clase.'><td>'.$row["lote"].'</td>
+						echo '<tr class='.$clase.'>
+						<td class="boton_x"><center><img src=\"../images/iconos/ico_ir.gif\" border=\"0\" alt=\"Seleccionar esta categoria\"></center></td>
+							  <td>'.$row["lote"].'</td>
 							  <td>'.$row["fecha_vence"].'</td>
 							  <td>'.$row["ingreso"].'</td>
-							  <td>'.$row["existencia"].'</td>
+							
 							  <td><center><a href="editar_lote.php?id='.$row["rowid"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td>
 							  <td><center><a href="cambia_stat.php?id='.$row["rowid"].'&stat=1&ref=3"><img src="../images/iconos/ico_desactivado.gif" alt="Desactivado"></a></center></td></tr>';										
 					$i++;
@@ -372,7 +396,37 @@ function Refrescar(form)
 <!-- /forum rules and admin links -->
 <br />
 			<div align="left"></div>
-            
+
+
+<script type="text/javascript">   
+	window.onload = function(){
+        $(".boton_x").click(function(){
+            var valores2= new Array();
+            $(this).parents("tr").find("td").each(function(){
+                valores2.push($(this).html())
+            });
+
+			var posi = '<?php echo $posi; ?>';
+			var tipo = '<?php echo $tipo; ?>';
+			var tipox = '<?php echo $tipox; ?>';
+			
+
+			window.opener.document.getElementById(tipox+"["+posi+"][1]").value = valores2[1];
+			window.opener.document.getElementById(tipox+"["+posi+"][2]").value = valores2[2];
+			window.opener.document.getElementById(tipox+"["+posi+"][3]").value = valores2[3];
+			window.opener.document.getElementById(tipox+"["+posi+"][11]").value = valores2[1];
+			window.opener.document.getElementById(tipox+"["+posi+"][21]").value = valores2[2];
+			window.opener.document.getElementById(tipox+"["+posi+"][31]").value = valores2[3];
+
+			window.close();
+			window.opener.focus();
+
+        });
+	};
+
+
+</script>
+  
 </body>
 
 </html>

@@ -3,9 +3,9 @@
 require("../includes/funciones.php");
 require("../includes/sqlcommand.inc");
 require_once('../includes/conectarse.php');
-ini_set('display_errors', 1);
+ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(E_ALL); 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -49,10 +49,13 @@ if(isset($_SESSION["ingreso"]))
     $fecha_fact=$_POST['date1'];
     $fecha_ingreso_sis=$_POST['date2'];
     $cantidad_filas = $_POST['cantidad_filas'];
-    $lote=$_POST['lote'];
-    $fecha_vence=$_POST['fecha_caducidad'];
     $bien=$_POST['bien'];
-    $cant_ingresada=$_POST['ingresado'];
+    $bienx = $_POST['bienx'];
+
+
+    //$lote=$_POST['lote'];
+    //$fecha_vence=$_POST['fecha_caducidad'];
+    //$cant_ingresada=$_POST['ingresado'];
     $costo_unitario=$_POST['costo_unitario'];
     $precio_total=$_POST['precio_total'];
     $precio_total1=$_POST['precio_total1'];
@@ -121,7 +124,10 @@ if(isset($_SESSION["ingreso"]))
         $codigoproducto = $bien[$cnt][1];
         $categoria = $bien[$cnt][2];
         $subcategoria = $bien[$cnt][3];
-        
+        $lote = $bienx[$cnt][11];
+        $fecha_vence = $bienx[$cnt][21];
+        $cant_ingresada = $bienx[$cnt][31];
+
         if ($costo_unitario[$cnt] == "") $costo_unitario[$cnt] = 0;
         $qry_ingreso_det = "INSERT INTO tb_ingreso_det
            ( codigo_ingreso_enc, 
@@ -145,11 +151,11 @@ if(isset($_SESSION["ingreso"]))
             $categoria,
             $subcategoria, 
             $codigoproducto, 
-            $cant_ingresada[$cnt],  
+            $cant_ingresada,  
             $costo_unitario[$cnt], 
             $precio_total[$cnt],
-            '$lote[$cnt]',
-            '$fecha_vence[$cnt]', 
+            '$lote',
+            '$fecha_vence', 
             $codigo_bodega, 
             '$nombre_usuario', 
             '$hoy',
@@ -158,7 +164,9 @@ if(isset($_SESSION["ingreso"]))
             $codigo_empresa                              
              )";   
         $query($qry_ingreso_det);
-        //print_r($qry_ingreso_det);
+         /* echo("<hr>");
+        print_r($qry_ingreso_det);
+        echo("<hr>");  */
         $cnt++;
     }
 
@@ -167,9 +175,11 @@ if(isset($_SESSION["ingreso"]))
 
     $cnt = 1;
     while ($cnt <= count($bien)) {
-        $codigoproducto = $bien[$cnt][1];
+        $codigo_producto = $bien[$cnt][1];
         $categoria = $bien[$cnt][2];
         $subcategoria = $bien[$cnt][3];
+        $cant_ingresada=$bienx[$cnt][31];
+        
   
         // Consultar si existe el producto en la tabla
         $qry_consulta = "SELECT * FROM tb_kardex WHERE 
@@ -183,10 +193,10 @@ if(isset($_SESSION["ingreso"]))
         $existe = false;
         while ($row = $fetch_array($res_consulta)) {
             $existe = true;  
-            $saldo = $row["saldo"] + $cant_ingresada[$cnt];              
+            $saldo = $row["saldo"] + $cant_ingresada;              
             $costo_actual = $row["saldo"] * $row["costo_actual"];             
             $costo_totalant = $row["costo_total"];            
-            $costo_nuevo = $cant_ingresada[$cnt] * $costo_unitario[$cnt];
+            $costo_nuevo = $cant_ingresada * $costo_unitario[$cnt];
             $suma_costo = $costo_actual + $costo_nuevo;  
 
 
@@ -223,10 +233,10 @@ if(isset($_SESSION["ingreso"]))
             $codigo_bodega,
             $categoria,
             $subcategoria, 
-            $codigoproducto,
+            $codigo_producto,
             1,
             '$hoy',
-            $cant_ingresada[$cnt], 
+            $cant_ingresada, 
             '$nombre_usuario', 
             '$hoy',
             $activo,
@@ -236,19 +246,22 @@ if(isset($_SESSION["ingreso"]))
             $costo_factura,
             $costo_movimiento, 
             $cod_dependencia,
-            $cant_ingresada[$cnt],
+            $cant_ingresada,
             $saldo,      
             $costo_total,
             $costo_unitario[$cnt])";
             //print($suma_costo);
+            /* echo("<hr>");
+            print_r($qry_ingreso_kardex);
+            echo("<hr>");  */
         } 
          
         if (!$existe) {
             $existe = true;  
-            $saldo = $row["saldo"] + $cant_ingresada[$cnt];              
+            $saldo = $row["saldo"] + $cant_ingresada;              
             $costo_actual = $row["saldo"] * $row["costo_actual"];             
             $costo_totalant = $row["costo_total"];            
-            $costo_nuevo = $cant_ingresada[$cnt] * $costo_unitario[$cnt];
+            $costo_nuevo = $cant_ingresada * $costo_unitario[$cnt];
             $suma_costo = $costo_actual + $costo_nuevo;  
             //print($costo_factura); 
             $costo_total = $precio_total[$cnt] + $costo_totalant;            
@@ -282,10 +295,10 @@ if(isset($_SESSION["ingreso"]))
             $codigo_bodega,
             $categoria,
             $subcategoria, 
-            $codigoproducto,
+            $codigo_producto,
             1,
             '$hoy',
-            $cant_ingresada[$cnt], 
+            $cant_ingresada, 
             '$nombre_usuario', 
             '$hoy',
             $activo,
@@ -295,18 +308,20 @@ if(isset($_SESSION["ingreso"]))
             $costo_factura,
             $costo_movimiento, 
             $cod_dependencia,
-            $cant_ingresada[$cnt],
+            $cant_ingresada,
             $saldo,      
             $costo_total,
             $costo_unitario[$cnt])";
             //print($costo_factura); 
-            //print($qry_ingreso_kardex);  
+           /*  echo("<hr>");
+            print_r($qry_ingreso_kardex);
+            echo("<hr>");  */
         }    
         if (!$existe) {
-            $saldo = $row["saldo"] + $cant_ingresada[$cnt];
+            $saldo = $row["saldo"] + $cant_ingresada;
             $costo_actual = $row["saldo"] * $row["costo_actual"];
             $costo_totalant = $row["costo_total"];
-            $costo_nuevo = $cant_ingresada[$cnt] * $costo_unitario[$cnt];
+            $costo_nuevo = $cant_ingresada * $costo_unitario[$cnt];
             $suma_costo = $costo_actual + $costo_nuevo;            
             $costo_total = $precio_total1[$cnt] + $costo_totalant;
             $promedio = $costo_total / $saldo;
@@ -323,10 +338,13 @@ if(isset($_SESSION["ingreso"]))
             costo_total=$costo_total 
             WHERE codigo_empresa=$codigo_empresa 
                 AND codigo_bodega=$codigo_bodega 
-                AND codigo_producto=$codigoproducto 
+                AND codigo_producto=$codigo_producto 
                 AND codigo_categoria=$categoria 
                 AND codigo_subcategoria=$subcategoria";
-                //print($qry_ingreso_kardex);  
+                //print($qry_ingreso_kardex);
+                /* echo("<hr>");
+                print_r($qry_ingreso_kardex);
+                echo("<hr>");   */
             
         }  
         //print($qry_ingreso_kardex);
@@ -341,6 +359,8 @@ if(isset($_SESSION["ingreso"]))
         $codigoproducto = $bien[$cnt][1];
         $categoria = $bien[$cnt][2];
         $subcategoria = $bien[$cnt][3];
+
+        $cant_ingresada=$bienx[$cnt][31];
         //$codigo = $bien[$cnt][4];
         $renglon = $bien[$cnt][5];
         // Consultar si existe el producto en la tabla
@@ -357,7 +377,7 @@ if(isset($_SESSION["ingreso"]))
         $existe = false;
         while ($row = $fetch_array($res_consulta)) {
             $existe = true;
-            $existencia_actual = $row["existencia"] + $cant_ingresada[$cnt];
+            $existencia_actual = $row["existencia"] + $cant_ingresada;
             //print($existencia_actual);
             $qry_ingreso_inventario = "UPDATE tb_inventario 
             SET existencia=$existencia_actual, 
@@ -373,7 +393,7 @@ if(isset($_SESSION["ingreso"]))
         
         if (!$existe) {
 
-            $existencia_actual = $row["existencia"] + $cant_ingresada[$cnt];
+            $existencia_actual = $row["existencia"] + $cant_ingresada;
             //echo "<h1>exist".$row["existencia"]."</h1><hr/>";
             //echo "<h1>ingre".$cant_ingresada[$cnt]."</h1><hr/>";
             //echo "<h1>tot".$existencia_actual."</h1><hr/>";
@@ -398,7 +418,7 @@ if(isset($_SESSION["ingreso"]))
                 $categoria,
                 $subcategoria,   
                 $codigoproducto,
-                $cant_ingresada[$cnt],
+                $cant_ingresada,
                 '$hoy',     
                 '$hoy',
                 '$nombre_usuario',
@@ -425,6 +445,10 @@ if(isset($_SESSION["ingreso"]))
         $categoria = $bien[$cnt][2];
         $subcategoria = $bien[$cnt][3];
         $renglon = $bien[$cnt][5];
+        $lote=$bienx[$cnt][11];
+        $fecha_vence=$bienx[$cnt][21];
+        $cant_ingresada=$bienx[$cnt][31];
+    
         // Consultar si existe el producto en la tabla
         $qry_consulta="SELECT * FROM tb_inventario_det 
         WHERE codigo_empresa=$codigo_empresa 
@@ -438,21 +462,24 @@ if(isset($_SESSION["ingreso"]))
         while($row=$fetch_array($res_consulta))
         {
             $existe=true;
-            $existencia_actual=$row["existencia"]+$cant_ingresada[$cnt];
+            $existencia_actual=$row["existencia"]+$cant_ingresada;
             $qry_ingreso_inventario ="UPDATE tb_inventario_det 
             SET existencia=$existencia_actual, 
             activo=1, 
-            lote=$lote[$cnt],
-            fecha_vence='$fecha_vence[$cnt]'
+            lote=$lote,
+            fecha_vence='$fecha_vence'
             WHERE codigo_empresa=$codigo_empresa 
             AND codigo_bodega=$codigo_bodega 
             AND codigo_producto=$codigoproducto 
             AND codigo_categoria=$categoria 
             AND codigo_subcategoria=$subcategoria";
+            echo("<hr>");
+            print_r($qry_ingreso_inventario);
+            echo("<hr>");
         }
         if(!$existe)
         {
-            $existencia_actual=$row["existencia"]+$cant_ingresada[$cnt];
+            $existencia_actual=$row["existencia"]+$cant_ingresada;
             //echo "<h1>exist".$row["existencia"]."</h1><hr/>";
             //echo "<h1>ingre".$cant_ingresada[$cnt]."</h1><hr/>";
             //echo "<h1>tot".$existencia_actual."</h1><hr/>";
@@ -467,20 +494,23 @@ if(isset($_SESSION["ingreso"]))
                 lote,
                 fecha_vence)
             VALUES (
-                $cant_ingresada[$cnt],
+                $cant_ingresada,
                 $codigo_empresa, 
                 $codigo_bodega, 
                 $codigoproducto, 
                 $categoria,
                 $subcategoria, 
                 1,
-                '$lote[$cnt]',
-                '$fecha_vence[$cnt]')";
+                $lote,
+                '$fecha_vence')";
+                echo("<hr>");
+                print_r($qry_ingreso_inventario);
+                echo("<hr>");
         }
         //echo "ultimo: ".$qry_ingreso_inventario;
         
         $query($qry_ingreso_inventario);
-        //print_r($qry_ingreso_inventario);
+        
         
         $cnt++;
     

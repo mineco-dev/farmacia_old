@@ -353,21 +353,7 @@ var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
 
 <script type="text/javascript">
 
-//Funcion Envio a temporal
-// $(document).on('ready',function(){
-//     $('#Temporl').click(function(){
-//         var url = "RequiTemporal.php";
-//         $.ajax({
-//            type: "POST",
-//            url: url,
-//            data: $("#data").serialize(),
-//            success: function(data)
-//            {
-//              alert("enviado");
-//            }
-//        });
-//     });
-// });
+
 
 var enviodocumento;
 $(document).on('ready',function (){
@@ -380,18 +366,7 @@ $(document).on('ready',function (){
            // };
        };
     });
-console.log("usuario id");
-console.log(<?php echo $usuario_id; ?>);
 
-console.log("grupo id");
-console.log(<?php echo $grupo_id; ?>);
-
-console.log("usuario nombre");
-console.log(<?php echo $usuario_nombre; ?>);
-console.log("dependencia");
-console.log(<?php echo $dependencia; ?>);
-console.log("codigo grupo");
-console.log(<?php echo $codigo_grupo; ?>);
 });
   $.ajax({
     url: 'PHP/CargaDepartamento.php',
