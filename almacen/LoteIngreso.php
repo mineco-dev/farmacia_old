@@ -8,9 +8,9 @@
 	$posi=$_REQUEST['posi'];
 	$tipo=$_REQUEST['tipo'];
 	$tipox=$_REQUEST['tipox'];
-	$cat=$_REQUEST['cat'];
-	$subcat=$_REQUEST['subcat'];
-	$codprod=$_REQUEST['codp'];
+	$cat=$_GET['cat'];
+	$subcat=$_GET['subcat'];
+	$codprod=$_GET['codp'];
 	
 ?>
 <?PHP
@@ -34,7 +34,7 @@ if (isset($_REQUEST["txt_lote"]))
 			$cant_ingreso=($_REQUEST["cant_ingreso"]);
 			
 			$fecha_ingreso=($_REQUEST["f_ingreso"]);
-			$lote=($_REQUEST["txt_lote"]);
+			$lote=strtoupper($_REQUEST["txt_lote"]);
 
 			/* $qry_ultimo_lote="select max(rowid) as ultimo_lote from lotes_existencia";		
 			$res_qry_ultimo_lote=$query($qry_ultimo_lote);				
@@ -330,7 +330,10 @@ function Refrescar(form)
 			if ($_REQUEST["txt_buscar"]!="")
 				{
 					$busqueda=strtoupper($_REQUEST["txt_buscar"]);					
-					$consulta = "SELECT * FROM lotes_existencia where lote like '%$busqueda%'";					
+					$consulta = "SELECT * FROM lotes_existencia where lote like '%$busqueda%' codigo_categoria ='$cat' and codigo_subcategoria='$subcat' and codigo_producto='$codprod' order by fecha_vence";
+					echo("<hr>");
+						echo($consulta);
+						echo("<hr>");					
 				}
 			else	
 				if (isset($_REQUEST["in"]))	
@@ -338,14 +341,13 @@ function Refrescar(form)
 					$inicial=$_REQUEST["in"];
 					if ($inicial!="all")
 					{
-						$consulta = "SELECT * FROM lotes_existencia where lote like '$inicial%'";
+						$consulta = "SELECT * FROM lotes_existencia where lote like '$inicial%' codigo_categoria ='$cat' and codigo_subcategoria='$subcat' and codigo_producto='$codprod' order by fecha_vence";
+						
 					}
 					else
 					{
 						$consulta = "SELECT * FROM lotes_existencia where codigo_categoria ='$cat' and codigo_subcategoria='$subcat' and codigo_producto='$codprod' order by fecha_vence";
-						echo("<hr>");
-						echo($consulta);
-						echo("<hr>");
+						
 					}
 				}
 				else
@@ -373,7 +375,7 @@ function Refrescar(form)
 							<td>'.$row["fecha_vence"].'</td>
 							<td>'.$row["ingreso"].'</td>
 							
-							<td><center><a href="editar_lote.php?id='.$row["rowid"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td>
+							<td><center><a href="editar_lote.php?id='.$row["rowid"].'&cat='.$cat.'&subcat='.$subcat.'&codp='.$codprod.'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td>
 							<td><center><a href="cambia_stat.php?id='.$row["rowid"].'&stat=2&ref=3"><img src="../images/iconos/ico_activo.gif" alt="Activo"></a></center></td></tr>';					
 					else
 						echo '<tr class='.$clase.'>
@@ -382,7 +384,7 @@ function Refrescar(form)
 							  <td>'.$row["fecha_vence"].'</td>
 							  <td>'.$row["ingreso"].'</td>
 							
-							  <td><center><a href="editar_lote.php?id='.$row["rowid"].'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td>
+							  <td><center><a href="editar_lote.php?id='.$row["rowid"].'&cat='.$cat.'&subcat='.$subcat.'&codp='.$codprod.'"><img src="../images/iconos/ico_editar.png" width="27" height = "29" alt="Modificar información"></a></center></td>
 							  <td><center><a href="cambia_stat.php?id='.$row["rowid"].'&stat=1&ref=3"><img src="../images/iconos/ico_desactivado.gif" alt="Desactivado"></a></center></td></tr>';										
 					$i++;
 				}

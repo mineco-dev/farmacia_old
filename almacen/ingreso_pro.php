@@ -63,6 +63,7 @@ $_SESSION["ingreso"] = true;
             <th class="title_input">Codigo</th>
             <th class="title_input">Renglon</th>
             <th class="title_input_product">Producto</th>
+            <th class="">Buscar</th>
             <th class="title_input">Lote</th>
             <th class="title_input">Fecha Vencimiento</th>
             <th class="title_input">Cantidad Ingresada</th>
@@ -93,7 +94,10 @@ $_SESSION["ingreso"] = true;
 
 <script type="text/javascript">
     $(document).on('click','.buscaprod',function(){       
-            var nolinea = $(this).attr("nolinea");
+            var texto = $(this).attr("id");
+            var no = texto.substring(6,7);
+            var nolinea= parseInt(no,10);
+            console.log(nolinea);
             var catx = document.getElementById("bien["+nolinea+"][2]").value;
             var subcatx = document.getElementById("bien["+nolinea+"][3]").value;
             var codprodx = document.getElementById("bien["+nolinea+"][1]").value;
@@ -101,7 +105,7 @@ $_SESSION["ingreso"] = true;
             window.open('LoteIngreso.php?cat='+catx+'&subcat='+subcatx+'&codp='+codprodx+'&tipo=bien&posi='+nolinea+'&tipox=bienx','Buscar4','width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=150,left=1100');
             
             //var id = $(this).attr("id");
-           //console.log(nolinea);
+           
     });
     
     $(document).ready(function () {
@@ -133,20 +137,30 @@ $_SESSION["ingreso"] = true;
         fila += "<td><input name=\"bien[" + cont + "][3]\" type=\"text\" id=\"bien[" + cont + "][3]\" size=\"5%\" class=\"form-control input_center\" ></td>"
         fila += "<td><input name=\"bien[" + cont + "][1]\" type=\"text\" id=\"bien[" + cont + "][1]\" size=\"5%\" class=\"form-control input_center\"></td>"
         fila += "<td><input name=\"bien[" + cont + "][5]\" type=\"text\" id=\"bien[" + cont + "][5]\" size=\"5%\" class=\"form-control input_center\"></td>"
-        fila += "<td><input name=\"bien[" + cont + "][7]\" type=\"text\" id=\"bien[" + cont + "][7]\" size=\"45\" class=\"form-control\" > </td>"
+        fila += "<td><input name=\"bien[" + cont + "][7]\" type=\"text\" id=\"bien[" + cont + "][7]\" size=\"4%\" class=\"form-control\" > </td>"
+
+
+        fila += "<td><span class=\"buscaprod\" id=\"blote="+ cont + "\" name=\"blote="+ cont +" \"> <i class=\"fa fa-search\" aria-hidden=\"true\"></i> </span></td>"
         //lote de la medicina
-        //fila += "<td><input name=\"bienx[" + cont + "][1]\" type=\"text\" id=\"bienx[" + cont + "][1]\"  size=\"7\" class=\"monto form-control input_center\" disabled><span><a id =blote"+cont+" href=\"javascript:void(0)\" onClick=\"buscar=window.open(\'LoteIngreso.php?bd=&cat=&codp=&tipo=bien&posi=" + cont + "\',\'Buscar4\',\'width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=150,left=1100\'); return false;\" >...</a></span></td><input name=\"bienx[" + cont + "][11]\" type=\"hidden\" id=\"bienx[" + cont + "][11]\"  size=\"7\" class=\"monto form-control input_center\" >"
-        fila += "<td><input name=\"bienx[" + cont + "][1]\" type=\"text\" id=\"bienx[" + cont + "][1]\"  size=\"7\" class=\"monto form-control input_center\" disabled><span><span  class= \"buscaprod\" nolinea= "+cont+" id =blote"+cont+"  >+...</span></span></td><input name=\"bienx[" + cont + "][11]\" type=\"hidden\" id=\"bienx[" + cont + "][11]\"  size=\"7\" class=\"monto form-control input_center\" >"
+        fila += "<td><input name=\"bienx[" + cont + "][1]\" type=\"text\" id=\"bienx[" + cont + "][1]\"  size=\"7\" class=\"monto form-control input_center\" disabled></td>"
         //fecha caducindad medicina
-        fila += "<td><input name=\"bienx[" + cont + "][2]\" type=\"date\" id=\"bienx[" + cont + "][2]\"  size=\"7\" class=\"monto form-control input_center\" disabled></td><input name=\"bienx[" + cont + "][21]\" type=\"hidden\" id=\"bienx[" + cont + "][21]\"  size=\"7\" class=\"monto form-control input_center\" >"     
+        fila += "<td><input name=\"bienx[" + cont + "][2]\" type=\"date\" id=\"bienx[" + cont + "][2]\"  size=\"7\" class=\"monto form-control input_center\" disabled></td>"     
         //cantidad de medicina ingresada
-        fila += "<td><input name=\"bienx[" + cont + "][3]\" type=\"text\" id=\"bienx[" + cont + "][3]\"  size=\"7\" class=\"monto form-control input_center\" disabled></td><input name=\"bienx[" + cont + "][31]\" type=\"hidden\" id=\"bienx[" + cont + "][31]\"  size=\"7\" class=\"monto form-control input_center\" >"
+        fila += "<td><input name=\"bienx[" + cont + "][3]\" type=\"text\" id=\"bienx[" + cont + "][3]\"  size=\"7\" class=\"monto form-control input_center\" disabled></td>"
         //fin fecha caducindad medicina
         fila += "<td><input class=\"monto form-control input_center\"  name=\"costo_unitario[" + cont + "]\" type=\"text\" id=\"costo_unitario[" + cont + "]\"   size=\"7\"></td>"
         fila += "<td><input name=\"precio_total[" + cont + "]\" type=\"text\" id=\"precio_total[" + cont + "]\"  size=\"20\"  class=\"totalizar form-control input_center\" ></td>"
         fila += "<td id=\"fila" + cont + "\" onclick=\"seleccionarFila(id, 'check" + cont + "');\" ><input id=\"check" + cont + "\" type=\"checkbox\" name=\"transporte\" class=\"form-check\" >Eliminar</td>"
-        fila += "<td><input name=\"precio_total1[" + cont + "]\" type=\"text\" id=\"precio_total1[" + cont + "]\" size=\"7\" style=\"display:none\" ></td>"
-        fila += "<td><input name=\"bien[" + cont + "][4]\" type=\"hidden\" id=\"bien[" + cont + "][4]\"  size=\"7\" style=\"display:none\"></td>"
+        fila += "<td><input name=\"precio_total1[" + cont + "]\" type=\"hidden\" id=\"precio_total1[" + cont + "]\" size=\"7\" style=\"display:block\" ></td>"
+        fila += "<td><input name=\"bien[" + cont + "][4]\" type=\"hidden\" id=\"bien[" + cont + "][4]\"  size=\"7\" style=\"display:block\"></td>"
+        //nueva celda lote oculto
+        fila += "<td><input name=\"bienx["+ cont +"][11]\" type=\"hidden\" id=\"bienx["+ cont +"][11]\" size=\"10\" class=\"monto form-control input_center\"></td>"
+        //nueva celda fecha caducidad oculta
+        fila += "<td><input name=\"bienx["+ cont +"][21]\" type=\"hidden\" id=\"bienx["+ cont +"][21]\" size=\"10\" class=\"monto form-control input_center\"></td>"
+        //nueva celda cantidad ingresada oculta
+        fila += "<td><input name=\"bienx["+ cont +"][31]\" type=\"hidden\" id=\"bienx["+ cont +"][31]\" size=\"10\" class=\"monto form-control input_center\"></td>"
+
+
         fila += "</tr>";
         $('#tabla4').append(fila);
         setCantidad(cont);
@@ -255,8 +269,8 @@ $_SESSION["ingreso"] = true;
             $(this).find('td').eq(3).find('input').attr("id", "bien[" + num + "][3]");//subcategoria
             $(this).find('td').eq(3).find('input').attr("name", "bien[" + num + "][3]");//subcategoria
 
-            $(this).find('td').eq(4).find('input').attr("id", "bien[" + num + "][1]");//subcategoria
-            $(this).find('td').eq(4).find('input').attr("name", "bien[" + num + "][1]");//subcategoria
+            $(this).find('td').eq(4).find('input').attr("id", "bien[" + num + "][1]");//codigo producto
+            $(this).find('td').eq(4).find('input').attr("name", "bien[" + num + "][1]");//codigo producto
 
             $(this).find('td').eq(5).find('input').attr("id", "bien[" + num + "][5]");//renglon
             $(this).find('td').eq(5).find('input').attr("name", "bien[" + num + "][5]");//renglon
@@ -264,49 +278,64 @@ $_SESSION["ingreso"] = true;
             $(this).find('td').eq(6).find('input').attr("id", "bien[" + num + "][7]");//producto
             $(this).find('td').eq(6).find('input').attr("name", "bien[" + num + "][7]");//producto
 
-            $(this).find('td').eq(12).find('input').attr("id", "bien[" + num + "][4]");//
-            $(this).find('td').eq(12).find('input').attr("name", "bien[" + num + "][4]");
+            $(this).find('td').eq(7).find('span').attr("id","blote=" + num + "")//buscar lote
+            $(this).find('td').eq(7).find('span').attr("name","blote=" + num + "")//buscar lote
 
-            //$(this).find('td').eq(7).find('input').attr("id", "lote[" + num + "]");//lote del producto
-            //$(this).find('td').eq(7).find('input').attr("name", "lote[" + num + "]");//lote del producto
+            $(this).find('td').eq(8).find('input').attr("id", "bienx[" + num + "][1]");//lote del producto
+            $(this).find('td').eq(8).find('input').attr("name", "bienx[" + num + "][1]");//lote del producto
 
-            $(this).find('td').eq(7).find('input').attr("id", "bienx[" + num + "][1]");//lote del producto
-            $(this).find('td').eq(7).find('input').attr("name", "bienx[" + num + "][1]");//lote del producto
-
-           // $(this).find('td').eq(8).find('input').attr("id", "fecha_caducidad[" + num + "]");//fecha de vencimiento
-            //$(this).find('td').eq(8).find('input').attr("name", "fecha_caducidad[" + num + "]");//fecha de vencimiento
             $(this).find('td').eq(9).find('input').attr("id", "bienx[" + num + "][2]");//fecha de vencimiento
-            $(this).find('td').eq(9).find('input').attr("name", "bienx[" + num + "][2]");//fecha de vencimiento
-            
+            $(this).find('td').eq(9).find('input').attr("name", "bienx[" + num + "][2]");//fecha de vencimiento            
            
 
-            $(this).find('td').eq(9).find('input').attr("id", "bienx[" + num + "][3]");//cantidad ingresada
-            $(this).find('td').eq(9).find('input').attr("name", "bienx[" + num + "][3]");//cantidad ingresada
-            $(this).find('td').eq(9).find('input').attr("onblur", "suma(" + num + ");");
-
-
-            $(this).find('td').eq(10).find('input').attr("id", "costo_unitario[" + num + "]");
-            $(this).find('td').eq(10).find('input').attr("name", "costo_unitario[" + num + "]");
+            $(this).find('td').eq(10).find('input').attr("id", "bienx[" + num + "][3]");//cantidad ingresada
+            $(this).find('td').eq(10).find('input').attr("name", "bienx[" + num + "][3]");//cantidad ingresada
             $(this).find('td').eq(10).find('input').attr("onblur", "suma(" + num + ");");
 
 
-            $(this).find('td').eq(11).find('input').attr("id", "precio_total[" + num + "]");
-            $(this).find('td').eq(11).find('input').attr("name", "precio_total[" + num + "]");
+            $(this).find('td').eq(11).find('input').attr("id", "costo_unitario[" + num + "]");//precio unitario
+            $(this).find('td').eq(11).find('input').attr("name", "costo_unitario[" + num + "]");//precio unitario
+            $(this).find('td').eq(11).find('input').attr("onblur", "suma(" + num + ");");
 
 
-            $(this).find('td').eq(12).attr("onclick", "seleccionarFila(id, 'check" + num + "');");
-            $(this).find('td').eq(12).attr("id", "fila" + num + "");
-            $(this).find('td').eq(12).find('input').attr("id", "check" + num + "");
+            $(this).find('td').eq(12).find('input').attr("id", "precio_total[" + num + "]");//precio total
+            $(this).find('td').eq(12).find('input').attr("name", "precio_total[" + num + "]");//precio total
 
 
-            $(this).find('td').eq(13).find('input').attr("id", "precio_total1[" + num + "]");
-            $(this).find('td').eq(13).find('input').attr("name", "precio_total1[" + num + "]");
+            $(this).find('td').eq(13).attr("onclick", "seleccionarFila(id, 'check" + num + "');");//check eliminar
+            $(this).find('td').eq(13).attr("id", "fila" + num + "");//check eliminar
+            $(this).find('td').eq(13).find('input').attr("id", "check" + num + "");//check eliminar
+
+
+            $(this).find('td').eq(14).find('input').attr("id", "precio_total1[" + num + "]");//precio total oculto
+            $(this).find('td').eq(14).find('input').attr("name", "precio_total1[" + num + "]");//precio total oculto
+
+            $(this).find('td').eq(15).find('input').attr("id", "bien[" + num + "][4]");//cod producto oculto
+            $(this).find('td').eq(15).find('input').attr("name", "bien[" + num + "][4]");//cod producto oculto
+
+            $(this).find('td').eq(16).find('input').attr("id", "bienx["+ num +"][11]");//lote oculto
+            $(this).find('td').eq(16).find('input').attr("name", "bienx["+ num +"][11]");//lote oculto
+
+            $(this).find('td').eq(17).find('input').attr("id", "bienx["+ num +"][21]");//fecha oculta
+            $(this).find('td').eq(17).find('input').attr("name", "bienx["+ num +"][21]");//fecha oculta
+           
+            $(this).find('td').eq(18).find('input').attr("id", "bienx["+ num +"][31]");//cantidad oculta
+            $(this).find('td').eq(18).find('input').attr("name", "bienx["+ num +"][31]");//cantidad oculta
+
+
+            $(this).find('td').eq(19).find('span').attr("id","nolinea"+ num +"")//cambio de linea del span
+            $(this).find('td').eq(19).find('span').attr("name","nolinea"+ num +"")//cambio de linea del span
+            
 
 
             $(this).attr("id", "fila" + num + "");
             $(this).find('td').eq(0).text(num);
+
+
+            
             num++;
             document.getElementById("cantidad_filas").value = num -1 ;
+            
         });
 
     
@@ -328,7 +357,6 @@ $_SESSION["ingreso"] = true;
         // $('#fila'+id_fila).remove();
         for (var i = 0; i <= id_fila.length; i++) {
             $('#' + id_fila[i]).remove();
-
         }
         PTotal = PTotal - resta;
         // document.getElementById('PTotal').value = "Q " + new Intl.NumberFormat("en-IN").format(PTotal);
