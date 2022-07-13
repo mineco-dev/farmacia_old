@@ -330,10 +330,10 @@ function Refrescar(form)
 			if ($_REQUEST["txt_buscar"]!="")
 				{
 					$busqueda=strtoupper($_REQUEST["txt_buscar"]);					
-					$consulta = "SELECT * FROM lotes_existencia where lote like '%$busqueda%' codigo_categoria ='$cat' and codigo_subcategoria='$subcat' and codigo_producto='$codprod' order by fecha_vence";
-					echo("<hr>");
-						echo($consulta);
-						echo("<hr>");					
+					$consulta = "SELECT * FROM lotes_existencia where lote like '%$busqueda%' and codigo_categoria ='$cat' and codigo_subcategoria='$subcat' and codigo_producto='$codprod' order by fecha_vence";
+					/* echo("<hr>");
+					echo($consulta);
+					echo("<hr>"); */					
 				}
 			else	
 				if (isset($_REQUEST["in"]))	
@@ -341,13 +341,17 @@ function Refrescar(form)
 					$inicial=$_REQUEST["in"];
 					if ($inicial!="all")
 					{
-						$consulta = "SELECT * FROM lotes_existencia where lote like '$inicial%' codigo_categoria ='$cat' and codigo_subcategoria='$subcat' and codigo_producto='$codprod' order by fecha_vence";
-						
-					}
+						$consulta = "SELECT * FROM lotes_existencia where lote like '$inicial%' and codigo_categoria ='$cat' and codigo_subcategoria='$subcat' and codigo_producto='$codprod' order by fecha_vence";
+						/* echo("<hr>");
+						echo($consulta);
+						echo("<hr>");*/
+					} 
 					else
 					{
 						$consulta = "SELECT * FROM lotes_existencia where codigo_categoria ='$cat' and codigo_subcategoria='$subcat' and codigo_producto='$codprod' order by fecha_vence";
-						
+						/* echo("<hr>");
+						echo($consulta);
+						echo("<hr>"); */
 					}
 				}
 				else
