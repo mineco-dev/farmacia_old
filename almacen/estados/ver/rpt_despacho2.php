@@ -14,13 +14,13 @@
     <script src="./js/comandos_rpt.js"></script>
     <style>
       .titulotabla {
-  background-color: #0090ff;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
-  font-size: small;
-  color: #ffffff;
-  font-weight: bold;
-  height: 30px;
-}
+          background-color: #0090ff;
+          font-family: Verdana, Arial, Helvetica, sans-serif;
+          font-size: small;
+          color: #ffffff;
+          font-weight: bold;
+          height: 30px;
+      }
     </style>
   </head>
   <body>
@@ -69,7 +69,7 @@
                                                         from tb_requisicion_enc e 
                                                         inner join direccion dep
                                                         on dep.iddireccion = e.codigo_dependencia
-                                                        where e.codigo_estatus = 3 and e.codigo_requisicion_enc = '$hoja_despacho'";
+                                                        where e.codigo_estatus = 4 and e.codigo_requisicion_enc = '$hoja_despacho'";
                                     conectardb($almacen);
                                     $res_ingreso_enc=$query($qry_ingreso_enc);
                                     while($row_ingreso_enc=$fetch_array($res_ingreso_enc))
@@ -90,207 +90,207 @@
                                     if ($existe==true)
                                     {								
                                     ?>
-                      <span class="Estilo4"
-                        >Ministerio de Economía<br />
-                        Solicitud de Almacén </span
-                      ><br /><br />
-                    </p>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td width="53%" height="60">
-                <div align="left">
-                  <table
-                    width="98%"
-                    border="1"
-                    align="left"
-                    cellpadding="0"
-                    cellspacing="0"
-                  >
-                    <tr class="titulotabla">
-                      <td>
-                        <div align="left">SOLICITANTE</div>
-                        <div align="center"></div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="titulomenu">
-                          <?php  echo $solicitante; ?>
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="titulomenu">
-                          <?php  echo $dependencia; ?>
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="titulomenu"> </span>
-                      </td>
-                    </tr>
-                  </table>
-                  <span class="titulomenu">&nbsp;</span>
-                </div>
-              </td>
-              <td width="39%">
-                <table
-                  width="51%"
-                  border="1"
-                  align="right"
-                  cellpadding="0"
-                  cellspacing="0"
-                >
-                  <tr class="titulotabla">
-                    <td width="53%"><div align="center">REQUISICIÓN</div></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="titulomenu"
-                        >Número:
-                        <?php echo $numero_requisicion; ?>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td height="20">
-                      <span class="titulomenu"
-                        >Fecha: &nbsp;&nbsp;
-                        <?php echo $fecha; ?>
-                      </span>
-                      <span class="titulomenu"
-                        >Hora: &nbsp;&nbsp;
-                        <?php echo $hora; ?>
-                      </span>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-              <td width="0%">&nbsp;</td>
-            </tr>
-            <tr>
-              <td colspan="3">
-                <span class="titulomenu">observaciones: </span>
-                <span class="titulomenu"> <?php echo utf8_encode($observaciones); ?> </span>
-              </td>
-            </tr>
-            <tr>
-              <td height="2" colspan="4"></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <table
-            width="95%"
-            border="1"
-            align="center"
-            cellpadding="0"
-            cellspacing="0"
-          >
-            <tr class="titulotabla">
-              <td width="15%">
-                <div align="center">Código</div>
-              </td>
-              <td width="40%">
-                <div align="center">Descripción</div>
-              </td>
-              <td width="15%">
-                <div align="center">Uni. Medida</div>
-              </td>
-              <td width="15%">
-                <div align="center">Cantidad Solicitada</div>
-              </td>
-            </tr>
-            <?php	  	
-                    $qry_ingreso_det = "select d.codigo_requisicion_enc, d.codigo_producto, d.codigo_categoria, d.codigo_subcategoria, p.producto, m.unidad_medida,  
-                    d.cantidad_solicitada, d.cantidad_autorizada
-                    from  tb_requisicion_det d
-                    inner join cat_producto p
-                    on p.codigo_producto = d.codigo_producto and p.codigo_categoria = d.codigo_categoria and p.codigo_subcategoria = d.codigo_subcategoria
-                    inner join cat_medida m
-                    on p.codigo_medida = m.codigo_medida
-                    where d.codigo_requisicion_enc = $numero_requisicion";
-                            conectardb($almacen);
-                            $res_ingreso_det=$query($qry_ingreso_det);		
-                            while($row_ingreso_det=$fetch_array($res_ingreso_det))
-                            {			
-                                //$operador=$row_ingreso_det["usuario_creo"];
-                                //$operado=$row_ingreso_det["fecha_creado"];
-                                echo '<tr>
-            <td align="center" width="15%">
-              <span class="descripcionproducto"
-                >'.$row_ingreso_det["codigo_categoria"].'-'.$row_ingreso_det["codigo_subcategoria"].'-'.$row_ingreso_det["codigo_producto"].'</span
-              >
-            </td>
-            '; echo '
-            <td align="left" width="40%">
-              <span class="descripcionproducto"
-                >'.utf8_encode($row_ingreso_det["producto"]).'</span
-              >
-            </td>
-            '; echo '
-            <td align="center" width="15%">
-              <span class="descripcionproducto"
-                >'.$row_ingreso_det["unidad_medida"].'</span
-              >
-            </td>
-            '; echo '
-            <td align="center" width="15%">
-              <span class="descripcionproducto"
-                >'.$row_ingreso_det["cantidad_solicitada"].'</span
-              >
-            </td>
-            '; } $free_result($res_ingreso_det); ?>
-          </table>
-        </td>
-      </tr>
-    </table>
-    <table
-      width="95%"
-      border="0"
-      align="center"
-      cellpadding="0"
-      cellspacing="0"
-      >
-      <tr>
-        <td class="titulomenu">&nbsp;</td>
-        <td class="titulomenu">&nbsp;</td>
-        <td class="titulomenu">&nbsp;</td>
-      </tr>
-      <tr>
-      </tr>
-      <br>
-      <p></p>
-      <br>
-      <tr>
-        <td height="19" class="titulomenu">
-          <div div align="center">
-            (F)_________________<br />Solicitante (Firma y nombre)
-          </div>
-        </td>
-        <td height="19" class="titulomenu">
-          <div align="center">
-            (F)__________________<br />
-            Jefe Inmediato(Firma y Sello)
-          </div>
-        </td>
-        <td height="19" class="titulomenu">
-          <div align="center">
-            __________________ <br />
-            Sello de Recibido (Direccion Administrativa)
-          </div>
-        </td>
-      </tr>
-    </table>
-   </div>
-  <?php
+                                        <span class="Estilo4"
+                                          >Ministerio de Economía<br />
+                                          Solicitud de Almacén </span
+                                        ><br /><br />
+                                      </p>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td width="53%" height="60">
+                                  <div align="left">
+                                    <table
+                                      width="98%"
+                                      border="1"
+                                      align="left"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                    >
+                                      <tr class="titulotabla">
+                                        <td>
+                                          <div align="left">SOLICITANTE</div>
+                                          <div align="center"></div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <span class="titulomenu">
+                                            <?php  echo $solicitante; ?>
+                                          </span>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <span class="titulomenu">
+                                            <?php  echo $dependencia; ?>
+                                          </span>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <span class="titulomenu"> </span>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <span class="titulomenu">&nbsp;</span>
+                                  </div>
+                                </td>
+                                <td width="39%">
+                                  <table
+                                    width="51%"
+                                    border="1"
+                                    align="right"
+                                    cellpadding="0"
+                                    cellspacing="0"
+                                  >
+                                    <tr class="titulotabla">
+                                      <td width="53%"><div align="center">REQUISICIÓN</div></td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <span class="titulomenu"
+                                          >Número:
+                                          <?php echo $numero_requisicion; ?>
+                                        </span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td height="20">
+                                        <span class="titulomenu"
+                                          >Fecha: &nbsp;&nbsp;
+                                          <?php echo $fecha; ?>
+                                        </span>
+                                        <span class="titulomenu"
+                                          >Hora: &nbsp;&nbsp;
+                                          <?php echo $hora; ?>
+                                        </span>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                                <td width="0%">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td colspan="3">
+                                  <span class="titulomenu">observaciones: </span>
+                                  <span class="titulomenu"> <?php echo utf8_encode($observaciones); ?> </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td height="2" colspan="4"></td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <table
+                              width="95%"
+                              border="1"
+                              align="center"
+                              cellpadding="0"
+                              cellspacing="0"
+                            >
+                              <tr class="titulotabla">
+                                <td width="15%">
+                                  <div align="center">Código</div>
+                                </td>
+                                <td width="40%">
+                                  <div align="center">Descripción</div>
+                                </td>
+                                <td width="15%">
+                                  <div align="center">Uni. Medida</div>
+                                </td>
+                                <td width="15%">
+                                  <div align="center">Cantidad Solicitada</div>
+                                </td>
+                              </tr>
+                              <?php	  	
+                                      $qry_ingreso_det = "select d.codigo_requisicion_enc, d.codigo_producto, d.codigo_categoria, d.codigo_subcategoria, p.producto, m.unidad_medida,  
+                                      d.cantidad_solicitada, d.cantidad_autorizada
+                                      from  tb_requisicion_det d
+                                      inner join cat_producto p
+                                      on p.codigo_producto = d.codigo_producto and p.codigo_categoria = d.codigo_categoria and p.codigo_subcategoria = d.codigo_subcategoria
+                                      inner join cat_medida m
+                                      on p.codigo_medida = m.codigo_medida
+                                      where d.codigo_requisicion_enc = $numero_requisicion";
+                                              conectardb($almacen);
+                                              $res_ingreso_det=$query($qry_ingreso_det);		
+                                              while($row_ingreso_det=$fetch_array($res_ingreso_det))
+                                              {			
+                                                  //$operador=$row_ingreso_det["usuario_creo"];
+                                                  //$operado=$row_ingreso_det["fecha_creado"];
+                                                  echo '<tr>
+                              <td align="center" width="15%">
+                                <span class="descripcionproducto"
+                                  >'.$row_ingreso_det["codigo_categoria"].'-'.$row_ingreso_det["codigo_subcategoria"].'-'.$row_ingreso_det["codigo_producto"].'</span
+                                >
+                              </td>
+                              '; echo '
+                              <td align="left" width="40%">
+                                <span class="descripcionproducto"
+                                  >'.utf8_encode($row_ingreso_det["producto"]).'</span
+                                >
+                              </td>
+                              '; echo '
+                              <td align="center" width="15%">
+                                <span class="descripcionproducto"
+                                  >'.$row_ingreso_det["unidad_medida"].'</span
+                                >
+                              </td>
+                              '; echo '
+                              <td align="center" width="15%">
+                                <span class="descripcionproducto"
+                                  >'.$row_ingreso_det["cantidad_solicitada"].'</span
+                                >
+                              </td>
+                              '; } $free_result($res_ingreso_det); ?>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <table
+                        width="95%"
+                        border="0"
+                        align="center"
+                        cellpadding="0"
+                        cellspacing="0"
+                        >
+                        <tr>
+                          <td class="titulomenu">&nbsp;</td>
+                          <td class="titulomenu">&nbsp;</td>
+                          <td class="titulomenu">&nbsp;</td>
+                        </tr>
+                        <tr>
+                        </tr>
+                        <br>
+                        <p></p>
+                        <br>
+                        <tr>
+                          <td height="19" class="titulomenu">
+                            <div div align="center">
+                              (F)_________________<br />Solicitante (Firma y nombre)
+                            </div>
+                          </td>
+                          <td height="19" class="titulomenu">
+                            <div align="center">
+                              (F)__________________<br />
+                              Jefe Inmediato(Firma y Sello)
+                            </div>
+                          </td>
+                          <td height="19" class="titulomenu">
+                            <div align="center">
+                              __________________ <br />
+                              Sello de Recibido (Direccion Administrativa)
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <?php
     }
     else
         {

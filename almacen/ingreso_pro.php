@@ -132,7 +132,7 @@ $_SESSION["ingreso"] = true;
 
         var fila = "<tr class=\"selected\" id=\"fila" + cont + "\" >";
         fila += "<td id=\"cantidad\">" + cont + "</td>"
-        fila += "<td class=\"input_center\" ><a  href=\"javascript:void(0)\" onClick=\"buscar=window.open(\'productoIngreso.php?tipo=bien&posi=" + cont + "\',\'Buscar4\',\'width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250\'); return false;\" ><i class=\"fa fa-search\" aria-hidden=\"true\"></i></a></td>"
+        fila += "<td class=\"input_center\" ><a  href=\"javascript:void(0)\" onClick=\"buscar=window.open(\'productoIngreso.php?tipox=bienx&tipo=bien&posi=" + cont + "\',\'Buscar4\',\'width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250\'); return false;\" ><i class=\"fa fa-search\" aria-hidden=\"true\"></i></a></td>"
         fila += "<td><input name=\"bien[" + cont + "][2]\" type=\"text\" id=\"bien[" + cont + "][2]\" size=\"5%\" class=\"form-control input_center\"  ></td>"
         fila += "<td><input name=\"bien[" + cont + "][3]\" type=\"text\" id=\"bien[" + cont + "][3]\" size=\"5%\" class=\"form-control input_center\" ></td>"
         fila += "<td><input name=\"bien[" + cont + "][1]\" type=\"text\" id=\"bien[" + cont + "][1]\" size=\"5%\" class=\"form-control input_center\"></td>"
@@ -261,7 +261,7 @@ $_SESSION["ingreso"] = true;
         var num = 1;
         $('#tabla4 tbody tr').each(function () {
         
-            $(this).find('td').eq(1).find('a').attr("onClick", "buscar=window.open('productoIngreso.php?tipo=bien&posi=" + num + "','Buscar4','width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250'); return false;");
+            $(this).find('td').eq(1).find('a').attr("onClick", "buscar=window.open('productoIngreso.php?tipox=bienx&tipo=bien&posi=" + num + "','Buscar4','width=700,height=500,menubar=no, scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no,top=100,left=250'); return false;");
           
             $(this).find('td').eq(2).find('input').attr("id", "bien[" + num + "][2]");//categoria
             $(this).find('td').eq(2).find('input').attr("name", "bien[" + num + "][2]");//categoria

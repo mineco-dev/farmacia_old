@@ -5,7 +5,7 @@
 	$qry_bodega="select cat_bodega.codigo_bodega, cat_bodega.bodega from cat_bodega
 inner join cat_empresa on
 cat_bodega.codigo_empresa = cat_empresa.codigo_empresa
-where cat_bodega.codigo_empresa = ".$_REQUEST['Id']." and cat_bodega.activo = 1 ORDER BY cat_bodega.bodega";	
+where cat_bodega.codigo_empresa = ".$_REQUEST['Id']." and cat_bodega.activo = 1  and cat_bodega.codigo_bodega=8  ORDER BY cat_bodega.bodega";
 
 					$res_qry_bodega=$query($qry_bodega);	
 					//echo 'Subcategoria ';

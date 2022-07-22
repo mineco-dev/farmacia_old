@@ -430,14 +430,88 @@ if(isset($_SESSION["ingreso"]))
         }
         //print($qry_ingreso_inventario);
         //echo "primero: ".$qry_ingreso_inventario;
-        echo 
+        
         $query($qry_ingreso_inventario);
         $cnt++;
     }
 
-    /////////////////////////////////// Actualiza tabla inventario_det /////////////////////////////
-  
+    ////////////////////////////  actualizar tabla lotes_existencia ////////////////////////////////////
+
     $cnt=1;
+    while($cnt<=count($bien)){
+        $codigo =$bien[$cnt][4];
+        $codigo_producto=$bien[$cnt][1];
+        $categoria = $bien[$cnt][2];
+        $subcategoria =$bien[$cnt][3];
+        $lote = $bienx[$cnt][11];
+        $fecha_vence= $bienx[$cnt][21];
+        $cant_ingresada = $bienx[$cnt][31];
+
+        //consultamos la existencia del producto
+        $qry_consulta= "SELECT * FROM lotes_existencia 
+                        WHERE codigo_bodega=$codigo_bodega
+                        AND codigo_producto=$codigo_producto
+                        AND codigo_categoria=$categoria
+                        AND codigo_subcategoria=$subcategoria
+                        AND lote='$lote'
+                        ";
+        $res_consulta=$query($qry_consulta);
+        $existe=false;
+        while($row=$fetch_array($res_consulta)){
+            $existe=true;
+            $existencia_actual=$row["existencia"]+$cant_ingresada;
+            $id_fila=$row["rowid"];
+            $qry_ingreso_inventario ="UPDATE lotes_existencia SET
+            ingreso=$cant_ingresada,
+            existencia=$existencia_actual,
+            estado=1,
+            lote='$lote',
+            fecha_vence='$fecha_vence'
+            WHERE codigo_bodega=$codigo_bodega 
+            AND codigo_producto=$codigo_producto 
+            AND codigo_categoria=$categoria 
+            AND codigo_subcategoria=$subcategoria
+            AND rowid=$id_fila";
+            //echo("existe");
+            
+
+        }
+        if(!$existe){
+            $qry_ingreso_inventario ="INSERT INTO lotes_existencia 
+                (codigo_bodega, 
+                codigo_categoria, 
+                codigo_subcategoria, 
+                codigo_producto, 
+                fecha_vence,
+                ingreso,
+                existencia,
+                fecha_ingreso,
+                estado,
+                lote
+                )
+            VALUES (
+                $codigo_bodega, 
+                $categoria,
+                $subcategoria, 
+                $codigoproducto, 
+                '$fecha_vence',
+                $cant_ingresada,
+                $cant_ingresada,
+                '$hoy', 
+                1,
+                '$lote')";
+            //echo("no existe");
+                
+        }
+       /*  echo("<hr>");
+        echo($qry_ingreso_inventario);
+        echo("<hr>");  */ 
+        $query($qry_ingreso_inventario);
+        $cnt++;
+    } 
+
+      
+     /*$cnt=1;
     while($cnt<=count($bien))
     {
         $codigo = $bien[$cnt][4];
@@ -512,9 +586,9 @@ if(isset($_SESSION["ingreso"]))
         $query($qry_ingreso_inventario);
         
         
-        $cnt++;
+         $cnt++;
     
-    }
+    } */
     echo '<TR><TD COLSPAN="5">&nbsp;</TD></TR>';
     echo '<TR><TD COLSPAN="5"><span class="titulomenu"><center>Hoja de ingreso guardada correctamente!</span></center></TD></TR>';
 }

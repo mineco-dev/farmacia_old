@@ -86,7 +86,7 @@
                         <?PHP
                           conectardb($almacen);											
                           //$qry_tipo_empresa="SELECT * FROM cat_bodega where codigo_bodega=8 or codigo_bodega=15 or codigo_bodega = 18 and codigo_empresa = ".$_SESSION["empresax"]." and activo=1";										
-                          $qry_tipo_empresa="SELECT * FROM cat_bodega where codigo_bodega in (8 , ". $_SESSION["bodega15"] . " ,18 ) and activo= 1";										
+                          $qry_tipo_empresa="SELECT * FROM cat_bodega where codigo_bodega=8 and activo= 1";										
                           $res_qry_tipo_empresa=$query($qry_tipo_empresa);	
 
                             echo('<select name="cbo_tipo_empresa">');

@@ -1,8 +1,13 @@
 <?php
 // llamada a conexion
+
     require_once('../../comandos/funciones.php');
     require_once('../../comandos/sqlcommand.inc');
     conectardb($almacen); 
+
+    ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
 
 $TipoSolicitud = $_POST['optradio'];
 $nombre_usuario = $_SESSION["user_name"];
@@ -19,13 +24,15 @@ if ($TipoSolicitud == "1") {
     $a=0;
     $rowUpdate = 0;
     $rowSaldo = 0;
-    while ($fila < count($producto)) {
+    while ($fila < count($producto)) 
+    {
         
         $SQL = 'SELECT 
                     inventario.rowid as fila,
                     inventario.existencia,
                     (pro.producto +\' \' + pro.marca) as Producto,
-                    inventario.cantidad_comprometida 
+                    inventario.cantidad_comprometida ,
+                    requi.cantidad_autorizada
                 FROM tb_inventario inventario
                 INNER JOIN tb_requisicion_det requi 
                     ON requi.codigo_bodega = inventario.codigo_bodega 
@@ -39,6 +46,7 @@ if ($TipoSolicitud == "1") {
                     AND pro.codigo_producto = inventario.codigo_producto
                 WHERE requi.rowid ='. $codigoP[$fila] .'
         ';
+        //echo $SQL;
         
         $responseProducto = $query($SQL);
 
@@ -53,14 +61,17 @@ if ($TipoSolicitud == "1") {
 
             $existencia[] = $row['existencia'];
             $arrayProducto[] = $row['Producto'];
-            
+            $arraycomprometida[] = $row['cantidad_autorizada'];
             $rowUpdate++;
         }
         
         $SQLUpdate = 'UPDATE
                             tb_inventario SET
-                            cantidad_comprometida =' . $Saldo[$rowSaldo] . '
+                            cantidad_comprometida = cantidad_comprometida + ' . $producto[$rowSaldo] . '
                             WHERE rowid = '.$fil[$rowSaldo].'';
+                            //echo "<hr>";
+                           // echo $SQLUpdate;
+                            //echo "<hr>";
         $responseUpdate = $query($SQLUpdate);
 
         $SQLUpdateRequiDet = 'UPDATE 
@@ -90,7 +101,7 @@ if ($TipoSolicitud == "1") {
                                 fecha_rechazo = "'.date("Y-m-d H:i:s").'"
                                 WHERE codigo_requisicion_enc = '.$nRequi.'';
 
-        $responseRequi = $query($SQLUpdateRequi);
+        //$responseRequi = $query($SQLUpdateRequi);
 
         echo 0;
 }

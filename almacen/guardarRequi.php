@@ -90,9 +90,9 @@
 				}
 				
 				$cnt=1; 		
-				while($cnt<=count($bien))// se actualiza la cantidad comprometida
+				/*while($cnt<=count($bien))// se actualiza la cantidad comprometida
 				{						
-					conectardb($almacen);
+					/conectardb($almacen);
 					$solicitado = $cantidad_solicitada[$cnt];
 					$qry_consulta="select * from tb_inventario where codigo_bodega='$cbodega[$cnt]' and codigo_empresa='$cempresa[$cnt]' and codigo_producto='$cproducto[$cnt]' and codigo_categoria='$ccategoria[$cnt]' and codigo_subcategoria='$csubcategoria[$cnt]'";
 					$res_consulta=$query($qry_consulta);
@@ -106,7 +106,7 @@
 					}					
 					$query($qry_ingreso_inventario);
 					$cnt++;
-				}	
+				}*/	
 
 					echo '<TR><TD COLSPAN="5">&nbsp;</TD></TR>';							
 					echo '<TR><TD COLSPAN="5"><span class="titulomenu"><center>Requisición Enviada a Autorización!</span></center></TD></TR>';

@@ -65,7 +65,8 @@ $res_qry_producto = $query($Fields);
 $tabla = "";
 
 while ($row = $fetch_array($res_qry_producto)) {
-    $input = '<input class=\"x\" name=\"producto[]\" type=\"text\" size=\"3\" id=\"solicitado\" value=\"'.$row['cantidad_solicitada'].'\" required /></br><input class=\"form-control cantidad\" name=\"codigoP[]\" type=\"hidden\" size=\"3\" id=\"codigoP\" value=\"'.$row['rowid'].'\" Readonly/></br><input class=\"form-control cantidad\" name=\"Solicitado[]\" type=\"hidden\" size=\"3\" id=\"Solicitado\" value=\"'.$row['cantidad_solicitada'].'\" Readonly/>';
+    $maximoexistencia = $row['existencia'] -  $row['cantidad_comprometida'];
+    $input = '<input min= 0 max = '.$maximoexistencia. ' class=\"x\" name=\"producto[]\" type=\"number\" size=\"3\" id=\"solicitado\" value=\"'.$row['cantidad_solicitada'].'\" required /></br><input class=\"form-control cantidad\" name=\"codigoP[]\" type=\"hidden\" size=\"3\" id=\"codigoP\" value=\"'.$row['rowid'].'\" Readonly/></br><input class=\"form-control cantidad\" name=\"Solicitado[]\" type=\"hidden\" size=\"3\" id=\"Solicitado\" value=\"'.$row['cantidad_solicitada'].'\" Readonly/>';
     $check = '<i class=\"fas fa-exclamation-circle circle\"></i>';
     $tabla .= '{
 				  "CODIGO":"' . $row["Row"] . '",

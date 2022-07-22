@@ -185,7 +185,10 @@ function Refrescar(form)
 						</strong></div></td>
 						<td width="10%" class="titulotabla"><strong>Codigo Producto</strong></td>
 						<td width="50%" class="titulotabla"><strong>Producto</strong></td>
-						
+						<td width="10%" class="titulotabla oculto">Categoria</td>
+						<td width="10%" class="titulotabla oculto">Sub</td>
+						<td width="10%" class="titulotabla oculto">Rowid</td>
+						<td width="10%" class="titulotabla">Existencia</td>
 						
 					</tr>
 					<?PHP
@@ -282,6 +285,10 @@ function Refrescar(form)
 							echo "<td class='boton'><center><a><img src=\"../images/iconos/ico_ir.gif\" border=\"0\" alt=\"Seleccionar esta categoria\"></a></center></td>";					
 							echo '<td>'.$row["codigo_producto"].'</td>
 								  <td>'.utf8_encode($row["producto"]).'</td>
+								  <td class="oculto">'.$row["codigo_categoria"].'</td>
+								  <td class="oculto">'.$row["codigo_subcategoria"].'</td>
+								  <td class="oculto" >'.$row["rowid"].'</td> 
+								  <td class="">'.$row["existencia"].'</td> 
 								  </tr>';											
 							$i++;
 						}				
@@ -324,7 +331,7 @@ function Refrescar(form)
 				window.opener.document.getElementById(tipo+"["+posi+"][7]").value = valores[2];
 				window.opener.document.getElementById(tipo+"["+posi+"][5]").value = valores[3];
 				window.opener.document.getElementById(tipo+"["+posi+"][6]").value = valores[4];
-				//window.opener.document.getElementById(tipo+"["+posi+"][4]").value = valores[5];
+				window.opener.document.getElementById(tipo+"["+posi+"][4]").value = valores[5];
 				window.opener.document.getElementById(tipo+"["+posi+"][8]").value = valores[6];
 
 				window.close();

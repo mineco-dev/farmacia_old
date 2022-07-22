@@ -10,6 +10,7 @@
 		$_SESSION["posi"]=$_REQUEST["posi"];
 		$tipo=$_REQUEST["tipo"];
 		$posi=$_REQUEST["posi"];
+		$tipox=$_REQUEST["tipox"];
 	}
 	else
 	{
@@ -253,18 +254,23 @@ window.onload = function(){
             });
 
 			var posi = '<?php echo $posi; ?>';
-			var tipo = '<?php echo $tipo; ?>'
+			var tipo = '<?php echo $tipo; ?>';
+			var tipox= '<?php echo $tipox; ?>';
 			let elementox ="";
 			window.opener.document.getElementById(tipo+"["+posi+"][1]").value = valores[1];//codigo del producto en detalle de productos
 			window.opener.document.getElementById(tipo+"["+posi+"][4]").value = valores[1];//codigo del producto en casill oculta
 			window.opener.document.getElementById(tipo+"["+posi+"][2]").value = valores[3];//categoria en detalle de producto
 			window.opener.document.getElementById(tipo+"["+posi+"][5]").value = valores[3];//renglon en detalle producto que es el mismo valor de categoria
 			window.opener.document.getElementById(tipo+"["+posi+"][3]").value = valores[4];//subcategoria en detalle producto
-			window.opener.document.getElementById(tipo+"["+posi+"][7]").value = valores[2];//descricion de producto en detalle			
+			window.opener.document.getElementById(tipo+"["+posi+"][7]").value = valores[2];//descricion de producto en detalle	
 			
+			//borra los campos de lote fecha y cantidad en caso cambien de producto
+			window.opener.document.getElementById(tipox+"["+posi+"][1]").value='';
+			window.opener.document.getElementById(tipox+"["+posi+"][2]").value='';
+			window.opener.document.getElementById(tipox+"["+posi+"][3]").value='';
+			
+			//cerrar ventana
 			window.close();
-			window.opener.focus();
-
         });
 };
 

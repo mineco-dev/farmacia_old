@@ -317,7 +317,7 @@ function imprimir()
 			<input  name="txt_codigo['.$cnt.'][11]"  value='.$resultado['codigo_requisicion_enc'].' type="hidden" size="3" id="txt_autorizado1"/>
 			<input  name="bien['.$cnt.'][8]" type="hidden" size="3" id="txt_bien1"/>
 			<input  name="txt_empresa['.$cnt.'][7]"  value='.$resultado['codigo_empresa'].' type="hidden" size="3" id="txt_autorizado1"/>
-			<input  name="txt_bodega['.$cnt.'][6]"  value='.$resultado['codigo_bodega'].' type="text" size="3" id="txt_autorizado1"/>
+			<input  name="txt_bodega['.$cnt.'][6]"  value='.$resultado['codigo_bodega'].' type="text" size="3" id="txt_autorizado1"/ style="display:none;">
 			<input  name="txt_subcategoria['.$cnt.'][5]"  value='.$resultado['codigo_subcategoria'].' type="hidden" size="3" id="txt_autorizado1"/>
 			<input  name="txt_categoria['.$cnt.'][4]"  value='.$resultado['codigo_categoria'].' type="hidden" size="3" id="txt_autorizado1"/>
 			<input  name="txt_producto['.$cnt.'][3]"  value='.$resultado['codigo_producto'].' type="hidden" size="3" id="txt_autorizado1"/>

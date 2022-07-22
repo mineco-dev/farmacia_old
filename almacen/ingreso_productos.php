@@ -198,7 +198,7 @@ $usuario_id = ($_SESSION["user_id"]);
                                     <td colspan="2">
                                         <?php
                                         conectardb($almacen);
-                                        $qry_tipo_dependencia = "select * from direccion order by nombre";
+                                        $qry_tipo_dependencia = "select * from direccion where iddireccion=1 order by nombre";
                                         $res_qry_tipo_dependencia = $query($qry_tipo_dependencia);
                                         echo('<select class="form-control " style="width:20%;" name="cbo_dependencia">');
                                         $nombre = ":: Seleccione ::";

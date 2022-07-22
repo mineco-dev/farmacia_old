@@ -17,7 +17,7 @@
 				<select class="form-control" style="width:170px;" name="a" required >
 				
 				<option value="0">:: Seleccione ::</option>
-				<option value="15">Compra Directa</option>
+				<!--<option value="15">Compra Directa</option>-->
 				<option value="8">Compra General</option> 
 				</select>
 				</td>
@@ -40,6 +40,7 @@
 				<option value="0">:: Seleccione ::</option>
 				<option value="30">Próximos a vencer</option>
 				<option value="40">Baja existencia</option> 
+				<option value="50">Medicina expirada</option> 
 				</select>
 				</td>
 
@@ -135,9 +136,11 @@
 		if ($d>0) //-- agregar la condicion de bodega
 			{$condicionesx= $condicionesx. ' and p.codigo_producto = '.$d ;}
 		if ($otro==30) //-- cuando se elija los de proximos a vencer
-			{$condicionesx= $condicionesx . 'and convert(date,id.fecha_vence) <= EOMONTH( dateadd(month, 6,  getdate()) ) and id.existencia>0';}
+			{$condicionesx= $condicionesx . 'and convert(date,id.fecha_vence) >= getdate() and convert(date,id.fecha_vence) <= EOMONTH( dateadd(month, 6,  getdate()) ) and id.existencia>0';}
 		if ($otro==40) //-- cuando se baja existencia
 			{$condicionesx= $condicionesx . ' and i.existencia<= p.existencia_minima ';}
+		if ($otro==50) //-- cuando se baja existencia
+			{$condicionesx= $condicionesx . ' and  DATEDIFF(DAY,GETDATE(),id.fecha_vence) <= 0 and id.existencia>0';}
 		/* fin condiciones indamicas */
 		if ($a >0)
 		{
@@ -152,7 +155,7 @@
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
-					inner join tb_inventario_det id
+					inner join lotes_existencia id
 					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
 					inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
