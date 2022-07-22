@@ -20,7 +20,7 @@ if (isset($_REQUEST["txt_lote"]))
 	{	
 		conectardb($almacen);
 		$nuevo_lote=strtoupper($_REQUEST["txt_lote"]);	
-		$qry_si_existe="select * from lotes_existencia where lote='$nuevo_lote' and codigo_bodega=8";
+		$qry_si_existe="select * from lotes_existencia where lote='$nuevo_lote' and codigo_bodega=8 and codigo_producto='$codprod'";
 		$res_qry_si_existe=$query($qry_si_existe);	
 		$existe=false;	
 		while($row_medida=$fetch_array($res_qry_si_existe))
