@@ -171,7 +171,7 @@
 		}
 		 /* echo "<hr>";
 		echo $query;
-		echo "<hr>";  */
+		echo "<hr>"; */
 	
 		getTabla2($query, 10, $vec, $vec2, $vec3, $dbms, 95,"","","");
 	?>
