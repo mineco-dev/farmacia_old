@@ -61,7 +61,7 @@ from tb_requisicion_enc e
 left outer join direccion d
 on e.codigo_dependencia = d.iddireccion
 where 
-codigo_estatus = 4
+codigo_estatus in (4,5)
 and  e.codigo_requisicion_enc='$cris'
 
 order by fecha_requisicion desc";
@@ -74,7 +74,7 @@ from tb_requisicion_enc e
 left outer join direccion d
 on e.codigo_dependencia = d.iddireccion
 where 
-codigo_estatus in ($mtstatus,4)
+codigo_estatus in (4,5)
 and
 e.fecha_requisicion between '2013-01-01' and getdate()
 order by fecha_requisicion desc";

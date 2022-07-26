@@ -25,33 +25,15 @@
   </head>
   <body>
     <div >
-    <table
-      width="95%"
-      border="0"
-      align="center"
-      cellpadding="0"
-      cellspacing="0"
-    >
+    <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
-    
         <td colspan="2">
-          <table
-            width="100%"
-            height="98"
-            border="0"
-            align="center"
-            cellpadding="0"
-            cellspacing="0"
-          >
+          <table width="100%" height="98" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
               <td width="8%" rowspan="3">
                 <div align="center">
                   <span class="titulomenu">
-                    <img
-                      src="../../images/logo_mineco.jpg"
-                      
-                      height="55"
-                    />
+                    <img src="../../images/logo_mineco.jpg" height="55"/>
                   </span>
                 </div>
               </td>
@@ -69,7 +51,7 @@
                                                         from tb_requisicion_enc e 
                                                         inner join direccion dep
                                                         on dep.iddireccion = e.codigo_dependencia
-                                                        where e.codigo_estatus = 4 and e.codigo_requisicion_enc = '$hoja_despacho'";
+                                                        where e.codigo_estatus = 4 or e.codigo_estatus= 5 and e.codigo_requisicion_enc = '$hoja_despacho'";
                                     conectardb($almacen);
                                     $res_ingreso_enc=$query($qry_ingreso_enc);
                                     while($row_ingreso_enc=$fetch_array($res_ingreso_enc))
@@ -92,8 +74,7 @@
                                     ?>
                                         <span class="Estilo4"
                                           >Ministerio de Economía<br />
-                                          Solicitud de Almacén </span
-                                        ><br /><br />
+                                          Receta Médica </span><br/><em>Para uso Exclusivo en Clínica Médica del Ministerio de Economía</em><br /><br />
                                       </p>
                                     </div>
                                   </div>
@@ -102,16 +83,10 @@
                               <tr>
                                 <td width="53%" height="60">
                                   <div align="left">
-                                    <table
-                                      width="98%"
-                                      border="1"
-                                      align="left"
-                                      cellpadding="0"
-                                      cellspacing="0"
-                                    >
+                                    <table width="98%" border="1" align="left" cellpadding="0" cellspacing="0">
                                       <tr class="titulotabla">
                                         <td>
-                                          <div align="left">SOLICITANTE</div>
+                                          <div align="left">DATOS DEL PACIENTE</div>
                                           <div align="center"></div>
                                         </td>
                                       </tr>
@@ -139,13 +114,7 @@
                                   </div>
                                 </td>
                                 <td width="39%">
-                                  <table
-                                    width="51%"
-                                    border="1"
-                                    align="right"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                  >
+                                  <table width="51%" border="1" align="right" cellpadding="0" cellspacing="0">
                                     <tr class="titulotabla">
                                       <td width="53%"><div align="center">REQUISICIÓN</div></td>
                                     </tr>
@@ -187,25 +156,22 @@
                         </tr>
                         <tr>
                           <td>
-                            <table
-                              width="95%"
-                              border="1"
-                              align="center"
-                              cellpadding="0"
-                              cellspacing="0"
-                            >
+                            <table width="95%" border="1" align="center" cellpadding="0" cellspacing="0">
                               <tr class="titulotabla">
-                                <td width="15%">
+                                <td width="10%">
+                                  <div align="center">Cantidad Solicitada</div>
+                                </td>
+                                <td width="10%">
                                   <div align="center">Código</div>
                                 </td>
                                 <td width="40%">
                                   <div align="center">Descripción</div>
                                 </td>
-                                <td width="15%">
+                                <td width="10%">
                                   <div align="center">Uni. Medida</div>
                                 </td>
                                 <td width="15%">
-                                  <div align="center">Cantidad Solicitada</div>
+                                  <div align="center">POSOLOGÍA/DÓSIS</div>
                                 </td>
                               </tr>
                               <?php	  	
@@ -223,30 +189,33 @@
                                               {			
                                                   //$operador=$row_ingreso_det["usuario_creo"];
                                                   //$operado=$row_ingreso_det["fecha_creado"];
-                                                  echo '<tr>
-                              <td align="center" width="15%">
+                              echo '<tr>
+                              <td align="center" width="10%">
+                                <span class="descripcionproducto"
+                                  >'.$row_ingreso_det["cantidad_solicitada"].'</span
+                                >
+                              </td>'
+                              ;echo'              
+                              <td align="center" width="10%">
                                 <span class="descripcionproducto"
                                   >'.$row_ingreso_det["codigo_categoria"].'-'.$row_ingreso_det["codigo_subcategoria"].'-'.$row_ingreso_det["codigo_producto"].'</span
                                 >
                               </td>
                               '; echo '
-                              <td align="left" width="40%">
+                              <td align="center" width="35%">
                                 <span class="descripcionproducto"
                                   >'.utf8_encode($row_ingreso_det["producto"]).'</span
                                 >
                               </td>
                               '; echo '
-                              <td align="center" width="15%">
+                              <td align="center" width="10%">
                                 <span class="descripcionproducto"
                                   >'.$row_ingreso_det["unidad_medida"].'</span
                                 >
-                              </td>
+                              </td>                             
                               '; echo '
                               <td align="center" width="15%">
-                                <span class="descripcionproducto"
-                                  >'.$row_ingreso_det["cantidad_solicitada"].'</span
-                                >
-                              </td>
+                              </td>                             
                               '; } $free_result($res_ingreso_det); ?>
                             </table>
                           </td>
@@ -272,19 +241,19 @@
                         <tr>
                           <td height="19" class="titulomenu">
                             <div div align="center">
-                              (F)_________________<br />Solicitante (Firma y nombre)
+                              (F)____________________________<br/> Médico Tratante<br/>Firma y Sello
                             </div>
                           </td>
                           <td height="19" class="titulomenu">
                             <div align="center">
-                              (F)__________________<br />
-                              Jefe Inmediato(Firma y Sello)
+                              (F)____________________<br />
+                              Entrega Medicamento
                             </div>
                           </td>
                           <td height="19" class="titulomenu">
                             <div align="center">
-                              __________________ <br />
-                              Sello de Recibido (Direccion Administrativa)
+                              (F)____________________________ <br />
+                              Recibe Medicamento PACIENTE
                             </div>
                           </td>
                         </tr>

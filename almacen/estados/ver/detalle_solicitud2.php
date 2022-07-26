@@ -212,6 +212,7 @@ function imprimir()
        
          <tr>
           <td valign="top">&nbsp;</td>
+		  
         <td colspan="2"> <input name="txt_id" type="hidden" id="txt_id" value="<?PHP echo $codigo; ?>">   </td>
           </tr>
         
