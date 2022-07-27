@@ -30,6 +30,7 @@
 		$Departamento  = $_POST['Departamento'];//nombre de la dependencia o direccion
 		$Municipio  = $_POST['Municipio'];//nombre del jefe de la dependencia
 		$cantidad_solicitada = $_POST['cantidad_solicitada'];//cantidad solicitada por producto
+		$dosis= $_POST['dosis'];// dosis descrita por medico
 		if (isset($_SESSION["ingreso"]) && $Accion == 0)
 		{
 			conectardb($almacen);
@@ -43,7 +44,9 @@
 			while($cnt<=count($bien))//buscar y asigna el codigo, cat, subcat, bodega y cod_empresa a cada linea.
 			{
 				$codigo = $bien[$cnt][4]; //codigo de la fila de la tabla cat_producto		
-				$solicitado = $cantidad_solicitada[$cnt]; 
+				$solicitado = $cantidad_solicitada[$cnt];
+				$dosisIngresad= $dosis[$cnt];
+				 
 				$qry_x_rowid_producto = "select  distinct inventario.codigo_producto,inventario.codigo_categoria,inventario.codigo_subcategoria, inventario.codigo_bodega, inventario.codigo_empresa 
 										from tb_inventario as inventario
 										inner join cat_producto as produc on
@@ -82,9 +85,10 @@
 				while($cnt<=count($bien))//se ingresan los datos de cada producto. por fila
 				{						
 					$solicitado = $cantidad_solicitada[$cnt];
+					$dosisIngresad= $dosis[$cnt];
 					$qry_ingreso_det ="insert into tb_requisicion_det";	
-					$qry_ingreso_det.="(codigo_requisicion_enc,codigo_bodega, codigo_producto, codigo_categoria, codigo_subcategoria, cantidad_solicitada,  codigo_empresa)";
-					$qry_ingreso_det.="values ('$no_ingreso',  '$cbodega[$cnt]','$cproducto[$cnt]', '$ccategoria[$cnt]', '$csubcategoria[$cnt]', '$solicitado', '$cempresa[$cnt]')";			
+					$qry_ingreso_det.="(codigo_requisicion_enc,codigo_bodega, codigo_producto, codigo_categoria, codigo_subcategoria, cantidad_solicitada,  codigo_empresa, dosis)";
+					$qry_ingreso_det.="values ('$no_ingreso',  '$cbodega[$cnt]','$cproducto[$cnt]', '$ccategoria[$cnt]', '$csubcategoria[$cnt]', '$solicitado', '$cempresa[$cnt]','$dosis[$cnt]')";			
 					$query($qry_ingreso_det);		
 					$cnt++;		
 				}

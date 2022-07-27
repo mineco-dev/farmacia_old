@@ -139,8 +139,8 @@
 			{$condicionesx= $condicionesx . 'and convert(date,id.fecha_vence) >= getdate() and convert(date,id.fecha_vence) <= EOMONTH( dateadd(month, 6,  getdate()) ) and id.existencia>0';}
 		if ($otro==40) //-- cuando se baja existencia
 			{$condicionesx= $condicionesx . ' and i.existencia<= p.existencia_minima ';}
-		if ($otro==50) //-- cuando se baja existencia
-			{$condicionesx= $condicionesx . ' and  DATEDIFF(DAY,GETDATE(),id.fecha_vence) <= 0 and id.existencia>0';}
+		if ($otro==50) //-- cuando las medicinas ya expiraron
+			{$condicionesx= $condicionesx . ' and  DATEDIFF(DAY,GETDATE(),id.fecha_vence) <= 0 and id.existencia > 0';}
 		/* fin condiciones indamicas */
 		if ($a >0)
 		{
@@ -155,18 +155,18 @@
 			from 
 			tb_inventario i inner join cat_producto p 
 					on i.codigo_producto = p.codigo_producto and i.codigo_categoria = p.codigo_categoria and i.codigo_subcategoria = p.codigo_subcategoria
-					inner join lotes_existencia id
+			inner join lotes_existencia id
 					on i.codigo_producto=id.codigo_producto and i.codigo_categoria=id.codigo_categoria and i.codigo_subcategoria=id.codigo_subcategoria
-					inner join cat_medida m
+			inner join cat_medida m
 					on m.codigo_medida = p.codigo_medida
 			inner join cat_empresa e
 					on e.codigo_empresa = i.codigo_empresa
 			inner join cat_bodega b
-					on b.codigo_bodega = i.codigo_bodega inner join dbo.tb_kardex as kd on 
-			i.codigo_producto = kd.codigo_producto and i.codigo_categoria = kd.codigo_categoria and i.codigo_subcategoria = kd.codigo_subcategoria
-								where p.activo=1 ". $condicionesx . "
-								group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
-								order by producto";
+					on b.codigo_bodega = i.codigo_bodega 
+			inner join dbo.tb_kardex as kd on i.codigo_producto = kd.codigo_producto and i.codigo_categoria = kd.codigo_categoria and i.codigo_subcategoria = kd.codigo_subcategoria
+			where p.activo=1 ". $condicionesx . "
+			group by p.codigo_categoria,p.codigo_subcategoria,p.codigo_producto 
+			order by producto";
 
 		}
 		 /* echo "<hr>";

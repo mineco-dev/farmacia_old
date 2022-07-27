@@ -138,8 +138,6 @@ $_SESSION["ingreso"] = true;
         fila += "<td><input name=\"bien[" + cont + "][1]\" type=\"text\" id=\"bien[" + cont + "][1]\" size=\"5%\" class=\"form-control input_center\"></td>"
         fila += "<td><input name=\"bien[" + cont + "][5]\" type=\"text\" id=\"bien[" + cont + "][5]\" size=\"5%\" class=\"form-control input_center\"></td>"
         fila += "<td><input name=\"bien[" + cont + "][7]\" type=\"text\" id=\"bien[" + cont + "][7]\" size=\"4%\" class=\"form-control\" > </td>"
-
-
         fila += "<td><span class=\"buscaprod\" id=\"blote="+ cont + "\" name=\"blote="+ cont +" \"> <i class=\"fa fa-search\" aria-hidden=\"true\"></i> </span></td>"
         //lote de la medicina
         fila += "<td><input name=\"bienx[" + cont + "][1]\" type=\"text\" id=\"bienx[" + cont + "][1]\"  size=\"7\" class=\"monto form-control input_center\" disabled></td>"

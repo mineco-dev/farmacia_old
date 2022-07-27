@@ -65,6 +65,7 @@
                                         $fecha=$row_ingreso_enc["fecha_requisicion"];
                                         $hora=$row_ingreso_enc["hora_requisicion"];
                                         $fecha_despacho=$row_ingreso_enc["fecha_despacho"];
+                                        $dosis_medicina=$row_ingreso_en["dosis"];
                                         $existe=true;
                                         
                                     }
@@ -176,7 +177,7 @@
                               </tr>
                               <?php	  	
                                       $qry_ingreso_det = "select d.codigo_requisicion_enc, d.codigo_producto, d.codigo_categoria, d.codigo_subcategoria, p.producto, m.unidad_medida,  
-                                      d.cantidad_solicitada, d.cantidad_autorizada
+                                      d.cantidad_solicitada, d.cantidad_autorizada, d.dosis
                                       from  tb_requisicion_det d
                                       inner join cat_producto p
                                       on p.codigo_producto = d.codigo_producto and p.codigo_categoria = d.codigo_categoria and p.codigo_subcategoria = d.codigo_subcategoria
@@ -215,6 +216,9 @@
                               </td>                             
                               '; echo '
                               <td align="center" width="15%">
+                              <span class="descripcionproducto"
+                               >'.$row_ingreso_det["dosis"].'</span
+                              >
                               </td>                             
                               '; } $free_result($res_ingreso_det); ?>
                             </table>
