@@ -71,53 +71,52 @@ body {
                         <td align="center" bordercolor="#0000FF" bgcolor="#FFFFFF"><span lang="es-gt"><span lang="es-gt">
                           <select name="cboDiai" size="1" id="cboDiai" onkeypress="return handleEnter(this, event)">
                             <?PHP
-					   			for ($x=1; $x<=31; $x++)
-								{
-									if (date("j") == $x)
-									{
-										echo "<option value='$x' selected>$x</option>";
-									}
-									else
-									{
-					   					echo "<option value='$x'>$x</option>";
-									}
-								}					   	
-					   ?>
+                                for ($x=1; $x<=31; $x++)
+                              {
+                                if (date("j") == $x)
+                                {
+                                  echo "<option value='$x' selected>$x</option>";
+                                }
+                                else
+                                {
+                                    echo "<option value='$x'>$x</option>";
+                                }
+                              }					   	
+					                  ?>
                         </select>
                         </span></span><span lang="es-gt"><span lang="es-gt"><span lang="es-gt"><span lang="es-gt">
                         <select name="cboMesi" size="1" id="cboMesi" >
-                          <?	
-					  			$m = 0;
-					   			for ($x=0; $x<=11; $x++)
-								{
-									$m++;
-									if (date("n") == $m)
-									{
-										echo "<option value='$m' selected>$fecha[$x]</option>";
-									}
-									else
-									{
-					   					echo "<option value='$m'>$fecha[$x]</option>";
-									}
-								}					   	
-
-					  ?>
+                          <?php	
+                              $m = 0;
+                              for ($x=0; $x<=11; $x++)
+                            {
+                              $m++;
+                              if (date("n") == $m)
+                              {
+                                echo "<option value='$m' selected>$fecha[$x]</option>";
+                              }
+                              else
+                              {
+                                  echo "<option value='$m'>$fecha[$x]</option>";
+                              }
+                            }			
+                          ?>
                         </select>
                         </span></span></span></span><span lang="es-gt"><span lang="es-gt"><span lang="es-gt"><span lang="es-gt"><span lang="es-gt"><span lang="es-gt"><span lang="es-gt"><span lang="es-gt">
                         <select name="cboAnioi" size="1" id="cboAnioi">
-                          <?	
-					  			$m = date("Y"); //mes
-								$mA = date("Y")-1;
-								$mA1 = date("Y")-2;
-								$mA2 = date("Y")-3;
-								$mA3 = date("Y")-5; // mes anterior
-								$d = date("j");
-								echo "<option value='$m' selected>$m</option>";
-								echo "<option value='$mA'>$mA</option>";								
-								echo "<option value='$mA1'>$mA1</option>";
-								echo "<option value='$mA2'>$mA2</option>";
-								echo "<option value='$mA3'>$mA3</option>";
-					  ?>
+                          <?php	
+                              $m = date("Y"); //mes
+                              $mA = date("Y")-1;
+                              $mA1 = date("Y")-2;
+                              $mA2 = date("Y")-3;
+                              $mA3 = date("Y")-5; // mes anterior
+                              $d = date("j");
+                              echo "<option value='$m' selected>$m</option>";
+                              echo "<option value='$mA'>$mA</option>";								
+                              echo "<option value='$mA1'>$mA1</option>";
+                              echo "<option value='$mA2'>$mA2</option>";
+                              echo "<option value='$mA3'>$mA3</option>";
+                          ?>
                         </select>
                         </span></span></span></span></span></span></span></span></td>
                       </tr>
@@ -126,53 +125,53 @@ body {
                         <td align="center" bordercolor="#0000FF" bgcolor="#FFFFFF"><span lang="es-gt"><span lang="es-gt">
                           <select name="cboDiaf" size="1" id="cboDiaf" onkeypress="return handleEnter(this, event)">
                             <?PHP
-					   			for ($x=1; $x<=31; $x++)
-								{
-									if (date("j") == $x)
-									{
-										echo "<option value='$x' selected>$x</option>";
-									}
-									else
-									{
-					   					echo "<option value='$x'>$x</option>";
-									}
-								}					   	
-					   ?>
+                                    for ($x=1; $x<=31; $x++)
+                                  {
+                                    if (date("j") == $x)
+                                    {
+                                      echo "<option value='$x' selected>$x</option>";
+                                    }
+                                    else
+                                    {
+                                        echo "<option value='$x'>$x</option>";
+                                    }
+                                  }					   	
+                              ?>
                         </select>
                           <span lang="es-gt"><span lang="es-gt"><span lang="es-gt"><span lang="es-gt">
                           <select name="cboMesf" size="1" id="cboMesf" >
-                            <?	
-					  			$m = 0;
-					   			for ($x=0; $x<=11; $x++)
-								{
-									$m++;
-									if (date("n") == $m)
-									{
-										echo "<option value='$m' selected>$fecha[$x]</option>";
-									}
-									else
-									{
-					   					echo "<option value='$m'>$fecha[$x]</option>";
-									}
-								}					   	
+                            <?php	
+                                $m = 0;
+                                for ($x=0; $x<=11; $x++)
+                              {
+                                $m++;
+                                if (date("n") == $m)
+                                {
+                                  echo "<option value='$m' selected>$fecha[$x]</option>";
+                                }
+                                else
+                                {
+                                    echo "<option value='$m'>$fecha[$x]</option>";
+                                }
+                              }					   	
 
-					  ?>
+                          ?>
                           </select>
                           <span lang="es-gt"><span lang="es-gt"><span lang="es-gt"><span lang="es-gt"><span lang="es-gt"><span lang="es-gt"><span lang="es-gt"><span lang="es-gt">
                           <select name="cboAniof" size="1" id="cboAniof">
-                            <?	
-					  			$m = date("Y"); //mes
-								$mA = date("Y")-1;
-								$mA1 = date("Y")-2;
-								$mA2 = date("Y")-3;
-								$mA3 = date("Y")-4; // mes anterior
-								$d = date("j");
-								echo "<option value='$m' selected>$m</option>";
-								echo "<option value='$mA'>$mA</option>";								
-								echo "<option value='$mA1'>$mA1</option>";
-								echo "<option value='$mA2'>$mA2</option>";
-								echo "<option value='$mA3'>$mA3</option>";
-					  ?>
+                            <?php	
+                                    $m = date("Y"); //mes
+                                  $mA = date("Y")-1;
+                                  $mA1 = date("Y")-2;
+                                  $mA2 = date("Y")-3;
+                                  $mA3 = date("Y")-4; // mes anterior
+                                  $d = date("j");
+                                  echo "<option value='$m' selected>$m</option>";
+                                  echo "<option value='$mA'>$mA</option>";								
+                                  echo "<option value='$mA1'>$mA1</option>";
+                                  echo "<option value='$mA2'>$mA2</option>";
+                                  echo "<option value='$mA3'>$mA3</option>";
+                            ?>
                           </select>
                         </span></span></span></span></span></span></span></span> </span></span></span></span> </span></span></td>
                       </tr>
@@ -242,9 +241,10 @@ body {
 
 function generaSelect()
 {	
-		$consulta=mssql_query("select distinct(c.codigo_categoria), c.categoria from cat_subcategoria s
-	inner join cat_categoria c
-	on c.codigo_categoria = s.codigo_categoria order by c.codigo_categoria");
+	$consulta=mssql_query("select distinct(c.codigo_categoria), c.categoria 
+                          from cat_subcategoria s
+	                        inner join cat_categoria c
+	                          on c.codigo_categoria = s.codigo_categoria and c.codigo_categoria=266 order by c.codigo_categoria");
 	echo "<select name='select1' id='select1' onChange='cargaContenido(this.id)'>";
 	echo "<option value='0'>Seleccione Categoria</option>";
 	while($registro=mssql_fetch_row($consulta))
